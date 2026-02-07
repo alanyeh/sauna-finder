@@ -1,0 +1,31 @@
+import SaunaCard from './SaunaCard';
+
+export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite }) {
+  return (
+    <div className="flex flex-col flex-1 bg-white overflow-hidden">
+      <div className="px-7 py-4 border-b border-light-border text-[13px] text-warm-gray bg-white">
+        {saunas.length} sauna{saunas.length !== 1 ? 's' : ''} found
+      </div>
+
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        {saunas.length === 0 ? (
+          <div className="px-7 py-10 text-center text-warm-gray">
+            No saunas match your filters. Try adjusting your search.
+          </div>
+        ) : (
+          saunas.map((sauna) => (
+            <SaunaCard
+              key={sauna.id}
+              sauna={sauna}
+              isSelected={selectedSauna?.id === sauna.id}
+              onClick={() => onSaunaSelect(sauna)}
+              user={user}
+              isFavorite={isFavorite?.(sauna.id)}
+              onToggleFavorite={() => toggleFavorite?.(sauna.id)}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  );
+}
