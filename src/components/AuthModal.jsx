@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-} from 'firebase/auth';
-import { auth, googleProvider } from '../firebase';
+import { supabase } from '../supabase';
 
 export default function AuthModal({ onClose }) {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -18,14 +13,13 @@ export default function AuthModal({ onClose }) {
     setError('');
     setLoading(true);
     try {
-      if (isSignUp) {
-        await createUserWithEmailAndPassword(auth, email, password);
-      } else {
-        await signInWithEmailAndPassword(auth, email, password);
-      }
+      const { error: authError } = isSignUp
+        ? await supabase.auth.signUp({ email, password })
+        : await supabase.auth.signInWithPassword({ email, password });
+      if (authError) throw authError;
       onClose();
     } catch (err) {
-      setError(err.message.replace('Firebase: ', ''));
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -34,10 +28,12 @@ export default function AuthModal({ onClose }) {
   const handleGoogle = async () => {
     setError('');
     try {
-      await signInWithPopup(auth, googleProvider);
-      onClose();
+      const { error: authError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+      });
+      if (authError) throw authError;
     } catch (err) {
-      setError(err.message.replace('Firebase: ', ''));
+      setError(err.message);
     }
   };
 

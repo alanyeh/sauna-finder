@@ -10,7 +10,7 @@ function App() {
   const [selectedSauna, setSelectedSauna] = useState(null);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const { user } = useAuth();
-  const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.uid);
+  const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.id);
 
   const {
     neighborhood,

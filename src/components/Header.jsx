@@ -22,7 +22,7 @@ export default function Header() {
           {user ? (
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-sm font-medium">
-                {(user.displayName?.[0] || user.email?.[0] || '?').toUpperCase()}
+                {(user.user_metadata?.full_name?.[0] || user.email?.[0] || '?').toUpperCase()}
               </div>
               <button
                 onClick={logout}
