@@ -4,7 +4,7 @@ import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-goog
 const MAP_ID = 'sauna_finder_map';
 
 // Add your Google Maps API key here
-const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
 
 const mapStyles = [
   {
@@ -97,18 +97,22 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
       setCenter({ lat: selectedSauna.lat, lng: selectedSauna.lng });
       setZoom(15);
     } else if (saunas.length > 0) {
-      // Calculate bounds to fit all saunas
-      const bounds = new google.maps.LatLngBounds();
+      // Calculate bounds manually to fit all saunas
+      let minLat = saunas[0].lat;
+      let maxLat = saunas[0].lat;
+      let minLng = saunas[0].lng;
+      let maxLng = saunas[0].lng;
+
       saunas.forEach(sauna => {
-        bounds.extend({ lat: sauna.lat, lng: sauna.lng });
+        minLat = Math.min(minLat, sauna.lat);
+        maxLat = Math.max(maxLat, sauna.lat);
+        minLng = Math.min(minLng, sauna.lng);
+        maxLng = Math.max(maxLng, sauna.lng);
       });
-      
-      // This is approximate - in production you'd use map.fitBounds()
-      const ne = bounds.getNorthEast();
-      const sw = bounds.getSouthWest();
+
       setCenter({
-        lat: (ne.lat() + sw.lat()) / 2,
-        lng: (ne.lng() + sw.lng()) / 2
+        lat: (minLat + maxLat) / 2,
+        lng: (minLng + maxLng) / 2
       });
       setZoom(12);
     }
