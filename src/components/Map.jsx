@@ -126,7 +126,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
         mapTypeControl={false}
         streetViewControl={false}
         fullscreenControl={true}
-        gestureHandling="auto"
+        gestureHandling="greedy"
       >
         <MapController selectedSauna={selectedSauna} />
         {saunas.map(sauna => (
