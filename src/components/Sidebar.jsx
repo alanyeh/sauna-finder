@@ -52,20 +52,28 @@ export default function Sidebar({
       >
         <Header />
       </div>
-      <Filters
-        neighborhoods={neighborhoods}
-        neighborhood={neighborhood}
-        setNeighborhood={setNeighborhood}
-        price={price}
-        setPrice={setPrice}
-        selectedAmenities={selectedAmenities}
-        toggleAmenity={toggleAmenity}
-        user={user}
-        showFavoritesOnly={showFavoritesOnly}
-        setShowFavoritesOnly={setShowFavoritesOnly}
-        isOpen={showFilters}
-        onClose={() => setShowFilters(false)}
-      />
+      {/* Filters - Scrolls away on mobile, always shown on desktop */}
+      <div
+        className="transition-transform duration-100 ease-out overflow-hidden md:overflow-visible"
+        style={{
+          transform: `translateY(-${headerOffset}px)`,
+        }}
+      >
+        <Filters
+          neighborhoods={neighborhoods}
+          neighborhood={neighborhood}
+          setNeighborhood={setNeighborhood}
+          price={price}
+          setPrice={setPrice}
+          selectedAmenities={selectedAmenities}
+          toggleAmenity={toggleAmenity}
+          user={user}
+          showFavoritesOnly={showFavoritesOnly}
+          setShowFavoritesOnly={setShowFavoritesOnly}
+          isOpen={showFilters}
+          onClose={() => setShowFilters(false)}
+        />
+      </div>
       {/* Sauna count and controls - Mobile - Scrolls with header, then sticks */}
       <div
         className="z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden transition-transform duration-100 ease-out"
