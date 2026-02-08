@@ -26,17 +26,14 @@ export default function Sidebar({
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
   const headerHeightRef = useRef(0);
-  const lastScrollRef = useRef(0);
 
   const handleListScroll = (scrollTop) => {
-    // Calculate scroll direction (positive = scrolling up, negative = scrolling down)
-    const scrollDelta = lastScrollRef.current - scrollTop;
-    lastScrollRef.current = scrollTop;
-
-    // Update header offset based on scroll direction
-    // Scrolling up collapses header, scrolling down expands it
-    const newOffset = Math.max(0, Math.min(headerOffset + scrollDelta, headerHeightRef.current || 120));
-    setHeaderOffset(newOffset);
+    // When scrolling, calculate how much of the header to hide
+    // Header collapses more as you scroll down through the list
+    const maxHeaderHeight = headerHeightRef.current || 120;
+    // Cap the offset at the header's full height
+    const offset = Math.min(scrollTop, maxHeaderHeight);
+    setHeaderOffset(offset);
   };
 
   return (
@@ -69,8 +66,13 @@ export default function Sidebar({
         isOpen={showFilters}
         onClose={() => setShowFilters(false)}
       />
-      {/* Sauna count and controls - Mobile - Sticky */}
-      <div className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden">
+      {/* Sauna count and controls - Mobile - Scrolls with header, then sticks */}
+      <div
+        className="z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden transition-transform duration-100 ease-out"
+        style={{
+          transform: `translateY(-${Math.min(headerOffset, headerHeightRef.current || 120)}px)`,
+        }}
+      >
         <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
         <div className="flex gap-2">
           <button
