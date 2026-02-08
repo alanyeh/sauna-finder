@@ -18,6 +18,8 @@ export default function Sidebar({
   isFavorite,
   showFavoritesOnly,
   setShowFavoritesOnly,
+  mobileView,
+  setMobileView,
 }) {
   return (
     <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10">
@@ -41,6 +43,8 @@ export default function Sidebar({
         user={user}
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
+        mobileView={mobileView}
+        setMobileView={setMobileView}
       />
     </div>
   );
