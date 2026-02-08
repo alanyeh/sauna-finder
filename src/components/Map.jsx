@@ -6,7 +6,7 @@ const MAP_ID = 'sauna_finder_map';
 // Add your Google Maps API key here
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
 
-function MapController({ saunas, selectedSauna }) {
+function MapController({ selectedSauna }) {
   const map = useMap();
 
   useEffect(() => {
@@ -15,28 +15,9 @@ function MapController({ saunas, selectedSauna }) {
     if (selectedSauna) {
       map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
       map.setZoom(15);
-    } else if (saunas.length > 0) {
-      // Calculate bounds to fit all saunas
-      let minLat = saunas[0].lat;
-      let maxLat = saunas[0].lat;
-      let minLng = saunas[0].lng;
-      let maxLng = saunas[0].lng;
-
-      saunas.forEach(sauna => {
-        minLat = Math.min(minLat, sauna.lat);
-        maxLat = Math.max(maxLat, sauna.lat);
-        minLng = Math.min(minLng, sauna.lng);
-        maxLng = Math.max(maxLng, sauna.lng);
-      });
-
-      const center = {
-        lat: (minLat + maxLat) / 2,
-        lng: (minLng + maxLng) / 2
-      };
-      map.panTo(center);
-      map.setZoom(12);
     }
-  }, [selectedSauna, saunas, map]);
+    // Map will stay at default center/zoom (Manhattan/Brooklyn view) when no sauna is selected
+  }, [selectedSauna, map]);
 
   return null;
 }
@@ -137,7 +118,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
         fullscreenControl={true}
         gestureHandling="auto"
       >
-        <MapController saunas={saunas} selectedSauna={selectedSauna} />
+        <MapController selectedSauna={selectedSauna} />
         {saunas.map(sauna => (
           <SaunaMarker
             key={sauna.id}
