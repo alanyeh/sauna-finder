@@ -139,15 +139,14 @@ export default function Sidebar({
       </div>
 
       {/* Map or List content */}
-      <div className="flex-1 overflow-hidden bg-white">
-        {mobileView === 'map' ? (
-          <Map
-            saunas={filteredSaunas}
-            selectedSauna={selectedSauna}
-            onSaunaSelect={onSaunaSelect}
-          />
-        ) : (
-          <SaunaList
+      {mobileView === 'map' ? (
+        <Map
+          saunas={filteredSaunas}
+          selectedSauna={selectedSauna}
+          onSaunaSelect={onSaunaSelect}
+        />
+      ) : (
+        <SaunaList
           saunas={filteredSaunas}
           selectedSauna={selectedSauna}
           onSaunaSelect={onSaunaSelect}
@@ -157,7 +156,6 @@ export default function Sidebar({
           onScroll={handleListScroll}
         />
       )}
-      </div>
     </div>
   );
 }
