@@ -6,29 +6,6 @@ const MAP_ID = 'sauna_finder_map';
 // Add your Google Maps API key here
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
 
-const mapStyles = [
-  {
-    featureType: "poi",
-    elementType: "labels",
-    stylers: [{ visibility: "off" }]
-  },
-  {
-    featureType: "water",
-    elementType: "geometry",
-    stylers: [{ color: "#E8E4DC" }]
-  },
-  {
-    featureType: "landscape",
-    elementType: "geometry",
-    stylers: [{ color: "#FAF8F3" }]
-  },
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [{ color: "#ffffff" }]
-  }
-];
-
 function MapController({ saunas, selectedSauna }) {
   const map = useMap();
 
@@ -157,7 +134,6 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
         mapTypeControl={false}
         streetViewControl={false}
         fullscreenControl={true}
-        styles={mapStyles}
         gestureHandling="auto"
       >
         <MapController saunas={saunas} selectedSauna={selectedSauna} />
