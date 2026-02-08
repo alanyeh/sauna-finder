@@ -59,7 +59,11 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('list')}
-            className={`p-1 transition-colors ${mobileView === 'list' ? 'text-charcoal' : 'text-warm-gray hover:text-charcoal'}`}
+            className={`p-1.5 rounded transition-colors ${
+              mobileView === 'list'
+                ? 'bg-charcoal text-white'
+                : 'text-charcoal hover:bg-charcoal hover:text-white'
+            }`}
             title="List view"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
