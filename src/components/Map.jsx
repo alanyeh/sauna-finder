@@ -24,17 +24,8 @@ function MapController({ selectedSauna }) {
 }
 
 function SaunaMarker({ sauna, isSelected, onClick }) {
-  const [showInfo, setShowInfo] = useState(false);
-
-  useEffect(() => {
-    if (isSelected) {
-      setShowInfo(true);
-    }
-  }, [isSelected]);
-
   const handleClick = useCallback(() => {
     onClick(sauna);
-    setShowInfo(true);
   }, [onClick, sauna]);
 
   return (
@@ -48,10 +39,10 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
         }`} />
       </AdvancedMarker>
 
-      {showInfo && (
+      {isSelected && (
         <InfoWindow
           position={{ lat: sauna.lat, lng: sauna.lng }}
-          onCloseClick={() => setShowInfo(false)}
+          onCloseClick={() => onClick(null)}
         >
           <div className="min-w-[280px] overflow-hidden">
             {(sauna.photos || sauna.photo_url) && (
