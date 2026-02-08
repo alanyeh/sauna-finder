@@ -68,11 +68,15 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('map')}
-            className={`p-1 transition-colors ${mobileView === 'map' ? 'text-charcoal' : 'text-warm-gray hover:text-charcoal'}`}
+            className={`p-1.5 rounded transition-colors ${
+              mobileView === 'map'
+                ? 'bg-charcoal text-white'
+                : 'text-charcoal hover:bg-charcoal hover:text-white'
+            }`}
             title="Map view"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" />
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5z" />
             </svg>
           </button>
         </div>
