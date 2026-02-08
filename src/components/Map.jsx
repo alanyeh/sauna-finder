@@ -101,8 +101,9 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
 }
 
 export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
-  const [defaultCenter] = useState({ lat: 40.7128, lng: -74.0060 });
-  const [defaultZoom] = useState(12);
+  // Center between Manhattan and Brooklyn to show both boroughs
+  const [defaultCenter] = useState({ lat: 40.68, lng: -73.97 });
+  const [defaultZoom] = useState(11);
 
   if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
     return (
