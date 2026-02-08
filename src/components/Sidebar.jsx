@@ -20,7 +20,7 @@ export default function Sidebar({
   setShowFavoritesOnly,
 }) {
   return (
-    <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full md:h-screen overflow-hidden z-10">
+    <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10">
       <Header />
       <Filters
         neighborhoods={neighborhoods}
