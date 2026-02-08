@@ -48,14 +48,7 @@ export default function Sidebar({
   return (
     <div className="w-full md:w-[420px] border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
       {/* Scrolling background container - encompasses header and filters */}
-      <div
-        className="md:bg-white transition-all duration-100 ease-out overflow-hidden"
-        style={{
-          transform: `translateY(-${headerOffset}px)`,
-          maxHeight: `${Math.max(0, (headerHeightRef.current || 250) - headerOffset)}px`,
-          backgroundColor: 'white',
-        }}
-      >
+      <div className="overflow-hidden bg-white">
         {/* Header - Scrolls away on mobile, always shown on desktop */}
         <div
           ref={(el) => {
@@ -63,7 +56,8 @@ export default function Sidebar({
               headerHeightRef.current = el.offsetHeight;
             }
           }}
-          className="md:block overflow-hidden"
+          className="md:block"
+          style={{ marginTop: `-${headerOffset}px` }}
         >
           <Header citySlug={citySlug} setCitySlug={setCitySlug} />
         </div>
@@ -149,7 +143,7 @@ export default function Sidebar({
 
       {/* Map or List content */}
       {mobileView === 'map' ? (
-        <div className="flex-1 min-h-0 relative">
+        <div className="flex-1 min-h-0 relative" style={{ touchAction: 'none' }}>
           <Map
             saunas={filteredSaunas}
             selectedSauna={selectedSauna}
