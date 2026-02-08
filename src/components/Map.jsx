@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
+import PhotoCarousel from './PhotoCarousel';
 
 const MAP_ID = 'sauna_finder_map';
 
@@ -52,28 +53,36 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
           position={{ lat: sauna.lat, lng: sauna.lng }}
           onCloseClick={() => setShowInfo(false)}
         >
-          <div className="p-4 min-w-[280px]">
-            <h3 className="text-base font-medium mb-2 text-charcoal">
-              {sauna.name}
-            </h3>
-            <div className="flex items-center gap-1.5 mb-2 text-[13px]">
-              <span className="text-accent-red">★</span>
-              <span className="font-medium">{sauna.rating}</span>
-              <span className="text-warm-gray text-xs">
-                ({sauna.ratingCount.toLocaleString()})
-              </span>
+          <div className="min-w-[280px] overflow-hidden">
+            {(sauna.photos || sauna.photo_url) && (
+              <PhotoCarousel
+                photos={sauna.photos || (sauna.photo_url ? [sauna.photo_url] : [])}
+                alt={sauna.name}
+              />
+            )}
+            <div className="p-4">
+              <h3 className="text-base font-medium mb-2 text-charcoal">
+                {sauna.name}
+              </h3>
+              <div className="flex items-center gap-1.5 mb-2 text-[13px]">
+                <span className="text-accent-red">★</span>
+                <span className="font-medium">{sauna.rating}</span>
+                <span className="text-warm-gray text-xs">
+                  ({sauna.ratingCount.toLocaleString()})
+                </span>
+              </div>
+              <p className="text-[13px] text-warm-gray mb-3">
+                {sauna.address}
+              </p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}&query_place_id=${sauna.placeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red"
+              >
+                View on Google Maps
+              </a>
             </div>
-            <p className="text-[13px] text-warm-gray mb-3">
-              {sauna.address}
-            </p>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}&query_place_id=${sauna.placeId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red"
-            >
-              View on Google Maps
-            </a>
           </div>
         </InfoWindow>
       )}

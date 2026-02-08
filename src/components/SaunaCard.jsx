@@ -1,16 +1,25 @@
 import { amenityLabels } from '../data/saunas';
+import PhotoCarousel from './PhotoCarousel';
 
 export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite }) {
   return (
     <div
       onClick={onClick}
-      className={`px-7 py-5 border-b border-light-border cursor-pointer transition-colors ${
+      className={`border-b border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
           ? 'bg-cream border-l-[3px] border-l-accent-red'
           : 'bg-white hover:bg-hover-bg'
       }`}
     >
-      <div className="flex items-start justify-between">
+      {(sauna.photos || sauna.photo_url) && (
+        <PhotoCarousel
+          photos={sauna.photos || (sauna.photo_url ? [sauna.photo_url] : [])}
+          alt={sauna.name}
+        />
+      )}
+
+      <div className="px-7 py-5">
+        <div className="flex items-start justify-between">
         <h3 className="text-base font-medium mb-1.5 text-charcoal">
           {sauna.name}
         </h3>
@@ -60,6 +69,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
             {amenityLabels[amenity]}
           </span>
         ))}
+      </div>
       </div>
     </div>
   );

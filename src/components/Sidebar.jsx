@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './Header';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
@@ -22,8 +23,10 @@ export default function Sidebar({
   mobileView,
   setMobileView,
 }) {
+  const [showFilters, setShowFilters] = useState(false);
+
   return (
-    <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10">
+    <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
       <Header />
       <Filters
         neighborhoods={neighborhoods}
@@ -36,11 +39,24 @@ export default function Sidebar({
         user={user}
         showFavoritesOnly={showFavoritesOnly}
         setShowFavoritesOnly={setShowFavoritesOnly}
+        isOpen={showFilters}
+        onClose={() => setShowFilters(false)}
       />
-      {/* Sauna count and view toggle - always visible */}
-      <div className="px-7 py-4 border-b border-light-border text-[13px] text-warm-gray bg-white flex items-center justify-between md:hidden">
-        <span>{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
+      {/* Sauna count and controls - Mobile */}
+      <div className="px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden">
+        <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
         <div className="flex gap-2">
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className={`px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
+              showFilters
+                ? 'bg-charcoal text-white'
+                : 'bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white'
+            }`}
+            title="Toggle filters"
+          >
+            Filter
+          </button>
           <button
             onClick={() => setMobileView('list')}
             className={`p-1 transition-colors ${mobileView === 'list' ? 'text-charcoal' : 'text-warm-gray hover:text-charcoal'}`}
@@ -61,6 +77,23 @@ export default function Sidebar({
           </button>
         </div>
       </div>
+
+      {/* Sauna count and filters - Desktop */}
+      <div className="hidden md:flex px-7 py-4 border-b border-light-border bg-white items-center justify-between">
+        <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
+        <button
+          onClick={() => setShowFilters(!showFilters)}
+          className={`px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
+            showFilters
+              ? 'bg-charcoal text-white'
+              : 'bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white'
+          }`}
+          title="Toggle filters"
+        >
+          Filter
+        </button>
+      </div>
+
       {/* Map or List content */}
       {mobileView === 'map' ? (
         <Map
