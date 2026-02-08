@@ -37,51 +37,48 @@ export default function Sidebar({
   };
 
   return (
-    <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
-      {/* Header - Scrolls away on mobile, always shown on desktop */}
+    <div className="w-full md:w-[420px] border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
+      {/* Scrolling background container - encompasses header and filters */}
       <div
-        ref={(el) => {
-          if (el && headerHeightRef.current === 0) {
-            headerHeightRef.current = el.offsetHeight;
-          }
-        }}
-        className="md:block transition-all duration-100 ease-out overflow-hidden"
+        className="md:bg-white transition-all duration-100 ease-out overflow-hidden"
         style={{
           transform: `translateY(-${headerOffset}px)`,
-          maxHeight: `${Math.max(0, (headerHeightRef.current || 120) - headerOffset)}px`,
+          maxHeight: `${Math.max(0, (headerHeightRef.current || 250) - headerOffset)}px`,
+          backgroundColor: 'white',
         }}
       >
-        <Header />
+        {/* Header - Scrolls away on mobile, always shown on desktop */}
+        <div
+          ref={(el) => {
+            if (el && headerHeightRef.current === 0) {
+              headerHeightRef.current = el.offsetHeight;
+            }
+          }}
+          className="md:block overflow-hidden"
+        >
+          <Header />
+        </div>
+        {/* Filters - Scrolls away on mobile, always shown on desktop */}
+        <div className="md:block overflow-hidden">
+          <Filters
+            neighborhoods={neighborhoods}
+            neighborhood={neighborhood}
+            setNeighborhood={setNeighborhood}
+            price={price}
+            setPrice={setPrice}
+            selectedAmenities={selectedAmenities}
+            toggleAmenity={toggleAmenity}
+            user={user}
+            showFavoritesOnly={showFavoritesOnly}
+            setShowFavoritesOnly={setShowFavoritesOnly}
+            isOpen={showFilters}
+            onClose={() => setShowFilters(false)}
+          />
+        </div>
       </div>
-      {/* Filters - Scrolls away on mobile, always shown on desktop */}
+      {/* Sauna count and controls - Mobile - Sticky at top */}
       <div
-        className="transition-all duration-100 ease-out overflow-hidden md:overflow-visible"
-        style={{
-          transform: `translateY(-${headerOffset}px)`,
-          maxHeight: `calc(1000px - ${headerOffset}px)`,
-        }}
-      >
-        <Filters
-          neighborhoods={neighborhoods}
-          neighborhood={neighborhood}
-          setNeighborhood={setNeighborhood}
-          price={price}
-          setPrice={setPrice}
-          selectedAmenities={selectedAmenities}
-          toggleAmenity={toggleAmenity}
-          user={user}
-          showFavoritesOnly={showFavoritesOnly}
-          setShowFavoritesOnly={setShowFavoritesOnly}
-          isOpen={showFilters}
-          onClose={() => setShowFilters(false)}
-        />
-      </div>
-      {/* Sauna count and controls - Mobile - Scrolls with header, then sticks */}
-      <div
-        className="z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden transition-transform duration-100 ease-out"
-        style={{
-          transform: `translateY(-${Math.min(headerOffset, headerHeightRef.current || 120)}px)`,
-        }}
+        className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden"
       >
         <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
         <div className="flex gap-2">
@@ -142,14 +139,15 @@ export default function Sidebar({
       </div>
 
       {/* Map or List content */}
-      {mobileView === 'map' ? (
-        <Map
-          saunas={filteredSaunas}
-          selectedSauna={selectedSauna}
-          onSaunaSelect={onSaunaSelect}
-        />
-      ) : (
-        <SaunaList
+      <div className="flex-1 overflow-hidden bg-white">
+        {mobileView === 'map' ? (
+          <Map
+            saunas={filteredSaunas}
+            selectedSauna={selectedSauna}
+            onSaunaSelect={onSaunaSelect}
+          />
+        ) : (
+          <SaunaList
           saunas={filteredSaunas}
           selectedSauna={selectedSauna}
           onSaunaSelect={onSaunaSelect}
@@ -159,6 +157,7 @@ export default function Sidebar({
           onScroll={handleListScroll}
         />
       )}
+      </div>
     </div>
   );
 }
