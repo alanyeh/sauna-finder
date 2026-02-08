@@ -22,6 +22,8 @@ export default function Sidebar({
   setShowFavoritesOnly,
   mobileView,
   setMobileView,
+  citySlug,
+  setCitySlug,
 }) {
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -56,7 +58,7 @@ export default function Sidebar({
           }}
           className="md:block overflow-hidden"
         >
-          <Header />
+          <Header citySlug={citySlug} setCitySlug={setCitySlug} />
         </div>
         {/* Filters - Desktop only, scrolls away on mobile */}
         <div className="hidden md:block overflow-hidden">
@@ -144,6 +146,7 @@ export default function Sidebar({
           saunas={filteredSaunas}
           selectedSauna={selectedSauna}
           onSaunaSelect={onSaunaSelect}
+          citySlug={citySlug}
         />
       ) : (
         <SaunaList

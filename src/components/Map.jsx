@@ -13,7 +13,7 @@ function MapController({ selectedSauna }) {
   useEffect(() => {
     if (!map) return;
 
-    if (selectedSauna) {
+    if (selectedSauna && selectedSauna.lat != null && selectedSauna.lng != null) {
       map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
       map.setZoom(15);
     }
@@ -27,6 +27,8 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
   const handleClick = useCallback(() => {
     onClick(sauna);
   }, [onClick, sauna]);
+
+  if (sauna.lat == null || sauna.lng == null) return null;
 
   return (
     <>
@@ -55,18 +57,22 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
               <h3 className="text-base font-medium mb-2 text-charcoal">
                 {sauna.name}
               </h3>
-              <div className="flex items-center gap-1.5 mb-2 text-[13px]">
-                <span className="text-accent-red">★</span>
-                <span className="font-medium">{sauna.rating}</span>
-                <span className="text-warm-gray text-xs">
-                  ({sauna.ratingCount.toLocaleString()})
-                </span>
-              </div>
+              {sauna.rating != null && (
+                <div className="flex items-center gap-1.5 mb-2 text-[13px]">
+                  <span className="text-accent-red">★</span>
+                  <span className="font-medium">{sauna.rating}</span>
+                  {sauna.ratingCount != null && (
+                    <span className="text-warm-gray text-xs">
+                      ({sauna.ratingCount.toLocaleString()})
+                    </span>
+                  )}
+                </div>
+              )}
               <p className="text-[13px] text-warm-gray mb-3">
                 {sauna.address}
               </p>
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}&query_place_id=${sauna.placeId}`}
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red"
@@ -81,10 +87,14 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
   );
 }
 
-export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
-  // Center between Manhattan and Brooklyn to show both boroughs
-  const [defaultCenter] = useState({ lat: 40.68, lng: -73.97 });
-  const [defaultZoom] = useState(11);
+const CITY_CENTERS = {
+  nyc: { lat: 40.68, lng: -73.97 },
+  sf: { lat: 37.77, lng: -122.42 },
+};
+
+export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug }) {
+  const center = CITY_CENTERS[citySlug] || CITY_CENTERS.nyc;
+  const [defaultZoom] = useState(12);
 
   if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
     return (
@@ -109,8 +119,8 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
       <Map
         mapId={MAP_ID}
-        defaultCenter={defaultCenter}
-        defaultZoom={defaultZoom}
+        center={center}
+        zoom={defaultZoom}
         disableDefaultUI={false}
         zoomControl={true}
         mapTypeControl={false}

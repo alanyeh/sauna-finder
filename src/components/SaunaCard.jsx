@@ -44,13 +44,17 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
       </p>
 
       <div className="flex items-center gap-4 mb-2.5">
-        <div className="flex items-center gap-1 text-[13px]">
-          <span className="text-accent-red">★</span>
-          <span className="font-medium">{sauna.rating}</span>
-          <span className="text-warm-gray text-xs">
-            ({sauna.ratingCount.toLocaleString()})
-          </span>
-        </div>
+        {sauna.rating != null && (
+          <div className="flex items-center gap-1 text-[13px]">
+            <span className="text-accent-red">★</span>
+            <span className="font-medium">{sauna.rating}</span>
+            {sauna.ratingCount != null && (
+              <span className="text-warm-gray text-xs">
+                ({sauna.ratingCount.toLocaleString()})
+              </span>
+            )}
+          </div>
+        )}
         <div className="text-[13px] font-medium text-charcoal">
           {sauna.price}
         </div>
@@ -60,7 +64,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         {sauna.address}
       </p>
 
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-1.5 mb-3">
         {sauna.amenities.map(amenity => (
           <span
             key={amenity}
@@ -70,6 +74,18 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
           </span>
         ))}
       </div>
+
+      {sauna.placeId && (
+        <a
+          href={`https://www.google.com/maps/place/?q=place_id:${sauna.placeId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline"
+        >
+          View on Google Maps
+        </a>
+      )}
       </div>
     </div>
   );

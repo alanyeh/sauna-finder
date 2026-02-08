@@ -11,6 +11,7 @@ function App() {
   const [selectedSauna, setSelectedSauna] = useState(null);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const [mobileView, setMobileView] = useState('list');
+  const [citySlug, setCitySlug] = useState('nyc');
   const { user } = useAuth();
   const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.id);
 
@@ -51,7 +52,7 @@ function App() {
     toggleAmenity,
     neighborhoods,
     filteredSaunas,
-  } = useFilters(saunas);
+  } = useFilters(saunas, citySlug);
 
   // Reset favorites filter on sign-out
   useEffect(() => {
@@ -89,6 +90,8 @@ function App() {
           setShowFavoritesOnly={setShowFavoritesOnly}
           mobileView={mobileView}
           setMobileView={setMobileView}
+          citySlug={citySlug}
+          setCitySlug={setCitySlug}
         />
       </div>
 
@@ -98,6 +101,7 @@ function App() {
           saunas={displayedSaunas}
           selectedSauna={selectedSauna}
           onSaunaSelect={handleSaunaSelect}
+          citySlug={citySlug}
         />
       </div>
     </div>
