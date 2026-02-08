@@ -149,12 +149,14 @@ export default function Sidebar({
 
       {/* Map or List content */}
       {mobileView === 'map' ? (
-        <Map
-          saunas={filteredSaunas}
-          selectedSauna={selectedSauna}
-          onSaunaSelect={onSaunaSelect}
-          citySlug={citySlug}
-        />
+        <div className="flex-1 min-h-0 relative">
+          <Map
+            saunas={filteredSaunas}
+            selectedSauna={selectedSauna}
+            onSaunaSelect={onSaunaSelect}
+            citySlug={citySlug}
+          />
+        </div>
       ) : (
         <SaunaList
           saunas={filteredSaunas}
