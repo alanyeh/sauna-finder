@@ -7,17 +7,21 @@ const MAP_ID = 'sauna_finder_map';
 // Add your Google Maps API key here
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
 
-function MapController({ selectedSauna }) {
+function MapController({ selectedSauna, cityCenter }) {
   const map = useMap();
 
   useEffect(() => {
     if (!map) return;
+    map.panTo(cityCenter);
+    map.setZoom(12);
+  }, [cityCenter, map]);
 
-    if (selectedSauna && selectedSauna.lat != null && selectedSauna.lng != null) {
+  useEffect(() => {
+    if (!map || !selectedSauna) return;
+    if (selectedSauna.lat != null && selectedSauna.lng != null) {
       map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
       map.setZoom(15);
     }
-    // Map will stay at default center/zoom (Manhattan/Brooklyn view) when no sauna is selected
   }, [selectedSauna, map]);
 
   return null;
@@ -119,8 +123,8 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
       <Map
         mapId={MAP_ID}
-        center={center}
-        zoom={defaultZoom}
+        defaultCenter={center}
+        defaultZoom={defaultZoom}
         disableDefaultUI={false}
         zoomControl={true}
         mapTypeControl={false}
@@ -128,7 +132,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
         fullscreenControl={true}
         gestureHandling="greedy"
       >
-        <MapController selectedSauna={selectedSauna} />
+        <MapController selectedSauna={selectedSauna} cityCenter={center} />
         {saunas.map(sauna => (
           <SaunaMarker
             key={sauna.id}
