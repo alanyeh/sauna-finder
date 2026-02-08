@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import AuthModal from './AuthModal';
 
 export default function Header() {
   const { user, logout } = useAuth();
-  const [showAuthModal, setShowAuthModal] = useState(false);
 
   return (
     <div className="px-7 py-8 pb-6 border-b border-light-border">
@@ -19,7 +16,7 @@ export default function Header() {
         </div>
 
         <div className="flex-shrink-0 mt-1">
-          {user ? (
+          {user && (
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-sm font-medium">
                 {(user.user_metadata?.full_name?.[0] || user.email?.[0] || '?').toUpperCase()}
@@ -31,20 +28,9 @@ export default function Header() {
                 Sign Out
               </button>
             </div>
-          ) : (
-            <button
-              onClick={() => setShowAuthModal(true)}
-              className="px-3 py-1.5 text-[13px] border border-light-border rounded hover:bg-hover-bg transition-colors"
-            >
-              Sign In
-            </button>
           )}
         </div>
       </div>
-
-      {showAuthModal && (
-        <AuthModal onClose={() => setShowAuthModal(false)} />
-      )}
     </div>
   );
 }
