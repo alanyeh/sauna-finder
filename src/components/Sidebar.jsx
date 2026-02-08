@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Header from './Header';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
@@ -24,10 +24,37 @@ export default function Sidebar({
   setMobileView,
 }) {
   const [showFilters, setShowFilters] = useState(false);
+  const [headerOffset, setHeaderOffset] = useState(0);
+  const headerHeightRef = useRef(0);
+  const lastScrollRef = useRef(0);
+
+  const handleListScroll = (scrollTop) => {
+    // Calculate scroll direction (positive = scrolling up, negative = scrolling down)
+    const scrollDelta = lastScrollRef.current - scrollTop;
+    lastScrollRef.current = scrollTop;
+
+    // Update header offset based on scroll direction
+    // Scrolling up collapses header, scrolling down expands it
+    const newOffset = Math.max(0, Math.min(headerOffset + scrollDelta, headerHeightRef.current || 120));
+    setHeaderOffset(newOffset);
+  };
 
   return (
     <div className="w-full md:w-[420px] bg-white border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
-      <Header />
+      {/* Header - Scrolls away on mobile, always shown on desktop */}
+      <div
+        ref={(el) => {
+          if (el && headerHeightRef.current === 0) {
+            headerHeightRef.current = el.offsetHeight;
+          }
+        }}
+        className="md:block transition-transform duration-100 ease-out overflow-hidden"
+        style={{
+          transform: `translateY(-${headerOffset}px)`,
+        }}
+      >
+        <Header />
+      </div>
       <Filters
         neighborhoods={neighborhoods}
         neighborhood={neighborhood}
@@ -42,8 +69,8 @@ export default function Sidebar({
         isOpen={showFilters}
         onClose={() => setShowFilters(false)}
       />
-      {/* Sauna count and controls - Mobile */}
-      <div className="px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden">
+      {/* Sauna count and controls - Mobile - Sticky */}
+      <div className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden">
         <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
         <div className="flex gap-2">
           <button
@@ -117,6 +144,7 @@ export default function Sidebar({
           user={user}
           toggleFavorite={toggleFavorite}
           isFavorite={isFavorite}
+          onScroll={handleListScroll}
         />
       )}
     </div>
