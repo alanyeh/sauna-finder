@@ -15,7 +15,7 @@ export default {
         'hover-bg': '#F5F2EB',
       },
       fontFamily: {
-        serif: ['Instrument Serif', 'serif'],
+        serif: ['Libre Baskerville', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
