@@ -45,6 +45,11 @@ export default function Sidebar({
         isFavorite={isFavorite}
         mobileView={mobileView}
         setMobileView={setMobileView}
+        mapProps={{
+          saunas: filteredSaunas,
+          selectedSauna: selectedSauna,
+          onSaunaSelect: onSaunaSelect,
+        }}
       />
     </div>
   );

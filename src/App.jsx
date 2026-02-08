@@ -69,8 +69,8 @@ function App() {
 
   return (
     <div className="flex flex-col md:flex-row h-screen overflow-hidden">
-      {/* Sidebar - hidden on mobile when map view */}
-      <div className={`${mobileView === 'map' ? 'hidden' : ''} md:flex md:w-[420px] md:flex-none`}>
+      {/* Sidebar - shown on all views, contains Header, Filters, and either SaunaList or Map on mobile */}
+      <div className="md:flex md:w-[420px] md:flex-none">
         <Sidebar
           neighborhoods={neighborhoods}
           neighborhood={neighborhood}
@@ -92,8 +92,8 @@ function App() {
         />
       </div>
 
-      {/* Map - hidden on mobile when list view */}
-      <div className={`${mobileView === 'list' ? 'hidden' : ''} flex-1 h-full md:h-screen md:flex`}>
+      {/* Map on desktop - hidden on mobile */}
+      <div className="hidden md:flex flex-1 h-screen">
         <Map
           saunas={displayedSaunas}
           selectedSauna={selectedSauna}

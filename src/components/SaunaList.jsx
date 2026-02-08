@@ -1,6 +1,7 @@
 import SaunaCard from './SaunaCard';
+import Map from './Map';
 
-export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, mobileView, setMobileView }) {
+export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, mobileView, setMobileView, mapProps }) {
   return (
     <div className="flex flex-col flex-1 bg-white overflow-hidden">
       <div className="px-7 py-4 border-b border-light-border text-[13px] text-warm-gray bg-white flex items-center justify-between">
@@ -22,30 +23,36 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
               title="Map view"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" />
               </svg>
             </button>
           </div>
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto custom-scrollbar">
-        {saunas.length === 0 ? (
-          <div className="px-7 py-10 text-center text-warm-gray">
-            No saunas match your filters. Try adjusting your search.
-          </div>
+      <div className="flex-1 overflow-hidden">
+        {mobileView === 'map' && mapProps ? (
+          <Map {...mapProps} />
         ) : (
-          saunas.map((sauna) => (
-            <SaunaCard
-              key={sauna.id}
-              sauna={sauna}
-              isSelected={selectedSauna?.id === sauna.id}
-              onClick={() => onSaunaSelect(sauna)}
-              user={user}
-              isFavorite={isFavorite?.(sauna.id)}
-              onToggleFavorite={() => toggleFavorite?.(sauna.id)}
-            />
-          ))
+          <div className="overflow-y-auto custom-scrollbar h-full">
+            {saunas.length === 0 ? (
+              <div className="px-7 py-10 text-center text-warm-gray">
+                No saunas match your filters. Try adjusting your search.
+              </div>
+            ) : (
+              saunas.map((sauna) => (
+                <SaunaCard
+                  key={sauna.id}
+                  sauna={sauna}
+                  isSelected={selectedSauna?.id === sauna.id}
+                  onClick={() => onSaunaSelect(sauna)}
+                  user={user}
+                  isFavorite={isFavorite?.(sauna.id)}
+                  onToggleFavorite={() => toggleFavorite?.(sauna.id)}
+                />
+              ))
+            )}
+          </div>
         )}
       </div>
     </div>
