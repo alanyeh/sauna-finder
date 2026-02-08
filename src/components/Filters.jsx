@@ -3,7 +3,6 @@ import { amenityLabels } from '../data/saunas';
 const amenities = [
   { value: 'cold_plunge', label: 'Cold Plunge' },
   { value: 'steam_room', label: 'Steam' },
-  { value: 'massage', label: 'Massage' },
   { value: 'pool', label: 'Pool' },
   { value: 'coed', label: 'Co-ed' },
   { value: 'private', label: 'Private' },
