@@ -60,9 +60,21 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </div>
       </div>
 
-      <p className="text-[13px] text-warm-gray mb-2">
-        {sauna.address}
-      </p>
+      {sauna.placeId ? (
+        <a
+          href={`https://www.google.com/maps/place/?q=place_id:${sauna.placeId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="text-[13px] text-warm-gray hover:text-charcoal transition-colors underline mb-2 block"
+        >
+          {sauna.address}
+        </a>
+      ) : (
+        <p className="text-[13px] text-warm-gray mb-2">
+          {sauna.address}
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-1.5 mb-3">
         {sauna.amenities.map(amenity => (
@@ -74,18 +86,6 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
           </span>
         ))}
       </div>
-
-      {sauna.placeId && (
-        <a
-          href={`https://www.google.com/maps/place/?q=place_id:${sauna.placeId}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline"
-        >
-          View on Google Maps
-        </a>
-      )}
       </div>
     </div>
   );

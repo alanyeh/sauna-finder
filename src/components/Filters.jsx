@@ -80,11 +80,11 @@ export default function Filters({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/30 z-40 md:hidden"
+        className="fixed inset-0 bg-black/30 z-40"
         onClick={handleCancel}
       />
       {/* Bottom Sheet Modal */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg shadow-lg z-50 md:absolute md:top-full md:rounded-none md:left-0 md:right-0 md:border-b md:border-light-border max-h-[80vh] overflow-y-auto">
+      <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg shadow-lg z-50 max-h-[80vh] overflow-y-auto">
         <div className="px-7 py-5">
         {/* Neighborhood & Price */}
         <div className="flex gap-3 mb-4">

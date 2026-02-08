@@ -47,9 +47,8 @@ export default function Sidebar({
 
   return (
     <div className="w-full md:w-[420px] border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
-      {/* Scrolling background container - encompasses header and filters */}
+      {/* Header */}
       <div className="overflow-hidden bg-white">
-        {/* Header - Scrolls away on mobile, always shown on desktop */}
         <div
           ref={(el) => {
             if (el && headerHeightRef.current === 0) {
@@ -61,28 +60,10 @@ export default function Sidebar({
         >
           <Header citySlug={citySlug} setCitySlug={setCitySlug} />
         </div>
-        {/* Filters - Desktop only, scrolls away on mobile */}
-        <div className="hidden md:block overflow-hidden">
-          <Filters
-            neighborhoods={neighborhoods}
-            neighborhood={neighborhood}
-            setNeighborhood={setNeighborhood}
-            price={price}
-            setPrice={setPrice}
-            selectedAmenities={selectedAmenities}
-            toggleAmenity={toggleAmenity}
-            user={user}
-            showFavoritesOnly={showFavoritesOnly}
-            setShowFavoritesOnly={setShowFavoritesOnly}
-            isOpen={showFilters}
-            onClose={() => setShowFilters(false)}
-          />
-        </div>
       </div>
-      {/* Sauna count and controls - Mobile - Sticky at top */}
-      <div
-        className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between md:hidden"
-      >
+
+      {/* Sauna count and controls */}
+      <div className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between">
         <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
         <div className="flex gap-2">
           <button
@@ -98,7 +79,7 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('list')}
-            className={`p-1.5 rounded transition-colors ${
+            className={`p-1.5 rounded transition-colors md:hidden ${
               mobileView === 'list'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
@@ -111,7 +92,7 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('map')}
-            className={`p-1.5 rounded transition-colors ${
+            className={`p-1.5 rounded transition-colors md:hidden ${
               mobileView === 'map'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
@@ -123,22 +104,6 @@ export default function Sidebar({
             </svg>
           </button>
         </div>
-      </div>
-
-      {/* Sauna count and filters - Desktop */}
-      <div className="hidden md:flex px-7 py-4 border-b border-light-border bg-white items-center justify-between">
-        <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
-        <button
-          onClick={() => setShowFilters(!showFilters)}
-          className={`px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
-            showFilters
-              ? 'bg-charcoal text-white'
-              : 'bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white'
-          }`}
-          title="Toggle filters"
-        >
-          Filter
-        </button>
       </div>
 
       {/* Map or List content */}
@@ -163,44 +128,21 @@ export default function Sidebar({
         />
       )}
 
-      {/* Mobile Filters Bottom Sheet */}
-      {showFilters && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black/40 z-30 md:hidden"
-            onClick={() => setShowFilters(false)}
-          />
-          {/* Bottom Sheet */}
-          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg z-40 md:hidden max-h-[80vh] overflow-y-auto custom-scrollbar">
-            <div className="sticky top-0 bg-white border-b border-light-border px-7 py-4 flex items-center justify-between">
-              <h3 className="font-serif text-lg">Filters</h3>
-              <button
-                onClick={() => setShowFilters(false)}
-                className="text-2xl text-warm-gray hover:text-charcoal transition-colors"
-              >
-                ×
-              </button>
-            </div>
-            <div className="px-7 py-4">
-              <Filters
-                neighborhoods={neighborhoods}
-                neighborhood={neighborhood}
-                setNeighborhood={setNeighborhood}
-                price={price}
-                setPrice={setPrice}
-                selectedAmenities={selectedAmenities}
-                toggleAmenity={toggleAmenity}
-                user={user}
-                showFavoritesOnly={showFavoritesOnly}
-                setShowFavoritesOnly={setShowFavoritesOnly}
-                isOpen={showFilters}
-                onClose={() => setShowFilters(false)}
-              />
-            </div>
-          </div>
-        </>
-      )}
+      {/* Filters Panel */}
+      <Filters
+        neighborhoods={neighborhoods}
+        neighborhood={neighborhood}
+        setNeighborhood={setNeighborhood}
+        price={price}
+        setPrice={setPrice}
+        selectedAmenities={selectedAmenities}
+        toggleAmenity={toggleAmenity}
+        user={user}
+        showFavoritesOnly={showFavoritesOnly}
+        setShowFavoritesOnly={setShowFavoritesOnly}
+        isOpen={showFilters}
+        onClose={() => setShowFilters(false)}
+      />
     </div>
   );
 }
