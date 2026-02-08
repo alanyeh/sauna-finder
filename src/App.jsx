@@ -1,16 +1,45 @@
 import { useState, useEffect, useMemo } from 'react';
 import Sidebar from './components/Sidebar';
 import Map from './components/Map';
-import { saunas } from './data/saunas';
+import { supabase } from './supabase';
 import { useFilters } from './hooks/useFilters';
 import { useAuth } from './contexts/AuthContext';
 import { useFavorites } from './hooks/useFavorites';
 
 function App() {
+  const [saunas, setSaunas] = useState([]);
   const [selectedSauna, setSelectedSauna] = useState(null);
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const { user } = useAuth();
   const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.id);
+
+  // Fetch saunas from Supabase
+  useEffect(() => {
+    const fetchSaunas = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('saunas')
+          .select('*')
+          .order('id', { ascending: true });
+
+        if (error) throw error;
+
+        // Convert snake_case to camelCase
+        const transformedData = (data || []).map(sauna => ({
+          ...sauna,
+          ratingCount: sauna.rating_count,
+          placeId: sauna.place_id,
+        }));
+
+        setSaunas(transformedData);
+      } catch (error) {
+        console.error('Error fetching saunas:', error);
+        setSaunas([]);
+      }
+    };
+
+    fetchSaunas();
+  }, []);
 
   const {
     neighborhood,

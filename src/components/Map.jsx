@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps';
+import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 
 const MAP_ID = 'sauna_finder_map';
 
@@ -28,6 +28,41 @@ const mapStyles = [
     stylers: [{ color: "#ffffff" }]
   }
 ];
+
+function MapController({ saunas, selectedSauna }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!map) return;
+
+    if (selectedSauna) {
+      map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
+      map.setZoom(15);
+    } else if (saunas.length > 0) {
+      // Calculate bounds to fit all saunas
+      let minLat = saunas[0].lat;
+      let maxLat = saunas[0].lat;
+      let minLng = saunas[0].lng;
+      let maxLng = saunas[0].lng;
+
+      saunas.forEach(sauna => {
+        minLat = Math.min(minLat, sauna.lat);
+        maxLat = Math.max(maxLat, sauna.lat);
+        minLng = Math.min(minLng, sauna.lng);
+        maxLng = Math.max(maxLng, sauna.lng);
+      });
+
+      const center = {
+        lat: (minLat + maxLat) / 2,
+        lng: (minLng + maxLng) / 2
+      };
+      map.panTo(center);
+      map.setZoom(12);
+    }
+  }, [selectedSauna, saunas, map]);
+
+  return null;
+}
 
 function SaunaMarker({ sauna, isSelected, onClick }) {
   const [showInfo, setShowInfo] = useState(false);
@@ -89,34 +124,8 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
 }
 
 export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
-  const [center, setCenter] = useState({ lat: 40.7128, lng: -74.0060 });
-  const [zoom, setZoom] = useState(12);
-
-  useEffect(() => {
-    if (selectedSauna) {
-      setCenter({ lat: selectedSauna.lat, lng: selectedSauna.lng });
-      setZoom(15);
-    } else if (saunas.length > 0) {
-      // Calculate bounds manually to fit all saunas
-      let minLat = saunas[0].lat;
-      let maxLat = saunas[0].lat;
-      let minLng = saunas[0].lng;
-      let maxLng = saunas[0].lng;
-
-      saunas.forEach(sauna => {
-        minLat = Math.min(minLat, sauna.lat);
-        maxLat = Math.max(maxLat, sauna.lat);
-        minLng = Math.min(minLng, sauna.lng);
-        maxLng = Math.max(maxLng, sauna.lng);
-      });
-
-      setCenter({
-        lat: (minLat + maxLat) / 2,
-        lng: (minLng + maxLng) / 2
-      });
-      setZoom(12);
-    }
-  }, [selectedSauna, saunas]);
+  const [defaultCenter] = useState({ lat: 40.7128, lng: -74.0060 });
+  const [defaultZoom] = useState(12);
 
   if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
     return (
@@ -141,18 +150,17 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect }) {
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
       <Map
         mapId={MAP_ID}
-        defaultCenter={center}
-        defaultZoom={zoom}
-        center={center}
-        zoom={zoom}
+        defaultCenter={defaultCenter}
+        defaultZoom={defaultZoom}
         disableDefaultUI={false}
         zoomControl={true}
         mapTypeControl={false}
         streetViewControl={false}
         fullscreenControl={true}
         styles={mapStyles}
-        gestureHandling="greedy"
+        gestureHandling="auto"
       >
+        <MapController saunas={saunas} selectedSauna={selectedSauna} />
         {saunas.map(sauna => (
           <SaunaMarker
             key={sauna.id}
