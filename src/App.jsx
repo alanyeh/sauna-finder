@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="flex flex-col md:flex-row h-screen overflow-hidden">
       {/* Sidebar - shown on all views, contains Header, Filters, and either SaunaList or Map on mobile */}
-      <div className="flex flex-col flex-1 md:flex-none md:w-[420px]">
+      <div className="flex flex-col flex-1 h-full md:flex-none md:w-[420px] md:h-auto">
         <Sidebar
           neighborhoods={neighborhoods}
           neighborhood={neighborhood}
