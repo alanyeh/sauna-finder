@@ -30,11 +30,13 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
         )}
       </div>
 
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden w-full">
         {mobileView === 'map' && mapProps ? (
-          <Map {...mapProps} />
+          <div className="w-full h-full">
+            <Map {...mapProps} />
+          </div>
         ) : (
-          <div className="overflow-y-auto custom-scrollbar h-full">
+          <div className="overflow-y-auto custom-scrollbar h-full w-full">
             {saunas.length === 0 ? (
               <div className="px-7 py-10 text-center text-warm-gray">
                 No saunas match your filters. Try adjusting your search.
