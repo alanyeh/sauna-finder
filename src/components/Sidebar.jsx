@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Header from './Header';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
@@ -28,6 +28,13 @@ export default function Sidebar({
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
   const headerHeightRef = useRef(0);
+
+  // Reset header offset when switching to map view so city buttons aren't hidden
+  useEffect(() => {
+    if (mobileView === 'map') {
+      setHeaderOffset(0);
+    }
+  }, [mobileView]);
 
   const handleListScroll = (scrollTop) => {
     // When scrolling, calculate how much of the header to hide
