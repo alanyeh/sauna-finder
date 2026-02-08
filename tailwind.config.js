@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         serif: ['Libre Baskerville', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['IBM Plex Mono', 'monospace'],
       },
     },
   },
