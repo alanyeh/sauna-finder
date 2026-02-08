@@ -1,7 +1,6 @@
 import SaunaCard from './SaunaCard';
-import Map from './Map';
 
-export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, mobileView, setMobileView, mapProps }) {
+export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, mobileView, setMobileView }) {
   return (
     <div className="flex flex-col flex-1 bg-white overflow-hidden">
       <div className="px-7 py-4 border-b border-light-border text-[13px] text-warm-gray bg-white flex items-center justify-between">
@@ -30,31 +29,23 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
         )}
       </div>
 
-      <div className="flex-1 overflow-hidden w-full">
-        {mobileView === 'map' && mapProps ? (
-          <div className="w-full h-full">
-            <Map {...mapProps} />
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        {saunas.length === 0 ? (
+          <div className="px-7 py-10 text-center text-warm-gray">
+            No saunas match your filters. Try adjusting your search.
           </div>
         ) : (
-          <div className="overflow-y-auto custom-scrollbar h-full w-full">
-            {saunas.length === 0 ? (
-              <div className="px-7 py-10 text-center text-warm-gray">
-                No saunas match your filters. Try adjusting your search.
-              </div>
-            ) : (
-              saunas.map((sauna) => (
-                <SaunaCard
-                  key={sauna.id}
-                  sauna={sauna}
-                  isSelected={selectedSauna?.id === sauna.id}
-                  onClick={() => onSaunaSelect(sauna)}
-                  user={user}
-                  isFavorite={isFavorite?.(sauna.id)}
-                  onToggleFavorite={() => toggleFavorite?.(sauna.id)}
-                />
-              ))
-            )}
-          </div>
+          saunas.map((sauna) => (
+            <SaunaCard
+              key={sauna.id}
+              sauna={sauna}
+              isSelected={selectedSauna?.id === sauna.id}
+              onClick={() => onSaunaSelect(sauna)}
+              user={user}
+              isFavorite={isFavorite?.(sauna.id)}
+              onToggleFavorite={() => toggleFavorite?.(sauna.id)}
+            />
+          ))
         )}
       </div>
     </div>

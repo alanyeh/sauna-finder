@@ -1,6 +1,7 @@
 import Header from './Header';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
+import Map from './Map';
 
 export default function Sidebar({
   neighborhoods,
@@ -36,21 +37,24 @@ export default function Sidebar({
         showFavoritesOnly={showFavoritesOnly}
         setShowFavoritesOnly={setShowFavoritesOnly}
       />
-      <SaunaList
-        saunas={filteredSaunas}
-        selectedSauna={selectedSauna}
-        onSaunaSelect={onSaunaSelect}
-        user={user}
-        toggleFavorite={toggleFavorite}
-        isFavorite={isFavorite}
-        mobileView={mobileView}
-        setMobileView={setMobileView}
-        mapProps={{
-          saunas: filteredSaunas,
-          selectedSauna: selectedSauna,
-          onSaunaSelect: onSaunaSelect,
-        }}
-      />
+      {mobileView === 'map' ? (
+        <Map
+          saunas={filteredSaunas}
+          selectedSauna={selectedSauna}
+          onSaunaSelect={onSaunaSelect}
+        />
+      ) : (
+        <SaunaList
+          saunas={filteredSaunas}
+          selectedSauna={selectedSauna}
+          onSaunaSelect={onSaunaSelect}
+          user={user}
+          toggleFavorite={toggleFavorite}
+          isFavorite={isFavorite}
+          mobileView={mobileView}
+          setMobileView={setMobileView}
+        />
+      )}
     </div>
   );
 }
