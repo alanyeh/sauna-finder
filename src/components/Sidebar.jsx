@@ -58,8 +58,8 @@ export default function Sidebar({
         >
           <Header />
         </div>
-        {/* Filters - Scrolls away on mobile, always shown on desktop */}
-        <div className="md:block overflow-hidden">
+        {/* Filters - Desktop only, scrolls away on mobile */}
+        <div className="hidden md:block overflow-hidden">
           <Filters
             neighborhoods={neighborhoods}
             neighborhood={neighborhood}
@@ -155,6 +155,45 @@ export default function Sidebar({
           isFavorite={isFavorite}
           onScroll={handleListScroll}
         />
+      )}
+
+      {/* Mobile Filters Bottom Sheet */}
+      {showFilters && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/40 z-30 md:hidden"
+            onClick={() => setShowFilters(false)}
+          />
+          {/* Bottom Sheet */}
+          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg z-40 md:hidden max-h-[80vh] overflow-y-auto custom-scrollbar">
+            <div className="sticky top-0 bg-white border-b border-light-border px-7 py-4 flex items-center justify-between">
+              <h3 className="font-serif text-lg">Filters</h3>
+              <button
+                onClick={() => setShowFilters(false)}
+                className="text-2xl text-warm-gray hover:text-charcoal transition-colors"
+              >
+                ×
+              </button>
+            </div>
+            <div className="px-7 py-4">
+              <Filters
+                neighborhoods={neighborhoods}
+                neighborhood={neighborhood}
+                setNeighborhood={setNeighborhood}
+                price={price}
+                setPrice={setPrice}
+                selectedAmenities={selectedAmenities}
+                toggleAmenity={toggleAmenity}
+                user={user}
+                showFavoritesOnly={showFavoritesOnly}
+                setShowFavoritesOnly={setShowFavoritesOnly}
+                isOpen={showFilters}
+                onClose={() => setShowFilters(false)}
+              />
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
