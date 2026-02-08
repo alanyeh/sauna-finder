@@ -45,18 +45,20 @@ export default function Sidebar({
             headerHeightRef.current = el.offsetHeight;
           }
         }}
-        className="md:block transition-transform duration-100 ease-out overflow-hidden"
+        className="md:block transition-all duration-100 ease-out overflow-hidden"
         style={{
           transform: `translateY(-${headerOffset}px)`,
+          maxHeight: `${Math.max(0, (headerHeightRef.current || 120) - headerOffset)}px`,
         }}
       >
         <Header />
       </div>
       {/* Filters - Scrolls away on mobile, always shown on desktop */}
       <div
-        className="transition-transform duration-100 ease-out overflow-hidden md:overflow-visible"
+        className="transition-all duration-100 ease-out overflow-hidden md:overflow-visible"
         style={{
           transform: `translateY(-${headerOffset}px)`,
+          maxHeight: `calc(1000px - ${headerOffset}px)`,
         }}
       >
         <Filters
