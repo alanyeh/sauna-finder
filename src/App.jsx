@@ -50,6 +50,9 @@ function App() {
     setPrice,
     selectedAmenities,
     toggleAmenity,
+    selectedTypes,
+    toggleType,
+    saunaTypes,
     neighborhoods,
     filteredSaunas,
   } = useFilters(saunas, citySlug);
@@ -80,6 +83,9 @@ function App() {
           setPrice={setPrice}
           selectedAmenities={selectedAmenities}
           toggleAmenity={toggleAmenity}
+          saunaTypes={saunaTypes}
+          selectedTypes={selectedTypes}
+          toggleType={toggleType}
           filteredSaunas={displayedSaunas}
           selectedSauna={selectedSauna}
           onSaunaSelect={handleSaunaSelect}

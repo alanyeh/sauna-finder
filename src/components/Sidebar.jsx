@@ -12,6 +12,9 @@ export default function Sidebar({
   setPrice,
   selectedAmenities,
   toggleAmenity,
+  saunaTypes,
+  selectedTypes,
+  toggleType,
   filteredSaunas,
   selectedSauna,
   onSaunaSelect,
@@ -137,6 +140,9 @@ export default function Sidebar({
         setPrice={setPrice}
         selectedAmenities={selectedAmenities}
         toggleAmenity={toggleAmenity}
+        saunaTypes={saunaTypes}
+        selectedTypes={selectedTypes}
+        toggleType={toggleType}
         user={user}
         showFavoritesOnly={showFavoritesOnly}
         setShowFavoritesOnly={setShowFavoritesOnly}

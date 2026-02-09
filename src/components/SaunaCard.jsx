@@ -76,6 +76,12 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </p>
       )}
 
+      {sauna.description && (
+        <p className="text-[12px] text-warm-gray mb-2.5 leading-relaxed">
+          {sauna.description}
+        </p>
+      )}
+
       <div className="flex flex-wrap gap-1.5 mb-3">
         {sauna.amenities.map(amenity => (
           <span

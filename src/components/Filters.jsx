@@ -17,6 +17,9 @@ export default function Filters({
   setPrice,
   selectedAmenities,
   toggleAmenity,
+  saunaTypes,
+  selectedTypes,
+  toggleType,
   user,
   showFavoritesOnly,
   setShowFavoritesOnly,
@@ -27,6 +30,7 @@ export default function Filters({
   const [tempNeighborhood, setTempNeighborhood] = useState(neighborhood);
   const [tempPrice, setTempPrice] = useState(price);
   const [tempAmenities, setTempAmenities] = useState(selectedAmenities);
+  const [tempTypes, setTempTypes] = useState(selectedTypes);
   const [tempShowFavorites, setTempShowFavorites] = useState(showFavoritesOnly);
 
   // Update temp state when actual filters change (on apply)
@@ -34,14 +38,23 @@ export default function Filters({
     setTempNeighborhood(neighborhood);
     setTempPrice(price);
     setTempAmenities(selectedAmenities);
+    setTempTypes(selectedTypes);
     setTempShowFavorites(showFavoritesOnly);
-  }, [neighborhood, price, selectedAmenities, showFavoritesOnly]);
+  }, [neighborhood, price, selectedAmenities, selectedTypes, showFavoritesOnly]);
 
   const handleToggleTempAmenity = (amenity) => {
     setTempAmenities(prev =>
       prev.includes(amenity)
         ? prev.filter(a => a !== amenity)
         : [...prev, amenity]
+    );
+  };
+
+  const handleToggleTempType = (type) => {
+    setTempTypes(prev =>
+      prev.includes(type)
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
     );
   };
 
@@ -62,6 +75,18 @@ export default function Filters({
       }
     });
 
+    // Update types
+    tempTypes.forEach(type => {
+      if (!selectedTypes.includes(type)) {
+        toggleType(type);
+      }
+    });
+    selectedTypes.forEach(type => {
+      if (!tempTypes.includes(type)) {
+        toggleType(type);
+      }
+    });
+
     onClose();
   };
 
@@ -70,6 +95,7 @@ export default function Filters({
     setTempNeighborhood(neighborhood);
     setTempPrice(price);
     setTempAmenities(selectedAmenities);
+    setTempTypes(selectedTypes);
     setTempShowFavorites(showFavoritesOnly);
     onClose();
   };
@@ -135,6 +161,30 @@ export default function Filters({
               <span>{tempShowFavorites ? '♥' : '♡'}</span>
               <span>Show Favorites</span>
             </button>
+          </div>
+        )}
+
+        {/* Type */}
+        {saunaTypes && saunaTypes.length > 0 && (
+          <div className="mb-4">
+            <label className="block text-[11px] uppercase tracking-wider text-warm-gray font-medium mb-2">
+              Type
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {saunaTypes.map(type => (
+                <button
+                  key={type}
+                  onClick={() => handleToggleTempType(type)}
+                  className={`px-3 py-1.5 border rounded-full text-[12px] transition-all ${
+                    tempTypes.includes(type)
+                      ? 'bg-charcoal text-white border-charcoal'
+                      : 'bg-white text-charcoal border-light-border hover:bg-hover-bg hover:border-charcoal'
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
