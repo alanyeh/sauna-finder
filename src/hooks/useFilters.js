@@ -1,5 +1,34 @@
 import { useState, useMemo, useEffect } from 'react';
 
+// Maps granular type strings → consolidated filter categories
+const TYPE_TO_CATEGORY = {
+  'Russian Banya': 'Russian Banya',
+  'Russian Bathhouse': 'Russian Banya',
+  'Traditional Banya': 'Russian Banya',
+  'Traditional Russian Banya': 'Russian Banya',
+  'Korean Spa': 'Korean Spa',
+  'Korean Day Spa': 'Korean Spa',
+  'Korean Fitness & Spa': 'Korean Spa',
+  'Boutique Sauna': 'Private Sauna Studio',
+  'Private Sauna Studio': 'Private Sauna Studio',
+  'Infrared Sauna': 'Infrared Sauna',
+  'Day Spa': 'Spa & Wellness',
+  'Hotel Spa': 'Hotel Spa',
+  'Luxury Spa': 'Spa & Wellness',
+  'Wellness Spa': 'Spa & Wellness',
+  'Italian Spa': 'Spa & Wellness',
+  'Resort': 'Spa & Wellness',
+  'Modern Bathhouse': 'Modern Bathhouse',
+  'World Spa': 'Modern Bathhouse',
+  'Gym Sauna': 'Gym Sauna',
+  'Day Spa & Sauna Resort': 'Spa & Wellness',
+  'Japanese Neighborhood Sauna': 'Japanese Sauna',
+};
+
+function getCategory(rawType) {
+  return TYPE_TO_CATEGORY[rawType] || rawType;
+}
+
 export const useFilters = (saunas, citySlug) => {
   const [neighborhood, setNeighborhood] = useState('');
   const [price, setPrice] = useState('');
@@ -23,7 +52,7 @@ export const useFilters = (saunas, citySlug) => {
   }, [citySaunas]);
 
   const saunaTypes = useMemo(() => {
-    return [...new Set(citySaunas.flatMap(s => s.types || []))].sort();
+    return [...new Set(citySaunas.flatMap(s => (s.types || []).map(getCategory)))].sort();
   }, [citySaunas]);
 
   const filteredSaunas = useMemo(() => {
@@ -31,7 +60,7 @@ export const useFilters = (saunas, citySlug) => {
       if (neighborhood && sauna.neighborhood !== neighborhood) return false;
       if (price && sauna.price !== price) return false;
       if (selectedTypes.length > 0 &&
-          !selectedTypes.some(t => (sauna.types || []).includes(t))) {
+          !selectedTypes.some(cat => (sauna.types || []).some(t => getCategory(t) === cat))) {
         return false;
       }
       if (selectedAmenities.length > 0 &&
