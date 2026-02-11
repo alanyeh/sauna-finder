@@ -34,6 +34,16 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
             >
               San Francisco
             </button>
+            <button
+              onClick={() => setCitySlug('seattle')}
+              className={`px-3 py-1 rounded text-[12px] font-medium transition-colors ${
+                citySlug === 'seattle'
+                  ? 'bg-charcoal text-white'
+                  : 'text-warm-gray hover:text-charcoal'
+              }`}
+            >
+              Seattle
+            </button>
           </div>
         </div>
 

@@ -180,6 +180,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
                 >
                   <option value="nyc">New York</option>
                   <option value="sf">San Francisco</option>
+                  <option value="seattle">Seattle</option>
                 </select>
               </div>
               <div className="flex-1">

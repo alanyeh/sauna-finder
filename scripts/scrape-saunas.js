@@ -95,9 +95,20 @@ const CITY_CONFIGS = {
     neighborhoods: [
       'Capitol Hill', 'Ballard', 'Fremont', 'Wallingford',
       'University District', 'Queen Anne', 'Georgetown', 'Beacon Hill',
-      'Columbia City', 'West Seattle', 'South Lake Union',
+      'Columbia City', 'West Seattle', 'South Lake Union', 'Green Lake',
+      'Greenwood', 'Eastlake', 'Magnolia', 'Northgate', 'Shoreline',
+      'SeaTac', 'Renton', 'Kent', 'Federal Way',
     ],
-    zipToNeighborhood: {},
+    zipToNeighborhood: {
+      '98101': 'Downtown', '98102': 'Pioneer Square', '98103': 'Fremont',
+      '98104': 'Downtown', '98105': 'University District', '98107': 'Ballard',
+      '98109': 'Queen Anne', '98110': 'Ballard', '98112': 'Capitol Hill',
+      '98115': 'University District', '98118': 'Columbia City', '98119': 'South Lake Union',
+      '98121': 'Fremont', '98122': 'SoDo', '98125': 'Green Lake', '98126': 'West Seattle',
+      '98133': 'Greenwood', '98134': 'Beacon Hill', '98136': 'West Seattle',
+      '98144': 'Beacon Hill', '98146': 'Skyway', '98154': 'South Lake Union',
+      '98155': 'Northgate', '98158': 'SeaTac', '98166': 'Kent',
+    },
   },
   portland: {
     city_slug: 'portland',
@@ -204,10 +215,24 @@ const BRAND_WHITELIST = [
 
 // Gym chains that are KNOWN to have saunas — only these gyms pass the filter
 const GYM_WHITELIST = [
-  /equinox/i, /life\s*time/i, /\btmpl\b/i, /chelsea\s*piers/i,
-  /\bvital\b.*\b(climbing|gym)\b/i, /brooklyn\s*boulders/i,
-  /powerhouse\s*gym/i, /mercedes\s*club/i,
-  /complete\s*body/i, /manhattan\s*plaza/i, /harbor\s*fitness/i,
+  // Luxury/high-end chains with consistent sauna amenities
+  /equinox/i, /life\s*time/i, /mercedes\s*club/i,
+
+  // Climbing & specialized gyms (often have saunas)
+  /\btmpl\b/i, /brooklyn\s*boulders/i, /\bvital\b.*\b(climbing|gym)\b/i,
+  /\bclimbing\b.*\bgym\b/i, /climbing\s*wall/i, /bouldering/i,
+
+  // Regional chains with strong sauna presence
+  /la\s*fitness/i, /gold\s*gym/i, /anytime\s*fitness/i,
+  /crunch\s*fitness/i, /orangetheory/i, /sports\s*club/i,
+
+  // NYC/premium
+  /chelsea\s*piers/i, /powerhouse\s*gym/i, /complete\s*body/i,
+  /manhattan\s*plaza/i, /harbor\s*fitness/i,
+
+  // Other verified chains
+  /korean\s*spa.*gym/i, /bathhouse.*gym/i, /wellness.*center/i,
+  /athletic\s*club/i, /sports\s*center/i,
 ];
 
 // ─── Supabase & API Setup ──────────────────────────────────────────────────────
