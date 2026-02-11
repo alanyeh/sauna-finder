@@ -83,7 +83,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
       )}
 
       <div className="flex flex-wrap gap-1.5 mb-3">
-        {sauna.amenities.map(amenity => (
+        {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
           <span
             key={amenity}
             className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
@@ -92,6 +92,18 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
           </span>
         ))}
       </div>
+
+      {sauna.website_url && (
+        <a
+          href={sauna.website_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline"
+        >
+          Visit website →
+        </a>
+      )}
       </div>
     </div>
   );

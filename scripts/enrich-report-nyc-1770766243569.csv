@@ -1,0 +1,32 @@
+id,name,field,before,after,status
+14,"Area Infrared Sauna",amenities,"cold_plunge; private","cold_plunge; private; infrared_sauna",CHANGED
+15,"Perspire Sauna Studio",amenities,"cold_plunge; private","cold_plunge; private; infrared_sauna",CHANGED
+20,"beem Light Sauna",amenities,"private","private; infrared_sauna",CHANGED
+34,"Area Infrared Sauna",amenities,"cold_plunge; private","cold_plunge; private; infrared_sauna",CHANGED
+35,"Perspire Sauna Studio",amenities,"cold_plunge; private","cold_plunge; private; infrared_sauna",CHANGED
+40,"beem Light Sauna",amenities,"private","private; infrared_sauna",CHANGED
+41,"Lore Bathing Club",amenities,"dry_sauna; cold_plunge; coed","dry_sauna; cold_plunge; coed; infrared_sauna",CHANGED
+42,"Saint NYC",amenities,"cold_plunge; steam_room; private","cold_plunge; steam_room; private; dry_sauna",CHANGED
+43,"Chill Space NYC",amenities,"cold_plunge; steam_room; private","cold_plunge; steam_room; private; infrared_sauna",CHANGED
+45,"Akari Sauna Greenpoint",amenities,"cold_plunge; steam_room; coed","cold_plunge; steam_room; coed; dry_sauna",CHANGED
+50,"BRC Day Spa & Sauna Resort",amenities,"cold_plunge; steam_room; massage; pool; coed","cold_plunge; steam_room; massage; pool; coed; dry_sauna",CHANGED
+53,"NLighten Infrared Sauna",amenities,"steam_room; private","steam_room; private; infrared_sauna",CHANGED
+68,"VITAL Climbing Gym Brooklyn",description,"45,000 sq ft climbing gym with rooftop sauna and cafe in a converted warehouse.","45,000 sq ft climbing gym with rooftop sauna and cafe in a converted warehouse. (Membership required)",CHANGED
+69,"Life Time Atlantic Avenue",amenities,"cold_plunge; steam_room; pool; coed","cold_plunge; steam_room; pool; coed; dry_sauna",CHANGED
+69,"Life Time Atlantic Avenue",description,"Three-story luxury fitness club with cedarwood saunas, cold plunge, and hydrotherapy suite.","Three-story luxury fitness club with cedarwood saunas, cold plunge, and hydrotherapy suite. (Membership required)",CHANGED
+70,"Chelsea Piers Fitness Brooklyn",description,"52,000 sq ft fitness club with 75-foot pool, sauna, and steam in luxurious locker rooms.","52,000 sq ft fitness club with 75-foot pool, sauna, and steam in luxurious locker rooms. (Membership required)",CHANGED
+71,"Brooklyn Boulders Queensbridge",amenities,"coed","coed; dry_sauna",CHANGED
+71,"Brooklyn Boulders Queensbridge",description,"25,000 sq ft climbing gym with dry saunas in full-service locker rooms.","25,000 sq ft climbing gym with dry saunas in full-service locker rooms. (Membership required)",CHANGED
+72,"TMPL Avenue A",amenities,"steam_room; coed","steam_room; coed; infrared_sauna",CHANGED
+72,"TMPL Avenue A",description,"Five-level luxury gym with infrared sauna and steam rooms.","Five-level luxury gym with infrared sauna and steam rooms. (Membership required)",CHANGED
+73,"Manhattan Plaza Health Club",description,"35,000 sq ft community gym with pool, tennis courts, sauna, and rock climbing wall.","35,000 sq ft community gym with pool, tennis courts, sauna, and rock climbing wall. (Membership required)",CHANGED
+74,"Mercedes Club",description,"80,000 sq ft luxury health club with indoor and outdoor pools, spa, and sauna.","80,000 sq ft luxury health club with indoor and outdoor pools, spa, and sauna. (Membership required)",CHANGED
+75,"Equinox Hotel New York",amenities,"cold_plunge; steam_room; pool; massage; coed","cold_plunge; steam_room; pool; massage; coed; dry_sauna",CHANGED
+77,"The Dominick Hotel",amenities,"steam_room; massage; pool; coed","steam_room; massage; pool; coed; private",CHANGED
+80,"The William Vale",amenities,"private; coed","private; coed; dry_sauna",CHANGED
+84,"Virgin Hotels NYC",amenities,"steam_room; pool","steam_room; pool; dry_sauna",CHANGED
+86,"The Iroquois",amenities,"private","private; dry_sauna",CHANGED
+90,"TMPL West Village",description,"","(Membership required)",CHANGED
+91,"Powerhouse Gym NYC",description,"","(Membership required)",CHANGED
+93,"West Side YMCA",description,"","(Membership required)",CHANGED
+96,"The Rockaway Hotel",amenities,"pool; private","pool; private; dry_sauna",CHANGED
