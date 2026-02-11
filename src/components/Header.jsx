@@ -11,7 +11,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
             Sauna Finder
           </h1>
           <p className="text-[13px] text-warm-gray font-light tracking-wide">
-            Discover the finest saunas & bathhouses in NYC and San Francisco
+            Find your perfect sauna
           </p>
           <div className="flex gap-1 mt-3">
             <button
