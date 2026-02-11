@@ -2,6 +2,23 @@ import { useState } from 'react';
 import { supabase } from '../supabase';
 import { amenityLabels } from '../data/saunas';
 
+async function geocodeAddress(address) {
+  // Use the Maps JavaScript API Geocoder (loaded by the Map component)
+  if (window.google?.maps?.Geocoder) {
+    const geocoder = new window.google.maps.Geocoder();
+    try {
+      const response = await geocoder.geocode({ address });
+      if (response.results.length > 0) {
+        const location = response.results[0].geometry.location;
+        return { lat: location.lat(), lng: location.lng() };
+      }
+    } catch {
+      // fall through
+    }
+  }
+  return { lat: null, lng: null };
+}
+
 const SAUNA_TYPES = [
   'Modern Bathhouse',
   'Korean Spa',
@@ -52,6 +69,8 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
     setLoading(true);
 
     try {
+      const { lat, lng } = await geocodeAddress(address);
+
       const { error: insertError } = await supabase.from('saunas').insert({
         name,
         address,
@@ -66,8 +85,8 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
         rating: null,
         rating_count: null,
         photos: [],
-        lat: null,
-        lng: null,
+        lat,
+        lng,
       });
 
       if (insertError) throw insertError;
