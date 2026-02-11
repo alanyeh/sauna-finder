@@ -147,22 +147,6 @@ export default function Filters({
           </div>
         </div>
 
-        {/* Favorites Toggle */}
-        {user && (
-          <div className="mb-4">
-            <button
-              onClick={() => setTempShowFavorites(!tempShowFavorites)}
-              className={`flex items-center gap-2 px-3 py-2 border rounded text-[13px] transition-all w-full justify-center ${
-                tempShowFavorites
-                  ? 'bg-accent-red text-white border-accent-red'
-                  : 'bg-white text-charcoal border-light-border hover:bg-hover-bg hover:border-charcoal'
-              }`}
-            >
-              <span>{tempShowFavorites ? '♥' : '♡'}</span>
-              <span>Show Favorites</span>
-            </button>
-          </div>
-        )}
 
         {/* Type */}
         {saunaTypes && saunaTypes.length > 0 && (
