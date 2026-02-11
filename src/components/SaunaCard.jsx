@@ -75,9 +75,9 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </div>
       </div>
 
-      {sauna.lat && sauna.lng ? (
+      {sauna.address ? (
         <a
-          href={`https://maps.google.com/?q=${sauna.lat},${sauna.lng}`}
+          href={`https://maps.google.com/?q=${encodeURIComponent(sauna.address)}`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
