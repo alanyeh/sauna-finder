@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { supabase } from '../supabase';
 import { amenityLabels } from '../data/saunas';
 
-async function geocodeAddress(address) {
+async function geocodeAddress(address, citySlug) {
   // Use the Maps JavaScript API Geocoder (loaded by the Map component)
   if (window.google?.maps?.Geocoder) {
     const geocoder = new window.google.maps.Geocoder();
@@ -16,7 +16,14 @@ async function geocodeAddress(address) {
       // fall through
     }
   }
-  return { lat: null, lng: null };
+
+  // Fallback: use city center if geocoding fails
+  const cityCenters = {
+    nyc: { lat: 40.7128, lng: -74.0060 },
+    sf: { lat: 37.7749, lng: -122.4194 },
+    seattle: { lat: 47.6062, lng: -122.3321 },
+  };
+  return cityCenters[citySlug] || { lat: null, lng: null };
 }
 
 const SAUNA_TYPES = [
@@ -45,9 +52,14 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
   const [hours, setHours] = useState('');
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [description, setDescription] = useState('');
+  const [photoFiles, setPhotoFiles] = useState([]);
+  const [photoPreviews, setPhotoPreviews] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const fileInputRef = useRef(null);
+
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
   const toggleType = (type) => {
     setSelectedTypes((prev) =>
@@ -63,13 +75,70 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
     );
   };
 
+  const handleFileSelect = (e) => {
+    const files = Array.from(e.target.files || []);
+    const validFiles = [];
+    const previews = [];
+
+    for (const file of files) {
+      if (!file.type.startsWith('image/')) continue;
+      if (file.size > MAX_FILE_SIZE) continue;
+
+      validFiles.push(file);
+
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        previews.push(ev.target.result);
+        if (previews.length === validFiles.length) {
+          setPhotoPreviews((prev) => [...prev, ...previews]);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    setPhotoFiles((prev) => [...prev, ...validFiles]);
+
+    // Reset input
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const removePhoto = (index) => {
+    setPhotoFiles((prev) => prev.filter((_, i) => i !== index));
+    setPhotoPreviews((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
     try {
-      const { lat, lng } = await geocodeAddress(address);
+      const { lat, lng } = await geocodeAddress(address, city);
+
+      // Upload photos if any exist
+      let photoUrls = [];
+      if (photoFiles.length > 0) {
+        for (const file of photoFiles) {
+          // Sanitize filename: remove spaces and special characters
+          const sanitizedName = file.name
+            .replace(/[^a-zA-Z0-9.-]/g, '_')
+            .toLowerCase();
+          const fileName = `${Date.now()}-${sanitizedName}`;
+          const { error: uploadError } = await supabase.storage
+            .from('sauna-photos')
+            .upload(`public/${fileName}`, file, {
+              cacheControl: '3600',
+              upsert: false,
+            });
+
+          if (uploadError) throw uploadError;
+
+          const { data: { publicUrl } } = supabase.storage
+            .from('sauna-photos')
+            .getPublicUrl(`public/${fileName}`);
+          photoUrls.push(publicUrl);
+        }
+      }
 
       const { error: insertError } = await supabase.from('saunas').insert({
         name,
@@ -84,7 +153,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
         description: description || null,
         rating: null,
         rating_count: null,
-        photos: [],
+        photos: photoUrls,
         lat,
         lng,
       });
@@ -92,8 +161,10 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
       if (insertError) throw insertError;
 
       setSuccess(true);
-      onSaunaAdded?.();
-      setTimeout(() => onClose(), 1500);
+      if (onSaunaAdded) {
+        await onSaunaAdded();
+      }
+      setTimeout(() => onClose(), 800);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -306,6 +377,55 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
                 rows={2}
                 className="w-full px-3 py-2.5 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none resize-none"
               />
+            </div>
+
+            {/* Photos */}
+            <div>
+              <label className="block text-[11px] uppercase tracking-wider text-warm-gray font-medium mb-2">
+                Photos
+              </label>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleFileSelect}
+                className="hidden"
+              />
+
+              {/* Photo previews */}
+              {photoPreviews.length > 0 && (
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  {photoPreviews.map((preview, idx) => (
+                    <div key={idx} className="relative group">
+                      <img
+                        src={preview}
+                        alt={`Preview ${idx}`}
+                        className="w-full h-20 object-cover rounded border border-light-border"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removePhoto(idx)}
+                        className="absolute -top-2 -right-2 bg-accent-red text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+                        aria-label="Remove photo"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Add photos button */}
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="w-full border-2 border-dashed border-light-border rounded-lg p-4 text-center hover:bg-hover-bg transition text-sm"
+              >
+                <div className="text-xl mb-1">📷</div>
+                <p className="text-charcoal font-medium">Click to add photos</p>
+                <p className="text-warm-gray text-xs">Max 5MB per image (optional)</p>
+              </button>
             </div>
 
             {/* Submit */}
