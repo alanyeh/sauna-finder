@@ -18,7 +18,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         />
       )}
 
-      <div className="px-7 py-5">
+      <div className="px-5 py-5">
         <div className="flex items-start justify-between">
         <h3 className="text-base font-medium mb-1.5 text-charcoal">
           {sauna.name}

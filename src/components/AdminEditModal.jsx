@@ -163,7 +163,7 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4 p-6 max-h-[85vh] overflow-y-auto"
+        className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4 p-5 max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">

@@ -69,17 +69,17 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
                 </button>
               </div>
             )}
-            <div className="p-4">
+            <div className="px-0 py-4 font-sans">
               <h3 className="text-base font-medium mb-1.5 text-charcoal">
                 {sauna.name}
               </h3>
               {sauna.types && sauna.types.length > 0 && (
-                <p className="text-xs text-warm-gray mb-2 capitalize">
+                <p className="text-xs text-warm-gray mb-2 capitalize font-sans">
                   {sauna.types.join(', ')}
                 </p>
               )}
               {sauna.rating != null && (
-                <div className="flex items-center gap-1.5 mb-2 text-[13px]">
+                <div className="flex items-center gap-1.5 mb-2 text-[13px] font-sans">
                   <span className="text-accent-red">★</span>
                   <span className="font-medium">{sauna.rating}</span>
                   {sauna.ratingCount != null && (
@@ -101,14 +101,26 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
                   ))}
                 </div>
               )}
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red"
-              >
-                View on Google Maps
-              </a>
+              <div className="flex gap-2 font-sans">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red font-medium"
+                >
+                  View on Google Maps
+                </a>
+                {sauna.website_url && (
+                  <a
+                    href={sauna.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-4 py-2 bg-white border border-light-border text-charcoal text-[13px] rounded transition-colors hover:bg-hover-bg font-medium"
+                  >
+                    View Website
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </InfoWindow>
