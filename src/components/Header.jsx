@@ -1,6 +1,6 @@
 import { useAuth } from '../contexts/AuthContext';
 
-export default function Header({ citySlug, setCitySlug }) {
+export default function Header({ citySlug, setCitySlug, onSignIn }) {
   const { user, logout } = useAuth();
 
   return (
@@ -38,7 +38,7 @@ export default function Header({ citySlug, setCitySlug }) {
         </div>
 
         <div className="flex-shrink-0 mt-1">
-          {user && (
+          {user ? (
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-sm font-medium">
                 {(user.user_metadata?.full_name?.[0] || user.email?.[0] || '?').toUpperCase()}
@@ -50,6 +50,13 @@ export default function Header({ citySlug, setCitySlug }) {
                 Sign Out
               </button>
             </div>
+          ) : (
+            <button
+              onClick={onSignIn}
+              className="px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+            >
+              Sign In
+            </button>
           )}
         </div>
       </div>

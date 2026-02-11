@@ -109,6 +109,7 @@ function App() {
           citySlug={citySlug}
           setCitySlug={setCitySlug}
           onSubmitSauna={handleSubmitSauna}
+          onSignIn={() => setShowAuthModal(true)}
         />
       </div>
 
