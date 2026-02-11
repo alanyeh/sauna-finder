@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import Sidebar from './components/Sidebar';
 import Map from './components/Map';
+import AuthModal from './components/AuthModal';
+import SubmitSaunaModal from './components/SubmitSaunaModal';
 import { supabase } from './supabase';
 import { useFilters } from './hooks/useFilters';
 import { useAuth } from './contexts/AuthContext';
@@ -12,36 +14,44 @@ function App() {
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const [mobileView, setMobileView] = useState('list');
   const [citySlug, setCitySlug] = useState('nyc');
+  const [showSubmitModal, setShowSubmitModal] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const { user } = useAuth();
   const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.id);
 
-  // Fetch saunas from Supabase
+  const fetchSaunas = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('saunas')
+        .select('*')
+        .order('id', { ascending: true });
+
+      if (error) throw error;
+
+      const transformedData = (data || []).map(sauna => ({
+        ...sauna,
+        ratingCount: sauna.rating_count,
+        placeId: sauna.place_id,
+      }));
+
+      setSaunas(transformedData);
+    } catch (error) {
+      console.error('Error fetching saunas:', error);
+      setSaunas([]);
+    }
+  };
+
   useEffect(() => {
-    const fetchSaunas = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('saunas')
-          .select('*')
-          .order('id', { ascending: true });
-
-        if (error) throw error;
-
-        // Convert snake_case to camelCase
-        const transformedData = (data || []).map(sauna => ({
-          ...sauna,
-          ratingCount: sauna.rating_count,
-          placeId: sauna.place_id,
-        }));
-
-        setSaunas(transformedData);
-      } catch (error) {
-        console.error('Error fetching saunas:', error);
-        setSaunas([]);
-      }
-    };
-
     fetchSaunas();
   }, []);
+
+  const handleSubmitSauna = () => {
+    if (user) {
+      setShowSubmitModal(true);
+    } else {
+      setShowAuthModal(true);
+    }
+  };
 
   const {
     neighborhood,
@@ -98,6 +108,7 @@ function App() {
           setMobileView={setMobileView}
           citySlug={citySlug}
           setCitySlug={setCitySlug}
+          onSubmitSauna={handleSubmitSauna}
         />
       </div>
 
@@ -110,6 +121,17 @@ function App() {
           citySlug={citySlug}
         />
       </div>
+      {showAuthModal && (
+        <AuthModal onClose={() => setShowAuthModal(false)} />
+      )}
+
+      {showSubmitModal && (
+        <SubmitSaunaModal
+          onClose={() => setShowSubmitModal(false)}
+          citySlug={citySlug}
+          onSaunaAdded={fetchSaunas}
+        />
+      )}
     </div>
   );
 }

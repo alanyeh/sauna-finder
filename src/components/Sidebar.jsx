@@ -27,6 +27,7 @@ export default function Sidebar({
   setMobileView,
   citySlug,
   setCitySlug,
+  onSubmitSauna,
 }) {
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -67,8 +68,17 @@ export default function Sidebar({
 
       {/* Sauna count and controls */}
       <div className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between">
-        <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
+        </div>
         <div className="flex gap-2">
+          <button
+            onClick={onSubmitSauna}
+            className="px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+            title="Submit a sauna"
+          >
+            + Add Sauna
+          </button>
           <button
             onClick={() => setShowFilters(!showFilters)}
             className={`px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
