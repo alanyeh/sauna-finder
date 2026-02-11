@@ -14,6 +14,27 @@
 }
 
 @layer components {
+  /* InfoWindow overrides — edge-to-edge content, hide default close button */
+  .gm-style .gm-style-iw-c {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+  .gm-style .gm-style-iw-d {
+    overflow: auto !important;
+    padding: 0 !important;
+    max-height: none !important;
+  }
+  .gm-style .gm-style-iw-chr {
+    display: none !important;
+  }
+  .gm-style .gm-style-iw-tc {
+    display: none !important;
+  }
+  .gm-style-iw button.gm-ui-hover-effect {
+    display: none !important;
+  }
+
   /* Custom scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     @apply w-1.5;

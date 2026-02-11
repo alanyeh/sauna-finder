@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import PhotoCarousel from './PhotoCarousel';
+import { amenityLabels } from '../data/saunas';
 
 const MAP_ID = 'sauna_finder_map';
 
@@ -49,18 +50,34 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
         <InfoWindow
           position={{ lat: sauna.lat, lng: sauna.lng }}
           onCloseClick={() => onClick(null)}
+          headerDisabled
         >
           <div className="min-w-[280px] overflow-hidden">
             {(sauna.photos || sauna.photo_url) && (
-              <PhotoCarousel
-                photos={sauna.photos || (sauna.photo_url ? [sauna.photo_url] : [])}
-                alt={sauna.name}
-              />
+              <div className="relative">
+                <PhotoCarousel
+                  photos={sauna.photos || (sauna.photo_url ? [sauna.photo_url] : [])}
+                  alt={sauna.name}
+                  hideCounter
+                />
+                <button
+                  onClick={() => onClick(null)}
+                  className="absolute top-2 right-2 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-black/40 text-white text-sm hover:bg-black/60 transition-colors"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
             )}
             <div className="p-4">
-              <h3 className="text-base font-medium mb-2 text-charcoal">
+              <h3 className="text-base font-medium mb-1.5 text-charcoal">
                 {sauna.name}
               </h3>
+              {sauna.types && sauna.types.length > 0 && (
+                <p className="text-xs text-warm-gray mb-2 capitalize">
+                  {sauna.types.join(', ')}
+                </p>
+              )}
               {sauna.rating != null && (
                 <div className="flex items-center gap-1.5 mb-2 text-[13px]">
                   <span className="text-accent-red">★</span>
@@ -72,9 +89,18 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
                   )}
                 </div>
               )}
-              <p className="text-[13px] text-warm-gray mb-3">
-                {sauna.address}
-              </p>
+              {sauna.amenities && sauna.amenities.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
+                    <span
+                      key={amenity}
+                      className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+                    >
+                      {amenityLabels[amenity]}
+                    </span>
+                  ))}
+                </div>
+              )}
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
                 target="_blank"
@@ -131,6 +157,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
         streetViewControl={false}
         fullscreenControl={true}
         gestureHandling="greedy"
+        onClick={() => onSaunaSelect(null)}
       >
         <MapController selectedSauna={selectedSauna} cityCenter={center} />
         {saunas.map(sauna => (

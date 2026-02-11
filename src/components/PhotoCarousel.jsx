@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function PhotoCarousel({ photos, alt = 'Sauna' }) {
+export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!photos || photos.length === 0) {
@@ -50,9 +50,11 @@ export default function PhotoCarousel({ photos, alt = 'Sauna' }) {
           </button>
 
           {/* Photo Counter */}
-          <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-            {currentIndex + 1}/{photos.length}
-          </div>
+          {!hideCounter && (
+            <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+              {currentIndex + 1}/{photos.length}
+            </div>
+          )}
 
           {/* Dot Indicators */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
