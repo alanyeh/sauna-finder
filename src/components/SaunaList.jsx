@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import SaunaCard from './SaunaCard';
 
-export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll }) {
+export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna }) {
   const scrollContainerRef = useRef(null);
 
   const handleScroll = (e) => {
@@ -27,6 +27,8 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
               user={user}
               isFavorite={isFavorite?.(sauna.id)}
               onToggleFavorite={() => toggleFavorite?.(sauna.id)}
+              isAdmin={isAdmin}
+              onEdit={() => onEditSauna?.(sauna)}
             />
           ))
         )}

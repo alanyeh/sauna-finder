@@ -1,7 +1,7 @@
 import { amenityLabels } from '../data/saunas';
 import PhotoCarousel from './PhotoCarousel';
 
-export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite }) {
+export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite, isAdmin, onEdit }) {
   return (
     <div
       onClick={onClick}
@@ -23,20 +23,35 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         <h3 className="text-base font-medium mb-1.5 text-charcoal">
           {sauna.name}
         </h3>
-        {user && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleFavorite();
-            }}
-            className={`flex-shrink-0 ml-2 text-lg leading-none transition-colors ${
-              isFavorite ? 'text-accent-red' : 'text-light-border hover:text-accent-red'
-            }`}
-            aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-          >
-            {isFavorite ? '♥' : '♡'}
-          </button>
-        )}
+        <div className="flex items-center gap-1 flex-shrink-0 ml-2">
+          {isAdmin && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onEdit();
+              }}
+              className="text-warm-gray hover:text-charcoal text-sm leading-none transition-colors"
+              aria-label="Edit sauna"
+              title="Edit sauna"
+            >
+              &#9998;
+            </button>
+          )}
+          {user && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleFavorite();
+              }}
+              className={`text-lg leading-none transition-colors ${
+                isFavorite ? 'text-accent-red' : 'text-light-border hover:text-accent-red'
+              }`}
+              aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            >
+              {isFavorite ? '♥' : '♡'}
+            </button>
+          )}
+        </div>
       </div>
 
       <p className="text-xs text-warm-gray mb-2 capitalize">

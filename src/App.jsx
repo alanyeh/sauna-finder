@@ -3,10 +3,12 @@ import Sidebar from './components/Sidebar';
 import Map from './components/Map';
 import AuthModal from './components/AuthModal';
 import SubmitSaunaModal from './components/SubmitSaunaModal';
+import AdminEditModal from './components/AdminEditModal';
 import { supabase } from './supabase';
 import { useFilters } from './hooks/useFilters';
 import { useAuth } from './contexts/AuthContext';
 import { useFavorites } from './hooks/useFavorites';
+import { isAdmin } from './lib/admin';
 
 function App() {
   const [saunas, setSaunas] = useState([]);
@@ -16,7 +18,9 @@ function App() {
   const [citySlug, setCitySlug] = useState('nyc');
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [editingSauna, setEditingSauna] = useState(null);
   const { user } = useAuth();
+  const userIsAdmin = isAdmin(user);
   const { favorites, toggleFavorite, isFavorite } = useFavorites(user?.id);
 
   const fetchSaunas = async () => {
@@ -110,6 +114,8 @@ function App() {
           setCitySlug={setCitySlug}
           onSubmitSauna={handleSubmitSauna}
           onSignIn={() => setShowAuthModal(true)}
+          isAdmin={userIsAdmin}
+          onEditSauna={setEditingSauna}
         />
       </div>
 
@@ -131,6 +137,14 @@ function App() {
           onClose={() => setShowSubmitModal(false)}
           citySlug={citySlug}
           onSaunaAdded={fetchSaunas}
+        />
+      )}
+
+      {editingSauna && (
+        <AdminEditModal
+          sauna={editingSauna}
+          onClose={() => setEditingSauna(null)}
+          onSaunaUpdated={fetchSaunas}
         />
       )}
     </div>

@@ -29,6 +29,8 @@ export default function Sidebar({
   setCitySlug,
   onSubmitSauna,
   onSignIn,
+  isAdmin,
+  onEditSauna,
 }) {
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -139,6 +141,8 @@ export default function Sidebar({
           toggleFavorite={toggleFavorite}
           isFavorite={isFavorite}
           onScroll={handleListScroll}
+          isAdmin={isAdmin}
+          onEditSauna={onEditSauna}
         />
       )}
 
