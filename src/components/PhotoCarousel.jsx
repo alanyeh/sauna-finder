@@ -22,11 +22,12 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
   };
 
   return (
-    <div className="relative w-full h-40 bg-gray-200 overflow-hidden">
+    <div className="relative w-full h-40 bg-gray-200 overflow-hidden flex items-center justify-center">
       <img
         src={photos[currentIndex]}
         alt={`${alt} ${currentIndex + 1}`}
         className="w-full h-full object-cover"
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
 
       {photos.length > 1 && (
