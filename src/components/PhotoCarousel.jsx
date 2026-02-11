@@ -34,19 +34,19 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10"
+            className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-colors z-10"
             aria-label="Previous photo"
           >
-            ‹
+            <span className="text-lg sm:text-xl">‹</span>
           </button>
 
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors z-10"
+            className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-colors z-10"
             aria-label="Next photo"
           >
-            ›
+            <span className="text-lg sm:text-xl">›</span>
           </button>
 
           {/* Photo Counter */}

@@ -70,21 +70,21 @@ export default function Sidebar({
       </div>
 
       {/* Sauna count and controls */}
-      <div className="sticky top-0 z-20 px-7 py-4 border-b border-light-border bg-white flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-[13px] text-warm-gray">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''} found</span>
+      <div className="sticky top-0 z-20 px-4 md:px-7 py-3 md:py-4 border-b border-light-border bg-white flex items-center justify-between gap-2 md:gap-4">
+        <div className="flex items-center gap-1 min-w-0">
+          <span className="text-[12px] md:text-[13px] text-warm-gray truncate">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''}</span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1 md:gap-2 flex-shrink-0">
           <button
             onClick={onSubmitSauna}
-            className="px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+            className="hidden md:block px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
             title="Submit a sauna"
           >
             + Add Sauna
           </button>
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className={`px-3 py-1.5 rounded text-[13px] font-medium transition-colors ${
+            className={`px-2.5 md:px-3 py-1 md:py-1.5 rounded text-[11px] md:text-[13px] font-medium transition-colors ${
               showFilters
                 ? 'bg-charcoal text-white'
                 : 'bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white'
@@ -95,7 +95,7 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('list')}
-            className={`p-1.5 rounded transition-colors md:hidden ${
+            className={`p-1 md:p-1.5 rounded transition-colors md:hidden ${
               mobileView === 'list'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
@@ -108,7 +108,7 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('map')}
-            className={`p-1.5 rounded transition-colors md:hidden ${
+            className={`p-1 md:p-1.5 rounded transition-colors md:hidden ${
               mobileView === 'map'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
