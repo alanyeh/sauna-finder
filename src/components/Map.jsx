@@ -132,6 +132,7 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
 const CITY_CENTERS = {
   nyc: { lat: 40.68, lng: -73.97 },
   sf: { lat: 37.77, lng: -122.42 },
+  chicago: { lat: 41.88, lng: -87.63 },
   seattle: { lat: 47.61, lng: -122.33 },
 };
 
