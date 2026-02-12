@@ -47,12 +47,14 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
   const [rating, setRating] = useState(sauna.rating ?? '');
   const [ratingCount, setRatingCount] = useState(sauna.rating_count ?? sauna.ratingCount ?? '');
   const [genderPolicy, setGenderPolicy] = useState(sauna.gender_policy || '');
+  const [pricingOptions, setPricingOptions] = useState(sauna.pricing_options || []);
   const [photos, setPhotos] = useState(sauna.photos || []);
   const [photosToDelete, setPhotosToDelete] = useState([]);
   const [newPhotoFiles, setNewPhotoFiles] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const toggleType = (type) => {
     setSelectedTypes((prev) =>
@@ -78,6 +80,25 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
 
   const removeNewPhoto = (index) => {
     setNewPhotoFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const addPricingOption = () => {
+    setPricingOptions((prev) => [
+      ...prev,
+      { duration: '', price: '', description: '' },
+    ]);
+  };
+
+  const updatePricingOption = (index, field, value) => {
+    setPricingOptions((prev) => {
+      const updated = [...prev];
+      updated[index] = { ...updated[index], [field]: value };
+      return updated;
+    });
+  };
+
+  const removePricingOption = (index) => {
+    setPricingOptions((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleSave = async (e) => {
@@ -139,6 +160,7 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
           gender_policy: genderPolicy || null,
           rating: rating !== '' ? parseFloat(rating) : null,
           rating_count: ratingCount !== '' ? parseInt(ratingCount) : null,
+          pricing_options: pricingOptions.filter((o) => o.price !== ''),
           photos: finalPhotos,
           lat,
           lng,
@@ -154,6 +176,40 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    setError('');
+    setLoading(true);
+
+    try {
+      // Delete all photos from storage
+      if (photos.length > 0) {
+        for (const url of photos) {
+          const pathMatch = url.match(/sauna-photos\/(.+)$/);
+          if (pathMatch) {
+            await supabase.storage.from('sauna-photos').remove([pathMatch[1]]);
+          }
+        }
+      }
+
+      // Delete the sauna record
+      const { error: deleteError } = await supabase
+        .from('saunas')
+        .delete()
+        .eq('id', sauna.id);
+
+      if (deleteError) throw deleteError;
+
+      setSuccess(true);
+      onSaunaUpdated?.();
+      setTimeout(() => onClose(), 1200);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+      setShowDeleteConfirm(false);
     }
   };
 
@@ -176,7 +232,28 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
           </button>
         </div>
 
-        {success ? (
+        {showDeleteConfirm ? (
+          <div className="text-center py-8">
+            <p className="text-charcoal font-medium text-lg mb-4">Delete this sauna?</p>
+            <p className="text-warm-gray text-sm mb-6">This action cannot be undone.</p>
+            <div className="flex gap-3 justify-center">
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                disabled={loading}
+                className="px-4 py-2 border border-light-border rounded text-sm hover:bg-hover-bg transition-colors disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={loading}
+                className="px-4 py-2 bg-accent-red text-white rounded text-sm hover:bg-accent-red/90 transition-colors disabled:opacity-50 font-medium"
+              >
+                {loading ? 'Deleting...' : 'Delete'}
+              </button>
+            </div>
+          </div>
+        ) : success ? (
           <div className="text-center py-8">
             <p className="text-charcoal font-medium text-lg mb-1">Saved!</p>
             <p className="text-warm-gray text-sm">Changes have been applied.</p>
@@ -260,6 +337,61 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
                 <option value="$$">$$ - Moderate</option>
                 <option value="$$$">$$$ - Upscale</option>
               </select>
+            </div>
+
+            {/* Pricing Options */}
+            <div>
+              <label className="block text-[11px] uppercase tracking-wider text-warm-gray font-medium mb-2">
+                Pricing Options
+              </label>
+              <div className="space-y-2 mb-2">
+                {pricingOptions.map((option, index) => (
+                  <div key={index} className="flex gap-2 items-end">
+                    <input
+                      type="text"
+                      placeholder="Duration (e.g. 60 min)"
+                      value={option.duration}
+                      onChange={(e) =>
+                        updatePricingOption(index, 'duration', e.target.value)
+                      }
+                      className="flex-1 px-3 py-2 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Price"
+                      value={option.price}
+                      onChange={(e) =>
+                        updatePricingOption(index, 'price', e.target.value)
+                      }
+                      className="w-24 px-3 py-2 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Description"
+                      value={option.description}
+                      onChange={(e) =>
+                        updatePricingOption(index, 'description', e.target.value)
+                      }
+                      className="flex-1 px-3 py-2 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removePricingOption(index)}
+                      className="px-2.5 py-2 text-warm-gray hover:text-accent-red transition-colors"
+                      title="Remove option"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={addPricingOption}
+                className="px-3 py-1.5 border border-light-border rounded text-[12px] text-charcoal hover:bg-hover-bg transition-colors"
+              >
+                + Add Pricing Option
+              </button>
             </div>
 
             {/* Rating & Rating Count */}
@@ -470,14 +602,24 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
               )}
             </div>
 
-            {/* Save */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-2.5 bg-charcoal text-white text-sm rounded hover:bg-charcoal/90 transition-colors disabled:opacity-50 font-medium"
-            >
-              {loading ? 'Saving...' : 'Save Changes'}
-            </button>
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                type="submit"
+                disabled={loading}
+                className="flex-1 py-2.5 bg-charcoal text-white text-sm rounded hover:bg-charcoal/90 transition-colors disabled:opacity-50 font-medium"
+              >
+                {loading ? 'Saving...' : 'Save Changes'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowDeleteConfirm(true)}
+                disabled={loading}
+                className="px-4 py-2.5 bg-accent-red/10 text-accent-red text-sm rounded hover:bg-accent-red/20 transition-colors disabled:opacity-50 font-medium border border-accent-red/30"
+              >
+                Delete
+              </button>
+            </div>
           </form>
         )}
       </div>

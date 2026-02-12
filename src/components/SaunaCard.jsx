@@ -75,6 +75,18 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </div>
       </div>
 
+      {sauna.pricing_options?.length > 0 && (
+        <div className="mb-2.5 space-y-0.5">
+          {sauna.pricing_options.map((opt, i) => (
+            <div key={i} className="text-[12px] text-warm-gray">
+              <span className="font-medium text-charcoal">${opt.price}</span>
+              {opt.duration && <span> · {opt.duration}</span>}
+              {opt.description && <span> — {opt.description}</span>}
+            </div>
+          ))}
+        </div>
+      )}
+
       {sauna.address ? (
         <a
           href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}

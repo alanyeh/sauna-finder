@@ -108,7 +108,7 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
                   rel="noopener noreferrer"
                   className="flex-1 text-center px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red font-medium"
                 >
-                  View on Google Maps
+                  View on Maps
                 </a>
                 {sauna.website_url && (
                   <a

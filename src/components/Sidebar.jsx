@@ -31,6 +31,7 @@ export default function Sidebar({
   onSignIn,
   isAdmin,
   onEditSauna,
+  onAddSauna,
 }) {
   const [showFilters, setShowFilters] = useState(false);
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -65,7 +66,7 @@ export default function Sidebar({
           className="md:block"
           style={{ marginTop: `-${headerOffset}px` }}
         >
-          <Header citySlug={citySlug} setCitySlug={setCitySlug} onSignIn={onSignIn} />
+          <Header citySlug={citySlug} setCitySlug={setCitySlug} onSignIn={onSignIn} isAdmin={isAdmin} onAddSauna={onAddSauna} />
         </div>
       </div>
 
