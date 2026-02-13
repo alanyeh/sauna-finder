@@ -77,9 +77,9 @@ export default function Sidebar({
         </div>
         <div className="flex gap-1 md:gap-2 flex-shrink-0">
           <button
-            onClick={onSubmitSauna}
+            onClick={isAdmin ? onAddSauna : onSubmitSauna}
             className="hidden md:block px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
-            title="Submit a sauna"
+            title="Add a sauna"
           >
             + Add Sauna
           </button>

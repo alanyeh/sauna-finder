@@ -134,6 +134,7 @@ const CITY_CENTERS = {
   sf: { lat: 37.77, lng: -122.42 },
   chicago: { lat: 41.88, lng: -87.63 },
   seattle: { lat: 47.61, lng: -122.33 },
+  la: { lat: 34.052, lng: -118.291 },
 };
 
 export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug }) {

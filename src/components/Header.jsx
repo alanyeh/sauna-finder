@@ -1,6 +1,6 @@
 import { useAuth } from '../contexts/AuthContext';
 
-export default function Header({ citySlug, setCitySlug, onSignIn, isAdmin, onAddSauna }) {
+export default function Header({ citySlug, setCitySlug, onSignIn }) {
   const { user, logout } = useAuth();
 
   return (
@@ -54,22 +54,23 @@ export default function Header({ citySlug, setCitySlug, onSignIn, isAdmin, onAdd
             >
               SEA
             </button>
+            <button
+              onClick={() => setCitySlug('la')}
+              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
+                citySlug === 'la'
+                  ? 'bg-charcoal text-white'
+                  : 'text-warm-gray hover:text-charcoal'
+              }`}
+            >
+              LA
+            </button>
           </div>
         </div>
 
         <div className="flex-shrink-0 mt-0.5 md:mt-1">
           {user ? (
             <div className="flex items-center gap-1 md:gap-2">
-              {isAdmin && (
-                <button
-                  onClick={onAddSauna}
-                  className="text-[11px] md:text-[12px] text-warm-gray hover:text-charcoal transition-colors hidden sm:block"
-                  title="Add a new sauna"
-                >
-                  + Add
-                </button>
-              )}
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-xs md:text-sm font-medium flex-shrink-0">
+    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-xs md:text-sm font-medium flex-shrink-0">
                 {(user.user_metadata?.full_name?.[0] || user.email?.[0] || '?').toUpperCase()}
               </div>
               <button
