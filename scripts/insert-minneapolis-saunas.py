@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Insert Minneapolis saunas into Supabase"""
 
+import os
 import urllib.request
 import json
 
 # Supabase credentials
 SUPABASE_URL = "https://oqwwxfecnrspcjjwrylx.supabase.co"
-SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xd3d4ZmVjbnJzcGNqandyeWx4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDQ4Njk3NiwiZXhwIjoyMDg2MDYyOTc2fQ.Q_uQhG2BZdNOsOS-zddwFXe39rzFW2OrynxqvBTVuS8"
+SERVICE_KEY = os.environ["SUPABASE_SERVICE_KEY"]
 
 # Minneapolis saunas data
 saunas = [

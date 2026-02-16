@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Find and update missing Google Place IDs for Minneapolis saunas (IDs 664-674)"""
 
+import os
 import urllib.request
 import urllib.parse
 import json
 
-GOOGLE_PLACES_API_KEY = "AIzaSyDHi1IZO_OZ2U-VYRXQExf9dSahdDjddfE"
+GOOGLE_PLACES_API_KEY = os.environ["GOOGLE_PLACES_API_KEY"]
 SUPABASE_URL = "https://oqwwxfecnrspcjjwrylx.supabase.co"
-SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xd3d4ZmVjbnJzcGNqandyeWx4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDQ4Njk3NiwiZXhwIjoyMDg2MDYyOTc2fQ.Q_uQhG2BZdNOsOS-zddwFXe39rzFW2OrynxqvBTVuS8"
+SERVICE_KEY = os.environ["SUPABASE_SERVICE_KEY"]
 
 # Minneapolis saunas inserted with IDs 664-674
 venues_to_update = [
