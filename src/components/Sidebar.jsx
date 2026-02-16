@@ -23,6 +23,8 @@ export default function Sidebar({
   isFavorite,
   showFavoritesOnly,
   setShowFavoritesOnly,
+  sortBy,
+  setSortBy,
   mobileView,
   setMobileView,
   citySlug,
@@ -162,6 +164,8 @@ export default function Sidebar({
         user={user}
         showFavoritesOnly={showFavoritesOnly}
         setShowFavoritesOnly={setShowFavoritesOnly}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
         isOpen={showFilters}
         onClose={() => setShowFilters(false)}
       />

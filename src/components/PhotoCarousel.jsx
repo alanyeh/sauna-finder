@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(null);
+  const mouseStartX = useRef(null);
 
   if (!photos || photos.length === 0) {
     return null;
@@ -21,8 +23,44 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
     );
   };
 
+  const handleMouseDown = (e) => {
+    mouseStartX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e) => {
+    if (mouseStartX.current === null) return;
+    const delta = mouseStartX.current - e.clientX;
+    if (Math.abs(delta) > 50) {
+      delta > 0
+        ? setCurrentIndex((i) => (i === photos.length - 1 ? 0 : i + 1))
+        : setCurrentIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
+    }
+    mouseStartX.current = null;
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 50) {
+      delta > 0
+        ? setCurrentIndex((i) => (i === photos.length - 1 ? 0 : i + 1))
+        : setCurrentIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
+    }
+    touchStartX.current = null;
+  };
+
   return (
-    <div className="relative w-full h-40 bg-gray-200 overflow-hidden flex items-center justify-center">
+    <div
+      className="relative w-full h-40 bg-gray-200 overflow-hidden flex items-center justify-center"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <img
         src={photos[currentIndex]}
         alt={`${alt} ${currentIndex + 1}`}

@@ -75,6 +75,8 @@ function App() {
     saunaTypes,
     neighborhoods,
     filteredSaunas,
+    sortBy,
+    setSortBy,
   } = useFilters(saunas, citySlug);
 
   // Reset favorites filter on sign-out
@@ -116,6 +118,8 @@ function App() {
           setShowFavoritesOnly={setShowFavoritesOnly}
           mobileView={mobileView}
           setMobileView={setMobileView}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
           citySlug={citySlug}
           setCitySlug={setCitySlug}
           onSubmitSauna={handleSubmitSauna}

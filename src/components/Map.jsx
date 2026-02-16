@@ -136,11 +136,13 @@ const CITY_CENTERS = {
   seattle: { lat: 47.61, lng: -122.33 },
   la: { lat: 34.052, lng: -118.291 },
   minneapolis: { lat: 44.963, lng: -93.272 },
+  portland: { lat: 45.523, lng: -122.676 },
+  all: { lat: 39.5, lng: -98.35 },
 };
 
 export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug }) {
   const center = CITY_CENTERS[citySlug] || CITY_CENTERS.nyc;
-  const [defaultZoom] = useState(12);
+  const [defaultZoom] = useState(citySlug === 'all' ? 4 : 12);
 
   if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
     return (

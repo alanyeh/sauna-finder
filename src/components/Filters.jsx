@@ -23,6 +23,8 @@ export default function Filters({
   user,
   showFavoritesOnly,
   setShowFavoritesOnly,
+  sortBy,
+  setSortBy,
   isOpen,
   onClose,
 }) {
@@ -32,6 +34,7 @@ export default function Filters({
   const [tempAmenities, setTempAmenities] = useState(selectedAmenities);
   const [tempTypes, setTempTypes] = useState(selectedTypes);
   const [tempShowFavorites, setTempShowFavorites] = useState(showFavoritesOnly);
+  const [tempSortBy, setTempSortBy] = useState(sortBy);
 
   // Update temp state when actual filters change (on apply)
   useEffect(() => {
@@ -40,7 +43,8 @@ export default function Filters({
     setTempAmenities(selectedAmenities);
     setTempTypes(selectedTypes);
     setTempShowFavorites(showFavoritesOnly);
-  }, [neighborhood, price, selectedAmenities, selectedTypes, showFavoritesOnly]);
+    setTempSortBy(sortBy);
+  }, [neighborhood, price, selectedAmenities, selectedTypes, showFavoritesOnly, sortBy]);
 
   const handleToggleTempAmenity = (amenity) => {
     setTempAmenities(prev =>
@@ -62,6 +66,7 @@ export default function Filters({
     setNeighborhood(tempNeighborhood);
     setPrice(tempPrice);
     setShowFavoritesOnly(tempShowFavorites);
+    setSortBy(tempSortBy);
 
     // Update amenities
     tempAmenities.forEach(amenity => {
@@ -97,6 +102,7 @@ export default function Filters({
     setTempAmenities(selectedAmenities);
     setTempTypes(selectedTypes);
     setTempShowFavorites(showFavoritesOnly);
+    setTempSortBy(sortBy);
     onClose();
   };
 
@@ -112,6 +118,25 @@ export default function Filters({
       {/* Bottom Sheet Modal */}
       <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg shadow-lg z-50 max-h-[80vh] overflow-y-auto">
         <div className="px-7 py-5">
+        {/* Sort */}
+        <div className="mb-4">
+          <label className="block text-[11px] uppercase tracking-wider text-warm-gray font-medium mb-2">
+            Sort By
+          </label>
+          <select
+            value={tempSortBy}
+            onChange={(e) => setTempSortBy(e.target.value)}
+            className="w-full px-3 py-2.5 border border-light-border bg-white text-charcoal text-sm rounded transition-colors hover:border-warm-gray focus:border-charcoal focus:outline-none"
+          >
+            <option value="default">Default</option>
+            <option value="rating">Top Rated</option>
+            <option value="reviews">Most Reviewed</option>
+            <option value="name">Name (A–Z)</option>
+            <option value="price_asc">Price (Low to High)</option>
+            <option value="price_desc">Price (High to Low)</option>
+          </select>
+        </div>
+
         {/* Neighborhood & Price */}
         <div className="flex gap-3 mb-4">
           <div className="flex-1">

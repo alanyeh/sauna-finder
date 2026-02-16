@@ -1,5 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 
+const PRICE_ORDER = { '$': 1, '$$': 2, '$$$': 3 };
+
 // Maps granular type strings → consolidated filter categories
 const TYPE_TO_CATEGORY = {
   'Russian Banya': 'Russian Banya',
@@ -34,6 +36,7 @@ export const useFilters = (saunas, citySlug) => {
   const [price, setPrice] = useState('');
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
+  const [sortBy, setSortBy] = useState('default');
 
   // Reset sub-filters when city changes
   useEffect(() => {
@@ -41,9 +44,11 @@ export const useFilters = (saunas, citySlug) => {
     setPrice('');
     setSelectedAmenities([]);
     setSelectedTypes([]);
+    setSortBy('default');
   }, [citySlug]);
 
   const citySaunas = useMemo(() => {
+    if (citySlug === 'all') return saunas;
     return saunas.filter(s => (s.city_slug || 'nyc') === citySlug);
   }, [saunas, citySlug]);
 
@@ -56,7 +61,7 @@ export const useFilters = (saunas, citySlug) => {
   }, [citySaunas]);
 
   const filteredSaunas = useMemo(() => {
-    return citySaunas.filter(sauna => {
+    const filtered = citySaunas.filter(sauna => {
       if (neighborhood && sauna.neighborhood !== neighborhood) return false;
       if (price && sauna.price !== price) return false;
       if (selectedTypes.length > 0 &&
@@ -69,7 +74,29 @@ export const useFilters = (saunas, citySlug) => {
       }
       return true;
     });
-  }, [citySaunas, neighborhood, price, selectedTypes, selectedAmenities]);
+
+    const sorted = [...filtered];
+    switch (sortBy) {
+      case 'rating':
+        sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        break;
+      case 'reviews':
+        sorted.sort((a, b) => (b.rating_count || 0) - (a.rating_count || 0));
+        break;
+      case 'name':
+        sorted.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'price_asc':
+        sorted.sort((a, b) => (PRICE_ORDER[a.price] || 0) - (PRICE_ORDER[b.price] || 0));
+        break;
+      case 'price_desc':
+        sorted.sort((a, b) => (PRICE_ORDER[b.price] || 0) - (PRICE_ORDER[a.price] || 0));
+        break;
+      default:
+        break;
+    }
+    return sorted;
+  }, [citySaunas, neighborhood, price, selectedTypes, selectedAmenities, sortBy]);
 
   const toggleAmenity = (amenity) => {
     setSelectedAmenities(prev => 
@@ -106,6 +133,8 @@ export const useFilters = (saunas, citySlug) => {
     saunaTypes,
     neighborhoods,
     filteredSaunas,
-    clearFilters
+    clearFilters,
+    sortBy,
+    setSortBy,
   };
 };

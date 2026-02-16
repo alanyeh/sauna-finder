@@ -15,6 +15,16 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
           </p>
           <div className="flex gap-1 mt-2 md:mt-3 flex-wrap">
             <button
+              onClick={() => setCitySlug('all')}
+              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
+                citySlug === 'all'
+                  ? 'bg-charcoal text-white'
+                  : 'text-warm-gray hover:text-charcoal'
+              }`}
+            >
+              All
+            </button>
+            <button
               onClick={() => setCitySlug('nyc')}
               className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
                 citySlug === 'nyc'
@@ -73,6 +83,16 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
               }`}
             >
               MSP
+            </button>
+            <button
+              onClick={() => setCitySlug('portland')}
+              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
+                citySlug === 'portland'
+                  ? 'bg-charcoal text-white'
+                  : 'text-warm-gray hover:text-charcoal'
+              }`}
+            >
+              PDX
             </button>
           </div>
         </div>
