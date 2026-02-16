@@ -28,7 +28,7 @@ function MapController({ selectedSauna, cityCenter }) {
   return null;
 }
 
-function SaunaMarker({ sauna, isSelected, onClick }) {
+function SaunaMarker({ sauna, isSelected, onClick, disableInfoWindow }) {
   const handleClick = useCallback(() => {
     onClick(sauna);
   }, [onClick, sauna]);
@@ -46,7 +46,7 @@ function SaunaMarker({ sauna, isSelected, onClick }) {
         }`} />
       </AdvancedMarker>
 
-      {isSelected && (
+      {isSelected && !disableInfoWindow && (
         <InfoWindow
           position={{ lat: sauna.lat, lng: sauna.lng }}
           onCloseClick={() => onClick(null)}
@@ -140,7 +140,7 @@ const CITY_CENTERS = {
   all: { lat: 39.5, lng: -98.35 },
 };
 
-export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug }) {
+export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug, disableInfoWindow = false }) {
   const center = CITY_CENTERS[citySlug] || CITY_CENTERS.nyc;
   const [defaultZoom] = useState(citySlug === 'all' ? 4 : 12);
 
@@ -184,6 +184,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
             sauna={sauna}
             isSelected={selectedSauna?.id === sauna.id}
             onClick={onSaunaSelect}
+            disableInfoWindow={disableInfoWindow}
           />
         ))}
       </Map>

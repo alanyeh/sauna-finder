@@ -3,6 +3,7 @@ import Header from './Header';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
 import Map from './Map';
+import BottomSheet from './BottomSheet';
 
 export default function Sidebar({
   neighborhoods,
@@ -127,12 +128,20 @@ export default function Sidebar({
 
       {/* Map or List content */}
       {mobileView === 'map' ? (
-        <div className="flex-1 min-h-0 relative" style={{ touchAction: 'none' }}>
+        <div className="flex-1 min-h-0 relative overflow-hidden" style={{ touchAction: 'none' }}>
           <Map
             saunas={filteredSaunas}
             selectedSauna={selectedSauna}
             onSaunaSelect={onSaunaSelect}
             citySlug={citySlug}
+            disableInfoWindow={true}
+          />
+          <BottomSheet
+            selectedSauna={selectedSauna}
+            onClose={() => onSaunaSelect(null)}
+            user={user}
+            isFavorite={isFavorite?.(selectedSauna?.id)}
+            onToggleFavorite={() => toggleFavorite?.(selectedSauna?.id)}
           />
         </div>
       ) : (
