@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Header({ citySlug, setCitySlug, onSignIn }) {
@@ -7,9 +8,11 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
     <div className="px-4 md:px-7 py-6 md:py-8 md:pb-6 border-b border-light-border">
       <div className="flex items-start justify-between gap-3 md:gap-0">
         <div className="flex-1">
-          <h1 className="font-serif text-[24px] md:text-[28px] leading-tight tracking-tight mb-1 md:mb-2">
-            Sauna Finder
-          </h1>
+          <Link to="/">
+            <h1 className="font-serif text-[24px] md:text-[28px] leading-tight tracking-tight mb-1 md:mb-2 hover:text-accent-red transition-colors cursor-pointer">
+              Sauna Finder
+            </h1>
+          </Link>
           <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide hidden md:block">
             Find your perfect sauna
           </p>
