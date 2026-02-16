@@ -94,6 +94,16 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
             >
               PDX
             </button>
+            <button
+              onClick={() => setCitySlug('denver')}
+              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
+                citySlug === 'denver'
+                  ? 'bg-charcoal text-white'
+                  : 'text-warm-gray hover:text-charcoal'
+              }`}
+            >
+              DEN
+            </button>
           </div>
         </div>
 
