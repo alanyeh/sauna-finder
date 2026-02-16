@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import CarouselArrowButton from './CarouselArrowButton';
 
 export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,23 +71,8 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
 
       {photos.length > 1 && (
         <>
-          {/* Previous Button */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-colors z-10"
-            aria-label="Previous photo"
-          >
-            <span className="text-lg sm:text-xl">‹</span>
-          </button>
-
-          {/* Next Button */}
-          <button
-            onClick={goToNext}
-            className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-colors z-10"
-            aria-label="Next photo"
-          >
-            <span className="text-lg sm:text-xl">›</span>
-          </button>
+          <CarouselArrowButton direction="left" onClick={goToPrevious} className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2" aria-label="Previous photo" />
+          <CarouselArrowButton direction="right" onClick={goToNext} className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2" aria-label="Next photo" />
 
           {/* Photo Counter */}
           {!hideCounter && (

@@ -7,8 +7,8 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
       onClick={onClick}
       className={`border-b border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
-          ? 'bg-cream border-l-[3px] border-l-accent-red'
-          : 'bg-white hover:bg-hover-bg'
+          ? 'bg-white border-l-[3px] border-l-accent-red'
+          : 'bg-cream hover:bg-white'
       }`}
     >
       {(sauna.photos || sauna.photo_url) && (

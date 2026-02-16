@@ -157,7 +157,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
             'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.websiteUri',
           },
           body: JSON.stringify({
-            textQuery: `${searchQuery} ${city === 'nyc' ? 'New York' : city === 'sf' ? 'San Francisco' : city === 'chicago' ? 'Chicago' : city === 'la' ? 'Los Angeles' : 'Seattle'}`,
+            textQuery: `${searchQuery} ${{ nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles', seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland', denver: 'Denver' }[city] || city}`,
             maxResultCount: 5,
           }),
         }
@@ -433,6 +433,8 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                 <option value="la">Los Angeles</option>
                 <option value="seattle">Seattle</option>
                 <option value="minneapolis">Minneapolis</option>
+                <option value="portland">Portland</option>
+                <option value="denver">Denver</option>
               </select>
             </div>
 
@@ -530,6 +532,8 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                   <option value="la">Los Angeles</option>
                   <option value="seattle">Seattle</option>
                   <option value="minneapolis">Minneapolis</option>
+                  <option value="portland">Portland</option>
+                  <option value="denver">Denver</option>
                 </select>
               </div>
             )}

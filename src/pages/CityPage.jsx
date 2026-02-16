@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Map from '../components/Map';
 import AuthModal from '../components/AuthModal';
@@ -99,7 +100,10 @@ export default function CityPage() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden">
+      <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
+
+      <div className="flex flex-col md:flex-row flex-1 min-h-0">
       <div className="flex flex-col flex-1 h-full md:flex-none md:w-[420px] md:h-auto">
         <Sidebar
           neighborhoods={neighborhoods}
@@ -127,14 +131,13 @@ export default function CityPage() {
           citySlug={citySlug}
           setCitySlug={handleCityChange}
           onSubmitSauna={handleSubmitSauna}
-          onSignIn={() => setShowAuthModal(true)}
           isAdmin={userIsAdmin}
           onEditSauna={setEditingSauna}
           onAddSauna={handleAddSauna}
         />
       </div>
 
-      <div className="hidden md:flex flex-1 h-screen">
+      <div className="hidden md:flex flex-1">
         <Map
           saunas={displayedSaunas}
           selectedSauna={selectedSauna}
@@ -142,6 +145,7 @@ export default function CityPage() {
           citySlug={citySlug}
           onCityClick={handleCityChange}
         />
+      </div>
       </div>
 
       {showAuthModal && (

@@ -18,12 +18,15 @@ function MapController({ selectedSauna, cityCenter, citySlug }) {
   }, [cityCenter, citySlug, map]);
 
   useEffect(() => {
-    if (!map || !selectedSauna) return;
-    if (selectedSauna.lat != null && selectedSauna.lng != null) {
+    if (!map) return;
+    if (selectedSauna && selectedSauna.lat != null && selectedSauna.lng != null) {
       map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
       map.setZoom(15);
+    } else if (citySlug === 'all') {
+      map.panTo(cityCenter);
+      map.setZoom(4);
     }
-  }, [selectedSauna, map]);
+  }, [selectedSauna, map, citySlug, cityCenter]);
 
   return null;
 }
@@ -220,7 +223,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
         onClick={() => onSaunaSelect(null)}
       >
         <MapController selectedSauna={selectedSauna} cityCenter={center} citySlug={citySlug} />
-        {citySlug === 'all' && cityCounts ? (
+        {citySlug === 'all' && cityCounts && !selectedSauna ? (
           Object.entries(cityCounts).map(([slug, count]) => (
             CITY_CENTERS[slug] && (
               <CityMarker

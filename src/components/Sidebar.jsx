@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import Header from './Header';
+import { useState } from 'react';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
 import Map from './Map';
@@ -31,52 +30,18 @@ export default function Sidebar({
   citySlug,
   setCitySlug,
   onSubmitSauna,
-  onSignIn,
   isAdmin,
   onEditSauna,
   onAddSauna,
 }) {
   const [showFilters, setShowFilters] = useState(false);
-  const [headerOffset, setHeaderOffset] = useState(0);
-  const headerHeightRef = useRef(0);
-
-  // Reset header offset when switching to map view so city buttons aren't hidden
-  useEffect(() => {
-    if (mobileView === 'map') {
-      setHeaderOffset(0);
-    }
-  }, [mobileView]);
-
-  const handleListScroll = (scrollTop) => {
-    // When scrolling, calculate how much of the header to hide
-    // Header collapses more as you scroll down through the list
-    const maxHeaderHeight = headerHeightRef.current || 120;
-    // Cap the offset at the header's full height
-    const offset = Math.min(scrollTop, maxHeaderHeight);
-    setHeaderOffset(offset);
-  };
 
   return (
     <div className="w-full md:w-[420px] border-r border-light-border flex flex-col h-full overflow-hidden z-10 relative">
-      {/* Header */}
-      <div className="overflow-hidden bg-white">
-        <div
-          ref={(el) => {
-            if (el && headerHeightRef.current === 0) {
-              headerHeightRef.current = el.offsetHeight;
-            }
-          }}
-          className="md:block"
-          style={{ marginTop: `-${headerOffset}px` }}
-        >
-          <Header citySlug={citySlug} setCitySlug={setCitySlug} onSignIn={onSignIn} isAdmin={isAdmin} onAddSauna={onAddSauna} />
-        </div>
-      </div>
-
       {/* Sauna count and controls */}
-      <div className="sticky top-0 z-20 px-4 md:px-7 py-3 md:py-4 border-b border-light-border bg-white flex items-center justify-between gap-2 md:gap-4">
+      <div className="sticky top-0 z-20 px-4 md:px-7 py-3 md:py-4 border-b border-light-border bg-cream flex items-center justify-between gap-2 md:gap-4">
         <div className="flex items-center gap-1 min-w-0">
-          <span className="text-[12px] md:text-[13px] text-warm-gray truncate">{filteredSaunas.length} sauna{filteredSaunas.length !== 1 ? 's' : ''}</span>
+          <span className="text-[12px] md:text-[13px] text-warm-gray truncate">{filteredSaunas.length} Sauna{filteredSaunas.length !== 1 ? 's' : ''}</span>
         </div>
         <div className="flex gap-1 md:gap-2 flex-shrink-0">
           <button
@@ -153,7 +118,6 @@ export default function Sidebar({
           user={user}
           toggleFavorite={toggleFavorite}
           isFavorite={isFavorite}
-          onScroll={handleListScroll}
           isAdmin={isAdmin}
           onEditSauna={onEditSauna}
         />

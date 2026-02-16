@@ -4,6 +4,7 @@ import { useSaunaData } from '../contexts/SaunaDataContext';
 import { useAuth } from '../contexts/AuthContext';
 import { getCityFullName } from '../lib/cities';
 import HomeSaunaCard from '../components/HomeSaunaCard';
+import CarouselArrowButton from '../components/CarouselArrowButton';
 
 function CityCarousel({ saunas, citySlug }) {
   const scrollRef = useRef(null);
@@ -32,13 +33,7 @@ function CityCarousel({ saunas, citySlug }) {
     <div className="relative group/carousel">
       {/* Arrows — hidden on touch devices via hidden md:flex */}
       {canScrollLeft && (
-        <button
-          onClick={() => scroll(-1)}
-          className="absolute left-2 top-[30%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center text-charcoal hover:bg-white transition-all"
-          aria-label="Scroll left"
-        >
-          ‹
-        </button>
+        <CarouselArrowButton direction="left" onClick={() => scroll(-1)} className="absolute left-2 top-[30%] -translate-y-1/2" aria-label="Scroll left" />
       )}
 
       <div
@@ -52,13 +47,7 @@ function CityCarousel({ saunas, citySlug }) {
       </div>
 
       {canScrollRight && (
-        <button
-          onClick={() => scroll(1)}
-          className="absolute right-2 top-[30%] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center text-charcoal hover:bg-white transition-all"
-          aria-label="Scroll right"
-        >
-          ›
-        </button>
+        <CarouselArrowButton direction="right" onClick={() => scroll(1)} className="absolute right-2 top-[30%] -translate-y-1/2" aria-label="Scroll right" />
       )}
     </div>
   );
@@ -152,14 +141,14 @@ export default function HomePage() {
               className="group flex items-baseline gap-1.5 md:gap-2 min-w-0"
             >
               <h2 className="font-serif text-lg md:text-2xl text-charcoal truncate">
-                Popular saunas in {city.fullName}
+                Popular Saunas in {city.fullName}
               </h2>
               <span className="text-warm-gray group-hover:text-charcoal transition-colors text-base md:text-lg flex-shrink-0">
                 ›
               </span>
             </Link>
             <span className="text-[11px] md:text-xs text-warm-gray hidden sm:block flex-shrink-0 ml-3">
-              {city.totalCount} sauna{city.totalCount !== 1 ? 's' : ''}
+              {city.totalCount} Sauna{city.totalCount !== 1 ? 's' : ''}
             </span>
           </div>
 

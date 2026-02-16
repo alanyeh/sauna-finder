@@ -11,7 +11,7 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
   };
 
   return (
-    <div className="flex flex-col flex-1 bg-white overflow-hidden">
+    <div className="flex flex-col flex-1 bg-cream overflow-hidden">
       <div className="flex-1 overflow-y-auto custom-scrollbar" ref={scrollContainerRef} onScroll={handleScroll}>
         {saunas.length === 0 ? (
           <div className="px-7 py-10 text-center text-warm-gray">
