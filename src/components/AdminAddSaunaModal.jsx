@@ -432,6 +432,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                 <option value="chicago">Chicago</option>
                 <option value="la">Los Angeles</option>
                 <option value="seattle">Seattle</option>
+                <option value="minneapolis">Minneapolis</option>
               </select>
             </div>
 
@@ -528,6 +529,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                   <option value="chicago">Chicago</option>
                   <option value="la">Los Angeles</option>
                   <option value="seattle">Seattle</option>
+                  <option value="minneapolis">Minneapolis</option>
                 </select>
               </div>
             )}
