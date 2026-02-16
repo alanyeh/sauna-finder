@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import PhotoCarousel from './PhotoCarousel';
 import { amenityLabels } from '../data/saunas';
@@ -8,14 +8,14 @@ const MAP_ID = 'sauna_finder_map';
 // Add your Google Maps API key here
 const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
 
-function MapController({ selectedSauna, cityCenter }) {
+function MapController({ selectedSauna, cityCenter, citySlug }) {
   const map = useMap();
 
   useEffect(() => {
     if (!map) return;
     map.panTo(cityCenter);
-    map.setZoom(12);
-  }, [cityCenter, map]);
+    map.setZoom(citySlug === 'all' ? 4 : 12);
+  }, [cityCenter, citySlug, map]);
 
   useEffect(() => {
     if (!map || !selectedSauna) return;
@@ -140,9 +140,49 @@ const CITY_CENTERS = {
   all: { lat: 39.5, lng: -98.35 },
 };
 
-export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug, disableInfoWindow = false }) {
+const CITY_LABELS = {
+  nyc: 'NYC',
+  sf: 'SF',
+  chicago: 'Chicago',
+  seattle: 'Seattle',
+  la: 'LA',
+  minneapolis: 'Minneapolis',
+  portland: 'Portland',
+};
+
+function CityMarker({ citySlug, center, count, label, onClick }) {
+  return (
+    <AdvancedMarker
+      position={center}
+      onClick={() => onClick(citySlug)}
+    >
+      <div className="flex flex-col items-center cursor-pointer group">
+        <div className="w-10 h-10 rounded-full bg-accent-red text-white flex items-center justify-center text-sm font-bold border-2 border-white shadow-lg group-hover:scale-110 transition-transform">
+          {count}
+        </div>
+        <span className="mt-1 text-xs font-medium text-charcoal bg-white/90 px-2 py-0.5 rounded shadow-sm">
+          {label}
+        </span>
+      </div>
+    </AdvancedMarker>
+  );
+}
+
+export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug, disableInfoWindow = false, onCityClick }) {
   const center = CITY_CENTERS[citySlug] || CITY_CENTERS.nyc;
   const [defaultZoom] = useState(citySlug === 'all' ? 4 : 12);
+
+  const cityCounts = useMemo(() => {
+    if (citySlug !== 'all') return null;
+    const counts = {};
+    saunas.forEach(s => {
+      const slug = s.city_slug;
+      if (slug && slug !== 'all') {
+        counts[slug] = (counts[slug] || 0) + 1;
+      }
+    });
+    return counts;
+  }, [saunas, citySlug]);
 
   if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
     return (
@@ -177,16 +217,31 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
         gestureHandling="greedy"
         onClick={() => onSaunaSelect(null)}
       >
-        <MapController selectedSauna={selectedSauna} cityCenter={center} />
-        {saunas.map(sauna => (
-          <SaunaMarker
-            key={sauna.id}
-            sauna={sauna}
-            isSelected={selectedSauna?.id === sauna.id}
-            onClick={onSaunaSelect}
-            disableInfoWindow={disableInfoWindow}
-          />
-        ))}
+        <MapController selectedSauna={selectedSauna} cityCenter={center} citySlug={citySlug} />
+        {citySlug === 'all' && cityCounts ? (
+          Object.entries(cityCounts).map(([slug, count]) => (
+            CITY_CENTERS[slug] && (
+              <CityMarker
+                key={slug}
+                citySlug={slug}
+                center={CITY_CENTERS[slug]}
+                count={count}
+                label={CITY_LABELS[slug] || slug}
+                onClick={onCityClick || (() => {})}
+              />
+            )
+          ))
+        ) : (
+          saunas.map(sauna => (
+            <SaunaMarker
+              key={sauna.id}
+              sauna={sauna}
+              isSelected={selectedSauna?.id === sauna.id}
+              onClick={onSaunaSelect}
+              disableInfoWindow={disableInfoWindow}
+            />
+          ))
+        )}
       </Map>
     </APIProvider>
   );

@@ -137,6 +137,7 @@ function App() {
           selectedSauna={selectedSauna}
           onSaunaSelect={handleSaunaSelect}
           citySlug={citySlug}
+          onCityClick={setCitySlug}
         />
       </div>
       {showAuthModal && (

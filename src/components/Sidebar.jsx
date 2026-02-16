@@ -135,6 +135,7 @@ export default function Sidebar({
             onSaunaSelect={onSaunaSelect}
             citySlug={citySlug}
             disableInfoWindow={true}
+            onCityClick={setCitySlug}
           />
           <BottomSheet
             selectedSauna={selectedSauna}
