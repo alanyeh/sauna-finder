@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
+const CITIES = [
+  { slug: 'all', short: 'All', label: 'All Cities' },
+  { slug: 'nyc', short: 'NYC', label: 'New York' },
+  { slug: 'sf', short: 'SF', label: 'San Francisco' },
+  { slug: 'chicago', short: 'CHI', label: 'Chicago' },
+  { slug: 'seattle', short: 'SEA', label: 'Seattle' },
+  { slug: 'la', short: 'LA', label: 'Los Angeles' },
+  { slug: 'minneapolis', short: 'MSP', label: 'Minneapolis' },
+  { slug: 'portland', short: 'PDX', label: 'Portland' },
+  { slug: 'denver', short: 'DEN', label: 'Denver' },
+];
+
 export default function Header({ citySlug, setCitySlug, onSignIn }) {
   const { user, logout } = useAuth();
 
@@ -13,97 +25,32 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
               Sauna Finder
             </h1>
           </Link>
-          <div className="flex gap-1 flex-wrap">
-            <button
-              onClick={() => setCitySlug('all')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'all'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setCitySlug('nyc')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'nyc'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              NYC
-            </button>
-            <button
-              onClick={() => setCitySlug('sf')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'sf'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              SF
-            </button>
-            <button
-              onClick={() => setCitySlug('chicago')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'chicago'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              CHI
-            </button>
-            <button
-              onClick={() => setCitySlug('seattle')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'seattle'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              SEA
-            </button>
-            <button
-              onClick={() => setCitySlug('la')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'la'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              LA
-            </button>
-            <button
-              onClick={() => setCitySlug('minneapolis')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'minneapolis'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              MSP
-            </button>
-            <button
-              onClick={() => setCitySlug('portland')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'portland'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              PDX
-            </button>
-            <button
-              onClick={() => setCitySlug('denver')}
-              className={`px-2.5 md:px-3 py-1 rounded text-[11px] md:text-[12px] font-medium transition-colors whitespace-nowrap ${
-                citySlug === 'denver'
-                  ? 'bg-charcoal text-white'
-                  : 'text-warm-gray hover:text-charcoal'
-              }`}
-            >
-              DEN
-            </button>
+          {/* Mobile: dropdown */}
+          <select
+            value={citySlug}
+            onChange={(e) => setCitySlug(e.target.value)}
+            className="md:hidden px-2 py-1 rounded text-[12px] font-medium bg-cream border border-light-border text-charcoal"
+          >
+            {CITIES.map(({ slug, label }) => (
+              <option key={slug} value={slug}>{label}</option>
+            ))}
+          </select>
+
+          {/* Desktop: button row */}
+          <div className="hidden md:flex gap-1 flex-wrap">
+            {CITIES.map(({ slug, short }) => (
+              <button
+                key={slug}
+                onClick={() => setCitySlug(slug)}
+                className={`px-3 py-1 rounded text-[12px] font-medium transition-colors whitespace-nowrap ${
+                  citySlug === slug
+                    ? 'bg-charcoal text-white'
+                    : 'text-warm-gray hover:text-charcoal'
+                }`}
+              >
+                {short}
+              </button>
+            ))}
           </div>
         </div>
 
