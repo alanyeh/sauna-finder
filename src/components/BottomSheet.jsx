@@ -39,8 +39,10 @@ export default function BottomSheet({
     if (orderedList.length < 2 || !onNavigate) return;
     const currentIdx = orderedList.findIndex(s => s.id === selectedSauna.id);
     const nextIdx = direction === 'left'
-      ? (currentIdx + 1) % orderedList.length
-      : (currentIdx - 1 + orderedList.length) % orderedList.length;
+      ? currentIdx + 1
+      : currentIdx - 1;
+    // Don't loop — stop at the ends
+    if (nextIdx < 0 || nextIdx >= orderedList.length) return;
     const nextSauna = orderedList[nextIdx];
 
     // Animate out

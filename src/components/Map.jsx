@@ -25,6 +25,13 @@ function MapController({ selectedSauna, cityCenter, citySlug }) {
       if (map.getZoom() < 14) {
         map.setZoom(15);
       }
+      // On mobile, offset the center upward so the marker isn't hidden behind the bottom sheet
+      if (window.innerWidth < 768) {
+        // Positive dy shifts the map down, moving the marker up on screen
+        // Use ~30% of viewport height to clear the bottom sheet
+        const offsetY = Math.round(window.innerHeight * 0.15);
+        map.panBy(0, offsetY);
+      }
     } else if (citySlug === 'all') {
       map.panTo(cityCenter);
       map.setZoom(4);
