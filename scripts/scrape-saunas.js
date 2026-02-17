@@ -134,6 +134,31 @@ const CITY_CONFIGS = {
     ],
     zipToNeighborhood: {},
   },
+  houston: {
+    city_slug: 'houston',
+    full_name: 'Houston',
+    center: { lat: 29.7604, lng: -95.3698 },
+    radius: 35000,
+    neighborhoods: [
+      'Downtown', 'Midtown', 'Montrose', 'Heights', 'River Oaks',
+      'Galleria', 'Upper Kirby', 'Rice Village', 'Museum District',
+      'Memorial', 'Katy', 'Sugar Land', 'The Woodlands',
+      'Spring', 'Pearland', 'Bellaire', 'West University',
+      'Energy Corridor', 'Chinatown', 'Westchase',
+    ],
+    zipToNeighborhood: {
+      '77002': 'Downtown', '77003': 'East End', '77004': 'Museum District',
+      '77005': 'West University', '77006': 'Montrose', '77007': 'Heights',
+      '77008': 'Heights', '77009': 'Heights', '77010': 'Downtown',
+      '77019': 'River Oaks', '77024': 'Memorial', '77025': 'Braeswood',
+      '77027': 'Galleria', '77030': 'Medical Center', '77042': 'Westchase',
+      '77043': 'Energy Corridor', '77056': 'Galleria', '77057': 'Upper Kirby',
+      '77079': 'Energy Corridor', '77094': 'Katy', '77098': 'Upper Kirby',
+      '77401': 'Bellaire', '77478': 'Sugar Land', '77479': 'Sugar Land',
+      '77381': 'The Woodlands', '77382': 'The Woodlands',
+      '77373': 'Spring', '77581': 'Pearland',
+    },
+  },
 };
 
 // ─── Search Query Templates ────────────────────────────────────────────────────

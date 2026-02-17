@@ -25,6 +25,9 @@ async function geocodeAddress(address, citySlug) {
     chicago: { lat: 41.8781, lng: -87.6298 },
     la: { lat: 34.0522, lng: -118.2437 },
     minneapolis: { lat: 44.9537, lng: -93.2900 },
+    portland: { lat: 45.5152, lng: -122.6784 },
+    denver: { lat: 39.7392, lng: -104.9903 },
+    houston: { lat: 29.7604, lng: -95.3698 },
   };
   return cityCenters[citySlug] || { lat: null, lng: null };
 }
@@ -260,6 +263,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
                   <option value="minneapolis">Minneapolis</option>
                   <option value="portland">Portland</option>
                   <option value="denver">Denver</option>
+                  <option value="houston">Houston</option>
                 </select>
               </div>
               <div className="flex-1">
