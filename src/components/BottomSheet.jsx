@@ -83,38 +83,6 @@ export default function BottomSheet({
             )}
           </div>
 
-          {/* Address */}
-          {sauna.address && (
-            <a
-              href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[13px] text-warm-gray hover:text-charcoal transition-colors underline mt-2 block"
-            >
-              {sauna.address}
-            </a>
-          )}
-
-          {/* Description */}
-          {sauna.description && (
-            <p className="text-[12px] text-warm-gray mt-2 leading-relaxed">
-              {sauna.description}
-            </p>
-          )}
-
-          {/* Pricing options */}
-          {sauna.pricing_options?.length > 0 && (
-            <div className="mt-2 space-y-0.5">
-              {sauna.pricing_options.map((opt, i) => (
-                <div key={i} className="text-[12px] text-warm-gray">
-                  <span className="font-medium text-charcoal">${opt.price}</span>
-                  {opt.duration && <span> · {opt.duration}</span>}
-                  {opt.description && <span> — {opt.description}</span>}
-                </div>
-              ))}
-            </div>
-          )}
-
           {/* Amenities */}
           {sauna.amenities?.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-2.5">
