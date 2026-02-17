@@ -132,7 +132,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
             onClick={(e) => e.stopPropagation()}
             className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline truncate"
           >
-            {sauna.address}
+            View on Google Maps →
           </a>
         ) : <span />}
         {sauna.website_url && (
