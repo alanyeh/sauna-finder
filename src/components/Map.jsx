@@ -21,7 +21,10 @@ function MapController({ selectedSauna, cityCenter, citySlug }) {
     if (!map) return;
     if (selectedSauna && selectedSauna.lat != null && selectedSauna.lng != null) {
       map.panTo({ lat: selectedSauna.lat, lng: selectedSauna.lng });
-      map.setZoom(15);
+      // Only zoom in if not already zoomed (avoids jarring snap when swiping between saunas)
+      if (map.getZoom() < 14) {
+        map.setZoom(15);
+      }
     } else if (citySlug === 'all') {
       map.panTo(cityCenter);
       map.setZoom(4);
