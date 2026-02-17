@@ -4,6 +4,7 @@ import PhotoCarousel from './PhotoCarousel';
 export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite, isAdmin, onEdit }) {
   return (
     <div
+      data-sauna-id={sauna.id}
       onClick={onClick}
       className={`border-b border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
@@ -54,10 +55,12 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </div>
       </div>
 
+      {/* Type */}
       <p className="text-xs text-warm-gray mb-2 capitalize">
         {sauna.types.join(', ')}
       </p>
 
+      {/* Rating / Price */}
       <div className="flex items-center gap-4 mb-2.5">
         {sauna.rating != null && (
           <div className="flex items-center gap-1 text-[13px]">
@@ -72,65 +75,78 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         )}
         <div className="text-[13px] font-medium text-charcoal">
           {sauna.price}
+          {/* TODO: uncomment when pricing data is verified
+          {sauna.pricing_options?.length > 0 && (
+            <span className="text-warm-gray font-normal">
+              {' · '}
+              {sauna.pricing_options[0].price && `$${sauna.pricing_options[0].price}`}
+              {sauna.pricing_options[0].duration && ` / ${sauna.pricing_options[0].duration}`}
+            </span>
+          )}
+          */}
         </div>
       </div>
 
-      {sauna.pricing_options?.length > 0 && (
-        <div className="mb-2.5 space-y-0.5">
-          {sauna.pricing_options.map((opt, i) => (
-            <div key={i} className="text-[12px] text-warm-gray">
-              <span className="font-medium text-charcoal">${opt.price}</span>
-              {opt.duration && <span> · {opt.duration}</span>}
-              {opt.description && <span> — {opt.description}</span>}
-            </div>
+      {/* TODO: uncomment when pricing data is verified
+      {sauna.pricing_options?.length > 1 && (
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2.5 text-[12px] text-warm-gray">
+          {sauna.pricing_options.slice(1).map((opt, i) => (
+            <span key={i}>
+              {opt.price && `$${opt.price}`}
+              {opt.duration && ` / ${opt.duration}`}
+              {opt.description && ` (${opt.description})`}
+            </span>
+          ))}
+        </div>
+      )}
+      */}
+
+      {/* Amenities */}
+      {sauna.amenities?.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mb-2.5">
+          {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
+            <span
+              key={amenity}
+              className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+            >
+              {amenityLabels[amenity]}
+            </span>
           ))}
         </div>
       )}
 
-      {sauna.address ? (
-        <a
-          href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="text-[13px] text-warm-gray hover:text-charcoal transition-colors underline mb-2 block"
-        >
-          {sauna.address}
-        </a>
-      ) : (
-        <p className="text-[13px] text-warm-gray mb-2">
-          {sauna.address}
-        </p>
-      )}
-
+      {/* Description */}
       {sauna.description && (
         <p className="text-[12px] text-warm-gray mb-2.5 leading-relaxed">
           {sauna.description}
         </p>
       )}
 
-      <div className="flex flex-wrap gap-1.5 mb-3">
-        {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
-          <span
-            key={amenity}
-            className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+      {/* Address + Visit Website */}
+      <div className="flex items-center justify-between gap-2">
+        {sauna.address ? (
+          <a
+            href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline truncate"
           >
-            {amenityLabels[amenity]}
-          </span>
-        ))}
+            {sauna.address}
+          </a>
+        ) : <span />}
+        {sauna.website_url && (
+          <a
+            href={sauna.website_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline flex-shrink-0"
+          >
+            Visit Website →
+          </a>
+        )}
       </div>
-
-      {sauna.website_url && (
-        <a
-          href={sauna.website_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline"
-        >
-          Visit website →
-        </a>
-      )}
       </div>
     </div>
   );

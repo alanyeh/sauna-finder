@@ -1,8 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import SaunaCard from './SaunaCard';
 
 export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna }) {
   const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!selectedSauna || !scrollContainerRef.current) return;
+    const el = scrollContainerRef.current.querySelector(`[data-sauna-id="${selectedSauna.id}"]`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [selectedSauna]);
 
   const handleScroll = (e) => {
     if (onScroll) {
