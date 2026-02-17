@@ -47,6 +47,10 @@ export default function CityPage() {
       const sauna = saunas.find(s => s.id === selectedSaunaId);
       if (sauna) {
         setSelectedSauna(sauna);
+        // Switch to map view on mobile so the bottom sheet shows
+        if (window.innerWidth < 768) {
+          setMobileView('map');
+        }
       }
       // Clear the state so refreshing doesn't re-select
       window.history.replaceState({}, '');
@@ -93,6 +97,10 @@ export default function CityPage() {
 
   const handleSaunaSelect = (sauna) => {
     setSelectedSauna(sauna);
+    // On mobile list view, switch to map view when a sauna is tapped
+    if (sauna && mobileView === 'list' && window.innerWidth < 768) {
+      setMobileView('map');
+    }
   };
 
   const handleCityChange = (newSlug) => {
