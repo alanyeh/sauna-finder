@@ -108,6 +108,8 @@ export default function Sidebar({
             user={user}
             isFavorite={isFavorite?.(selectedSauna?.id)}
             onToggleFavorite={() => toggleFavorite?.(selectedSauna?.id)}
+            saunas={filteredSaunas}
+            onNavigate={onSaunaSelect}
           />
         </div>
       ) : (

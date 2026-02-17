@@ -1,5 +1,12 @@
+import { useRef, useState, useMemo, useCallback } from 'react';
 import PhotoCarousel from './PhotoCarousel';
 import { amenityLabels } from '../data/saunas';
+
+function distanceBetween(a, b) {
+  const dx = a.lat - b.lat;
+  const dy = a.lng - b.lng;
+  return dx * dx + dy * dy;
+}
 
 export default function BottomSheet({
   selectedSauna,
@@ -7,7 +14,65 @@ export default function BottomSheet({
   user,
   isFavorite,
   onToggleFavorite,
+  saunas = [],
+  onNavigate,
 }) {
+  const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
+  const [animClass, setAnimClass] = useState('animate-slide-up');
+
+  // Sort other saunas by distance from selected
+  const sortedByDistance = useMemo(() => {
+    if (!selectedSauna || saunas.length < 2) return [];
+    return saunas
+      .filter(s => s.id !== selectedSauna.id && s.lat != null && s.lng != null)
+      .sort((a, b) => distanceBetween(a, selectedSauna) - distanceBetween(b, selectedSauna));
+  }, [selectedSauna, saunas]);
+
+  // Build ordered list: [selected, ...sorted by distance]
+  const orderedList = useMemo(() => {
+    if (!selectedSauna) return [];
+    return [selectedSauna, ...sortedByDistance];
+  }, [selectedSauna, sortedByDistance]);
+
+  const navigate = useCallback((direction) => {
+    if (orderedList.length < 2 || !onNavigate) return;
+    const currentIdx = orderedList.findIndex(s => s.id === selectedSauna.id);
+    const nextIdx = direction === 'left'
+      ? (currentIdx + 1) % orderedList.length
+      : (currentIdx - 1 + orderedList.length) % orderedList.length;
+    const nextSauna = orderedList[nextIdx];
+
+    // Animate out
+    const outClass = direction === 'left' ? 'animate-slide-out-left' : 'animate-slide-out-right';
+    setAnimClass(outClass);
+
+    setTimeout(() => {
+      onNavigate(nextSauna);
+      // Animate in from opposite side
+      const inClass = direction === 'left' ? 'animate-slide-in-right' : 'animate-slide-in-left';
+      setAnimClass(inClass);
+    }, 200);
+  }, [orderedList, selectedSauna, onNavigate]);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const dx = touchStartX.current - e.changedTouches[0].clientX;
+    const dy = touchStartY.current - e.changedTouches[0].clientY;
+    touchStartX.current = null;
+    touchStartY.current = null;
+
+    // Only trigger if horizontal swipe is dominant and exceeds threshold
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      navigate(dx > 0 ? 'left' : 'right');
+    }
+  };
+
   if (!selectedSauna) return null;
 
   const sauna = selectedSauna;
@@ -15,9 +80,11 @@ export default function BottomSheet({
 
   return (
     <div
-      className="absolute bottom-3 left-3 right-3 z-40 bg-white rounded-xl bottom-sheet-shadow overflow-hidden animate-slide-up"
+      className={`absolute bottom-3 left-3 right-3 z-40 bg-white rounded-xl bottom-sheet-shadow overflow-hidden ${animClass}`}
       role="dialog"
       aria-label={`Details for ${sauna.name}`}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Close button */}
       <button
