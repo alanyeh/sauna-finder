@@ -40,13 +40,14 @@ export default function CityPage() {
     }
   }, [citySlug, saunas, navigate]);
 
-  // Auto-select sauna from homepage navigation
+  // Auto-select sauna from homepage navigation and switch to map view
   useEffect(() => {
     const selectedSaunaId = location.state?.selectedSaunaId;
     if (selectedSaunaId && saunas.length > 0) {
       const sauna = saunas.find(s => s.id === selectedSaunaId);
       if (sauna) {
         setSelectedSauna(sauna);
+        setMobileView('map');
       }
       // Clear the state so refreshing doesn't re-select
       window.history.replaceState({}, '');
