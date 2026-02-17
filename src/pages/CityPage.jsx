@@ -47,7 +47,6 @@ export default function CityPage() {
       const sauna = saunas.find(s => s.id === selectedSaunaId);
       if (sauna) {
         setSelectedSauna(sauna);
-        setMobileView('map');
       }
       // Clear the state so refreshing doesn't re-select
       window.history.replaceState({}, '');
