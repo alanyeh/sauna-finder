@@ -17,7 +17,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
   const { user, logout } = useAuth();
 
   return (
-    <div className="px-4 md:px-7 py-2.5 md:py-3 border-b border-light-border">
+    <div className="sticky top-0 z-50 px-4 md:px-7 py-2.5 md:py-3 border-b border-light-border bg-cream">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
           <Link to="/">

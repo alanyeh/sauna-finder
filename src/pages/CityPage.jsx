@@ -101,7 +101,7 @@ export default function CityPage() {
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
+    <div className="flex flex-col overflow-hidden" style={{ height: '100dvh' }}>
       <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
 
       <div className="flex flex-col md:flex-row flex-1 min-h-0">
