@@ -159,6 +159,58 @@ const CITY_CONFIGS = {
       '77373': 'Spring', '77581': 'Pearland',
     },
   },
+  toronto: {
+    city_slug: 'toronto',
+    full_name: 'Toronto',
+    center: { lat: 43.6532, lng: -79.3832 },
+    radius: 30000,
+    neighborhoods: [
+      'Downtown', 'Entertainment District', 'Financial District', 'King West',
+      'Yorkville', 'Corktown', 'Waterfront', 'Davenport', 'The Annex',
+      'Leslieville', 'Roncesvalles', 'Liberty Village', 'Midtown',
+      'North York', 'Scarborough', 'Etobicoke', 'Mississauga',
+      'Richmond Hill', 'Markham', 'Whitby',
+    ],
+    zipToNeighborhood: {},
+  },
+  vancouver: {
+    city_slug: 'vancouver',
+    full_name: 'Vancouver',
+    center: { lat: 49.2827, lng: -123.1207 },
+    radius: 25000,
+    neighborhoods: [
+      'Downtown', 'West End', 'Kitsilano', 'Mount Pleasant',
+      'Yaletown', 'Gastown', 'Coal Harbour', 'South Granville',
+      'Fairview', 'Grandview-Woodland', 'Strathcona',
+      'Hastings-Sunrise', 'Renfrew-Collingwood', 'Kerrisdale',
+      'Dunbar-Southlands', 'Riley Park', 'North Vancouver',
+      'Burnaby', 'Coquitlam', 'Richmond',
+    ],
+    zipToNeighborhood: {
+      'V6B': 'Downtown', 'V6C': 'Coal Harbour', 'V6E': 'West End',
+      'V6G': 'West End', 'V6Z': 'Downtown', 'V6H': 'Fairview',
+      'V6J': 'Kitsilano', 'V6K': 'Kitsilano', 'V6R': 'Kitsilano',
+      'V6T': 'Kitsilano', 'V5Y': 'Mount Pleasant', 'V5T': 'Mount Pleasant',
+      'V6A': 'Strathcona', 'V5L': 'Grandview-Woodland',
+      'V5K': 'Hastings-Sunrise', 'V5M': 'Renfrew-Collingwood',
+      'V5N': 'Riley Park', 'V5V': 'Riley Park',
+      'V5W': 'Sunset', 'V5X': 'Sunset', 'V5Z': 'Fairview',
+      'V5S': 'Killarney', 'V5R': 'Renfrew-Collingwood',
+      'V6L': 'Kerrisdale', 'V6M': 'Kerrisdale',
+      'V6N': 'Dunbar-Southlands', 'V6P': 'Dunbar-Southlands',
+      'V6S': 'Dunbar-Southlands',
+      'V7L': 'North Vancouver', 'V7M': 'North Vancouver',
+      'V7N': 'North Vancouver', 'V7P': 'North Vancouver',
+      'V3N': 'Burnaby', 'V5A': 'Burnaby', 'V5B': 'Burnaby',
+      'V5C': 'Burnaby', 'V5E': 'Burnaby', 'V5G': 'Burnaby',
+      'V5H': 'Burnaby', 'V5J': 'Burnaby',
+      'V3B': 'Coquitlam', 'V3C': 'Coquitlam', 'V3E': 'Coquitlam',
+      'V3J': 'Coquitlam', 'V3K': 'Coquitlam',
+      'V6V': 'Richmond', 'V6W': 'Richmond', 'V6X': 'Richmond',
+      'V6Y': 'Richmond', 'V7A': 'Richmond', 'V7B': 'Richmond',
+      'V7C': 'Richmond', 'V7E': 'Richmond',
+    },
+  },
 };
 
 // ─── Search Query Templates ────────────────────────────────────────────────────
@@ -564,11 +616,17 @@ function detectNeighborhood(address, cityConfig) {
     }
   }
 
-  // Try zip code mapping
+  // Try zip/postal code mapping
   if (cityConfig.zipToNeighborhood) {
+    // US 5-digit zip
     const zipMatch = addr.match(/\b(\d{5})\b/);
     if (zipMatch && cityConfig.zipToNeighborhood[zipMatch[1]]) {
       return cityConfig.zipToNeighborhood[zipMatch[1]];
+    }
+    // Canadian postal code (first 3 chars = FSA, e.g. V6B)
+    const caMatch = addr.match(/\b([A-Za-z]\d[A-Za-z])\s*\d[A-Za-z]\d\b/);
+    if (caMatch && cityConfig.zipToNeighborhood[caMatch[1].toUpperCase()]) {
+      return cityConfig.zipToNeighborhood[caMatch[1].toUpperCase()];
     }
   }
 

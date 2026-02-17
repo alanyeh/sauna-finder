@@ -12,6 +12,8 @@ const CITIES = [
   { slug: 'portland', short: 'PDX', label: 'Portland' },
   { slug: 'denver', short: 'DEN', label: 'Denver' },
   { slug: 'houston', short: 'HOU', label: 'Houston' },
+  { slug: 'vancouver', short: 'VAN', label: 'Vancouver' },
+  { slug: 'toronto', short: 'TOR', label: 'Toronto' },
 ];
 
 export default function Header({ citySlug, setCitySlug, onSignIn }) {

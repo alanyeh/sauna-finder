@@ -8,6 +8,8 @@ export const CITY_CONFIG = {
   portland: { slug: 'portland', label: 'PDX', fullName: 'Portland', center: { lat: 45.523, lng: -122.676 } },
   denver: { slug: 'denver', label: 'DEN', fullName: 'Denver', center: { lat: 39.7392, lng: -104.9903 } },
   houston: { slug: 'houston', label: 'HOU', fullName: 'Houston', center: { lat: 29.7604, lng: -95.3698 } },
+  vancouver: { slug: 'vancouver', label: 'VAN', fullName: 'Vancouver', center: { lat: 49.2827, lng: -123.1207 } },
+  toronto: { slug: 'toronto', label: 'TOR', fullName: 'Toronto', center: { lat: 43.6532, lng: -79.3832 } },
 };
 
 export function getCityFullName(slug) {

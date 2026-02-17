@@ -145,6 +145,8 @@ const CITY_CENTERS = {
   portland: { lat: 45.523, lng: -122.676 },
   denver: { lat: 39.7392, lng: -104.9903 },
   houston: { lat: 29.7604, lng: -95.3698 },
+  vancouver: { lat: 49.2827, lng: -123.1207 },
+  toronto: { lat: 43.6532, lng: -79.3832 },
   all: { lat: 39.5, lng: -98.35 },
 };
 
@@ -158,6 +160,8 @@ const CITY_LABELS = {
   portland: 'Portland',
   denver: 'Denver',
   houston: 'Houston',
+  vancouver: 'Vancouver',
+  toronto: 'Toronto',
 };
 
 function CityMarker({ citySlug, center, count, label, onClick }) {

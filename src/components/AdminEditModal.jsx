@@ -314,6 +314,8 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
                   <option value="portland">Portland</option>
                   <option value="denver">Denver</option>
                   <option value="houston">Houston</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="toronto">Toronto</option>
                 </select>
               </div>
               <div className="flex-1">

@@ -157,7 +157,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
             'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.websiteUri',
           },
           body: JSON.stringify({
-            textQuery: `${searchQuery} ${{ nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles', seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland', denver: 'Denver', houston: 'Houston' }[city] || city}`,
+            textQuery: `${searchQuery} ${{ nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles', seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland', denver: 'Denver', houston: 'Houston', vancouver: 'Vancouver', toronto: 'Toronto' }[city] || city}`,
             maxResultCount: 5,
           }),
         }
@@ -436,6 +436,8 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                 <option value="portland">Portland</option>
                 <option value="denver">Denver</option>
                 <option value="houston">Houston</option>
+                <option value="vancouver">Vancouver</option>
+                <option value="toronto">Toronto</option>
               </select>
             </div>
 
@@ -536,6 +538,8 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                   <option value="portland">Portland</option>
                   <option value="denver">Denver</option>
                   <option value="houston">Houston</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="toronto">Toronto</option>
                 </select>
               </div>
             )}
