@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sauna-finder.koriboshi.com/sitemap.xml
