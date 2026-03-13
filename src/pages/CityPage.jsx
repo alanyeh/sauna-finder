@@ -12,6 +12,8 @@ import { useFilters } from '../hooks/useFilters';
 import { useAuth } from '../contexts/AuthContext';
 import { useFavorites } from '../hooks/useFavorites';
 import { isAdmin } from '../lib/admin';
+import { getCityFullName } from '../lib/cities';
+import SEO from '../components/SEO';
 
 export default function CityPage() {
   const { citySlug } = useParams();
@@ -107,8 +109,55 @@ export default function CityPage() {
     navigate(`/city/${newSlug}`);
   };
 
+  const cityFullName = getCityFullName(citySlug);
+  const cityTitle = `Best Saunas in ${cityFullName}`;
+  const cityDescription = `Discover ${displayedSaunas.length} top-rated saunas and bathhouses in ${cityFullName}. Compare amenities, ratings, prices, and find your perfect sauna experience.`;
+
+  const cityJsonLd = useMemo(() => {
+    const itemListItems = displayedSaunas.slice(0, 20).map((sauna, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'LocalBusiness',
+        '@id': `https://sauna-finder.koriboshi.com/city/${citySlug}#sauna-${sauna.id}`,
+        name: sauna.name,
+        description: sauna.description || `${sauna.types?.[0] || 'Sauna'} in ${cityFullName}`,
+        address: { '@type': 'PostalAddress', streetAddress: sauna.address },
+        ...(sauna.lat && sauna.lng && {
+          geo: { '@type': 'GeoCoordinates', latitude: sauna.lat, longitude: sauna.lng },
+        }),
+        ...(sauna.rating && {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: sauna.rating,
+            ratingCount: sauna.rating_count || sauna.ratingCount,
+            bestRating: 5,
+          },
+        }),
+        ...(sauna.price && { priceRange: sauna.price }),
+        ...(sauna.photos?.length > 0 && { image: sauna.photos[0] }),
+        ...(sauna.website_url && { url: sauna.website_url }),
+      },
+    }));
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `Best Saunas in ${cityFullName}`,
+      numberOfItems: displayedSaunas.length,
+      itemListElement: itemListItems,
+    };
+  }, [displayedSaunas, citySlug, cityFullName]);
+
   return (
     <div className="flex flex-col overflow-hidden" style={{ height: '100dvh' }}>
+      <SEO
+        title={cityTitle}
+        description={cityDescription}
+        path={`/city/${citySlug}`}
+        jsonLd={cityJsonLd}
+      />
+      <h1 className="sr-only">Saunas and Bathhouses in {cityFullName}</h1>
       <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
 
       <div className="flex flex-col md:flex-row flex-1 min-h-0">

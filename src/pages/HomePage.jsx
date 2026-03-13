@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { getCityFullName } from '../lib/cities';
 import HomeSaunaCard from '../components/HomeSaunaCard';
 import CarouselArrowButton from '../components/CarouselArrowButton';
+import SEO from '../components/SEO';
 
 function CityCarousel({ saunas, citySlug }) {
   const scrollRef = useRef(null);
@@ -90,8 +91,22 @@ export default function HomePage() {
     );
   }
 
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Koriboshi Sauna Finder',
+    url: 'https://sauna-finder.koriboshi.com',
+    description: 'Find the best saunas and bathhouses across major US and Canadian cities.',
+  };
+
   return (
     <div className="min-h-screen bg-cream">
+      <SEO
+        title="Sauna Finder — Discover the Best Saunas & Bathhouses Near You"
+        description="Find the best saunas and bathhouses across major US and Canadian cities. Browse by neighborhood, price, amenities, and type. Discover Korean spas, Russian banyas, Finnish saunas, and more."
+        path="/"
+        jsonLd={websiteJsonLd}
+      />
       {/* Sticky header */}
       <header
         className={`sticky top-0 z-30 bg-cream px-4 md:px-8 lg:px-16 py-4 md:py-6 border-b border-light-border transition-shadow ${

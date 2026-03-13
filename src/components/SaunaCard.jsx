@@ -21,9 +21,9 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
 
       <div className="px-5 py-5">
         <div className="flex items-start justify-between">
-        <h3 className="text-base font-medium mb-1.5 text-charcoal">
+        <h2 className="text-base font-medium mb-1.5 text-charcoal">
           {sauna.name}
-        </h3>
+        </h2>
         <div className="flex items-center gap-1 flex-shrink-0 ml-2">
           {isAdmin && (
             <button

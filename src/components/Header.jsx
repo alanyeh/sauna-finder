@@ -24,9 +24,9 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
           <Link to="/">
-            <h1 className="font-serif text-[22px] md:text-[26px] leading-tight tracking-tight hover:text-accent-red transition-colors cursor-pointer whitespace-nowrap">
+            <span className="font-serif text-[22px] md:text-[26px] leading-tight tracking-tight hover:text-accent-red transition-colors cursor-pointer whitespace-nowrap">
               Sauna Finder
-            </h1>
+            </span>
           </Link>
           {/* Mobile: dropdown */}
           <select

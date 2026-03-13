@@ -107,9 +107,9 @@ export default function BottomSheet({
         <div className="px-3 py-3">
           {/* Name + favorite */}
           <div className="flex items-start justify-between">
-            <h3 className="text-base font-medium text-charcoal">
+            <h2 className="text-base font-medium text-charcoal">
               {sauna.name}
-            </h3>
+            </h2>
             {user && (
               <button
                 onClick={(e) => {
