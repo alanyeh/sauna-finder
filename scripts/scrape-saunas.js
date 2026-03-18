@@ -211,6 +211,19 @@ const CITY_CONFIGS = {
       'V7C': 'Richmond', 'V7E': 'Richmond',
     },
   },
+  minneapolis: {
+    city_slug: 'minneapolis',
+    full_name: 'Minneapolis',
+    center: { lat: 44.9778, lng: -93.2650 },
+    radius: 25000,
+    neighborhoods: [
+      'Downtown', 'North Loop', 'Northeast', 'Uptown',
+      'Linden Hills', 'Southwest', 'St. Paul', 'Edina',
+      'Bloomington', 'Plymouth', 'Minnetonka', 'Eden Prairie',
+      'Wayzata', 'Duluth',
+    ],
+    zipToNeighborhood: {},
+  },
 };
 
 // ─── Search Query Templates ────────────────────────────────────────────────────

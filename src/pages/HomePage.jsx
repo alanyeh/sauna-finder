@@ -176,7 +176,7 @@ export default function HomePage() {
               Sauna Finder
             </h1>
             <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide mt-0.5 hidden sm:block">
-              Discover the best saunas and bathhouses across the US
+              Discover the best saunas and bathhouses across the US and Canada
             </p>
           </div>
           <div className="flex-shrink-0">
