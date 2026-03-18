@@ -288,6 +288,7 @@ const BRAND_WHITELIST = [
   /restore\s*(hyper)?\s*wellness/i, /perspire/i, /recoverie/i,
   /grind\s*house/i, /sage\s*\+?\s*sound/i, /aire\s*ancient/i,
   /city\s*well/i, /kontra/i, /akari/i, /lore\s*bathing/i,
+  /rvivl/i,
 ];
 
 // Gym chains that are KNOWN to have saunas — only these gyms pass the filter
@@ -834,6 +835,8 @@ async function main() {
   const dryRun = args.includes('--dry-run');
   const withPhotos = args.includes('--with-photos');
   const noFilter = args.includes('--no-filter');
+  const skipGyms = args.includes('--skip-gyms');
+  const skipHotels = args.includes('--skip-hotels');
 
   if (!cityArg || !CITY_CONFIGS[cityArg]) {
     console.error('Usage: node scripts/scrape-saunas.js --city=<slug> [--dry-run] [--with-photos] [--no-filter]');
@@ -842,6 +845,8 @@ async function main() {
     console.error('  --dry-run      Search and report only, no DB writes');
     console.error('  --with-photos  Download and upload photos for each new entry');
     console.error('  --no-filter    Skip filtering (include all results)');
+    console.error('  --skip-gyms    Exclude Gym Sauna type results');
+    console.error('  --skip-hotels  Exclude Hotel Spa type results');
     process.exit(1);
   }
 
@@ -855,6 +860,8 @@ async function main() {
   if (dryRun) console.log('  [DRY RUN - no inserts will be made]');
   if (withPhotos) console.log('  [WITH PHOTOS - will download and upload photos]');
   if (noFilter) console.log('  [NO FILTER - all results included]');
+  if (skipGyms) console.log('  [SKIP GYMS - excluding Gym Sauna types]');
+  if (skipHotels) console.log('  [SKIP HOTELS - excluding Hotel Spa types]');
   console.log('');
 
   // ── Step 1: Build search queries ──────────────────────────────────────────
@@ -946,6 +953,22 @@ async function main() {
     } else {
       const record = placeToRecord(place, config.city_slug, config);
       newPlaces.push({ place, record });
+    }
+  }
+
+  // Filter out gyms/hotels if flags are set
+  const skippedByType = [];
+  if (skipGyms || skipHotels) {
+    for (let i = newPlaces.length - 1; i >= 0; i--) {
+      const types = newPlaces[i].record.types || [];
+      const isGymOnly = skipGyms && types.includes('Gym Sauna') && types.every(t => ['Gym Sauna', 'Hotel Spa'].includes(t));
+      const isHotelOnly = skipHotels && types.includes('Hotel Spa') && types.every(t => ['Hotel Spa', 'Gym Sauna'].includes(t));
+      if (isGymOnly || isHotelOnly) {
+        skippedByType.push(newPlaces.splice(i, 1)[0]);
+      }
+    }
+    if (skippedByType.length > 0) {
+      console.log(`Skipped ${skippedByType.length} gym/hotel entries by type filter`);
     }
   }
 
