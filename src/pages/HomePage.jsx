@@ -21,11 +21,24 @@ const CATEGORIES = [
 function CategoryGrid() {
   const navigate = useNavigate();
   const { lat, lng } = useGeolocation();
+  const { saunas } = useSaunaData();
 
   const closestCitySlug = lat && lng ? findClosestCity(lat, lng) : null;
   const closestCityName = closestCitySlug ? getCityFullName(closestCitySlug) : null;
   const targetCity = closestCitySlug || 'all';
   const headingText = closestCityName ? `Browse by Category in ${closestCityName}` : 'Browse by Category';
+
+  // Calculate counts for each category type (filtered by closest city)
+  const categoryCounts = useMemo(() => {
+    const counts = {};
+    const citySaunas = closestCitySlug
+      ? saunas.filter(s => (s.city_slug || 'nyc') === closestCitySlug)
+      : saunas;
+    CATEGORIES.forEach(({ type }) => {
+      counts[type] = citySaunas.filter(s => s.types?.includes(type)).length;
+    });
+    return counts;
+  }, [saunas, closestCitySlug]);
 
   return (
     <section className="px-4 md:px-8 lg:px-16 py-6 md:py-10 border-b border-light-border">
@@ -40,7 +53,10 @@ function CategoryGrid() {
             className="flex flex-col items-center justify-center gap-2 px-4 py-5 md:px-6 md:py-5 md:flex-shrink-0 md:min-w-[130px] bg-white border border-light-border rounded-xl hover:border-charcoal hover:bg-hover-bg transition-all duration-150 group"
           >
             <span className="text-2xl md:text-3xl leading-none text-charcoal group-hover:text-accent-red transition-colors">{icon}</span>
-            <span className="text-[11px] md:text-[12px] text-charcoal text-center leading-tight tracking-wide">{label}</span>
+            <div className="flex flex-col items-center">
+              <span className="text-[11px] md:text-[12px] text-charcoal text-center leading-tight tracking-wide">{label}</span>
+              <span className="text-[10px] md:text-[11px] text-warm-gray mt-1">{categoryCounts[type]} available</span>
+            </div>
           </button>
         ))}
       </div>
