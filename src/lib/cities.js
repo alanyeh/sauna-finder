@@ -1,4 +1,5 @@
 export const CITY_CONFIG = {
+  all: { slug: 'all', label: 'All', fullName: 'All Cities', center: { lat: 39.5, lng: -98.35 } },
   nyc: { slug: 'nyc', label: 'NYC', fullName: 'New York City', center: { lat: 40.68, lng: -73.97 } },
   sf: { slug: 'sf', label: 'SF', fullName: 'San Francisco', center: { lat: 37.77, lng: -122.42 } },
   chicago: { slug: 'chicago', label: 'CHI', fullName: 'Chicago', center: { lat: 41.88, lng: -87.63 } },

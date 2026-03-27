@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 
 const PRICE_ORDER = { '$': 1, '$$': 2, '$$$': 3 };
 
@@ -31,20 +31,29 @@ function getCategory(rawType) {
   return TYPE_TO_CATEGORY[rawType] || rawType;
 }
 
-export const useFilters = (saunas, citySlug) => {
+export const useFilters = (saunas, citySlug, initialTypes = []) => {
   const [neighborhood, setNeighborhood] = useState('');
   const [price, setPrice] = useState('');
   const [selectedAmenities, setSelectedAmenities] = useState([]);
-  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState(initialTypes);
   const [sortBy, setSortBy] = useState('default');
+
+  // Track previous city to only reset when city actually changes (not on StrictMode double-invoke)
+  const prevCitySlugRef = useRef(null);
 
   // Reset sub-filters when city changes
   useEffect(() => {
-    setNeighborhood('');
-    setPrice('');
-    setSelectedAmenities([]);
-    setSelectedTypes([]);
-    setSortBy('default');
+    const prevCitySlug = prevCitySlugRef.current;
+    prevCitySlugRef.current = citySlug;
+
+    // Only reset if city actually changed (not null → null on mount or same city twice)
+    if (prevCitySlug !== null && prevCitySlug !== citySlug) {
+      setNeighborhood('');
+      setPrice('');
+      setSelectedAmenities([]);
+      setSelectedTypes([]);
+      setSortBy('default');
+    }
   }, [citySlug]);
 
   const citySaunas = useMemo(() => {

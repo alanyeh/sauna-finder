@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
@@ -32,6 +32,9 @@ export default function CityPage() {
   const [editingSauna, setEditingSauna] = useState(null);
   const [showAddSaunaModal, setShowAddSaunaModal] = useState(false);
 
+  // Capture initial type filter on mount only (using ref to survive location.state clearing)
+  const initialTypesRef = useRef(location.state?.selectedType ? [location.state.selectedType] : []);
+
   // Validate citySlug — redirect to home if invalid (after data loads)
   useEffect(() => {
     if (saunas.length === 0) return;
@@ -54,7 +57,9 @@ export default function CityPage() {
           setMobileView('map');
         }
       }
-      // Clear the state so refreshing doesn't re-select
+    }
+    // Clear location state only if we used selectedSaunaId (initialTypes is captured in ref)
+    if (selectedSaunaId) {
       window.history.replaceState({}, '');
     }
   }, [location.state?.selectedSaunaId, saunas]);
@@ -73,7 +78,7 @@ export default function CityPage() {
     filteredSaunas,
     sortBy,
     setSortBy,
-  } = useFilters(saunas, citySlug);
+  } = useFilters(saunas, citySlug, initialTypesRef.current);
 
   // Reset favorites filter on sign-out
   useEffect(() => {
