@@ -2,7 +2,8 @@ import { useMemo, useRef, useState, useCallback, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSaunaData } from '../contexts/SaunaDataContext';
 import { useAuth } from '../contexts/AuthContext';
-import { getCityFullName } from '../lib/cities';
+import { getCityFullName, findClosestCity } from '../lib/cities';
+import { useGeolocation } from '../hooks/useGeolocation';
 import HomeSaunaCard from '../components/HomeSaunaCard';
 import CarouselArrowButton from '../components/CarouselArrowButton';
 import SEO from '../components/SEO';
@@ -19,17 +20,23 @@ const CATEGORIES = [
 
 function CategoryGrid() {
   const navigate = useNavigate();
+  const { lat, lng } = useGeolocation();
+
+  const closestCitySlug = lat && lng ? findClosestCity(lat, lng) : null;
+  const closestCityName = closestCitySlug ? getCityFullName(closestCitySlug) : null;
+  const targetCity = closestCitySlug || 'all';
+  const headingText = closestCityName ? `Browse by Category in ${closestCityName}` : 'Browse by Category';
 
   return (
     <section className="px-4 md:px-8 lg:px-16 py-6 md:py-10 border-b border-light-border">
       <h2 className="font-serif text-lg md:text-2xl text-charcoal mb-3 md:mb-5">
-        Browse by Category
+        {headingText}
       </h2>
       <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:gap-3 md:overflow-x-auto md:pb-1 scrollbar-hide">
         {CATEGORIES.map(({ type, label, icon }) => (
           <button
             key={type}
-            onClick={() => navigate('/city/all', { state: { selectedType: type } })}
+            onClick={() => navigate(`/city/${targetCity}`, { state: { selectedType: type } })}
             className="flex flex-col items-center justify-center gap-2 px-4 py-5 md:px-6 md:py-5 md:flex-shrink-0 md:min-w-[130px] bg-white border border-light-border rounded-xl hover:border-charcoal hover:bg-hover-bg transition-all duration-150 group"
           >
             <span className="text-2xl md:text-3xl leading-none text-charcoal group-hover:text-accent-red transition-colors">{icon}</span>

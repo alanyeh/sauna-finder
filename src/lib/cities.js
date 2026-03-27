@@ -21,3 +21,33 @@ export function getCityCenter(slug) {
   if (slug === 'all') return { lat: 39.5, lng: -98.35 };
   return CITY_CONFIG[slug]?.center || { lat: 39.5, lng: -98.35 };
 }
+
+export function findClosestCity(lat, lng) {
+  const R = 6371; // Earth's radius in km
+  let minDist = Infinity;
+  let closestSlug = 'nyc';
+
+  for (const [slug, config] of Object.entries(CITY_CONFIG)) {
+    if (slug === 'all') continue;
+
+    const toRad = (deg) => (deg * Math.PI) / 180;
+    const dLat = toRad(config.center.lat - lat);
+    const dLng = toRad(config.center.lng - lng);
+
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat)) *
+        Math.cos(toRad(config.center.lat)) *
+        Math.sin(dLng / 2) ** 2;
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c;
+
+    if (distance < minDist) {
+      minDist = distance;
+      closestSlug = slug;
+    }
+  }
+
+  return closestSlug;
+}
