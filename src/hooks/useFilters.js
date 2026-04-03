@@ -27,7 +27,7 @@ const TYPE_TO_CATEGORY = {
   'Japanese Neighborhood Sauna': 'Japanese Sauna',
 };
 
-function getCategory(rawType) {
+export function getCategory(rawType) {
   return TYPE_TO_CATEGORY[rawType] || rawType;
 }
 

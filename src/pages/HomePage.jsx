@@ -7,6 +7,7 @@ import { useGeolocation } from '../hooks/useGeolocation';
 import HomeSaunaCard from '../components/HomeSaunaCard';
 import CarouselArrowButton from '../components/CarouselArrowButton';
 import SEO from '../components/SEO';
+import { getCategory } from '../hooks/useFilters';
 
 const CATEGORIES = [
   { type: 'Russian Banya',    label: 'Russian Banya',    icon: '♨' },
@@ -35,7 +36,7 @@ function CategoryGrid() {
       ? saunas.filter(s => (s.city_slug || 'nyc') === closestCitySlug)
       : saunas;
     CATEGORIES.forEach(({ type }) => {
-      counts[type] = citySaunas.filter(s => s.types?.includes(type)).length;
+      counts[type] = citySaunas.filter(s => s.types?.some(t => getCategory(t) === type)).length;
     });
     return counts;
   }, [saunas, closestCitySlug]);
