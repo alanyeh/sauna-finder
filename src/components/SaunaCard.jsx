@@ -60,8 +60,8 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         {sauna.types.join(', ')}
       </p>
 
-      {/* Rating / Price */}
-      <div className="flex items-center gap-4 mb-2.5">
+      {/* Rating */}
+      <div className="flex items-center gap-4 mb-1.5">
         {sauna.rating != null && (
           <div className="flex items-center gap-1 text-[13px]">
             <span className="text-accent-red">★</span>
@@ -75,31 +75,33 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         )}
         <div className="text-[13px] font-medium text-charcoal">
           {sauna.price}
-          {/* TODO: uncomment when pricing data is verified
-          {sauna.pricing_options?.length > 0 && (
-            <span className="text-warm-gray font-normal">
-              {' · '}
-              {sauna.pricing_options[0].price && `$${sauna.pricing_options[0].price}`}
-              {sauna.pricing_options[0].duration && ` / ${sauna.pricing_options[0].duration}`}
-            </span>
-          )}
-          */}
         </div>
       </div>
 
-      {/* TODO: uncomment when pricing data is verified
-      {sauna.pricing_options?.length > 1 && (
-        <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2.5 text-[12px] text-warm-gray">
-          {sauna.pricing_options.slice(1).map((opt, i) => (
-            <span key={i}>
-              {opt.price && `$${opt.price}`}
-              {opt.duration && ` / ${opt.duration}`}
-              {opt.description && ` (${opt.description})`}
-            </span>
-          ))}
-        </div>
-      )}
-      */}
+      {/* Pricing */}
+      <div className="mb-2.5 text-[13px]">
+        {sauna.pricing_options?.length > 0 ? (
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-warm-gray">
+            {sauna.pricing_options.map((opt, i) => (
+              <span key={i}>
+                {opt.price && `$${opt.price}`}
+                {opt.duration && ` / ${opt.duration}`}
+                {opt.description && ` (${opt.description})`}
+              </span>
+            ))}
+          </div>
+        ) : sauna.website_url ? (
+          <a
+            href={sauna.website_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-warm-gray hover:text-charcoal transition-colors"
+          >
+            See site for pricing
+          </a>
+        ) : null}
+      </div>
 
       {/* Amenities */}
       {sauna.amenities?.length > 0 && (
