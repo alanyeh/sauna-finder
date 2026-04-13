@@ -51,6 +51,9 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
   const [photos, setPhotos] = useState(sauna.photos || []);
   const [photosToDelete, setPhotosToDelete] = useState([]);
   const [newPhotoFiles, setNewPhotoFiles] = useState([]);
+  const [dragIndex, setDragIndex] = useState(null);
+  const [dragOverIndex, setDragOverIndex] = useState(null);
+  const [dragSource, setDragSource] = useState(null); // 'existing' or 'new'
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -66,6 +69,46 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
     setSelectedAmenities((prev) =>
       prev.includes(amenity) ? prev.filter((a) => a !== amenity) : [...prev, amenity]
     );
+  };
+
+  const handleDragStart = (index, source) => {
+    setDragIndex(index);
+    setDragSource(source);
+  };
+
+  const handleDragOver = (e, index) => {
+    e.preventDefault();
+    setDragOverIndex(index);
+  };
+
+  const handleDragEnd = () => {
+    setDragIndex(null);
+    setDragOverIndex(null);
+    setDragSource(null);
+  };
+
+  const handleDrop = (e, dropIndex, dropTarget) => {
+    e.preventDefault();
+    if (dragIndex === null || dragSource !== dropTarget) {
+      handleDragEnd();
+      return;
+    }
+    if (dragSource === 'existing') {
+      setPhotos((prev) => {
+        const updated = [...prev];
+        const [moved] = updated.splice(dragIndex, 1);
+        updated.splice(dropIndex, 0, moved);
+        return updated;
+      });
+    } else {
+      setNewPhotoFiles((prev) => {
+        const updated = [...prev];
+        const [moved] = updated.splice(dragIndex, 1);
+        updated.splice(dropIndex, 0, moved);
+        return updated;
+      });
+    }
+    handleDragEnd();
   };
 
   const handleRemovePhoto = (url) => {
@@ -547,12 +590,28 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
               {/* Existing photos */}
               {photos.length > 0 && (
                 <div className="grid grid-cols-4 gap-2 mb-3">
-                  {photos.map((url) => (
-                    <div key={url} className="relative group">
+                  {photos.map((url, i) => (
+                    <div
+                      key={url}
+                      draggable
+                      onDragStart={() => handleDragStart(i, 'existing')}
+                      onDragOver={(e) => handleDragOver(e, i)}
+                      onDrop={(e) => handleDrop(e, i, 'existing')}
+                      onDragEnd={handleDragEnd}
+                      className={`relative group cursor-grab active:cursor-grabbing transition-all ${
+                        dragSource === 'existing' && dragOverIndex === i
+                          ? 'ring-2 ring-charcoal scale-105'
+                          : ''
+                      } ${
+                        dragSource === 'existing' && dragIndex === i
+                          ? 'opacity-40'
+                          : ''
+                      }`}
+                    >
                       <img
                         src={url}
                         alt=""
-                        className="w-full h-20 object-cover rounded"
+                        className="w-full h-20 object-cover rounded pointer-events-none"
                       />
                       <button
                         type="button"
@@ -570,11 +629,27 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
               {newPhotoFiles.length > 0 && (
                 <div className="grid grid-cols-4 gap-2 mb-3">
                   {newPhotoFiles.map((file, i) => (
-                    <div key={i} className="relative group">
+                    <div
+                      key={`new-${i}`}
+                      draggable
+                      onDragStart={() => handleDragStart(i, 'new')}
+                      onDragOver={(e) => handleDragOver(e, i)}
+                      onDrop={(e) => handleDrop(e, i, 'new')}
+                      onDragEnd={handleDragEnd}
+                      className={`relative group cursor-grab active:cursor-grabbing transition-all ${
+                        dragSource === 'new' && dragOverIndex === i
+                          ? 'ring-2 ring-charcoal scale-105'
+                          : ''
+                      } ${
+                        dragSource === 'new' && dragIndex === i
+                          ? 'opacity-40'
+                          : ''
+                      }`}
+                    >
                       <img
                         src={URL.createObjectURL(file)}
                         alt=""
-                        className="w-full h-20 object-cover rounded ring-2 ring-accent-red/30"
+                        className="w-full h-20 object-cover rounded ring-2 ring-accent-red/30 pointer-events-none"
                       />
                       <button
                         type="button"
