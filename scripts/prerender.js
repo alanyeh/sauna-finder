@@ -1,13 +1,19 @@
 // Build-time prerendering for sauna-finder.
 //
-// Runs after `vite build`. Spawns `vite preview`, launches a headless Chrome
-// via puppeteer, navigates to each route, waits for content + Helmet to settle,
-// then writes the rendered HTML to dist/{route}/index.html so crawlers see real
-// content instead of an empty SPA shell.
+// Runs after `vite build`. Starts a minimal in-process static file server
+// over `dist/`, launches puppeteer, navigates to each route, waits for
+// content + Helmet to settle, then writes the rendered HTML to
+// dist/{route}/index.html so crawlers see real content instead of an empty
+// SPA shell.
+//
+// Uses a plain Node http server (not `vite preview`) so this works in CI
+// environments like Vercel's build containers, which don't have xdg-open
+// and trip over vite preview's browser-open behavior.
 
-import { spawn } from 'node:child_process'
-import { writeFile, mkdir } from 'node:fs/promises'
-import { dirname, resolve } from 'node:path'
+import { createReadStream } from 'node:fs'
+import { writeFile, mkdir, stat } from 'node:fs/promises'
+import { createServer } from 'node:http'
+import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import puppeteer from 'puppeteer'
 
@@ -19,10 +25,10 @@ const PORT = 4319
 const ORIGIN = `http://localhost:${PORT}`
 
 // Prerender city pages first, home LAST. Reason: writing dist/index.html
-// causes vite preview's SPA fallback to serve the prerendered home page
-// for every unknown route, which then tries to hydrate against a different
-// page and throws hydration errors. Keeping / for last means all city routes
-// fall back to the original empty shell.
+// causes the static server's SPA fallback to serve the prerendered home
+// page for every unknown route, which then tries to hydrate against a
+// different page. Keeping / for last means all city routes fall back to
+// the original empty shell written by `vite build`.
 const routes = [
   ...Object.keys(CITY_CONFIG)
     .filter((slug) => slug !== 'all')
@@ -30,41 +36,67 @@ const routes = [
   '/',
 ]
 
-function startPreview() {
-  return new Promise((resolvePreview, reject) => {
-    const proc = spawn(
-      'npx',
-      ['vite', 'preview', '--port', String(PORT), '--strictPort'],
-      { cwd: resolve(__dirname, '..'), stdio: ['ignore', 'pipe', 'pipe'] }
-    )
-    let ready = false
-    proc.stdout.on('data', (chunk) => {
-      const out = chunk.toString()
-      if (!ready && out.includes('Local:')) {
-        ready = true
-        resolvePreview(proc)
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.mjs': 'application/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.svg': 'image/svg+xml',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.webp': 'image/webp',
+  '.ico': 'image/x-icon',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
+}
+
+async function tryFile(path) {
+  try {
+    const s = await stat(path)
+    return s.isFile() ? path : null
+  } catch {
+    return null
+  }
+}
+
+function startStaticServer() {
+  return new Promise((resolvePromise) => {
+    const server = createServer(async (req, res) => {
+      try {
+        const url = new URL(req.url, ORIGIN)
+        let relPath = decodeURIComponent(url.pathname)
+        if (relPath.endsWith('/')) relPath += 'index.html'
+
+        // Try direct file, then directory index, then SPA fallback
+        let filePath = await tryFile(join(distDir, relPath))
+        if (!filePath) filePath = await tryFile(join(distDir, relPath, 'index.html'))
+        if (!filePath) filePath = join(distDir, 'index.html') // SPA fallback
+
+        const ext = extname(filePath).toLowerCase()
+        res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' })
+        createReadStream(filePath).pipe(res)
+      } catch (err) {
+        res.writeHead(500)
+        res.end(String(err))
       }
     })
-    proc.stderr.on('data', (chunk) => {
-      process.stderr.write(`[vite preview] ${chunk}`)
-    })
-    proc.on('exit', (code) => {
-      if (!ready) reject(new Error(`vite preview exited early with code ${code}`))
-    })
-    setTimeout(() => {
-      if (!ready) reject(new Error('vite preview did not start within 10s'))
-    }, 10_000)
+    server.listen(PORT, '127.0.0.1', () => resolvePromise(server))
   })
 }
 
 async function prerenderRoute(browser, route) {
   const page = await browser.newPage()
-  // Block geolocation prompts to keep the rendered output deterministic
   const context = browser.defaultBrowserContext()
   await context.overridePermissions(ORIGIN, [])
 
   // Flag tells React components (via ClientOnly) not to render DOM-mutating
-  // libraries like Google Maps during prerender.
+  // libraries like Google Maps during the prerender pass.
   await page.evaluateOnNewDocument(() => {
     window.__PRERENDER__ = true
   })
@@ -75,7 +107,7 @@ async function prerenderRoute(browser, route) {
 
   await page.goto(`${ORIGIN}${route}`, { waitUntil: 'networkidle0', timeout: 30_000 })
 
-  // Wait until the SaunaDataContext has populated and Helmet has updated <title>.
+  // Wait until SaunaDataContext has populated and Helmet has updated <title>.
   // The "Loading saunas..." text disappears once data is in.
   await page.waitForFunction(
     () => !document.body.innerText.includes('Loading saunas'),
@@ -88,7 +120,6 @@ async function prerenderRoute(browser, route) {
   const html = await page.content()
   await page.close()
 
-  // Write to dist/{route}/index.html (or dist/index.html for /)
   const outPath =
     route === '/'
       ? resolve(distDir, 'index.html')
@@ -96,7 +127,6 @@ async function prerenderRoute(browser, route) {
   await mkdir(dirname(outPath), { recursive: true })
   await writeFile(outPath, html, 'utf8')
 
-  // Sanity check
   const titleMatch = html.match(/<title>([^<]+)<\/title>/)
   const hasJsonLd = html.includes('application/ld+json')
   console.log(
@@ -106,16 +136,19 @@ async function prerenderRoute(browser, route) {
 
 async function main() {
   console.log(`Prerendering ${routes.length} routes...`)
-  const preview = await startPreview()
+  const server = await startStaticServer()
   let browser
   try {
-    browser = await puppeteer.launch({ headless: 'new' })
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    })
     for (const route of routes) {
       await prerenderRoute(browser, route)
     }
   } finally {
     if (browser) await browser.close()
-    preview.kill('SIGTERM')
+    server.close()
   }
   console.log('Prerender complete.')
 }
