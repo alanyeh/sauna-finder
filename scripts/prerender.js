@@ -15,9 +15,34 @@ import { writeFile, mkdir, stat } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import puppeteer from 'puppeteer'
 
 import { CITY_CONFIG } from '../src/lib/cities.js'
+
+// Use full puppeteer locally (it bundles its own Chromium with all shared
+// libs), but on CI use puppeteer-core + @sparticuz/chromium, which ships
+// a Linux Chromium build bundled with its own shared libs. Vercel's build
+// container doesn't have libnspr4.so etc, so the standard puppeteer
+// download fails to launch.
+const IS_CI = !!(process.env.VERCEL || process.env.CI)
+
+let puppeteer
+let launchOptions
+if (IS_CI) {
+  const chromiumModule = await import('@sparticuz/chromium')
+  const chromium = chromiumModule.default
+  puppeteer = (await import('puppeteer-core')).default
+  launchOptions = {
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  }
+} else {
+  puppeteer = (await import('puppeteer')).default
+  launchOptions = {
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  }
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = resolve(__dirname, '..', 'dist')
@@ -139,10 +164,7 @@ async function main() {
   const server = await startStaticServer()
   let browser
   try {
-    browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    })
+    browser = await puppeteer.launch(launchOptions)
     for (const route of routes) {
       await prerenderRoute(browser, route)
     }
