@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '../supabase';
+import prebuiltSaunas from '../data/saunas-prebuilt.json';
 
 const SaunaDataContext = createContext(null);
 
@@ -17,9 +18,25 @@ function isHiddenChain(sauna) {
   return HIDDEN_CHAINS.some(chain => sauna.name?.includes(chain));
 }
 
+function transform(rows) {
+  return (rows || [])
+    .filter(sauna => !isHiddenChain(sauna))
+    .map(sauna => ({
+      ...sauna,
+      ratingCount: sauna.rating_count,
+      placeId: sauna.place_id,
+    }));
+}
+
+// Seeded from the build-time Supabase snapshot so the first render (both
+// during prerender and during client hydration) has identical data. Without
+// this, the client's first render would show 0 saunas while the prerendered
+// HTML has the real list — causing hydration mismatches.
+const INITIAL_SAUNAS = transform(prebuiltSaunas);
+
 export function SaunaDataProvider({ children }) {
-  const [saunas, setSaunas] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [saunas, setSaunas] = useState(INITIAL_SAUNAS);
+  const [loading, setLoading] = useState(false);
 
   const fetchSaunas = async () => {
     try {
@@ -30,18 +47,9 @@ export function SaunaDataProvider({ children }) {
 
       if (error) throw error;
 
-      const transformedData = (data || [])
-        .filter(sauna => !isHiddenChain(sauna))
-        .map(sauna => ({
-          ...sauna,
-          ratingCount: sauna.rating_count,
-          placeId: sauna.place_id,
-        }));
-
-      setSaunas(transformedData);
+      setSaunas(transform(data));
     } catch (error) {
       console.error('Error fetching saunas:', error);
-      setSaunas([]);
     } finally {
       setLoading(false);
     }

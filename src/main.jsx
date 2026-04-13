@@ -7,7 +7,16 @@ import { AuthProvider } from './contexts/AuthContext'
 import { SaunaDataProvider } from './contexts/SaunaDataContext'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootEl = document.getElementById('root')
+
+// Prerendered HTML is served to crawlers for SEO, but React hydration against
+// it trips over react-router v7's location handling. Instead of hydrating, we
+// throw away the prerendered DOM and mount fresh. Crawlers still read the
+// prerendered HTML (that's the SEO win); real users see a brief flash while
+// React rerenders identical content.
+rootEl.innerHTML = ''
+
+ReactDOM.createRoot(rootEl).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>

@@ -14,6 +14,7 @@ import { useFavorites } from '../hooks/useFavorites';
 import { isAdmin } from '../lib/admin';
 import { getCityFullName } from '../lib/cities';
 import SEO from '../components/SEO';
+import ClientOnly from '../components/ClientOnly';
 
 export default function CityPage() {
   const { citySlug } = useParams();
@@ -200,13 +201,15 @@ export default function CityPage() {
       </div>
 
       <div className="hidden md:flex flex-1">
-        <Map
-          saunas={displayedSaunas}
-          selectedSauna={selectedSauna}
-          onSaunaSelect={handleSaunaSelect}
-          citySlug={citySlug}
-          onCityClick={handleCityChange}
-        />
+        <ClientOnly>
+          <Map
+            saunas={displayedSaunas}
+            selectedSauna={selectedSauna}
+            onSaunaSelect={handleSaunaSelect}
+            citySlug={citySlug}
+            onCityClick={handleCityChange}
+          />
+        </ClientOnly>
       </div>
       </div>
 
