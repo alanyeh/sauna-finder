@@ -57,7 +57,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
         <div className="flex-shrink-0 flex items-center gap-2 md:gap-3">
           <a
             href="https://koriboshi.com"
-            className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors hidden sm:block"
+            className="font-sans text-[14px] text-charcoal hover:text-charcoal transition-colors"
           >
             Koriboshi
           </a>
