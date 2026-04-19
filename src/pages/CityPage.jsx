@@ -15,6 +15,8 @@ import { isAdmin } from '../lib/admin';
 import { getCityFullName } from '../lib/cities';
 import SEO from '../components/SEO';
 import ClientOnly from '../components/ClientOnly';
+import CitySEOContent from '../components/CitySEOContent';
+import { getCityContent } from '../lib/cityContent';
 
 export default function CityPage() {
   const { citySlug } = useParams();
@@ -146,17 +148,31 @@ export default function CityPage() {
       },
     }));
 
-    return {
-      '@context': 'https://schema.org',
+    const itemListNode = {
       '@type': 'ItemList',
       name: `Best Saunas in ${cityFullName}`,
       numberOfItems: displayedSaunas.length,
       itemListElement: itemListItems,
     };
+
+    const cityContent = getCityContent(citySlug);
+    const faqPageNode = {
+      '@type': 'FAQPage',
+      mainEntity: cityContent.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    };
+
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [itemListNode, faqPageNode],
+    };
   }, [displayedSaunas, citySlug, cityFullName]);
 
   return (
-    <div className="flex flex-col overflow-hidden" style={{ height: '100dvh' }}>
+    <>
       <SEO
         title={cityTitle}
         description={cityDescription}
@@ -164,54 +180,61 @@ export default function CityPage() {
         jsonLd={cityJsonLd}
       />
       <h1 className="sr-only">Saunas and Bathhouses in {cityFullName}</h1>
-      <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
 
-      <div className="flex flex-col md:flex-row flex-1 min-h-0">
-      <div className="flex flex-col flex-1 h-full md:flex-none md:w-[420px] md:h-auto">
-        <Sidebar
-          neighborhoods={neighborhoods}
-          neighborhood={neighborhood}
-          setNeighborhood={setNeighborhood}
-          price={price}
-          setPrice={setPrice}
-          selectedAmenities={selectedAmenities}
-          toggleAmenity={toggleAmenity}
-          saunaTypes={saunaTypes}
-          selectedTypes={selectedTypes}
-          toggleType={toggleType}
-          filteredSaunas={displayedSaunas}
-          selectedSauna={selectedSauna}
-          onSaunaSelect={handleSaunaSelect}
-          user={user}
-          toggleFavorite={toggleFavorite}
-          isFavorite={isFavorite}
-          showFavoritesOnly={showFavoritesOnly}
-          setShowFavoritesOnly={setShowFavoritesOnly}
-          mobileView={mobileView}
-          setMobileView={setMobileView}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          citySlug={citySlug}
-          setCitySlug={handleCityChange}
-          onSubmitSauna={handleSubmitSauna}
-          isAdmin={userIsAdmin}
-          onEditSauna={setEditingSauna}
-          onAddSauna={handleAddSauna}
-        />
+      {/* App panel: full-viewport map/list experience. Sits above the fold. */}
+      <div className="flex flex-col overflow-hidden" style={{ height: '100dvh' }}>
+        <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
+
+        <div className="flex flex-col md:flex-row flex-1 min-h-0">
+          <div className="flex flex-col flex-1 h-full md:flex-none md:w-[420px] md:h-auto">
+            <Sidebar
+              neighborhoods={neighborhoods}
+              neighborhood={neighborhood}
+              setNeighborhood={setNeighborhood}
+              price={price}
+              setPrice={setPrice}
+              selectedAmenities={selectedAmenities}
+              toggleAmenity={toggleAmenity}
+              saunaTypes={saunaTypes}
+              selectedTypes={selectedTypes}
+              toggleType={toggleType}
+              filteredSaunas={displayedSaunas}
+              selectedSauna={selectedSauna}
+              onSaunaSelect={handleSaunaSelect}
+              user={user}
+              toggleFavorite={toggleFavorite}
+              isFavorite={isFavorite}
+              showFavoritesOnly={showFavoritesOnly}
+              setShowFavoritesOnly={setShowFavoritesOnly}
+              mobileView={mobileView}
+              setMobileView={setMobileView}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              citySlug={citySlug}
+              setCitySlug={handleCityChange}
+              onSubmitSauna={handleSubmitSauna}
+              isAdmin={userIsAdmin}
+              onEditSauna={setEditingSauna}
+              onAddSauna={handleAddSauna}
+            />
+          </div>
+
+          <div className="hidden md:flex flex-1">
+            <ClientOnly>
+              <Map
+                saunas={displayedSaunas}
+                selectedSauna={selectedSauna}
+                onSaunaSelect={handleSaunaSelect}
+                citySlug={citySlug}
+                onCityClick={handleCityChange}
+              />
+            </ClientOnly>
+          </div>
+        </div>
       </div>
 
-      <div className="hidden md:flex flex-1">
-        <ClientOnly>
-          <Map
-            saunas={displayedSaunas}
-            selectedSauna={selectedSauna}
-            onSaunaSelect={handleSaunaSelect}
-            citySlug={citySlug}
-            onCityClick={handleCityChange}
-          />
-        </ClientOnly>
-      </div>
-      </div>
+      {/* SEO content: unique prose + FAQ + product callout. Scroll to reveal. */}
+      <CitySEOContent citySlug={citySlug} />
 
       {showAuthModal && (
         <AuthModal onClose={() => setShowAuthModal(false)} />
@@ -239,6 +262,6 @@ export default function CityPage() {
           onSaunaAdded={refetchSaunas}
         />
       )}
-    </div>
+    </>
   );
 }
