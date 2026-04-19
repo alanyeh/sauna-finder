@@ -167,20 +167,26 @@ export default function HomePage() {
       />
       {/* Sticky header */}
       <header
-        className={`sticky top-0 z-30 bg-cream px-4 md:px-8 lg:px-16 py-4 md:py-6 border-b border-light-border transition-shadow ${
+        className={`sticky top-0 z-30 bg-cream px-4 md:px-8 lg:px-16 py-2.5 md:py-3 border-b border-light-border transition-shadow ${
           headerPinned ? 'shadow-sm' : ''
         }`}
       >
         <div className="flex items-center justify-between">
           <div className="min-w-0">
-            <h1 className="font-serif text-[22px] md:text-[32px] leading-tight tracking-tight">
+            <h1 className="font-serif text-[18px] md:text-[22px] leading-tight tracking-tight">
               Sauna Finder
             </h1>
             <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide mt-0.5 hidden sm:block">
               Discover the best saunas and bathhouses across the US and Canada
             </p>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-2 md:gap-3">
+            <a
+              href="https://koriboshi.com"
+              className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors hidden sm:block"
+            >
+              Koriboshi
+            </a>
             {user ? (
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-xs md:text-sm font-medium">
@@ -233,10 +239,13 @@ export default function HomePage() {
       ))}
 
       {/* Footer */}
-      <footer className="px-4 md:px-8 lg:px-16 py-6 md:py-8 text-center">
-        <p className="text-[11px] md:text-xs text-warm-gray">
+      <footer className="px-4 md:px-8 lg:px-16 py-6 md:py-8 text-center border-t border-light-border">
+        <p className="text-[11px] md:text-xs text-warm-gray mb-2">
           Sauna Finder — Find your perfect sauna
         </p>
+        <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
+          Back to Koriboshi
+        </a>
       </footer>
     </div>
   );

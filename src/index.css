@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,10 +6,45 @@
 
 @layer base {
   body {
-    @apply bg-cream text-charcoal font-sans;
+    @apply bg-cream text-charcoal font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif font-light;
+  }
+
+  h1 {
+    @apply text-5xl leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-4xl leading-snug tracking-tight;
+  }
+
+  h3 {
+    @apply text-3xl leading-snug tracking-normal font-normal;
+  }
+
+  h4 {
+    @apply text-xl leading-snug tracking-normal font-medium;
+  }
+
+  h5 {
+    @apply text-lg leading-snug tracking-wide font-medium uppercase;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-inherit no-underline hover:underline transition-all duration-base;
+  }
+
+  button {
+    @apply transition-all duration-base;
   }
 }
 
@@ -45,16 +80,42 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-light-border rounded-sm;
+    @apply bg-light-border;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-warm-gray;
   }
 
-  /* Floating card shadow */
+  /* Koriboshi: Minimal floating panel shadow */
   .bottom-sheet-shadow {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -4px 24px rgba(26, 26, 24, 0.08);
+  }
+
+  /* Primary button — terracotta CTA */
+  .btn-primary {
+    @apply bg-terracotta text-white px-6 py-3 font-medium tracking-wide uppercase text-sm;
+    transition: background-color 250ms ease-out;
+  }
+
+  .btn-primary:hover {
+    @apply bg-terracotta-dark;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply border border-light-border text-charcoal px-6 py-3 font-medium tracking-wide uppercase text-sm bg-transparent;
+    transition: all 250ms ease-out;
+  }
+
+  .btn-secondary:hover {
+    @apply border-charcoal bg-stone-50;
+  }
+
+  /* Card with Koriboshi minimal style */
+  .card-minimal {
+    @apply bg-white border border-light-border rounded-none p-6;
+    box-shadow: none;
   }
 
   /* Slide-up entrance animation */

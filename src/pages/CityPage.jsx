@@ -236,6 +236,16 @@ export default function CityPage() {
       {/* SEO content: unique prose + FAQ + product callout. Scroll to reveal. */}
       <CitySEOContent citySlug={citySlug} />
 
+      {/* Footer */}
+      <footer className="px-4 md:px-8 lg:px-16 py-6 md:py-8 text-center border-t border-light-border bg-cream">
+        <p className="text-[11px] md:text-xs text-warm-gray mb-2">
+          Sauna Finder — Find your perfect sauna
+        </p>
+        <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
+          Back to Koriboshi
+        </a>
+      </footer>
+
       {showAuthModal && (
         <AuthModal onClose={() => setShowAuthModal(false)} />
       )}

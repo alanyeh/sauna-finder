@@ -39,39 +39,39 @@ export default function AuthModal({ onClose }) {
 
   return (
     <div
-      className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black/30 flex items-center justify-center z-50 transition-opacity duration-base"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl w-full max-w-sm mx-4 p-6"
+        className="bg-white border border-light-border rounded-none shadow-menu w-full max-w-sm mx-4 p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="font-serif text-xl">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="font-serif text-2xl font-light">
             {isSignUp ? 'Create Account' : 'Sign In'}
           </h2>
           <button
             onClick={onClose}
-            className="text-warm-gray hover:text-charcoal text-xl leading-none"
+            className="text-warm-gray hover:text-charcoal text-xl leading-none transition-colors duration-base"
           >
             &times;
           </button>
         </div>
 
         {error && (
-          <p className="text-accent-red text-[13px] mb-4 bg-red-50 px-3 py-2 rounded">
+          <p className="text-error text-xs mb-4 bg-stone-50 border border-light-border px-4 py-3">
             {error}
           </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form onSubmit={handleSubmit} className="space-y-4 mb-6">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2.5 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none"
+            className="w-full px-4 py-2.5 border border-light-border rounded-none text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
           />
           <input
             type="password"
@@ -80,29 +80,29 @@ export default function AuthModal({ onClose }) {
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={6}
-            className="w-full px-3 py-2.5 border border-light-border rounded text-sm focus:border-charcoal focus:outline-none"
+            className="w-full px-4 py-2.5 border border-light-border rounded-none text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-charcoal text-white text-sm rounded hover:bg-charcoal/90 transition-colors disabled:opacity-50"
+            className="w-full py-2.5 bg-terracotta text-white text-sm font-medium tracking-wide uppercase rounded-none hover:bg-terracotta-dark transition-all duration-base disabled:opacity-60"
           >
             {loading ? 'Please wait...' : isSignUp ? 'Create Account' : 'Sign In'}
           </button>
         </form>
 
-        <div className="relative my-4">
+        <div className="relative mb-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-light-border" />
           </div>
           <div className="relative flex justify-center text-xs">
-            <span className="bg-white px-2 text-warm-gray">or</span>
+            <span className="bg-white px-3 text-warm-gray-400">or</span>
           </div>
         </div>
 
         <button
           onClick={handleGoogle}
-          className="w-full py-2.5 border border-light-border rounded text-sm hover:bg-hover-bg transition-colors flex items-center justify-center gap-2"
+          className="w-full py-2.5 border border-light-border rounded-none text-sm font-medium hover:border-charcoal transition-all duration-base flex items-center justify-center gap-2"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24">
             <path
@@ -125,14 +125,14 @@ export default function AuthModal({ onClose }) {
           Continue with Google
         </button>
 
-        <p className="text-center text-[13px] text-warm-gray mt-4">
+        <p className="text-center text-xs text-warm-gray-400 mt-6">
           {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
           <button
             onClick={() => {
               setIsSignUp(!isSignUp);
               setError('');
             }}
-            className="text-charcoal font-medium hover:underline"
+            className="text-charcoal font-medium hover:underline transition-colors duration-base"
           >
             {isSignUp ? 'Sign In' : 'Sign Up'}
           </button>
