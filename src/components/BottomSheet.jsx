@@ -1,6 +1,6 @@
 import { useRef, useState, useMemo, useCallback } from 'react';
 import PhotoCarousel from './PhotoCarousel';
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 
 function distanceBetween(a, b) {
   const dx = a.lat - b.lat;

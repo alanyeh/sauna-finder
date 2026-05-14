@@ -1,4 +1,4 @@
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 import PhotoCarousel from './PhotoCarousel';
 
 const TYPE_MAP = {

@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { supabase } from '../supabase';
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 
 async function geocodeAddress(address, citySlug) {
   // Use the Maps JavaScript API Geocoder (loaded by the Map component)

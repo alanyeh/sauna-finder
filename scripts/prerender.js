@@ -17,6 +17,7 @@ import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { CITY_CONFIG } from '../src/lib/cities.js'
+import { generateSitemap } from './generate-sitemap.js'
 
 // Use full puppeteer locally (it bundles its own Chromium with all shared
 // libs), but on CI use puppeteer-core + @sparticuz/chromium, which ships
@@ -172,6 +173,10 @@ async function main() {
     if (browser) await browser.close()
     server.close()
   }
+
+  const sitemapPath = await generateSitemap(distDir)
+  console.log(`  sitemap → ${sitemapPath.replace(distDir, 'dist')}`)
+
   console.log('Prerender complete.')
 }
 

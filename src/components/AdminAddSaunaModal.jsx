@@ -1,8 +1,24 @@
 import { useState } from 'react';
 import { supabase } from '../supabase';
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
+// Calls the places-proxy Edge Function. The Google Places API key lives only as
+// a Supabase function secret — it is never shipped to the browser bundle.
+async function invokePlacesProxy(body) {
+  const { data, error } = await supabase.functions.invoke('places-proxy', { body });
+  if (error) {
+    // Surface the function's own error message when it returned a non-2xx body.
+    let message = error.message;
+    try {
+      const detail = await error.context?.json();
+      if (detail?.error) message = detail.error;
+    } catch {
+      // keep the generic message
+    }
+    throw new Error(message);
+  }
+  return data;
+}
 
 const SAUNA_TYPES = [
   'Modern Bathhouse',
@@ -147,27 +163,16 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
     setError('');
     setLoading(true);
     try {
-      const response = await fetch(
-        'https://places.googleapis.com/v1/places:searchText',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
-            'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.websiteUri',
-          },
-          body: JSON.stringify({
-            textQuery: `${searchQuery} ${{ nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles', seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland', denver: 'Denver', houston: 'Houston', vancouver: 'Vancouver', toronto: 'Toronto' }[city] || city}`,
-            maxResultCount: 5,
-          }),
-        }
-      );
+      const cityName = {
+        nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles',
+        seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland',
+        denver: 'Denver', houston: 'Houston', vancouver: 'Vancouver', toronto: 'Toronto',
+      }[city] || city;
 
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(`API error: ${response.status} — ${errData?.error?.message || JSON.stringify(errData)}`);
-      }
-      const data = await response.json();
+      const data = await invokePlacesProxy({
+        action: 'searchText',
+        textQuery: `${searchQuery} ${cityName}`,
+      });
       setResults(data.places || []);
       if ((data.places || []).length === 0) {
         setError('No results found. Try a different search query.');
@@ -187,18 +192,10 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
     setFormLoading(true);
 
     try {
-      const response = await fetch(
-        `https://places.googleapis.com/v1/places/${place.id}`,
-        {
-          headers: {
-            'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
-            'X-Goog-FieldMask': 'displayName,formattedAddress,location,rating,userRatingCount,websiteUri,regularOpeningHours,priceLevel,editorialSummary,reviews,photos,types',
-          },
-        }
-      );
-
-      if (!response.ok) throw new Error(`API error: ${response.status}`);
-      const fullPlace = await response.json();
+      const fullPlace = await invokePlacesProxy({
+        action: 'details',
+        placeId: place.id,
+      });
 
       setName(fullPlace.displayName?.text || '');
       setAddress(fullPlace.formattedAddress || '');
@@ -226,58 +223,20 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
     setFormLoading(true);
 
     try {
-      const response = await fetch(
-        `https://places.googleapis.com/v1/places/${selectedPlace.id}`,
-        {
-          headers: {
-            'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
-            'X-Goog-FieldMask': 'photos',
-          },
-        }
-      );
+      // The Edge Function fetches the Google photos and re-hosts them in the
+      // sauna-photos Storage bucket, returning the public URLs.
+      const data = await invokePlacesProxy({
+        action: 'photos',
+        placeId: selectedPlace.id,
+      });
+      const uploadedUrls = data.photos || [];
 
-      if (!response.ok) throw new Error(`API error: ${response.status}`);
-      const data = await response.json();
-      const photoRefs = (data.photos || []).slice(0, 5);
-
-      if (photoRefs.length === 0) {
+      if (uploadedUrls.length === 0) {
         setFormError('No photos found for this place');
-        setFormLoading(false);
         return;
       }
 
-      const uploadedUrls = [];
-      for (let i = 0; i < photoRefs.length; i++) {
-        const photoRef = photoRefs[i];
-        try {
-          const photoUrl = `https://places.googleapis.com/v1/${photoRef.name}/media?maxHeightPx=600&key=${GOOGLE_MAPS_API_KEY}`;
-          const photoResponse = await fetch(photoUrl);
-          if (!photoResponse.ok) continue;
-
-          const blob = await photoResponse.blob();
-          const fileName = `${Date.now()}-${i}-${Math.random().toString(36).substr(2, 9)}.jpg`;
-
-          const { error: uploadError } = await supabase.storage
-            .from('sauna-photos')
-            .upload(`public/${fileName}`, blob, {
-              contentType: 'image/jpeg',
-              cacheControl: '3600',
-              upsert: false,
-            });
-
-          if (!uploadError) {
-            const { data: { publicUrl } } = supabase.storage
-              .from('sauna-photos')
-              .getPublicUrl(`public/${fileName}`);
-            uploadedUrls.push(publicUrl);
-          }
-        } catch {
-          // Continue with next photo on error
-        }
-      }
-
       setPhotos(uploadedUrls);
-      setFormError(uploadedUrls.length > 0 ? '' : 'Failed to upload photos');
     } catch (err) {
       setFormError(err.message || 'Failed to fetch photos');
     } finally {

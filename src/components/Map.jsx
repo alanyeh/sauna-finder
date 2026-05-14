@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import PhotoCarousel from './PhotoCarousel';
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 
 const MAP_ID = 'sauna_finder_map';
 
-// Add your Google Maps API key here
-const GOOGLE_MAPS_API_KEY = 'AIzaSyCh0m5quuG6m_KSicoisiGDAV7K1Rql8gI';
+// Browser key — restricted by HTTP referrer + to the Maps JavaScript / Geocoding
+// APIs in the Google Cloud Console. Set in .env.local (and Vercel env vars).
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 function MapController({ selectedSauna, cityCenter, citySlug }) {
   const map = useMap();
@@ -205,19 +206,19 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
     return counts;
   }, [saunas, citySlug]);
 
-  if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
+  if (!GOOGLE_MAPS_API_KEY) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-cream">
         <div className="text-center max-w-md px-8">
           <h3 className="text-xl font-serif mb-3">Google Maps API Key Required</h3>
           <p className="text-sm text-warm-gray mb-4">
-            To display the map, add your Google Maps API key to:
+            To display the map, set <code className="text-xs">VITE_GOOGLE_MAPS_API_KEY</code> in:
           </p>
           <code className="block bg-white px-4 py-2 rounded text-xs text-left border border-light-border mb-4">
-            src/components/Map.jsx
+            .env.local
           </code>
           <p className="text-xs text-warm-gray">
-            Get your API key at <a href="https://console.cloud.google.com/google/maps-apis" className="text-accent-red hover:underline" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>
+            See <code className="text-xs">.env.example</code>. Get your API key at <a href="https://console.cloud.google.com/google/maps-apis" className="text-accent-red hover:underline" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>
           </p>
         </div>
       </div>

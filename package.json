@@ -1,5 +1,5 @@
 {
-  "name": "nyc-sauna-finder",
+  "name": "sauna-finder",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -8,7 +8,8 @@
     "prebuild": "node scripts/prefetch-saunas.js",
     "build": "vite build",
     "postbuild": "node scripts/prerender.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",
@@ -21,11 +22,15 @@
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@sparticuz/chromium": "^147.0.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.6.0",
     "postcss": "^8.4.32",
     "puppeteer": "^24.40.0",
     "puppeteer-core": "^24.40.0",

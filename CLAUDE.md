@@ -2,7 +2,7 @@
 
 A curated sauna and bathhouse discovery app for major US cities, built as a modern single-page React application with a Japanese-inspired minimal aesthetic.
 
-**Live data is stored in Supabase. Hardcoded data in `src/data/saunas.js` exists only as a fallback/reference.**
+**Live data is stored in Supabase. At build time `scripts/prefetch-saunas.js` snapshots it to `src/data/saunas-prebuilt.json` so prerender and the client's first render share identical data (no hydration mismatch).**
 
 ---
 
@@ -25,33 +25,46 @@ A curated sauna and bathhouse discovery app for major US cities, built as a mode
 
 ```
 src/
-├── App.jsx                 # Root component — layout, city/view state
+├── App.jsx                 # Router (/ and /city/:citySlug) + layout shell
 ├── main.jsx                # React entry point
 ├── index.css               # Tailwind directives + custom styles
 ├── supabase.js             # Supabase client init
 │
-├── components/
-│   ├── Header.jsx          # Title bar, city toggle (NYC/SF), user avatar
-│   ├── Sidebar.jsx         # Left panel container (420px desktop)
-│   ├── SaunaList.jsx       # Scrollable list with collapsing header on scroll
-│   ├── SaunaCard.jsx       # Card: photo carousel, name, rating, price, address, amenities
-│   ├── Filters.jsx         # Filter modal (bottom sheet on mobile)
-│   ├── Map.jsx             # Google Maps with AdvancedMarker pins
-│   ├── PhotoCarousel.jsx   # Multi-image carousel with dots/arrows
-│   └── AuthModal.jsx       # Sign-in / sign-up modal
+├── pages/
+│   ├── HomePage.jsx        # "/" — geolocated city carousels + category grid
+│   └── CityPage.jsx        # "/city/:citySlug" — list + map + SEO content
+│
+├── components/             # Header, Sidebar, SaunaList, SaunaCard, HomeSaunaCard,
+│                           # Filters, Map, BottomSheet, PhotoCarousel, AuthModal,
+│                           # SEO, CitySEOContent, ClientOnly, Submit/Admin modals
 │
 ├── hooks/
 │   ├── useFilters.js       # Filter logic: neighborhood, price, type, amenities
-│   └── useFavorites.js     # Favorites: localStorage + Supabase, requires auth
+│   ├── useFavorites.js     # Favorites: localStorage + Supabase, requires auth
+│   └── useGeolocation.js   # Closest-city detection for the homepage
 │
 ├── contexts/
-│   └── AuthContext.jsx     # Global auth state via React Context
+│   ├── AuthContext.jsx     # Global auth state via React Context
+│   └── SaunaDataContext.jsx# Sauna data: prebuilt snapshot → live Supabase refetch
+│
+├── lib/
+│   ├── cities.js           # CITY_CONFIG — single source of truth for cities
+│   ├── cityContent.js      # Per-city SEO prose + FAQs
+│   ├── amenities.js        # Amenity display labels
+│   └── admin.js            # Admin email allowlist
 │
 └── data/
-    └── saunas.js           # 51 hardcoded entries (fallback/reference only)
+    └── saunas-prebuilt.json# Build-time Supabase snapshot (gitignored)
 
 scripts/
-└── scrape-photos.js        # Fetches photos from Google Places API → Supabase Storage
+├── prefetch-saunas.js      # Supabase → saunas-prebuilt.json (runs pre dev/build)
+├── prerender.js            # Puppeteer prerender of every route (postbuild)
+├── generate-sitemap.js     # dist/sitemap.xml from CITY_CONFIG
+├── scrape-saunas.js        # Google Places scraper for new cities
+├── scrape-photos.js        # Fetch + upload sauna photos to Supabase Storage
+├── enrich-saunas.js        # Backfill/enrich existing records
+├── populate-pricing.js     # Populate day-pass pricing_options
+└── archive/                # One-off per-city insert/lookup scripts
 ```
 
 ---
@@ -74,7 +87,7 @@ amenities       json[]         e.g. ["cold_plunge", "steam_room", "massage", "po
 hours           text           Operating hours
 place_id        text           Google Place ID (for photo scraping)
 description     text           One-sentence summary
-city_slug       text           "nyc" | "sf" (multi-city key)
+city_slug       text           City key, e.g. "nyc" — see CITY_CONFIG in src/lib/cities.js
 photos          json[]         Array of Supabase Storage URLs
 website_url     text           Business website (optional)
 gender_policy   text           Gender restrictions (optional)
@@ -86,7 +99,7 @@ updated_at      timestamp      Auto-generated
 
 ## Key Features
 
-- **Multi-city support** — toggle between NYC and SF via `city_slug`; filters reset on city change
+- **Multi-city support** — 11 cities defined in `src/lib/cities.js` (`CITY_CONFIG`), each served at `/city/:citySlug`; filters reset on city change
 - **Filtering** — by neighborhood, price tier, sauna type, and amenities (all must match)
 - **Favorites** — heart toggle per card, persisted to localStorage keyed by user ID, requires auth
 - **Interactive map** — Google Maps with red marker pins; clicking a pin highlights the card
@@ -115,9 +128,11 @@ SUPABASE_SERVICE_KEY=<for admin writes>
 
 | Command           | What it does                                |
 | ----------------- | ------------------------------------------- |
-| `npm run dev`     | Start Vite dev server on `localhost:3000`    |
-| `npm run build`   | Production build → `dist/`                  |
+| `npm run dev`     | Prefetch Supabase data, then Vite dev server on `localhost:3000` |
+| `npm run build`   | `prebuild` prefetch → `vite build` → `postbuild` prerender + sitemap → `dist/` |
 | `npm run preview` | Preview production build locally            |
+| `npm run lint`    | ESLint over `src/` and `scripts/`           |
+| `node scripts/prefetch-saunas.js` | Snapshot Supabase `saunas` → `src/data/saunas-prebuilt.json` |
 | `node scripts/scrape-photos.js` | Scrape Google Places photos → Supabase Storage |
 
 ---
@@ -137,7 +152,7 @@ SUPABASE_SERVICE_KEY=<for admin writes>
 - **State management** — React Context for auth; hooks (`useFilters`, `useFavorites`) for feature logic; component-level state for UI
 - **Map** uses `AdvancedMarker` with uncontrolled center/zoom to avoid re-render panning issues
 - **Mobile map** uses greedy gesture handling so touch panning works without two-finger requirement
-- **Adding a new city** — insert rows with a new `city_slug` value; the UI city toggle in `Header.jsx` needs a new button
+- **Adding a new city** — add a `CITY_CONFIG` entry in `src/lib/cities.js`, insert Supabase rows with that `city_slug`, and write a `cityContent.js` prose+FAQ block; prerender and the sitemap pick it up automatically
 
 ---
 

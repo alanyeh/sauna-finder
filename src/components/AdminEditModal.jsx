@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../supabase';
-import { amenityLabels } from '../data/saunas';
+import { amenityLabels } from '../lib/amenities';
 
 async function geocodeAddress(address) {
   if (window.google?.maps?.Geocoder) {

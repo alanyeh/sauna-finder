@@ -1,5 +1,5 @@
 const ADMIN_EMAILS = [
-  'alnyeh@gmail.com', // TODO: replace with your actual login email
+  'alnyeh@gmail.com',
 ];
 
 export function isAdmin(user) {

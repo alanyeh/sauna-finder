@@ -1,7 +1,7 @@
 import { getCityContent } from '../lib/cityContent';
 import { getCityFullName } from '../lib/cities';
 
-const KORIBOSHI_PRODUCT_URL = 'https://koriboshi.com';
+const KORIBOSHI_PRODUCT_URL = 'https://koriboshi.com/collections/all';
 
 // Use native <details>/<summary> so every FAQ answer is always present in the
 // rendered HTML. Crawlers index the collapsed content; the FAQPage JSON-LD
@@ -61,8 +61,8 @@ export default function CitySEOContent({ citySlug }) {
           <p className="text-[14px] md:text-[15px] leading-relaxed text-warm-gray mb-4">
             A sauna hat protects your hair and helps regulate head temperature
             during longer sessions — a staple in Russian and Finnish sauna
-            traditions. Koriboshi makes a wool felt sauna hat designed for real
-            bathhouse use.
+            traditions. Koriboshi makes a double-layered Japanese cotton sauna
+            hat designed for real bathhouse use.
           </p>
           <a
             href={KORIBOSHI_PRODUCT_URL}

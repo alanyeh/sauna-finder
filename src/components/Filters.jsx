@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { amenityLabels } from '../data/saunas';
 
 const amenities = [
   { value: 'cold_plunge', label: 'Cold Plunge' },

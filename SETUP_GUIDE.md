@@ -22,26 +22,28 @@ npm install
 
 This will install all dependencies (~2-3 minutes).
 
-### 3. Add Your Google Maps API Key
+### 3. Configure Environment Variables
 
-1. Open `src/components/Map.jsx`
-2. Find line 8:
-   ```javascript
-   const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';
+1. Copy the example file:
+   ```bash
+   cp .env.example .env.local
    ```
-3. Replace with your actual API key:
-   ```javascript
-   const GOOGLE_MAPS_API_KEY = 'AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg';
-   ```
+2. Fill in the values in `.env.local`:
+   - `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` — Supabase dashboard → Project Settings → API
+   - `VITE_GOOGLE_MAPS_API_KEY` — your Google Maps **browser** key
 
-**Get a Google Maps API Key:**
+`.env.local` is gitignored — never commit real keys.
+
+**Get a Google Maps browser key:**
 1. Go to [Google Cloud Console](https://console.cloud.google.com/google/maps-apis)
-2. Create a new project (if you don't have one)
-3. Enable these APIs:
-   - Maps JavaScript API
-   - Places API
-4. Create credentials → API Key
-5. Copy the key
+2. Enable the **Maps JavaScript API** and **Geocoding API**
+3. Create credentials → API Key
+4. Restrict it: Application restrictions → HTTP referrers (your domains + `http://localhost:*`);
+   API restrictions → Maps JavaScript API + Geocoding API
+
+> The Google **Places** API key is **not** a frontend variable. It lives only as the
+> `GOOGLE_PLACES_API_KEY` secret on the `places-proxy` Supabase Edge Function — see
+> `supabase/functions/places-proxy/`.
 
 ### 4. Start Development Server
 
@@ -75,7 +77,7 @@ VS Code will prompt you to install these (or install manually):
 ```
 src/
 ├── components/       ← All React components
-│   ├── Map.jsx      ← Google Maps (ADD API KEY HERE)
+│   ├── Map.jsx      ← Google Maps (key from VITE_GOOGLE_MAPS_API_KEY)
 │   ├── Sidebar.jsx  ← Left panel container
 │   ├── SaunaList.jsx
 │   ├── SaunaCard.jsx
@@ -97,7 +99,7 @@ src/
 
 ### Issue: Map shows "API Key Required" message
 
-**Solution:** Add your Google Maps API key in `src/components/Map.jsx` (line 8)
+**Solution:** Set `VITE_GOOGLE_MAPS_API_KEY` in `.env.local` (see `.env.example`), then restart `npm run dev`
 
 ### Issue: Port 3000 already in use
 
