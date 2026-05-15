@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { getCityContent } from '../lib/cityContent';
-import { getCityFullName } from '../lib/cities';
+import { CITY_CONFIG, getCityFullName } from '../lib/cities';
 
 const KORIBOSHI_PRODUCT_URL = 'https://koriboshi.com/collections/all';
 
@@ -81,6 +82,27 @@ export default function CitySEOContent({ citySlug }) {
           {content.faqs.map((faq, i) => (
             <FAQItem key={i} q={faq.q} a={faq.a} defaultOpen={i === 0} />
           ))}
+        </div>
+
+        {/* Related cities — descriptive anchor text builds the internal link
+            graph that signals to crawlers these pages are worth indexing. */}
+        <div className="mt-10 md:mt-14 pt-8 md:pt-10 border-t border-light-border">
+          <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-5 md:mb-6 leading-tight">
+            Find Saunas in Other Cities
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2 md:gap-y-3">
+            {Object.values(CITY_CONFIG)
+              .filter((c) => c.slug !== 'all' && c.slug !== citySlug)
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/city/${c.slug}`}
+                  className="text-[14px] md:text-[15px] text-charcoal hover:text-accent-red transition-colors"
+                >
+                  Saunas in {c.fullName} <span aria-hidden="true">›</span>
+                </Link>
+              ))}
+          </div>
         </div>
       </div>
     </section>
