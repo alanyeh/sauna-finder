@@ -173,7 +173,10 @@ export default function HomePage() {
       >
         <div className="flex items-center justify-between">
           <div className="min-w-0">
-            <h1 className="font-serif text-[18px] md:text-[22px] leading-tight tracking-tight">
+            <h1 className="font-serif text-[16px] md:text-[22px] leading-tight tracking-tight">
+              <a href="https://koriboshi.com" className="hover:underline">
+                Koriboshi
+              </a>{' '}
               Sauna Finder
             </h1>
             <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide mt-0.5 hidden sm:block">
@@ -181,12 +184,6 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex-shrink-0 flex items-center gap-2 md:gap-3">
-            <a
-              href="https://koriboshi.com"
-              className="font-sans text-[14px] text-charcoal hover:text-charcoal transition-colors"
-            >
-              Koriboshi
-            </a>
             {user ? (
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-xs md:text-sm font-medium">
