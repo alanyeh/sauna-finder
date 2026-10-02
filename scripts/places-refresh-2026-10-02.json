@@ -1,0 +1,391 @@
+{
+  "batch": "places-refresh-2026-10-02",
+  "notBefore": "2026-10-03T08:20:00Z",
+  "expiresAt": "2026-10-10T00:00:00Z",
+  "listings": [
+    {
+      "id": 544,
+      "place_id": ""
+    },
+    {
+      "id": 672,
+      "place_id": "ChIJcUdAg1Yn9ocRpp3QgCQ6Rv0"
+    },
+    {
+      "id": 674,
+      "place_id": "ChIJs6_KyhIms1IR3fC_NhifaZo"
+    },
+    {
+      "id": 676,
+      "place_id": "ChIJ3QdQm3gKlVQRkdLimYiRWXA"
+    },
+    {
+      "id": 677,
+      "place_id": "ChIJB9valqiglVQRYZgiKdVoL0I"
+    },
+    {
+      "id": 678,
+      "place_id": "ChIJaShRimOhlVQRZ0zzEc6jo4o"
+    },
+    {
+      "id": 679,
+      "place_id": "ChIJVZWVrMCglVQRVzL2G9mKO3U"
+    },
+    {
+      "id": 680,
+      "place_id": "ChIJ148ReI-nlVQRZNVS8Pfzf2c"
+    },
+    {
+      "id": 681,
+      "place_id": "ChIJJdc8MoMJlVQR1qQUrA1Iq7c"
+    },
+    {
+      "id": 682,
+      "place_id": "ChIJDdCCrRehlVQRA0Z_WY7fT4I"
+    },
+    {
+      "id": 683,
+      "place_id": "ChIJX2Hv54x1lVQRaSK2IrTSXcw"
+    },
+    {
+      "id": 684,
+      "place_id": "ChIJFapV7Cp1lVQR87Lm3SeE8UM"
+    },
+    {
+      "id": 686,
+      "place_id": "ChIJDaFWq0ynlVQRZSLwseuGOtw"
+    },
+    {
+      "id": 687,
+      "place_id": "ChIJAfeU6d55bIcRhkQtys2CG24"
+    },
+    {
+      "id": 688,
+      "place_id": "ChIJRfjCsFeHa4cRzLaMRNosnz4"
+    },
+    {
+      "id": 689,
+      "place_id": "ChIJR7QL-rt5bIcR20PAeqDN8dI"
+    },
+    {
+      "id": 690,
+      "place_id": "ChIJa6AlODR_bIcRMbsyqShEU5w"
+    },
+    {
+      "id": 691,
+      "place_id": "ChIJOYutfKWZC0oRuYil2UnTrrA"
+    },
+    {
+      "id": 693,
+      "place_id": "ChIJSYpObGF5bIcRFVlb08RlL8I"
+    },
+    {
+      "id": 694,
+      "place_id": "ChIJw0kutV19bIcRcgYj5miDUqo"
+    },
+    {
+      "id": 695,
+      "place_id": "ChIJawwfI5R4bIcR379YjUPn6iU"
+    },
+    {
+      "id": 696,
+      "place_id": "ChIJTZmsrv5-bIcRR3Fg9eloPJE"
+    },
+    {
+      "id": 697,
+      "place_id": "ChIJKQH3nwwnuYQRUvx74B7wn44"
+    },
+    {
+      "id": 698,
+      "place_id": "ChIJjSKQ1vp_bIcRE25V3ev25-4"
+    },
+    {
+      "id": 701,
+      "place_id": "ChIJL6eMQh95bIcRNmVnsIVaGwA"
+    },
+    {
+      "id": 702,
+      "place_id": "ChIJ__4jVnvkLEARWpPp8R185CU"
+    },
+    {
+      "id": 703,
+      "place_id": "ChIJ2RKNlvXBQIYRzdKSzmthSgc"
+    },
+    {
+      "id": 704,
+      "place_id": "ChIJ3R2G187HQIYRfM8X9-RW3lA"
+    },
+    {
+      "id": 705,
+      "place_id": "ChIJXaceI7AnQYYRapUwtTXMEeo"
+    },
+    {
+      "id": 706,
+      "place_id": "ChIJAZym-kvBQIYR8GI-eIaUtGc"
+    },
+    {
+      "id": 707,
+      "place_id": "ChIJe46Cn7zAQIYRrLWC7MokfzY"
+    },
+    {
+      "id": 714,
+      "place_id": "ChIJo7foe2vBQIYRCyaYP3TDOik"
+    },
+    {
+      "id": 745,
+      "place_id": "ChIJO1yfpycnQYYRi_UB5laXTH8"
+    },
+    {
+      "id": 746,
+      "place_id": "ChIJMeoQ4HshQYYR3el7GJVk-f4"
+    },
+    {
+      "id": 748,
+      "place_id": "ChIJT4pBJuMhQYYR7Fp85zT0DFo"
+    },
+    {
+      "id": 749,
+      "place_id": "ChIJM7Fp1urmQIYR_rl5_fR60MM"
+    },
+    {
+      "id": 754,
+      "place_id": "ChIJse7mG4UxR4YRStECrHvaTIM"
+    },
+    {
+      "id": 755,
+      "place_id": "ChIJJYC-anUxR4YRaWsnrFYxq7k"
+    },
+    {
+      "id": 756,
+      "place_id": "ChIJVVWV5sk2R4YR5jdSWjvW7To"
+    },
+    {
+      "id": 757,
+      "place_id": "ChIJ1Yd_N5A2R4YR8hPCey3OZlI"
+    },
+    {
+      "id": 758,
+      "place_id": "ChIJ14pJpNUwR4YRptOqaSDJQaY"
+    },
+    {
+      "id": 776,
+      "place_id": "ChIJGx1sdW1xhlQRUe6wICTT-Ek"
+    },
+    {
+      "id": 777,
+      "place_id": "ChIJlfwKXg1zhlQRUiRUpMiCV2Y"
+    },
+    {
+      "id": 779,
+      "place_id": "ChIJ0-wTV4txhlQRaZTsi0QDXoE"
+    },
+    {
+      "id": 780,
+      "place_id": "ChIJi2Iq5XlxhlQRyHaA5LbCeW8"
+    },
+    {
+      "id": 782,
+      "place_id": "ChIJ12AkKcN3hlQRMeGDlyxzyy4"
+    },
+    {
+      "id": 785,
+      "place_id": "ChIJa5BHK7RzhlQRaDgkLphyUmQ"
+    },
+    {
+      "id": 786,
+      "place_id": "ChIJX5PyVm5zhlQRPku8lGBHy2g"
+    },
+    {
+      "id": 802,
+      "place_id": "ChIJPwA3Wz5xhlQRMGwCBbj-uiU"
+    },
+    {
+      "id": 808,
+      "place_id": "ChIJocE6sXyplVQRE6E0U13oSiY"
+    },
+    {
+      "id": 810,
+      "place_id": "ChIJezQrZcxxhlQRiFcWnk4QK0A"
+    },
+    {
+      "id": 811,
+      "place_id": "ChIJfeJ_CTB4hlQRu1IoDqXF-mk"
+    },
+    {
+      "id": 818,
+      "place_id": "ChIJS34fElM1K4gR-QJPhMiAodY"
+    },
+    {
+      "id": 819,
+      "place_id": "ChIJs7wDL7M0K4gRC0uidQzK8W0"
+    },
+    {
+      "id": 821,
+      "place_id": "ChIJUS2HkIs1K4gR6mRrnqwpaX0"
+    },
+    {
+      "id": 822,
+      "place_id": "ChIJbyKxum41K4gRenoEfdsHrqo"
+    },
+    {
+      "id": 825,
+      "place_id": "ChIJi0ZX_tE0K4gRo8c-F5R8Ktk"
+    },
+    {
+      "id": 826,
+      "place_id": "ChIJAYSh0hzN1IkR4IN4bP1pZtM"
+    },
+    {
+      "id": 827,
+      "place_id": "ChIJXayw7VE0K4gRSbn_j3cWJbY"
+    },
+    {
+      "id": 828,
+      "place_id": "ChIJvUEISsfVKogR3YTuVg-GKQM"
+    },
+    {
+      "id": 829,
+      "place_id": "ChIJJWLgegM4K4gROqWXj7McBOQ"
+    },
+    {
+      "id": 830,
+      "place_id": "ChIJp6Oow9AqK4gRXhR9ZLYeec0"
+    },
+    {
+      "id": 851,
+      "place_id": "ChIJF9JQDV3N1IkRoWKnTaG4OHI"
+    },
+    {
+      "id": 861,
+      "place_id": "ChIJKWfVjJ3U1IkRkrXOkxe3WD4"
+    },
+    {
+      "id": 868,
+      "place_id": "ChIJ6Z1uW7c3K4gRCbxjGh6spS4"
+    },
+    {
+      "id": 873,
+      "place_id": "ChIJ_cxJEHrW1IkR4BFsH-r3ElA"
+    },
+    {
+      "id": 874,
+      "place_id": "ChIJsxyc41fU1IkREQJeObFdRP8"
+    },
+    {
+      "id": 879,
+      "place_id": "ChIJLVX_1165woAR5kTDhpYphUU"
+    },
+    {
+      "id": 880,
+      "place_id": "ChIJt4qj116VwoAR2arht3PejAs"
+    },
+    {
+      "id": 881,
+      "place_id": "ChIJoWK-WgC5woARDxuCTz3VMyk"
+    },
+    {
+      "id": 882,
+      "place_id": "ChIJdYhy46G7woARUwiW0En2Dm0"
+    },
+    {
+      "id": 883,
+      "place_id": "ChIJcZKWN7q-woARSz-xH8gANzI"
+    },
+    {
+      "id": 884,
+      "place_id": "ChIJmw9lMmK7woAR83Raaql2sf4"
+    },
+    {
+      "id": 885,
+      "place_id": "ChIJFXt2hy67woARE1intyl6KZ8"
+    },
+    {
+      "id": 886,
+      "place_id": "ChIJiXyy6K6xwoAR84AacdREH-4"
+    },
+    {
+      "id": 890,
+      "place_id": "ChIJy0dD57SlwoARmy4OBrWvyCU"
+    },
+    {
+      "id": 891,
+      "place_id": "ChIJBbh-pcSlwoAR-i6AU1DydJU"
+    },
+    {
+      "id": 892,
+      "place_id": "ChIJl3J_Clm7woARG4D2RZCDZNQ"
+    },
+    {
+      "id": 893,
+      "place_id": "ChIJSZBYH4a6woARds0idUj26rg"
+    },
+    {
+      "id": 895,
+      "place_id": "ChIJTet0KxXrwoARuNqIZBZVvFQ"
+    },
+    {
+      "id": 898,
+      "place_id": "ChIJPXvUVGxJs1IRGzomuTUDY2s"
+    },
+    {
+      "id": 899,
+      "place_id": "ChIJaexzzpYD9ocRcTCPqJmaYSA"
+    },
+    {
+      "id": 901,
+      "place_id": "ChIJ_W98Ay3f94cRydDWWZjduTA"
+    },
+    {
+      "id": 903,
+      "place_id": "ChIJ1ZBT-3FLs1IRES0WOC5mZ68"
+    },
+    {
+      "id": 910,
+      "place_id": "ChIJpeiygAAd9ocR1ZyqvS25CiU"
+    },
+    {
+      "id": 914,
+      "place_id": "ChIJ37aNselZwokR08dHzsPE4BE"
+    },
+    {
+      "id": 915,
+      "place_id": "ChIJHRh5TmdZwokRXj6_FGcZFr0"
+    },
+    {
+      "id": 916,
+      "place_id": "ChIJGakjPLVZwokRVwUuwN_dxkU"
+    },
+    {
+      "id": 917,
+      "place_id": "ChIJZRUpK31ZwokRelH9J1ARTN4"
+    },
+    {
+      "id": 918,
+      "place_id": "ChIJv0mlV4JbwokRHAw1FiNWnKI"
+    },
+    {
+      "id": 922,
+      "place_id": "ChIJA9R9q9VZwokR0gr7pUhcIrc"
+    },
+    {
+      "id": 923,
+      "place_id": "ChIJO_i2bnRrUocRhicWvn8tbos"
+    },
+    {
+      "id": 924,
+      "place_id": "ChIJfZjCdlxtUocRyQNOzkWpr0E"
+    },
+    {
+      "id": 927,
+      "place_id": "ChIJL9HHcGSLTYcR8M8Xqs-GpwQ"
+    },
+    {
+      "id": 928,
+      "place_id": "ChIJQ_YJ5S91UocRpHbery9kn8E"
+    },
+    {
+      "id": 932,
+      "place_id": "ChIJSRoo0_L1TYcRDM_ALUSQ828"
+    }
+  ]
+}

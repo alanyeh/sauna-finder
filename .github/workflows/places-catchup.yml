@@ -1,0 +1,50 @@
+name: Finish October sauna refresh
+
+on:
+  schedule:
+    - cron: '20 8 3-9 10 *'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply updates (otherwise validate queue without Places requests)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: places-catchup-2026-10-02
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Resume remaining listings
+        id: refresh
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: |
+          if [ "$APPLY" = "true" ]; then
+            node scripts/resume-places-refresh.js --apply
+          else
+            node scripts/resume-places-refresh.js
+          fi
+      - name: Save update and restoration report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: places-catchup-${{ github.run_id }}
+          path: reports/places-catchup.json
+          retention-days: 30
