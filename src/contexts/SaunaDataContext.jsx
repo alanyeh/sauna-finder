@@ -2,27 +2,15 @@ import { createContext, useContext, useState, useEffect, useMemo, useCallback, u
 import { supabase } from '../supabase';
 import { useAuth } from './AuthContext';
 import { isAdmin } from '../lib/admin';
-import { isPublicSauna, normalizeCategories, isHotelSauna } from '../lib/saunaQuality';
+import { normalizeCategories } from '../lib/saunaQuality';
+
+import { isDiscoverableSauna } from '../lib/publicSaunas';
 
 const SaunaDataContext = createContext(null);
 
-// Generic chains to hide from results (records stay in DB but are filtered out)
-const HIDDEN_CHAINS = [
-  // Gym chains
-  'LA Fitness', 'Anytime Fitness', 'Crunch Fitness', 'YMCA', 'Life Time',
-  // Budget/generic hotel chains
-  'Holiday Inn', 'Comfort Suites', 'Comfort Inn', 'La Quinta',
-  'Quality Inn', 'Best Western', 'Crowne Plaza', 'Courtyard by Marriott',
-  'Delta Hotels', 'Sheraton', 'Hilton Americas', 'The Chatwal',
-];
-
-function isHiddenChain(sauna) {
-  return HIDDEN_CHAINS.some(chain => sauna.name?.includes(chain));
-}
-
 function transform(rows) {
   return (rows || [])
-    .filter(sauna => isPublicSauna(sauna) && (isHotelSauna(sauna) || !isHiddenChain(sauna)))
+    .filter(isDiscoverableSauna)
     .map(sauna => ({
       ...sauna,
       types: normalizeCategories(sauna.types),
@@ -68,6 +56,7 @@ export function SaunaDataProvider({ children, initialSaunas }) {
   }, []);
 
   useEffect(() => {
+    if (window.__PRERENDER__) return;
     fetchSaunas();
     const versionRef = requestVersion;
     return () => { versionRef.current++; };

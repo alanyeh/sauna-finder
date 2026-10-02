@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ReviewPage = lazy(() => import('./pages/ReviewPage'));
 const CityPage = lazy(() => import('./pages/CityPage'));
+const SaunaPage = lazy(() => import('./pages/SaunaPage'));
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/admin/review" element={<ReviewPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/city/:citySlug" element={<CityPage />} />
+        <Route path="/city/:citySlug/sauna/:saunaSlug" element={<SaunaPage />} />
       </Routes>
     </Suspense>
   );

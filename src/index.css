@@ -40,10 +40,10 @@
   }
 
   a {
-    @apply text-inherit no-underline hover:underline transition-all duration-base;
+    @apply text-inherit no-underline transition-all duration-base;
   }
 
-  :where(a, button, input, select, textarea):focus-visible {
+  :where(a, button, input, select, textarea, [role="link"]):focus-visible {
     outline: 2px solid theme('colors.terracotta-dark');
     outline-offset: 3px;
   }
@@ -59,6 +59,15 @@
 }
 
 @layer components {
+  .sauna-card-action {
+    @apply inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-lg border border-light-border bg-white/70 px-2 py-2.5 text-[11px] font-medium text-charcoal whitespace-nowrap hover:bg-white hover:border-warm-gray hover:no-underline;
+    transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .sauna-card-action-primary {
+    @apply border-charcoal bg-charcoal text-white hover:border-espresso-dark hover:bg-espresso-dark hover:shadow-sm;
+  }
+
   .ui-button {
     @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-light-border bg-white px-4 py-2 text-xs font-medium text-charcoal hover:border-warm-gray hover:bg-stone-50 hover:no-underline;
     transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;

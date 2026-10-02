@@ -11,13 +11,14 @@
 // and trip over vite preview's browser-open behavior.
 
 import { createReadStream } from 'node:fs'
-import { writeFile, mkdir, stat } from 'node:fs/promises'
+import { writeFile, mkdir, stat, readFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { dirname, extname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { CITY_CONFIG } from '../src/lib/cities.js'
 import { generateSitemap } from './generate-sitemap.js'
+import { saunaRoutes } from '../src/lib/saunaRoutes.js'
 
 // Use full puppeteer locally (it bundles its own Chromium with all shared
 // libs), but on CI use puppeteer-core + @sparticuz/chromium, which ships
@@ -55,7 +56,9 @@ const ORIGIN = `http://localhost:${PORT}`
 // page for every unknown route, which then tries to hydrate against a
 // different page. Keeping / for last means all city routes fall back to
 // the original empty shell written by `vite build`.
+const snapshot = JSON.parse(await readFile(new URL('../src/data/saunas-prebuilt.json', import.meta.url), 'utf8'))
 const routes = [
+  ...saunaRoutes(snapshot),
   ...Object.keys(CITY_CONFIG)
     .filter((slug) => slug !== 'all')
     .map((slug) => `/city/${slug}`),
@@ -92,7 +95,7 @@ async function tryFile(path) {
 }
 
 function startStaticServer() {
-  return new Promise((resolvePromise) => {
+  return new Promise((resolvePromise, rejectPromise) => {
     const server = createServer(async (req, res) => {
       try {
         const url = new URL(req.url, ORIGIN)
@@ -112,14 +115,13 @@ function startStaticServer() {
         res.end(String(err))
       }
     })
+    server.on('error', rejectPromise)
     server.listen(PORT, '127.0.0.1', () => resolvePromise(server))
   })
 }
 
 async function prerenderRoute(browser, route) {
   const page = await browser.newPage()
-  const context = browser.defaultBrowserContext()
-  await context.overridePermissions(ORIGIN, [])
 
   // Flag tells React components (via ClientOnly) not to render DOM-mutating
   // libraries like Google Maps during the prerender pass.
@@ -127,21 +129,33 @@ async function prerenderRoute(browser, route) {
     window.__PRERENDER__ = true
   })
 
-  page.on('pageerror', (err) => {
-    console.error(`[${route}] page error:`, err.message)
+  const errors = []
+  page.on('pageerror', err => errors.push(err.message))
+  // SEO output comes from the build snapshot; third-party assets and images
+  // are unnecessary during rendering and would multiply network work.
+  await page.setRequestInterception(true)
+  page.on('request', request => {
+    if (!request.url().startsWith(ORIGIN + '/') || ['image', 'font'].includes(request.resourceType())) request.abort()
+    else request.continue()
   })
 
-  await page.goto(`${ORIGIN}${route}`, { waitUntil: 'networkidle0', timeout: 30_000 })
+  await page.goto(`${ORIGIN}${route}`, { waitUntil: 'domcontentloaded', timeout: 30_000 })
 
-  // Wait until SaunaDataContext has populated and Helmet has updated <title>.
-  // The "Loading saunas..." text disappears once data is in.
-  await page.waitForFunction(
-    () => !document.body.innerText.includes('Loading saunas'),
-    { timeout: 15_000 }
-  )
-
-  // Give Helmet one more tick to flush meta tags
-  await new Promise((r) => setTimeout(r, 250))
+  // Wait for this route, not an empty Suspense fallback or a stale page title.
+  try {
+    await page.waitForFunction(
+      expected => document.querySelector('link[rel="canonical"]')?.getAttribute('href') === expected
+        && document.querySelector('#root h1')
+        && document.querySelector('script[type="application/ld+json"]')
+        && !document.body.innerText.includes('Loading saunas'),
+      { timeout: 15_000, polling: 100 }, `https://sauna-finder.koriboshi.com${route}`
+    )
+  } catch (error) {
+    const state = await page.evaluate(() => ({ title: document.title, canonical: document.querySelector('link[rel=canonical]')?.href, body: document.body.innerText.slice(0, 500) }))
+    await page.close()
+    throw new Error(`${route}: ${error.message}; ${JSON.stringify(state)}; ${errors.join('; ')}`, { cause: error })
+  }
+  if (errors.length) throw new Error(`${route}: ${errors.join('; ')}`)
 
   const html = await page.content()
   await page.close()
@@ -166,21 +180,29 @@ async function main() {
   let browser
   try {
     browser = await puppeteer.launch(launchOptions)
-    for (const route of routes) {
-      await prerenderRoute(browser, route)
-    }
+    await browser.defaultBrowserContext().overridePermissions(ORIGIN, [])
+    const pending = routes.filter(route => route !== '/')
+    let cursor = 0
+    const workers = await Promise.allSettled(Array.from({ length: 4 }, async () => {
+      while (cursor < pending.length) await prerenderRoute(browser, pending[cursor++])
+    }))
+    const failed = workers.find(worker => worker.status === 'rejected')
+    if (failed) throw failed.reason
+    await prerenderRoute(browser, '/')
   } finally {
     if (browser) await browser.close()
     server.close()
   }
 
-  const sitemapPath = await generateSitemap(distDir)
+  const sitemapPath = await generateSitemap(distDir, snapshot)
   console.log(`  sitemap → ${sitemapPath.replace(distDir, 'dist')}`)
 
   console.log('Prerender complete.')
 }
 
-main().catch((err) => {
+export { startStaticServer, puppeteer, launchOptions }
+
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) main().catch((err) => {
   console.error('Prerender failed:', err)
   process.exit(1)
 })

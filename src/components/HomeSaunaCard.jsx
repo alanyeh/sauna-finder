@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
-export default function HomeSaunaCard({ sauna, citySlug }) {
+export default function HomeSaunaCard({ sauna }) {
   const photos = sauna.photos || [];
   const primaryPhoto = photos[0];
 
   return (
     <Link
-      to={`/city/${citySlug}`}
+      to={`/city/${sauna.city_slug}`}
       state={{ selectedSaunaId: sauna.id }}
       className="flex-shrink-0 w-[72vw] sm:w-[44vw] md:w-[280px] lg:w-[280px] snap-start group hover:no-underline"
     >
@@ -44,11 +44,6 @@ export default function HomeSaunaCard({ sauna, citySlug }) {
           </p>
         )}
 
-        {sauna.price && (
-          <p className="text-[12px] md:text-[13px] text-charcoal font-medium mt-0.5">
-            {sauna.price}
-          </p>
-        )}
       </div>
     </Link>
   );

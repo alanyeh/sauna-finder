@@ -1,3 +1,4 @@
+import ShopLink from '../components/ShopLink';
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
@@ -12,6 +13,7 @@ import SEO from '../components/SEO';
 import ClientOnly from '../components/ClientOnly';
 import CitySEOContent from '../components/CitySEOContent';
 import { getCityContent } from '../lib/cityContent';
+import { saunaPath } from '../lib/saunaRoutes';
 
 const Map = lazy(() => import('../components/Map'));
 const AuthModal = lazy(() => import('../components/AuthModal'));
@@ -128,7 +130,8 @@ export default function CityPage() {
       position: index + 1,
       item: {
         '@type': 'LocalBusiness',
-        '@id': `https://sauna-finder.koriboshi.com/city/${citySlug}#sauna-${sauna.id}`,
+        '@id': `https://sauna-finder.koriboshi.com${saunaPath(sauna)}#business`,
+        url: `https://sauna-finder.koriboshi.com${saunaPath(sauna)}`,
         name: sauna.name,
         description: sauna.description || `${sauna.types?.[0] || 'Sauna'} in ${cityFullName}`,
         address: { '@type': 'PostalAddress', streetAddress: sauna.address },
@@ -145,7 +148,7 @@ export default function CityPage() {
         }),
         ...(sauna.price && { priceRange: sauna.price }),
         ...(sauna.photos?.length > 0 && { image: sauna.photos[0] }),
-        ...(sauna.website_url && { url: sauna.website_url }),
+        ...(sauna.website_url && { sameAs: sauna.website_url }),
       },
     }));
 
@@ -226,11 +229,9 @@ export default function CityPage() {
 
               <footer className="px-4 md:px-7 py-6 md:py-8 text-center border-t border-light-border bg-cream">
                 <p className="text-[11px] md:text-xs text-warm-gray mb-2">
-                  Sauna Finder — Find your perfect sauna
+                  Sauna Finder by Koriboshi
                 </p>
-                <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
-                  Back to Koriboshi
-                </a>
+                <ShopLink />
               </footer>
             </Sidebar>
           </div>

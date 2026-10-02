@@ -5,6 +5,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef(null);
   const mouseStartX = useRef(null);
+  const suppressClickUntil = useRef(0);
 
   if (!photos || photos.length === 0) {
     return null;
@@ -25,6 +26,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
   };
 
   const handleMouseDown = (e) => {
+    suppressClickUntil.current = 0;
     mouseStartX.current = e.clientX;
   };
 
@@ -32,6 +34,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
     if (mouseStartX.current === null) return;
     const delta = mouseStartX.current - e.clientX;
     if (Math.abs(delta) > 50) {
+      suppressClickUntil.current = Date.now() + 500;
       delta > 0
         ? setCurrentIndex((i) => (i === photos.length - 1 ? 0 : i + 1))
         : setCurrentIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
@@ -40,6 +43,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
   };
 
   const handleTouchStart = (e) => {
+    suppressClickUntil.current = 0;
     touchStartX.current = e.touches[0].clientX;
   };
 
@@ -47,6 +51,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
     if (touchStartX.current === null) return;
     const delta = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(delta) > 50) {
+      suppressClickUntil.current = Date.now() + 500;
       delta > 0
         ? setCurrentIndex((i) => (i === photos.length - 1 ? 0 : i + 1))
         : setCurrentIndex((i) => (i === 0 ? photos.length - 1 : i - 1));
@@ -61,6 +66,13 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
       onMouseUp={handleMouseUp}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      onClickCapture={event => {
+        if (Date.now() < suppressClickUntil.current) {
+          event.preventDefault();
+          event.stopPropagation();
+          suppressClickUntil.current = 0;
+        }
+      }}
     >
       <img
         src={photos[currentIndex]}
@@ -69,6 +81,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
         style={{ maxWidth: '100%', maxHeight: '100%' }}
         loading="lazy"
         decoding="async"
+        draggable={false}
       />
 
       {photos.length > 1 && (

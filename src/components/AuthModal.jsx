@@ -132,7 +132,7 @@ export default function AuthModal({ onClose }) {
               setIsSignUp(!isSignUp);
               setError('');
             }}
-            className="text-charcoal font-medium hover:underline transition-colors duration-base"
+            className="text-charcoal font-medium transition-colors duration-base"
           >
             {isSignUp ? 'Sign In' : 'Sign Up'}
           </button>

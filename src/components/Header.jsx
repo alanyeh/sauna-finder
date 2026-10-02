@@ -23,20 +23,17 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
 
   return (
     <div className="sticky top-0 z-50 px-4 md:px-7 py-2.5 md:py-3 border-b border-light-border bg-cream">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-          <div className="font-serif text-[14px] md:text-[18px] leading-tight tracking-tight">
-            <a href="https://koriboshi.com" className="block hover:underline">
-              Koriboshi
-            </a>
-            <span className="block">Sauna Finder</span>
-          </div>
+          <Link to="/" className="font-serif text-[14px] md:text-[18px] leading-tight tracking-tight shrink-0 whitespace-nowrap">
+            Sauna Finder
+          </Link>
           {/* Mobile: dropdown */}
           <select
             aria-label="Choose a city"
             value={citySlug}
             onChange={(e) => setCitySlug(e.target.value)}
-            className="ui-field md:hidden max-w-[145px] min-w-0 text-xs"
+            className="ui-field md:hidden w-auto flex-1 max-w-[145px] min-w-0 text-xs"
           >
             {CITIES.map(({ slug, label }) => (
               <option key={slug} value={slug}>{label}</option>

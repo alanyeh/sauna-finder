@@ -222,7 +222,7 @@ export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlu
             .env.local
           </code>
           <p className="text-xs text-warm-gray">
-            See <code className="text-xs">.env.example</code>. Get your API key at <a href="https://console.cloud.google.com/google/maps-apis" className="text-accent-red hover:underline" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>
+            See <code className="text-xs">.env.example</code>. Get your API key at <a href="https://console.cloud.google.com/google/maps-apis" className="text-accent-red" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>
           </p>
         </div>
       </div>

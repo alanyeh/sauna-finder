@@ -174,6 +174,32 @@ before copying a candidate into a listing's pricing options. Sites that only
 publish prices in booking widgets, JavaScript, or PDFs may return no candidates;
 an empty result does not mean free admission or that existing prices are current.
 
+## Individual sauna pages
+
+Published listings have a detail route at
+`/city/:citySlug/sauna/:nameSlug-:id`. The numeric ID is the lookup key; an old
+name slug or city path redirects in the client to the current canonical URL.
+Homepage and city cards open detail pages when clicked. City cards also support
+Enter when focused; photo controls, favorites, and external links remain independent.
+The detail page links back to the selected listing on the city map.
+
+Pages include existing photos, amenities, admission/access information, hours,
+directions, share controls, source dates when recorded, and LocalBusiness and
+breadcrumb structured data. Missing or unpublished records show an unavailable
+page with `noindex`; the SPA hosting fallback still returns HTTP 200 for these
+unknown URLs. Server-side 404s/redirects are a future hosting enhancement.
+
+Prerender and sitemap generation use the same visibility rules as public
+discovery. Four browser workers render listing and city pages from the build
+snapshot, without live database refetches, Maps, or image downloads; the homepage
+is rendered last. Metadata readiness is checked before saving each page.
+
+Validation: `node --test scripts/tests/*.test.js`, then `npm run build`.
+Run `node scripts/check-sauna-pages.js` after building for browser checks of
+direct links, canonical redirects, missing listings, gallery controls, mobile
+overflow, and return-to-map selection. This local browser check saves screenshots
+under `/private/tmp/sauna-detail-*.png`.
+
 ## Listing quality and review
 
 `/admin/review` is available to the admin account. It includes unpublished

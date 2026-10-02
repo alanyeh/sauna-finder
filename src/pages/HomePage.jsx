@@ -1,3 +1,4 @@
+import ShopLink from '../components/ShopLink';
 import { isAdmin } from '../lib/admin';
 import { useMemo, useRef, useState, useCallback, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -176,10 +177,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between">
           <div className="min-w-0">
             <h1 className="font-serif text-[16px] md:text-[22px] leading-tight tracking-tight">
-              <a href="https://koriboshi.com" className="hover:underline">
-                Koriboshi
-              </a>{' '}
-              Sauna Finder
+              <Link to="/">Sauna Finder</Link>
             </h1>
             <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide mt-0.5 hidden sm:block">
               Discover the best saunas and bathhouses across the US and Canada
@@ -241,11 +239,9 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="px-4 md:px-8 lg:px-16 py-6 md:py-8 text-center border-t border-light-border">
         <p className="text-[11px] md:text-xs text-warm-gray mb-2">
-          Sauna Finder — Find your perfect sauna
+          Sauna Finder by Koriboshi
         </p>
-        <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
-          Back to Koriboshi
-        </a>
+        <ShopLink />
       </footer>
     </div>
   );

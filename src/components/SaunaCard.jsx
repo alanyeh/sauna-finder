@@ -1,12 +1,34 @@
 import AccessDetails from './AccessDetails';
+import { Link, useNavigate } from 'react-router-dom';
+import { saunaPath } from '../lib/saunaRoutes';
 import { amenityLabels } from '../lib/amenities';
 import PhotoCarousel from './PhotoCarousel';
 
-export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite, isAdmin, onEdit }) {
+export default function SaunaCard({ sauna, isSelected, user, isFavorite, onToggleFavorite, isAdmin, onEdit }) {
+  const navigate = useNavigate();
+  const path = saunaPath(sauna);
+  const openDetails = event => {
+    if (event.defaultPrevented || event.target.closest('a, button, input, select, textarea') || window.getSelection()?.toString()) return;
+    if (event.metaKey || event.ctrlKey || event.button === 1) {
+      window.open(path, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(path);
+    }
+  };
   return (
     <div
       data-sauna-id={sauna.id}
-      onClick={onClick}
+      role="link"
+      tabIndex={0}
+      aria-label={`View ${sauna.name}`}
+      onClick={openDetails}
+      onAuxClick={event => { if (event.button === 1) openDetails(event); }}
+      onKeyDown={event => {
+        if (event.target === event.currentTarget && event.key === 'Enter') {
+          event.preventDefault();
+          navigate(path);
+        }
+      }}
       className={`border-b border-l-[3px] border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
           ? 'bg-white border-l-accent-red'
@@ -23,7 +45,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
       <div className="px-5 py-5">
         <div className="flex items-start justify-between">
         <h2 className="text-base font-normal leading-snug mb-1.5 text-charcoal">
-          {sauna.name}
+          <Link to={saunaPath(sauna)} onClick={event => event.stopPropagation()}>{sauna.name}</Link>
         </h2>
         <div className="flex items-center gap-1 flex-shrink-0 ml-2">
           {isAdmin && (
@@ -126,28 +148,44 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
         </p>
       )}
 
-      {/* Address + Visit Website */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-light-border pt-3">
-        {sauna.address ? (
+      {/* Listing actions */}
+      <div className="grid grid-flow-col auto-cols-fr gap-2 mt-4">
+        <Link
+          to={saunaPath(sauna)}
+          onClick={event => event.stopPropagation()}
+          className="sauna-card-action sauna-card-action-primary"
+          aria-label={`View details for ${sauna.name}`}
+        >
+          Details
+          <svg aria-hidden="true" className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14m-5-5 5 5-5 5" />
+          </svg>
+        </Link>
+        {sauna.address && (
           <a
             href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline truncate"
+            className="sauna-card-action"
+            aria-label={`Directions to ${sauna.name} on Google Maps (opens in a new tab)`}
           >
-            View on Google Maps →
+            Directions
           </a>
-        ) : <span />}
+        )}
         {sauna.website_url && (
           <a
             href={sauna.website_url}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="text-[12px] text-warm-gray hover:text-charcoal transition-colors underline flex-shrink-0"
+            className="sauna-card-action"
+            aria-label={`Visit ${sauna.name}'s website (opens in a new tab)`}
           >
-            Visit Website →
+            Website
+            <svg aria-hidden="true" className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17 17 7M7 7h10v10" />
+            </svg>
           </a>
         )}
       </div>

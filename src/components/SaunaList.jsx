@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import SaunaCard from './SaunaCard';
 
-export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna, citySlug, children }) {
+export default function SaunaList({ saunas, selectedSauna, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna, citySlug, children }) {
   const scrollContainerRef = useRef(null);
 
   // Jump back to the top of the list when switching cities — cross-city links
@@ -35,7 +35,6 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
               key={sauna.id}
               sauna={sauna}
               isSelected={selectedSauna?.id === sauna.id}
-              onClick={() => onSaunaSelect(sauna)}
               user={user}
               isFavorite={isFavorite?.(sauna.id)}
               onToggleFavorite={() => toggleFavorite?.(sauna.id)}
