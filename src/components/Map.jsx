@@ -1,3 +1,4 @@
+import AccessDetails from './AccessDetails';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import PhotoCarousel from './PhotoCarousel';
@@ -92,6 +93,7 @@ function SaunaMarker({ sauna, isSelected, onClick, disableInfoWindow }) {
                   {sauna.types.join(', ')}
                 </p>
               )}
+              <AccessDetails sauna={sauna} />
               {sauna.rating != null && (
                 <div className="flex items-center gap-1.5 mb-2 text-[13px] font-sans">
                   <span className="text-accent-red">★</span>

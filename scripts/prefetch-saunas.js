@@ -21,6 +21,7 @@ import { writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { config as loadDotenv } from 'dotenv'
+import { isPublicSauna } from '../src/lib/saunaQuality.js'
 import { createClient } from '@supabase/supabase-js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -86,7 +87,7 @@ if (errors.length > 0) {
 // Strip fields the UI never reads so they don't ride in the client bundle.
 // (The live client refetch still returns full rows, so admin editing keeps
 // access to every column.)
-const slimmed = saunas.map(({ created_at, updated_at, ...rest }) => rest)
+const slimmed = saunas.filter(isPublicSauna).map(({ created_at, updated_at, review_notes, ...rest }) => rest)
 
 const outPath = resolve(__dirname, '..', 'src', 'data', 'saunas-prebuilt.json')
 await mkdir(dirname(outPath), { recursive: true })

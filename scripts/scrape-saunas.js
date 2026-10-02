@@ -1,3 +1,4 @@
+import { discoveryLocationIssue, hasSpecificSaunaName, classifySaunaTypes } from './lib/discovery-quality.js';
 import { createClient } from '@supabase/supabase-js';
 import fetch from 'node-fetch';
 import { inferAmenityEvidence, placeTextSources, hasSaunaEvidence } from './lib/amenities.js';
@@ -303,15 +304,6 @@ const EXCLUDED_NAME_PATTERNS = [
   /children'?s?\s*fitness/i, /\bkids?\b/i,
 ];
 
-// Sauna-specific keywords — if the name contains any of these, always include
-const SAUNA_KEYWORDS = [
-  /sauna/i, /bath\s*house/i, /\bbanya\b/i, /\bhammam\b/i, /\bonsen\b/i,
-  /cold\s*plunge/i, /\binfrared\b/i, /steam\s*(room|lounge)/i,
-  /\bfloat(s|ation)?\b/i, /\bthermal\b/i, /\bthermae\b/i,
-  /\bsoak\b/i, /hot\s*tub/i, /\bplunge\b/i,
-  /\bbath(s|ing)?\b/i,
-];
-
 // Known sauna/wellness brands that may not have "sauna" in their name
 const BRAND_WHITELIST = [
   /othership/i, /remedy\s*place/i, /higher\s*dose/i, /clean\s*market/i,
@@ -406,12 +398,7 @@ function shouldInclude(place) {
     return { include: false, reason: `too few reviews (${reviews})` };
   }
 
-  // Always include: sauna-specific keywords in the name
-  for (const pattern of SAUNA_KEYWORDS) {
-    if (pattern.test(name)) {
-      return { include: true, reason: `sauna keyword: ${pattern.source}` };
-    }
-  }
+  if (hasSpecificSaunaName(name)) return { include: true, reason: 'Explicit sauna name; requires source review before publishing' };
 
   // Always include: known sauna/wellness brands
   for (const pattern of BRAND_WHITELIST) {
@@ -431,95 +418,6 @@ function shouldInclude(place) {
 }
 
 // ─── Auto-Classification ────────────────────────────────────────────────────────
-function classifyType(place) {
-  const name = (place.displayName?.text || '');
-  const types = place.types || [];
-  const saunaTypes = [];
-
-  // Bathhouse / Banya
-  if (/banya/i.test(name) || /russian.*bath/i.test(name)) {
-    saunaTypes.push('Russian Bathhouse');
-  } else if (/bath\s*house/i.test(name) || /\bbathing\b/i.test(name)) {
-    saunaTypes.push('Modern Bathhouse');
-  }
-
-  // Korean Spa
-  if (/korean/i.test(name) || /k[\-\s]?spa/i.test(name) || /jjimjil/i.test(name)) {
-    saunaTypes.push('Korean Spa');
-  }
-
-  // Hammam / Turkish
-  if (/hammam/i.test(name) || /moroccan.*bath/i.test(name) || /turkish.*bath/i.test(name)) {
-    saunaTypes.push('Traditional Bathhouse');
-  }
-
-  // Infrared
-  if (/infrared/i.test(name)) {
-    saunaTypes.push('Infrared Sauna');
-  }
-
-  // Float spa
-  if (/float/i.test(name)) {
-    saunaTypes.push('Float Spa');
-  }
-
-  // Gym / Fitness
-  if (types.includes('gym') || types.includes('fitness_center') || types.includes('health_club') ||
-      /\bgym\b/i.test(name) || /\bfitness\b/i.test(name) ||
-      /equinox/i.test(name) || /life\s*time/i.test(name) ||
-      /crunch/i.test(name) || /tmpl/i.test(name) ||
-      /climbing/i.test(name) || /boulders/i.test(name)) {
-    saunaTypes.push('Gym Sauna');
-  }
-
-  // Hotel / Resort
-  if (types.includes('hotel') || types.includes('lodging') || types.includes('resort_hotel') ||
-      /\bhotel\b/i.test(name) || /\bresort\b/i.test(name)) {
-    saunaTypes.push('Hotel Spa');
-  }
-
-  // Check editorial summary and reviews for additional / more specific types.
-  // Specific types (infrared, korean, etc.) are prepended so they show as primary.
-  const editorial = (place.editorialSummary?.text || '').toLowerCase();
-  const reviewText = (place.reviews || [])
-    .map(r => (r.text?.text || r.originalText?.text || '').toLowerCase())
-    .join(' ');
-  const extraText = `${editorial} ${reviewText}`;
-  const has = (t) => saunaTypes.includes(t);
-
-  if (!has('Korean Spa') && /korean\s*(spa|bath)|jjimjil/i.test(extraText)) {
-    saunaTypes.unshift('Korean Spa');
-  }
-  if (!has('Russian Bathhouse') && /russian|banya/i.test(extraText)) {
-    saunaTypes.unshift('Russian Bathhouse');
-  }
-  if (!has('Traditional Bathhouse') && /hammam|turkish\s*bath|moroccan/i.test(extraText)) {
-    saunaTypes.unshift('Traditional Bathhouse');
-  }
-  if (!has('Infrared Sauna') && /infrared/i.test(extraText)) {
-    saunaTypes.unshift('Infrared Sauna');
-  }
-  if (!has('Float Spa') && /float(ation)?[\s\-]*(tank|pod|therapy|spa|center)/i.test(extraText)) {
-    saunaTypes.unshift('Float Spa');
-  }
-  if (!has('Modern Bathhouse') && /bath\s*house|communal\s*bath|\bbathing\b/i.test(extraText)) {
-    saunaTypes.push('Modern Bathhouse');
-  }
-
-  // Name-based fallbacks
-  if (saunaTypes.length === 0 && /sauna/i.test(name)) {
-    saunaTypes.push('Boutique Sauna');
-  }
-  if (saunaTypes.length === 0 && (/\bspa\b/i.test(name) || /wellness/i.test(name))) {
-    saunaTypes.push('Day Spa');
-  }
-  if (saunaTypes.length === 0 && (/recovery/i.test(name) || /plunge/i.test(name))) {
-    saunaTypes.push('Wellness Center');
-  }
-
-  return saunaTypes;
-}
-
 // ─── Amenity Inference ────────────────────────────────────────────────────────
 // Scans name, editorial summary, and reviews for amenity keywords.
 function inferAmenities(place) {
@@ -553,7 +451,7 @@ function generateDescription(place, saunaTypes) {
 
   // Fallback: brief type-based description
   if (saunaTypes.length > 0) {
-    return `${saunaTypes[0]} offering sauna and wellness experiences.`;
+    return `${saunaTypes[0]}. Details awaiting source review.`;
   }
 
   return '';
@@ -616,7 +514,7 @@ function formatHours(openingHours) {
 }
 
 function placeToRecord(place, citySlug, cityConfig) {
-  const types = classifyType(place);
+  const types = classifySaunaTypes(place);
   return {
     name: place.displayName?.text || '',
     address: place.formattedAddress || '',
@@ -635,6 +533,9 @@ function placeToRecord(place, citySlug, cityConfig) {
     photos: null,
     website_url: place.websiteUri || null,
     gender_policy: null,
+    listing_status: 'review',
+    access_policy: 'unknown',
+    review_notes: 'New discovery: confirm location-specific sauna evidence, category and access before publishing.',
   };
 }
 
@@ -859,6 +760,11 @@ async function main() {
   const filteredOut = [];
 
   for (const place of uniquePlaces) {
+    const locationProblem = discoveryLocationIssue(place, config);
+    if (locationProblem) {
+      filteredOut.push({ place, reason: locationProblem });
+      continue;
+    }
     if (noFilter) {
       passedFilter.push(place);
       continue;
@@ -876,17 +782,16 @@ async function main() {
   console.log(`Filtered out: ${filteredOut.length}`);
 
   // ── Step 5: Check against existing DB entries ─────────────────────────────
-  console.log(`\nFetching existing ${config.city_slug} saunas from Supabase...`);
-  const { data: existingSaunas, error: fetchError } = await supabase
-    .from('saunas')
-    .select('id, name, address, place_id')
-    .eq('city_slug', config.city_slug);
-
-  if (fetchError) {
-    console.error('Error fetching existing saunas:', fetchError.message);
-    process.exit(1);
+  console.log(`\nFetching existing saunas across all cities from Supabase...`);
+  const existingSaunas = [];
+  for (let start = 0; ; start += 1000) {
+    const { data, error } = await supabase.from('saunas')
+      .select('id, name, address, place_id, city_slug').order('id').range(start, start + 999);
+    if (error) throw error;
+    existingSaunas.push(...data);
+    if (data.length < 1000) break;
   }
-  console.log(`Found ${existingSaunas.length} existing saunas in ${config.city_slug}\n`);
+  console.log(`Found ${existingSaunas.length} existing saunas across all cities\n`);
 
   const existingPlaceIds = new Set(existingSaunas.map(s => s.place_id).filter(Boolean));
 
@@ -900,7 +805,7 @@ async function main() {
       continue;
     }
 
-    const match = isDuplicate(place, existingSaunas);
+    const match = isDuplicate(place, existingSaunas.filter(row => row.city_slug === config.city_slug));
     if (match) {
       duplicates.push({ place, match });
     } else {

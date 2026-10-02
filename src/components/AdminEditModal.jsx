@@ -1,3 +1,4 @@
+import { SAUNA_CATEGORIES, normalizeCategories, publicationIssue, ACCESS_LABELS } from '../lib/saunaQuality';
 import { useState } from 'react';
 import { supabase } from '../supabase';
 import { amenityLabels } from '../lib/amenities';
@@ -18,15 +19,7 @@ async function geocodeAddress(address) {
   return { lat: null, lng: null };
 }
 
-const SAUNA_TYPES = [
-  'Modern Bathhouse',
-  'Korean Spa',
-  'Russian Banya',
-  'Infrared Sauna',
-  'Japanese Sauna',
-  'Hotel Spa',
-  'Gym Sauna',
-];
+const SAUNA_TYPES = SAUNA_CATEGORIES;
 
 const AMENITY_OPTIONS = Object.entries(amenityLabels).map(([value, label]) => ({
   value,
@@ -39,7 +32,7 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
   const [city, setCity] = useState(sauna.city_slug || 'nyc');
   const [neighborhood, setNeighborhood] = useState(sauna.neighborhood || '');
   const [price, setPrice] = useState(sauna.price || '');
-  const [selectedTypes, setSelectedTypes] = useState(sauna.types || []);
+  const [selectedTypes, setSelectedTypes] = useState(normalizeCategories(sauna.types));
   const [selectedAmenities, setSelectedAmenities] = useState(sauna.amenities || []);
   const [hours, setHours] = useState(sauna.hours || '');
   const [websiteUrl, setWebsiteUrl] = useState(sauna.website_url || '');
@@ -54,6 +47,14 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
   const [dragIndex, setDragIndex] = useState(null);
   const [dragOverIndex, setDragOverIndex] = useState(null);
   const [dragSource, setDragSource] = useState(null); // 'existing' or 'new'
+  const [quality, setQuality] = useState({
+    listing_status: sauna.listing_status || 'review', access_policy: sauna.access_policy || 'unknown',
+    access_source_url: sauna.access_source_url || '', access_checked_at: sauna.access_checked_at?.slice(0,10) || '',
+    access_notes: sauna.access_notes || '', sauna_source_url: sauna.sauna_source_url || '',
+    sauna_checked_at: sauna.sauna_checked_at?.slice(0,10) || '', review_notes: sauna.review_notes || '',
+    duplicate_of: sauna.duplicate_of || '',
+  });
+  const setQualityField = (key, value) => setQuality(previous => ({...previous, [key]: value}));
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -150,6 +151,17 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
     setLoading(true);
 
     try {
+      // Validate publication before any photo mutation or record write.
+      const coords = address === sauna.address ? { lat: sauna.lat, lng: sauna.lng } : await geocodeAddress(address);
+      const candidate = { ...sauna, ...quality, ...coords, name, city_slug: city, types: normalizeCategories(selectedTypes) };
+      if (quality.listing_status === 'active') {
+        const issue = publicationIssue(candidate);
+        if (issue) throw new Error(issue);
+        if (quality.duplicate_of) throw new Error('Clear the duplicate reference before publishing.');
+      }
+      if (quality.listing_status === 'duplicate' && (!quality.duplicate_of || Number(quality.duplicate_of) === sauna.id)) {
+        throw new Error('Choose a different canonical listing ID for a duplicate.');
+      }
       // Upload new photos
       const uploadedUrls = [];
       for (const file of newPhotoFiles) {
@@ -176,26 +188,25 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
         }
       }
 
-      // Re-geocode only if address changed
-      let lat = sauna.lat;
-      let lng = sauna.lng;
-      if (address !== sauna.address) {
-        const coords = await geocodeAddress(address);
-        lat = coords.lat;
-        lng = coords.lng;
-      }
+      const { lat, lng } = coords;
 
       const finalPhotos = [...photos, ...uploadedUrls];
 
       const { error: updateError } = await supabase
         .from('saunas')
         .update({
+          ...quality,
+          access_source_url: quality.access_source_url || null,
+          access_checked_at: quality.access_checked_at || null,
+          sauna_source_url: quality.sauna_source_url || null,
+          sauna_checked_at: quality.sauna_checked_at || null,
+          duplicate_of: quality.duplicate_of ? Number(quality.duplicate_of) : null,
           name,
           address,
           city_slug: city,
           neighborhood: neighborhood || null,
           price: price || null,
-          types: selectedTypes.length > 0 ? selectedTypes : null,
+          types: normalizeCategories(selectedTypes),
           amenities: selectedAmenities.length > 0 ? selectedAmenities : [],
           hours: hours || null,
           website_url: websiteUrl || null,
@@ -686,6 +697,36 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
                 </p>
               )}
             </div>
+
+            <fieldset className="border border-light-border p-4 space-y-4">
+              <legend className="px-2 font-serif text-lg">Publication &amp; access</legend>
+              <label className="block text-xs">Visibility
+                <select className="ui-field mt-2" value={quality.listing_status} onChange={e => setQualityField('listing_status', e.target.value)}>
+                  <option value="active">Published</option><option value="review">Needs review</option>
+                  <option value="hidden">Hidden</option><option value="duplicate">Duplicate</option>
+                  <option value="seasonal_closed">Seasonally closed</option>
+                </select>
+              </label>
+              <label className="block text-xs">Sauna access
+                <select className="ui-field mt-2" value={quality.access_policy} onChange={e => setQualityField('access_policy', e.target.value)}>
+                  {Object.entries(ACCESS_LABELS).map(([value,label]) => <option key={value} value={value}>{label}</option>)}
+                </select>
+              </label>
+              {[['sauna_source_url','Sauna evidence URL','url'],['sauna_checked_at','Sauna evidence checked','date'],
+                ['access_source_url','Non-guest sauna access source','url'],['access_checked_at','Access checked','date'],
+                ['duplicate_of','Canonical listing ID (duplicates only)','number']].map(([key,label,type]) => (
+                <label key={key} className="block text-xs">{label}
+                  <input type={type} className="ui-field mt-2" value={quality[key]} onChange={e => setQualityField(key,e.target.value)} />
+                </label>
+              ))}
+              <label className="block text-xs">Access conditions shown to visitors
+                <textarea className="ui-field mt-2" value={quality.access_notes} onChange={e => setQualityField('access_notes',e.target.value)} />
+              </label>
+              <label className="block text-xs">Review notes
+                <textarea className="ui-field mt-2" value={quality.review_notes} onChange={e => setQualityField('review_notes',e.target.value)} />
+              </label>
+              <p className="text-xs text-warm-gray">Publishing requires sauna evidence. Hotels also need a checked source confirming that non-guests can use the sauna.</p>
+            </fieldset>
 
             {/* Buttons */}
             <div className="flex gap-3">

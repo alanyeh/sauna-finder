@@ -1,19 +1,6 @@
+import AccessDetails from './AccessDetails';
 import { amenityLabels } from '../lib/amenities';
 import PhotoCarousel from './PhotoCarousel';
-
-const TYPE_MAP = {
-  'Luxury Spa': 'Modern Bathhouse',
-  'Boutique Sauna': 'Modern Bathhouse',
-  'Traditional Banya': 'Russian Banya',
-  'Russian Bathhouse': 'Russian Banya',
-  'Italian Spa': 'Modern Bathhouse',
-  'Day Spa': 'Modern Bathhouse',
-  'World Spa': 'Modern Bathhouse',
-};
-
-function mapType(type) {
-  return TYPE_MAP[type] || type;
-}
 
 export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite, onToggleFavorite, isAdmin, onEdit }) {
   return (
@@ -71,9 +58,10 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
 
       {/* Type */}
       <p className="text-xs text-warm-gray mb-2 capitalize">
-        {sauna.types.map(mapType).join(', ')}
+        {(sauna.types || []).join(', ')}
       </p>
 
+      <AccessDetails sauna={sauna} />
       {/* Rating */}
       <div className="flex items-center gap-4 mb-1.5">
         {sauna.rating != null && (

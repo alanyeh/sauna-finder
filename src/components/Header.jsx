@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { isAdmin } from '../lib/admin';
 import { useAuth } from '../contexts/AuthContext';
 
 const CITIES = [
@@ -61,6 +63,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
         </div>
 
         <div className="flex-shrink-0 flex items-center gap-2 md:gap-3">
+          {isAdmin(user) && <Link className="ui-button" to="/admin/review">Review</Link>}
           {user ? (
             <div className="flex items-center gap-1 md:gap-2">
     <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-accent-red text-white flex items-center justify-center text-xs md:text-sm font-medium flex-shrink-0">

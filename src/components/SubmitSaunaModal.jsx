@@ -1,3 +1,4 @@
+import { SAUNA_CATEGORIES, normalizeCategories } from '../lib/saunaQuality';
 import { useState, useRef } from 'react';
 import { supabase } from '../supabase';
 import { amenityLabels } from '../lib/amenities';
@@ -35,15 +36,7 @@ async function geocodeAddress(address, citySlug) {
   return cityCenters[citySlug] || { lat: null, lng: null };
 }
 
-const SAUNA_TYPES = [
-  'Modern Bathhouse',
-  'Korean Spa',
-  'Russian Banya',
-  'Infrared Sauna',
-  'Japanese Sauna',
-  'Hotel Spa',
-  'Gym Sauna',
-];
+const SAUNA_TYPES = SAUNA_CATEGORIES;
 
 const AMENITY_OPTIONS = Object.entries(amenityLabels).map(([value, label]) => ({
   value,
@@ -155,7 +148,8 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
         city_slug: city,
         neighborhood: neighborhoodInput || null,
         price: price || null,
-        types: selectedTypes.length > 0 ? selectedTypes : null,
+        types: normalizeCategories(selectedTypes),
+            listing_status: 'review',
         amenities: selectedAmenities.length > 0 ? selectedAmenities : [],
         hours: hours || null,
         website_url: websiteUrl || null,
@@ -206,7 +200,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
               Thanks for your submission!
             </p>
             <p className="text-warm-gray text-sm">
-              Your sauna has been added.
+              Your sauna has been submitted for review.
             </p>
           </div>
         ) : (

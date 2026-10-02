@@ -246,12 +246,12 @@ export const CITY_CONTENT = {
   'park-city': {
     intro: [
       "Park City punches far above its weight for sauna and contrast bathing. As a world-class ski town, its recovery culture runs deep: boutique cold-plunge studios in Kimball Junction, wood-fired saunas in the Heber Valley, and some of the best hotel spas in the American West clustered around Deer Valley and Canyons Village. Twenty minutes over the pass, the town of Midway adds a rare geological bonus — a natural geothermal hot spring inside a limestone crater where you can soak year-round.",
-      "The scene splits between destination resort spas — grand facilities with saunas, steam rooms, and pools attached to five-star lodges — and a newer wave of dedicated Nordic-style sauna and plunge studios serving locals and altitude-training athletes. At 7,000 feet, hydration matters even more than usual. Expect boutique sessions from around $40–$60 and resort spa day access from $75 upward.",
+      "The scene splits between destination resort spas — grand facilities with saunas, steam rooms, and pools attached to five-star lodges — and a newer wave of dedicated Nordic-style sauna and plunge studios serving locals and altitude-training athletes. At 7,000 feet, hydration matters even more than usual. Check each venue for current session rates and whether sauna access requires a separate booking.",
     ],
     faqs: [
       {
         q: "How much does a sauna session cost in Park City?",
-        a: "Boutique sauna and cold plunge studios in the Park City area typically charge $40–$60 per session. Resort and hotel spa day passes run higher, usually $75–$150, and often include pools, steam rooms, and relaxation lounges alongside the sauna.",
+        a: "Prices vary by venue, session length and access conditions. Check the venue booking page for the current rate and confirm that the sauna is included; a pool pass or spa treatment does not automatically include sauna access.",
       },
       {
         q: "Are there natural hot springs near Park City?",
@@ -259,7 +259,7 @@ export const CITY_CONTENT = {
       },
       {
         q: "Do Park City hotel spas allow non-guests?",
-        a: "Many do. Several Deer Valley and Canyons Village resort spas sell day access or treat-and-soak packages to non-guests, especially in shoulder season. Availability tightens during peak ski weeks, so call ahead to confirm day-pass policies.",
+        a: "Access varies by property. This directory shows hotel saunas only when a checked source confirms non-guest sauna access. Guest-only facilities and hotels with unconfirmed access stay out of public results. Check the linked access details before booking.",
       },
       {
         q: "Does altitude change how sauna feels in Park City?",

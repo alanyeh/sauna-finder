@@ -38,3 +38,9 @@ scripts/.refresh-checkpoint.json
 
 # Shopify order exports (may contain customer data)
 data/
+
+# Local audit evidence and cleanup restoration journals
+reports/
+supabase/.temp/
+.vercel
+.env*

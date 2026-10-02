@@ -10,7 +10,7 @@ import { inferAmenityEvidence } from './lib/amenities.js';
 config({ path: '.env.local', quiet: true });
 const out = resolve(process.argv.find(a => a.startsWith('--out='))?.slice(6) || `reports/quality-${new Date().toISOString().replace(/[:.]/g, '-')}`);
 await mkdir(out, { recursive: true });
-const client = createClient(process.env.VITE_SUPABASE_URL, process.env.VITE_SUPABASE_ANON_KEY);
+const client = createClient(process.env.VITE_SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY || process.env.VITE_SUPABASE_ANON_KEY);
 const rows = [];
 for (let start = 0; ; start += 1000) {
   const { data, error } = await client.from('saunas').select('*').order('id').range(start, start + 999);
@@ -30,6 +30,8 @@ const patterns = {
   private: /\bprivate\s*(?:sauna|session|room|suite|cabin)\b/i,
   hotel: /\b(?:hotel|resort|guest\s*room)\b/i,
   gym: /\b(?:gym|fitness|athletic\s*club)\b/i,
+  public_access: /\b(?:day[ -]pass|day[ -]guest|non[ -]?(?:hotel[ -]?)?guests?|open to the public|public access|outside guests|resortpass)\b/i,
+  guest_restriction: /\b(?:(?:hotel|registered|overnight|resort) guests? only|exclusively (?:for|to) .*guests?|reserved for .*guests?|only available to .*guests?)\b/i,
   float: /\b(?:floatation|flotation|float\s*(?:tank|therapy|suite|pod))\b/i,
 };
 const uncertain = /\b(?:no|not|without|closed|removed|unavailable|coming\s+soon|planned|opening\s+soon|out\s+of\s+order)\b/i;
@@ -87,6 +89,11 @@ async function audit(row) {
     if ((origins.get(url.origin) || 0) > 1 && /^\/(?:index\.html?)?$/.test(url.pathname)) flags.push('shared_brand_homepage_needs_location_check');
     if (website.pages[0] && new URL(website.pages[0].url).pathname === '/' && url.pathname !== '/') flags.push('location_redirected_to_homepage');
   } catch { /* Already reported. */ }
+  if ((row.types || []).some(type => /hotel/i.test(type))) {
+    if (evidence.guest_restriction) flags.push('hotel_guest_restriction_found');
+    if (evidence.public_access) flags.push('hotel_public_access_mentioned_confirm_sauna_included');
+    else flags.push('hotel_public_access_not_established');
+  }
   if (!row.address || row.lat == null || row.lng == null) flags.push('missing_location_data');
   if (!(row.types || []).length) flags.push('missing_category');
   const duplicateIds = rows.filter(other => other.id !== row.id && ((row.place_id && row.place_id === other.place_id) || (row.address && row.name?.toLowerCase() === other.name?.toLowerCase() && row.address === other.address))).map(other => other.id);

@@ -13,7 +13,7 @@ const PATTERNS = {
 
 // Prefer missing a suggestion to publishing an explicitly unavailable amenity.
 // This is intentionally sentence-level, and cannot resolve all natural language.
-const UNCERTAIN = /\b(?:no|not|without|never|removed|closed|broken|unavailable|wish|wished|wishful|hope|hopefully|planned|planning|upcoming|formerly|used\s+to|out\s+of\s+(?:order|service)|coming\s+soon|doesn['’]?t|don['’]?t|didn['’]?t|isn['’]?t|wasn['’]?t|aren['’]?t)\b/i;
+const UNCERTAIN = /\b(?:no|not|without|never|removed|closed|paused|on\s+pause|suspended|broken|unavailable|wish|wished|wishful|hope|hopefully|planned|planning|upcoming|formerly|used\s+to|out\s+of\s+(?:order|service)|coming\s+soon|doesn['’]?t|don['’]?t|didn['’]?t|isn['’]?t|wasn['’]?t|aren['’]?t)\b/i;
 
 export function inferAmenityEvidence(sources) {
   const sentences = sources.flatMap(source => String(source || '').split(/[.!?\n]+/))

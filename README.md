@@ -173,3 +173,43 @@ Check the source page, location, eligibility, taxes, and included facilities
 before copying a candidate into a listing's pricing options. Sites that only
 publish prices in booking widgets, JavaScript, or PDFs may return no candidates;
 an empty result does not mean free admission or that existing prices are current.
+
+## Listing quality and review
+
+`/admin/review` is available to the admin account. It includes unpublished
+records, source evidence, sauna access conditions, and duplicate references.
+Public discovery excludes review, hidden, duplicate and seasonally closed rows.
+Hotels require confirmed non-guest sauna access with both sauna and access
+source URLs and checked dates. Day passes for pools or other amenities do not
+qualify. Existing source-uncertain listings remain in a reversible review queue.
+
+Apply `supabase/migrations/202610020001_listing_quality.sql` before using the
+review controls on a new database. It adds quality fields, starts new imports
+in review, and restricts publication changes to the existing admin account.
+It preserves records and the existing public submission flow. The SQL admin
+email and `src/lib/admin.js` allowlist must stay in sync.
+
+Category aliases, publication validation and metro-distance checks live in
+`src/lib/saunaQuality.js`. Discovery and the admin Places importer share their
+classification rules. Discovery enforces its configured radius even with
+`--no-filter`, because Google's location bias is not a geographic restriction.
+
+Audit commands (read-only, with local evidence under gitignored `reports/`):
+
+```bash
+node scripts/audit-sauna-quality.js --out=reports/my-audit
+node scripts/recheck-sauna-quality.js reports/my-audit
+node scripts/summarize-sauna-quality.js reports/my-audit
+node --test scripts/tests/*.test.js
+```
+
+The browser recheck retries inconclusive records with bounded static crawling
+and ordinary rendering, without bypassing access challenges. Automated matches
+remain review leads; a generic brand page or missing keyword does not establish
+location-specific availability.
+
+The October 2 cleanup decisions are in
+`scripts/quality-decisions-2026-10-02.json`. The one-off
+`node scripts/apply-sauna-quality.js` previews changes; `--apply` writes the
+changed fields with concurrency checks and journals before/after values. Review
+that plan before running it again, as it applies the dated audit decisions.

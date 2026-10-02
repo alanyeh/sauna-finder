@@ -1,3 +1,4 @@
+import AccessDetails from './AccessDetails';
 import { useRef, useState, useMemo, useCallback } from 'react';
 import PhotoCarousel from './PhotoCarousel';
 import { amenityLabels } from '../lib/amenities';
@@ -133,6 +134,7 @@ export default function BottomSheet({
             </p>
           )}
 
+      <AccessDetails sauna={sauna} />
           {/* Rating + price */}
           <div className="flex items-center gap-2 mt-1.5">
             {sauna.rating != null && (

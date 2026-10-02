@@ -1,3 +1,6 @@
+import { classifySaunaTypes } from '../../scripts/lib/discovery-quality.js';
+import { inferAmenityEvidence, placeTextSources } from '../../scripts/lib/amenities.js';
+import { SAUNA_CATEGORIES, normalizeCategories } from '../lib/saunaQuality';
 import { useState } from 'react';
 import { supabase } from '../supabase';
 import { amenityLabels } from '../lib/amenities';
@@ -20,15 +23,7 @@ async function invokePlacesProxy(body) {
   return data;
 }
 
-const SAUNA_TYPES = [
-  'Modern Bathhouse',
-  'Korean Spa',
-  'Russian Banya',
-  'Infrared Sauna',
-  'Japanese Sauna',
-  'Hotel Spa',
-  'Gym Sauna',
-];
+const SAUNA_TYPES = SAUNA_CATEGORIES;
 
 const AMENITY_OPTIONS = Object.entries(amenityLabels).map(([value, label]) => ({
   value,
@@ -51,40 +46,9 @@ function formatHours(regularOpeningHours) {
   return regularOpeningHours.weekdayDescriptions.join(', ');
 }
 
-function classifyType(place) {
-  const text = [
-    place.displayName?.text,
-    place.editorialSummary?.text,
-    ...(place.reviews || []).map(r => r.text?.text),
-  ].filter(Boolean).join(' ').toLowerCase();
-
-  const types = [];
-  if (/infrared/.test(text)) types.push('Infrared Sauna');
-  if (/korean|hwa|jjimjil/.test(text)) types.push('Korean Spa');
-  if (/russian|banya/.test(text)) types.push('Russian Banya');
-  if (/japanese|onsen|sento/.test(text)) types.push('Japanese Sauna');
-  if (/hotel|spa|resort/.test(text)) types.push('Hotel Spa');
-  if (/gym|fitness|athletic/.test(text)) types.push('Gym Sauna');
-  if (types.length === 0) types.push('Modern Bathhouse');
-  return types;
-}
-
+const classifyType = classifySaunaTypes;
 function inferAmenities(place) {
-  const text = [
-    place.displayName?.text,
-    place.editorialSummary?.text,
-    ...(place.reviews || []).map(r => r.text?.text),
-  ].filter(Boolean).join(' ').toLowerCase();
-
-  const amenities = [];
-  if (/cold plunge|ice bath|cold tub/.test(text)) amenities.push('cold_plunge');
-  if (/steam room|steam bath/.test(text)) amenities.push('steam_room');
-  if (/massage/.test(text)) amenities.push('massage');
-  if (/pool|swimming/.test(text)) amenities.push('pool');
-  if (/co.?ed|mixed gender/.test(text)) amenities.push('coed');
-  if (/private room|private suite/.test(text)) amenities.push('private');
-  if (/dry sauna|finnish/.test(text)) amenities.push('dry_sauna');
-  return amenities;
+  return Object.keys(inferAmenityEvidence(placeTextSources(place)));
 }
 
 function urlToSearchQuery(url) {
@@ -276,7 +240,8 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
             rating: rating !== '' ? parseFloat(rating) : null,
             rating_count: ratingCount !== '' ? parseInt(ratingCount) : null,
             price: price || null,
-            types: selectedTypes.length > 0 ? selectedTypes : null,
+            types: normalizeCategories(selectedTypes),
+            listing_status: 'review',
             amenities: selectedAmenities.length > 0 ? selectedAmenities : [],
             hours: hours || null,
             website_url: websiteUrl || null,
@@ -352,7 +317,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
         {success && (
           <div className="text-center py-8">
             <p className="text-charcoal font-medium text-lg mb-1">Saved!</p>
-            <p className="text-warm-gray text-sm">New sauna has been added.</p>
+            <p className="text-warm-gray text-sm">New sauna has been added to the review queue.</p>
           </div>
         )}
 

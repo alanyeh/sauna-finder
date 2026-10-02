@@ -1,5 +1,8 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { supabase } from '../supabase';
+import { useAuth } from './AuthContext';
+import { isAdmin } from '../lib/admin';
+import { isPublicSauna, normalizeCategories, isHotelSauna } from '../lib/saunaQuality';
 
 const SaunaDataContext = createContext(null);
 
@@ -19,9 +22,10 @@ function isHiddenChain(sauna) {
 
 function transform(rows) {
   return (rows || [])
-    .filter(sauna => !isHiddenChain(sauna))
+    .filter(sauna => isPublicSauna(sauna) && (isHotelSauna(sauna) || !isHiddenChain(sauna)))
     .map(sauna => ({
       ...sauna,
+      types: normalizeCategories(sauna.types),
       ratingCount: sauna.rating_count,
       placeId: sauna.place_id,
     }));
@@ -29,10 +33,15 @@ function transform(rows) {
 
 // Bootstrap loads the static JSON separately from executable JavaScript.
 export function SaunaDataProvider({ children, initialSaunas }) {
-  const [saunas, setSaunas] = useState(() => transform(initialSaunas));
+  const { user } = useAuth();
+  const [rows, setRows] = useState(initialSaunas || []);
+  const saunas = useMemo(() => transform(rows), [rows]);
+  const allSaunas = isAdmin(user) ? rows : saunas;
+  const requestVersion = useRef(0);
   const [loading, setLoading] = useState(!initialSaunas);
 
-  const fetchSaunas = async () => {
+  const fetchSaunas = useCallback(async () => {
+    const version = ++requestVersion.current;
     try {
       // Supabase caps a single select at 1,000 rows and truncates silently,
       // so page through with .range().
@@ -50,20 +59,22 @@ export function SaunaDataProvider({ children, initialSaunas }) {
         if (data.length < PAGE_SIZE) break;
       }
 
-      setSaunas(transform(rows));
+      if (version === requestVersion.current) setRows(rows);
     } catch (error) {
       console.error('Error fetching saunas:', error);
     } finally {
-      setLoading(false);
+      if (version === requestVersion.current) setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchSaunas();
-  }, []);
+    const versionRef = requestVersion;
+    return () => { versionRef.current++; };
+  }, [fetchSaunas, user?.id]);
 
   return (
-    <SaunaDataContext.Provider value={{ saunas, loading, refetchSaunas: fetchSaunas }}>
+    <SaunaDataContext.Provider value={{ saunas, allSaunas, loading, refetchSaunas: fetchSaunas }}>
       {children}
     </SaunaDataContext.Provider>
   );

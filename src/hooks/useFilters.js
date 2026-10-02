@@ -2,34 +2,9 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 
 const PRICE_ORDER = { '$': 1, '$$': 2, '$$$': 3 };
 
-// Maps granular type strings → consolidated filter categories
-const TYPE_TO_CATEGORY = {
-  'Russian Banya': 'Russian Banya',
-  'Russian Bathhouse': 'Russian Banya',
-  'Traditional Banya': 'Russian Banya',
-  'Traditional Russian Banya': 'Russian Banya',
-  'Korean Spa': 'Korean Spa',
-  'Korean Day Spa': 'Korean Spa',
-  'Korean Fitness & Spa': 'Korean Spa',
-  'Boutique Sauna': 'Modern Bathhouse',
-  'Private Sauna Studio': 'Modern Bathhouse',
-  'Infrared Sauna': 'Infrared Sauna',
-  'Day Spa': 'Modern Bathhouse',
-  'Hotel Spa': 'Hotel Spa',
-  'Luxury Spa': 'Modern Bathhouse',
-  'Wellness Spa': 'Modern Bathhouse',
-  'Italian Spa': 'Modern Bathhouse',
-  'Resort': 'Modern Bathhouse',
-  'Modern Bathhouse': 'Modern Bathhouse',
-  'World Spa': 'Modern Bathhouse',
-  'Gym Sauna': 'Gym Sauna',
-  'Day Spa & Sauna Resort': 'Modern Bathhouse',
-  'Japanese Neighborhood Sauna': 'Japanese Sauna',
-};
-
-export function getCategory(rawType) {
-  return TYPE_TO_CATEGORY[rawType] || rawType;
-}
+// Shared category names are also used by cards, admin forms and scrapers.
+export { normalizeCategory as getCategory } from '../lib/saunaQuality';
+import { normalizeCategory as getCategory } from '../lib/saunaQuality';
 
 export const useFilters = (saunas, citySlug, initialTypes = []) => {
   const [neighborhood, setNeighborhood] = useState('');

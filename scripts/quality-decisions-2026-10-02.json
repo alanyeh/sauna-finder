@@ -1,0 +1,299 @@
+[
+  {
+    "id": 547,
+    "expectedName": "Albany Sauna & Hot Tubs",
+    "changes": {
+      "types": [
+        "Finnish Sauna"
+      ],
+      "sauna_source_url": "https://www.albanysauna.com/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Official site describes an authentic Finnish sauna, not a Russian banya."
+  },
+  {
+    "id": 568,
+    "expectedName": "Wild Haus Floating Saunas",
+    "changes": {
+      "types": [
+        "Traditional Sauna"
+      ],
+      "sauna_source_url": "https://thewildhaus.com/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Wood-fired floating sauna boats are not float-tank therapy."
+  },
+  {
+    "id": 818,
+    "expectedName": "Löyly Floating Sauna",
+    "changes": {
+      "types": [
+        "Traditional Sauna"
+      ],
+      "sauna_source_url": "https://www.loylyfloatingsauna.ca/toronto",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Floating sauna should not be categorized as float therapy."
+  },
+  {
+    "id": 808,
+    "expectedName": "Uptown Sauna House",
+    "changes": {
+      "city_slug": "portland",
+      "neighborhood": "Vancouver, WA",
+      "listing_status": "active",
+      "sauna_source_url": "https://www.uptownsaunahouse.com/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "The official sauna website and stored address identify Vancouver, Washington, in the Portland metro, not Vancouver BC."
+  },
+  {
+    "id": 763,
+    "expectedName": "Quapaw Baths & Spa",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Outside the assigned metro (over 150 km). Record retained for a future destination page; excluded from the incorrect city."
+  },
+  {
+    "id": 764,
+    "expectedName": "Buckstaff Bathhouse",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Outside the assigned metro (over 150 km). Record retained for a future destination page; excluded from the incorrect city."
+  },
+  {
+    "id": 765,
+    "expectedName": "The Old Roman Bath House",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Outside the assigned metro (over 150 km). Record retained for a future destination page; excluded from the incorrect city."
+  },
+  {
+    "id": 902,
+    "expectedName": "Cedar and Stone Nordic Sauna",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Outside the assigned metro (over 150 km). Record retained for a future destination page; excluded from the incorrect city."
+  },
+  {
+    "id": 913,
+    "expectedName": "Duluth Family Sauna",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Outside the assigned metro (over 150 km). Record retained for a future destination page; excluded from the incorrect city."
+  },
+  {
+    "id": 858,
+    "expectedName": "Kikospace - Sound Baths + Instrument Shop with Kiko",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Sound baths and instrument shop, not evidence of a physical sauna. Source: https://www.kikosounds.com/home"
+  },
+  {
+    "id": 850,
+    "expectedName": "Sound Baths & Somatics by Jungle Flower",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Sound-bath/somatics provider; no sauna evidence after two passes. Source: https://linktr.ee/jungleflowerwellness"
+  },
+  {
+    "id": 606,
+    "expectedName": "Golden Gardens Bathhouse",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "City park event rental venue. The adjacent Bywater sauna is a separate listing. Source: https://www.seattle.gov/parks/rentals-and-permits/indoor-event-rentals/golden-gardens-bathhouse"
+  },
+  {
+    "id": 13,
+    "expectedName": "cityWell Brooklyn",
+    "changes": {
+      "listing_status": "hidden"
+    },
+    "reason": "Official site says Steam / Soak / Sauna hydrotherapy is on pause. Keep hidden until reopening is confirmed. Source: https://citywellbrooklyn.com/"
+  },
+  {
+    "id": 661,
+    "expectedName": "Spa Montage Beverly Hills",
+    "changes": {
+      "listing_status": "review"
+    },
+    "reason": "The saved Beverly Hills spa URL redirects to a Deer Valley spa. Evidence is for the wrong property; do not use it to verify this listing."
+  },
+  {
+    "id": 595,
+    "expectedName": "Four Seasons Hotel Seattle",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 577
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #577 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 590,
+    "expectedName": "Hotel 1000, LXR Hotels & Resorts",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 584
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #584 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 726,
+    "expectedName": "Four Seasons Hotel Houston",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 709
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #709 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 718,
+    "expectedName": "Omni Houston Hotel",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 710
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #710 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 727,
+    "expectedName": "The Laura Hotel, Houston Downtown, Autograph Collection",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 735
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #735 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 833,
+    "expectedName": "Hotel X Toronto, a Destination by Hyatt Hotel",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 859
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #859 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 836,
+    "expectedName": "The Omni King Edward Hotel",
+    "changes": {
+      "listing_status": "duplicate",
+      "duplicate_of": 849
+    },
+    "reason": "Hotel and its named spa share the same address; retain the spa record #849 as the sauna destination. No deletion or transfer of reviews/photos."
+  },
+  {
+    "id": 84,
+    "expectedName": "Virgin Hotels NYC",
+    "changes": {
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "access_source_url": "https://virginhotels.com/new-york/exhale-spa/",
+      "access_checked_at": "2026-10-02T00:00:00.000Z",
+      "access_notes": "Recovery Day Pass includes sauna access. Advance booking required; confirm availability with the spa.",
+      "sauna_source_url": "https://virginhotels.com/new-york/exhale-spa/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Reviewed official day-pass page explicitly includes sauna facilities."
+  },
+  {
+    "id": 647,
+    "expectedName": "Chuan Spa at The Langham",
+    "changes": {
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "access_source_url": "https://www.langhamhotels.com/en/the-langham/chicago/wellness/chuan-spa/",
+      "access_checked_at": "2026-10-02T00:00:00.000Z",
+      "access_notes": "Rejuvenation Day Pass includes herbal and salt saunas. Contact Chuan Spa to book and confirm availability.",
+      "sauna_source_url": "https://www.langhamhotels.com/en/the-langham/chicago/wellness/chuan-spa/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Reviewed official day-pass page explicitly includes sauna facilities."
+  },
+  {
+    "id": 680,
+    "expectedName": "CASCADA Thermal Springs",
+    "changes": {
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "access_source_url": "https://shop.cascada.me/pages/spa-hot-springs",
+      "access_checked_at": "2026-10-02T00:00:00.000Z",
+      "access_notes": "Thermal spa day passes include sauna facilities. Reserve directly; check the current session and access conditions.",
+      "sauna_source_url": "https://shop.cascada.me/pages/spa-hot-springs",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Reviewed official day-pass page explicitly includes sauna facilities."
+  },
+  {
+    "id": 80,
+    "expectedName": "The William Vale",
+    "changes": {
+      "listing_status": "seasonal_closed",
+      "access_policy": "day_pass",
+      "access_source_url": "https://www.thewilliamvale.com/winter-spa/",
+      "access_checked_at": "2026-10-02T00:00:00.000Z",
+      "access_notes": "Non-hotel visitors can book private sauna sessions during the winter season. Currently listed as closed for the season.",
+      "sauna_source_url": "https://www.thewilliamvale.com/winter-spa/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Official FAQ permits non-hotel visitors, but the page currently announces seasonal closure."
+  },
+  {
+    "id": 694,
+    "expectedName": "Havana Health Sauna",
+    "changes": {
+      "listing_status": "active",
+      "sauna_source_url": "https://www.havanahealthsauna.com/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Second-pass property-specific website contains sauna facility evidence; public/gym admission terms are not independently confirmed."
+  },
+  {
+    "id": 550,
+    "expectedName": "Piedmont Springs",
+    "changes": {
+      "listing_status": "active",
+      "sauna_source_url": "https://www.piedmontsprings.com/",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Second-pass property-specific website contains sauna facility evidence; public/gym admission terms are not independently confirmed."
+  },
+  {
+    "id": 589,
+    "expectedName": "Equinox Rainier Square",
+    "changes": {
+      "listing_status": "active",
+      "sauna_source_url": "https://equinox-spa.com/location/equinox-rainier-square/specialty",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Second-pass property-specific website contains sauna facility evidence; public/gym admission terms are not independently confirmed."
+  },
+  {
+    "id": 63,
+    "expectedName": "Equinox Sports Club San Francisco",
+    "changes": {
+      "listing_status": "active",
+      "sauna_source_url": "https://www.equinox.com/clubs/northern-california/sportsclubsanfrancisco",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Second-pass property-specific website contains sauna facility evidence; public/gym admission terms are not independently confirmed."
+  },
+  {
+    "id": 781,
+    "expectedName": "Equinox West Georgia Street",
+    "changes": {
+      "listing_status": "active",
+      "sauna_source_url": "https://www.equinox.com/clubs/canada/vancouver/westgeorgiast",
+      "sauna_checked_at": "2026-10-02T00:00:00.000Z"
+    },
+    "reason": "Second-pass property-specific website contains sauna facility evidence; public/gym admission terms are not independently confirmed."
+  }
+]
