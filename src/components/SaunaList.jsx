@@ -1,8 +1,14 @@
 import { useRef, useEffect } from 'react';
 import SaunaCard from './SaunaCard';
 
-export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna }) {
+export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, toggleFavorite, isFavorite, onScroll, isAdmin, onEditSauna, citySlug, children }) {
   const scrollContainerRef = useRef(null);
+
+  // Jump back to the top of the list when switching cities — cross-city links
+  // at the end of the SEO content would otherwise land mid-list.
+  useEffect(() => {
+    scrollContainerRef.current?.scrollTo(0, 0);
+  }, [citySlug]);
 
   useEffect(() => {
     if (!selectedSauna || !scrollContainerRef.current) return;
@@ -38,6 +44,7 @@ export default function SaunaList({ saunas, selectedSauna, onSaunaSelect, user, 
             />
           ))
         )}
+        {children}
       </div>
     </div>
   );

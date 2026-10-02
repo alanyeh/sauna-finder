@@ -8,9 +8,9 @@ export default function HomeSaunaCard({ sauna, citySlug }) {
     <Link
       to={`/city/${citySlug}`}
       state={{ selectedSaunaId: sauna.id }}
-      className="flex-shrink-0 w-[72vw] sm:w-[44vw] md:w-[280px] lg:w-[280px] snap-start group"
+      className="flex-shrink-0 w-[72vw] sm:w-[44vw] md:w-[280px] lg:w-[280px] snap-start group hover:no-underline"
     >
-      <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden bg-light-border mb-2">
+      <div className="relative w-full aspect-[3/2] rounded-sm overflow-hidden bg-light-border mb-3">
         {primaryPhoto ? (
           <img
             src={primaryPhoto}
@@ -27,7 +27,7 @@ export default function HomeSaunaCard({ sauna, citySlug }) {
 
       <div>
         <div className="flex items-start justify-between gap-2">
-          <h3 className="text-[13px] md:text-[14px] font-medium text-charcoal leading-snug truncate">
+          <h3 className="text-base font-normal text-charcoal leading-snug line-clamp-2">
             {sauna.name}
           </h3>
           {sauna.rating != null && (
@@ -39,7 +39,7 @@ export default function HomeSaunaCard({ sauna, citySlug }) {
         </div>
 
         {sauna.types?.length > 0 && (
-          <p className="text-[11px] md:text-[12px] text-warm-gray truncate mt-0.5">
+          <p className="text-xs text-warm-gray truncate mt-1.5">
             {sauna.types[0]}
           </p>
         )}

@@ -3,7 +3,8 @@
 // Usage: node scripts/scrape-websites.js [--dry-run] [--city=<slug>]
 
 import { createClient } from '@supabase/supabase-js';
-import fetch from 'node-fetch';
+import { crawlWebsite, selectSpaPage } from './lib/website-content.js';
+import { fetchPlacesJSON, PlacesQuotaError } from './lib/places.js';
 import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env.local' });
@@ -22,7 +23,7 @@ function sleep(ms) {
 async function fetchWebsite(placeId) {
   if (!placeId) return null;
 
-  const response = await fetch(
+  const data = await fetchPlacesJSON(
     `https://places.googleapis.com/v1/places/${placeId}`, {
       headers: {
         'X-Goog-Api-Key': API_KEY,
@@ -31,54 +32,25 @@ async function fetchWebsite(placeId) {
     }
   );
 
-  if (!response.ok) return null;
-  const data = await response.json();
   return data.websiteUri || null;
 }
 
-// For hotels/gyms, try to find a direct spa/sauna page by checking common URL patterns
+function isHotelOrGym(name, types = []) {
+  return (types || []).some(type => ['Hotel Spa', 'Resort', 'Gym Sauna'].includes(type))
+    || /hotel|resort|gym|fitness|climbing|boulders|ymca|equinox|life\s*time|tmpl/i.test(name);
+}
+
 async function findSpaPage(baseUrl, name, types) {
-  const isHotel = (types || []).some(t =>
-    ['Hotel Spa', 'Resort'].includes(t)
-  ) || /hotel|resort/i.test(name);
-
-  const isGym = (types || []).some(t => t === 'Gym Sauna')
-    || /gym|fitness|climbing|boulders|ymca|equinox|life\s*time|tmpl/i.test(name);
-
-  if (!isHotel && !isGym) return baseUrl;
-
-  // Common spa/sauna subpage paths to try
-  const subpages = isHotel
-    ? ['/spa', '/wellness', '/spa-wellness', '/amenities/spa', '/amenities', '/wellness-spa', '/the-spa', '/spa-fitness']
-    : ['/sauna', '/spa', '/amenities', '/facilities', '/wellness'];
-
-  const baseOrigin = new URL(baseUrl).origin;
-
-  for (const path of subpages) {
-    const testUrl = baseOrigin + path;
-    try {
-      const res = await fetch(testUrl, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(5000) });
-      if (res.ok) {
-        return testUrl;
-      }
-    } catch {
-      // timeout or network error, skip
-    }
-  }
-
-  // No spa subpage found, return the base URL
-  return baseUrl;
+  if (!isHotelOrGym(name, types)) return baseUrl;
+  const { pages, errors } = await crawlWebsite(baseUrl);
+  for (const error of errors) console.warn(`\n    Website: ${error.url}: ${error.error}`);
+  return selectSpaPage(pages, baseUrl);
 }
 
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
   const cityArg = args.find(a => a.startsWith('--city='))?.split('=')[1] || null;
-
-  if (!API_KEY) {
-    console.error('Missing GOOGLE_PLACES_API_KEY in .env.local');
-    process.exit(1);
-  }
 
   console.log('\n=== Scraping website URLs ===');
   if (dryRun) console.log('  [DRY RUN — no DB writes]');
@@ -111,7 +83,10 @@ async function main() {
   let errors = 0;
 
   // Phase 1: Fetch missing website URLs from Google Places
-  if (needsUrl.length > 0) {
+  if (needsUrl.length > 0 && !API_KEY) {
+    console.warn('Missing GOOGLE_PLACES_API_KEY: skipping missing URLs; checking existing websites only.');
+  }
+  if (needsUrl.length > 0 && API_KEY) {
     console.log('--- Phase 1: Fetching missing website URLs ---');
     for (let i = 0; i < needsUrl.length; i++) {
       const sauna = needsUrl[i];
@@ -143,18 +118,14 @@ async function main() {
       } catch (err) {
         console.log(` ERROR: ${err.message}`);
         errors++;
+        if (err instanceof PlacesQuotaError) break;
       }
     }
     console.log('');
   }
 
   // Phase 2: For hotels/gyms that already have a base URL, try to find spa-specific page
-  const hotelsGyms = hasUrl.filter(s => {
-    const types = s.types || [];
-    const isHotel = types.includes('Hotel Spa') || types.includes('Resort') || /hotel|resort/i.test(s.name);
-    const isGym = types.includes('Gym Sauna') || /gym|fitness|climbing|boulders|ymca/i.test(s.name);
-    return isHotel || isGym;
-  });
+  const hotelsGyms = hasUrl.filter(s => isHotelOrGym(s.name, s.types));
 
   if (hotelsGyms.length > 0) {
     console.log('--- Phase 2: Finding spa pages for hotels/gyms ---');

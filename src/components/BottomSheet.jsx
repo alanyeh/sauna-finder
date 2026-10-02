@@ -159,7 +159,7 @@ export default function BottomSheet({
               {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
                 <span
                   key={amenity}
-                  className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+                  className="amenity-badge"
                 >
                   {amenityLabels[amenity]}
                 </span>
@@ -173,7 +173,7 @@ export default function BottomSheet({
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center px-4 py-2.5 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red font-medium"
+              className="ui-button ui-button-primary flex-1"
             >
               View on Maps
             </a>
@@ -182,7 +182,7 @@ export default function BottomSheet({
                 href={sauna.website_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center px-4 py-2.5 bg-white border border-light-border text-charcoal text-[13px] rounded transition-colors hover:bg-hover-bg font-medium"
+                className="ui-button flex-1"
               >
                 Visit Website
               </a>

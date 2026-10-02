@@ -1,12 +1,7 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import Map from '../components/Map';
-import AuthModal from '../components/AuthModal';
-import SubmitSaunaModal from '../components/SubmitSaunaModal';
-import AdminEditModal from '../components/AdminEditModal';
-import AdminAddSaunaModal from '../components/AdminAddSaunaModal';
 import { useSaunaData } from '../contexts/SaunaDataContext';
 import { useFilters } from '../hooks/useFilters';
 import { useAuth } from '../contexts/AuthContext';
@@ -17,6 +12,12 @@ import SEO from '../components/SEO';
 import ClientOnly from '../components/ClientOnly';
 import CitySEOContent from '../components/CitySEOContent';
 import { getCityContent } from '../lib/cityContent';
+
+const Map = lazy(() => import('../components/Map'));
+const AuthModal = lazy(() => import('../components/AuthModal'));
+const SubmitSaunaModal = lazy(() => import('../components/SubmitSaunaModal'));
+const AdminEditModal = lazy(() => import('../components/AdminEditModal'));
+const AdminAddSaunaModal = lazy(() => import('../components/AdminAddSaunaModal'));
 
 export default function CityPage() {
   const { citySlug } = useParams();
@@ -181,7 +182,8 @@ export default function CityPage() {
       />
       <h1 className="sr-only">Saunas and Bathhouses in {cityFullName}</h1>
 
-      {/* App panel: full-viewport map/list experience. Sits above the fold. */}
+      {/* App panel: full-viewport map/list experience. The document never
+          scrolls — SEO content and footer live inside the list's scroll pane. */}
       <div className="flex flex-col overflow-hidden" style={{ height: '100dvh' }}>
         <Header citySlug={citySlug} setCitySlug={handleCityChange} onSignIn={() => setShowAuthModal(true)} />
 
@@ -216,11 +218,26 @@ export default function CityPage() {
               isAdmin={userIsAdmin}
               onEditSauna={setEditingSauna}
               onAddSauna={handleAddSauna}
-            />
+            >
+              {/* SEO content: unique prose + FAQ + product callout. Lives at the
+                  end of the list scroll so users reach it naturally and the map
+                  pane never forces document scrolling. */}
+              <CitySEOContent citySlug={citySlug} />
+
+              <footer className="px-4 md:px-7 py-6 md:py-8 text-center border-t border-light-border bg-cream">
+                <p className="text-[11px] md:text-xs text-warm-gray mb-2">
+                  Sauna Finder — Find your perfect sauna
+                </p>
+                <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
+                  Back to Koriboshi
+                </a>
+              </footer>
+            </Sidebar>
           </div>
 
           <div className="hidden md:flex flex-1">
             <ClientOnly>
+              <Suspense fallback={<p role="status">Loading map…</p>}>
               <Map
                 saunas={displayedSaunas}
                 selectedSauna={selectedSauna}
@@ -228,24 +245,13 @@ export default function CityPage() {
                 citySlug={citySlug}
                 onCityClick={handleCityChange}
               />
+              </Suspense>
             </ClientOnly>
           </div>
         </div>
       </div>
 
-      {/* SEO content: unique prose + FAQ + product callout. Scroll to reveal. */}
-      <CitySEOContent citySlug={citySlug} />
-
-      {/* Footer */}
-      <footer className="px-4 md:px-8 lg:px-16 py-6 md:py-8 text-center border-t border-light-border bg-cream">
-        <p className="text-[11px] md:text-xs text-warm-gray mb-2">
-          Sauna Finder — Find your perfect sauna
-        </p>
-        <a href="https://koriboshi.com" className="text-[11px] md:text-xs text-warm-gray hover:text-charcoal transition-colors">
-          Back to Koriboshi
-        </a>
-      </footer>
-
+      <Suspense fallback={<p role="status" className="fixed bottom-4 right-4 bg-white p-4">Loading…</p>}>
       {showAuthModal && (
         <AuthModal onClose={() => setShowAuthModal(false)} />
       )}
@@ -272,6 +278,7 @@ export default function CityPage() {
           onSaunaAdded={refetchSaunas}
         />
       )}
+      </Suspense>
     </>
   );
 }

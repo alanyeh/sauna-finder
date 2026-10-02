@@ -1,0 +1,38 @@
+# Nightly Vercel rebuild.
+#
+# The site's prerendered HTML (what crawlers index) is frozen at build time:
+# `prebuild` snapshots Supabase into saunas-prebuilt.json and `postbuild`
+# bakes it into dist/. Without periodic rebuilds, Supabase edits never reach
+# the deployed HTML. This workflow fires the Vercel deploy hook every night
+# so the live site tracks the database within ~24 hours.
+#
+# One-time setup:
+#   1. Vercel dashboard → sauna-finder project → Settings → Git → Deploy Hooks
+#      → create a hook (name: "nightly-rebuild", branch: main) and copy its URL.
+#   2. GitHub repo → Settings → Secrets and variables → Actions →
+#      new repository secret named VERCEL_DEPLOY_HOOK_URL with that URL.
+#
+# Can also be run on demand from the Actions tab (workflow_dispatch).
+
+name: Nightly rebuild
+
+on:
+  schedule:
+    # 09:00 UTC = 1am PST / 2am PDT
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$DEPLOY_HOOK_URL" ]; then
+            echo "::error::VERCEL_DEPLOY_HOOK_URL secret is not set. See the comment at the top of this workflow file for setup steps."
+            exit 1
+          fi
+          response=$(curl --fail --silent --show-error -X POST "$DEPLOY_HOOK_URL")
+          echo "Deploy hook accepted: $response"

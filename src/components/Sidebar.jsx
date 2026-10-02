@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import Filters from './Filters';
 import SaunaList from './SaunaList';
-import Map from './Map';
 import BottomSheet from './BottomSheet';
+
+const Map = lazy(() => import('./Map'));
 
 export default function Sidebar({
   neighborhoods,
@@ -33,6 +34,7 @@ export default function Sidebar({
   isAdmin,
   onEditSauna,
   onAddSauna,
+  children,
 }) {
   const [showFilters, setShowFilters] = useState(false);
 
@@ -46,30 +48,32 @@ export default function Sidebar({
         <div className="flex gap-1 md:gap-2 flex-shrink-0">
           <button
             onClick={isAdmin ? onAddSauna : onSubmitSauna}
-            className="hidden md:block px-3 py-1.5 rounded text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+            className="ui-button hidden md:inline-flex px-3"
             title="Add a sauna"
           >
             + Add Sauna
           </button>
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className={`px-2.5 md:px-3 py-1 md:py-1.5 rounded text-[11px] md:text-[13px] font-medium transition-colors ${
+            className={`ui-button px-3 ${
               showFilters
                 ? 'bg-charcoal text-white'
-                : 'bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white'
+                : 'bg-white text-charcoal'
             }`}
+            aria-expanded={showFilters}
             title="Toggle filters"
           >
             Filter
           </button>
           <button
             onClick={() => setMobileView('list')}
-            className={`p-1 md:p-1.5 rounded transition-colors md:hidden ${
+            className={`min-h-11 min-w-11 inline-flex items-center justify-center rounded-sm transition-colors md:hidden ${
               mobileView === 'list'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
             }`}
-            title="List view"
+            aria-pressed={mobileView === 'list'}
+            aria-label="List view"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
@@ -77,12 +81,13 @@ export default function Sidebar({
           </button>
           <button
             onClick={() => setMobileView('map')}
-            className={`p-1 md:p-1.5 rounded transition-colors md:hidden ${
+            className={`min-h-11 min-w-11 inline-flex items-center justify-center rounded-sm transition-colors md:hidden ${
               mobileView === 'map'
                 ? 'bg-charcoal text-white'
                 : 'text-charcoal hover:bg-charcoal hover:text-white'
             }`}
-            title="Map view"
+            aria-pressed={mobileView === 'map'}
+            aria-label="Map view"
           >
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 30">
               <path d="M12 2C6.48 2 2 6.48 2 12c0 9 10 20 10 20s10-11 10-20c0-5.52-4.48-10-10-10zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
@@ -94,6 +99,7 @@ export default function Sidebar({
       {/* Map or List content */}
       {mobileView === 'map' ? (
         <div className="flex-1 min-h-0 relative overflow-hidden" style={{ touchAction: 'none' }}>
+          <Suspense fallback={<p role="status">Loading map…</p>}>
           <Map
             saunas={filteredSaunas}
             selectedSauna={selectedSauna}
@@ -102,6 +108,7 @@ export default function Sidebar({
             disableInfoWindow={true}
             onCityClick={setCitySlug}
           />
+          </Suspense>
           <BottomSheet
             selectedSauna={selectedSauna}
             onClose={() => onSaunaSelect(null)}
@@ -122,7 +129,10 @@ export default function Sidebar({
           isFavorite={isFavorite}
           isAdmin={isAdmin}
           onEditSauna={onEditSauna}
-        />
+          citySlug={citySlug}
+        >
+          {children}
+        </SaunaList>
       )}
 
       {/* Filters Panel */}

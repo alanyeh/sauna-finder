@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import fetch from 'node-fetch';
+import { inferAmenityEvidence, placeTextSources, hasSaunaEvidence } from './lib/amenities.js';
+import { fetchPlacesJSON, collectSearchPages, PlacesQuotaError } from './lib/places.js';
 import * as dotenv from 'dotenv';
 import { writeFileSync } from 'fs';
 import { createInterface } from 'readline';
@@ -211,6 +213,21 @@ const CITY_CONFIGS = {
       'V7C': 'Richmond', 'V7E': 'Richmond',
     },
   },
+  'park-city': {
+    city_slug: 'park-city',
+    full_name: 'Park City',
+    center: { lat: 40.6461, lng: -111.4980 },
+    radius: 20000,
+    neighborhoods: [
+      'Old Town', 'Main Street', 'Deer Valley', 'Canyons Village',
+      'Kimball Junction', 'Prospector', 'Snyderville', 'Silver Summit',
+      'Jeremy Ranch', 'Midway', 'Heber City',
+    ],
+    zipToNeighborhood: {
+      '84060': 'Old Town', '84098': 'Kimball Junction',
+      '84049': 'Midway', '84032': 'Heber City',
+    },
+  },
   minneapolis: {
     city_slug: 'minneapolis',
     full_name: 'Minneapolis',
@@ -304,28 +321,6 @@ const BRAND_WHITELIST = [
   /rvivl/i,
 ];
 
-// Gym chains that are KNOWN to have saunas — only these gyms pass the filter
-const GYM_WHITELIST = [
-  // Luxury/high-end chains with consistent sauna amenities
-  /equinox/i, /life\s*time/i, /mercedes\s*club/i,
-
-  // Climbing & specialized gyms (often have saunas)
-  /\btmpl\b/i, /brooklyn\s*boulders/i, /\bvital\b.*\b(climbing|gym)\b/i,
-  /\bclimbing\b.*\bgym\b/i, /climbing\s*wall/i, /bouldering/i,
-
-  // Regional chains with strong sauna presence
-  /la\s*fitness/i, /gold\s*gym/i, /anytime\s*fitness/i,
-  /crunch\s*fitness/i, /orangetheory/i, /sports\s*club/i,
-
-  // NYC/premium
-  /chelsea\s*piers/i, /powerhouse\s*gym/i, /complete\s*body/i,
-  /manhattan\s*plaza/i, /harbor\s*fitness/i,
-
-  // Other verified chains
-  /korean\s*spa.*gym/i, /bathhouse.*gym/i, /wellness.*center/i,
-  /athletic\s*club/i, /sports\s*center/i,
-];
-
 // ─── Supabase & API Setup ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
@@ -334,21 +329,19 @@ const supabase = createClient(
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
 
 const FIELD_MASK = [
+  'nextPageToken',
   'places.id',
+  'places.businessStatus',
   'places.displayName',
   'places.formattedAddress',
   'places.location',
   'places.rating',
   'places.userRatingCount',
-  'places.nationalPhoneNumber',
   'places.websiteUri',
   'places.regularOpeningHours',
   'places.types',
-  'places.googleMapsUri',
   'places.photos',
   'places.priceLevel',
-  'places.primaryType',
-  'places.primaryTypeDisplayName',
   'places.editorialSummary',
   'places.reviews',
 ].join(',');
@@ -363,11 +356,11 @@ async function textSearch(query, cityConfig, pageToken = null) {
         radius: cityConfig.radius,
       },
     },
-    maxResultCount: 20,
+    pageSize: 20,
   };
   if (pageToken) body.pageToken = pageToken;
 
-  const response = await fetch('https://places.googleapis.com/v1/places:searchText', {
+  return fetchPlacesJSON('https://places.googleapis.com/v1/places:searchText', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -377,26 +370,10 @@ async function textSearch(query, cityConfig, pageToken = null) {
     body: JSON.stringify(body),
   });
 
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`Places API error (${response.status}): ${errText}`);
-  }
-
-  return response.json();
 }
 
 async function searchAllPages(query, cityConfig) {
-  const allResults = [];
-  let pageToken = null;
-
-  do {
-    const data = await textSearch(query, cityConfig, pageToken);
-    if (data.places) allResults.push(...data.places);
-    pageToken = data.nextPageToken || null;
-    if (pageToken) await sleep(300);
-  } while (pageToken);
-
-  return allResults;
+  return collectSearchPages(token => textSearch(query, cityConfig, token));
 }
 
 // ─── Filtering ──────────────────────────────────────────────────────────────────
@@ -404,6 +381,11 @@ function shouldInclude(place) {
   const name = place.displayName?.text || '';
   const types = place.types || [];
   const reviews = place.userRatingCount || 0;
+
+  // Closed businesses never belong in a fresh scrape
+  if (place.businessStatus === 'CLOSED_PERMANENTLY' || place.businessStatus === 'CLOSED_TEMPORARILY') {
+    return { include: false, reason: `business status: ${place.businessStatus}` };
+  }
 
   // Hard exclude by Google Places type
   for (const t of types) {
@@ -438,23 +420,10 @@ function shouldInclude(place) {
     }
   }
 
-  // Hotels/resorts: include (they appeared in sauna searches for a reason)
-  const isHotel = types.some(t => ['hotel', 'lodging', 'resort_hotel'].includes(t))
-    || /\bhotel\b/i.test(name) || /\bresort\b/i.test(name);
-  if (isHotel) {
-    return { include: true, reason: 'hotel/resort' };
-  }
-
-  // Gyms: only include chains known to have saunas
-  const isGym = types.some(t => ['gym', 'fitness_center', 'health_club'].includes(t))
-    || /\bgym\b/i.test(name) || /\bfitness\b/i.test(name);
-  if (isGym) {
-    for (const pattern of GYM_WHITELIST) {
-      if (pattern.test(name)) {
-        return { include: true, reason: `whitelisted gym: ${pattern.source}` };
-      }
-    }
-    return { include: false, reason: 'gym without confirmed saunas' };
+  // Search relevance and chain membership do not confirm this location has a
+  // sauna. Require explicit text evidence for generic hotels, gyms, and spas.
+  if (hasSaunaEvidence(placeTextSources(place))) {
+    return { include: true, reason: 'explicit sauna evidence in place text (needs review)' };
   }
 
   // Everything else (generic spas, massage parlors, etc.): exclude
@@ -554,37 +523,7 @@ function classifyType(place) {
 // ─── Amenity Inference ────────────────────────────────────────────────────────
 // Scans name, editorial summary, and reviews for amenity keywords.
 function inferAmenities(place) {
-  const name = (place.displayName?.text || '');
-  const editorial = (place.editorialSummary?.text || '');
-  const reviewTexts = (place.reviews || [])
-    .map(r => (r.text?.text || r.originalText?.text || ''))
-    .join(' ');
-  const allText = `${name} ${editorial} ${reviewTexts}`;
-  const amenities = [];
-
-  if (/dry\s*sauna|heated\s*sauna|traditional\s*sauna|finnish\s*sauna|cedar\s*sauna|wood[\s\-]*(fired\s*)?sauna|barrel\s*sauna/i.test(allText)) {
-    amenities.push('dry_sauna');
-  }
-  if (/cold\s*plunge|ice\s*bath|cold\s*(pool|tub|dip)|plunge\s*pool|cold\s*immersion/i.test(allText)) {
-    amenities.push('cold_plunge');
-  }
-  if (/steam\s*room|steam\s*bath|eucalyptus\s*steam/i.test(allText)) {
-    amenities.push('steam_room');
-  }
-  if (/\bmassage\b|body\s*scrub/i.test(allText)) {
-    amenities.push('massage');
-  }
-  if (/swimming\s*pool|lap\s*pool|hot\s*tub|jacuzzi|whirlpool|soaking\s*(tub|pool)|thermal\s*pool|rooftop\s*pool|outdoor\s*pool|indoor\s*pool|\bpool\b/i.test(allText)) {
-    amenities.push('pool');
-  }
-  if (/co[\-\s]?ed|mixed[\-\s]?gender|men\s*and\s*women|all\s*genders?\b/i.test(allText)) {
-    amenities.push('coed');
-  }
-  if (/private\s*(room|suite|session|sauna|cabin|pod|bath|experience)/i.test(allText)) {
-    amenities.push('private');
-  }
-
-  return amenities;
+  return Object.keys(inferAmenityEvidence(placeTextSources(place)));
 }
 
 // ─── Description Generation ──────────────────────────────────────────────────
@@ -682,8 +621,8 @@ function placeToRecord(place, citySlug, cityConfig) {
     name: place.displayName?.text || '',
     address: place.formattedAddress || '',
     neighborhood: detectNeighborhood(place.formattedAddress, cityConfig),
-    lat: place.location?.latitude || null,
-    lng: place.location?.longitude || null,
+    lat: place.location?.latitude ?? null,
+    lng: place.location?.longitude ?? null,
     rating: place.rating || null,
     rating_count: place.userRatingCount || null,
     price: mapPriceLevel(place.priceLevel) || null,
@@ -903,6 +842,7 @@ async function main() {
       allPlaces.push(...results);
     } catch (err) {
       console.log(` ERROR: ${err.message}`);
+      if (err instanceof PlacesQuotaError) break;
     }
 
     await sleep(200);

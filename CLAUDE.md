@@ -61,6 +61,7 @@ scripts/
 ├── prerender.js            # Puppeteer prerender of every route (postbuild)
 ├── generate-sitemap.js     # dist/sitemap.xml from CITY_CONFIG
 ├── scrape-saunas.js        # Google Places scraper for new cities
+├── refresh-saunas.js       # Refresh existing records (ratings, hours, closures)
 ├── scrape-photos.js        # Fetch + upload sauna photos to Supabase Storage
 ├── enrich-saunas.js        # Backfill/enrich existing records
 ├── populate-pricing.js     # Populate day-pass pricing_options
@@ -134,6 +135,7 @@ SUPABASE_SERVICE_KEY=<for admin writes>
 | `npm run lint`    | ESLint over `src/` and `scripts/`           |
 | `node scripts/prefetch-saunas.js` | Snapshot Supabase `saunas` → `src/data/saunas-prebuilt.json` |
 | `node scripts/scrape-photos.js` | Scrape Google Places photos → Supabase Storage |
+| `node scripts/refresh-saunas.js` | Refresh ratings/hours/closures for existing records (quota-aware, ~60/day) |
 
 ---
 
@@ -152,7 +154,8 @@ SUPABASE_SERVICE_KEY=<for admin writes>
 - **State management** — React Context for auth; hooks (`useFilters`, `useFavorites`) for feature logic; component-level state for UI
 - **Map** uses `AdvancedMarker` with uncontrolled center/zoom to avoid re-render panning issues
 - **Mobile map** uses greedy gesture handling so touch panning works without two-finger requirement
-- **Adding a new city** — add a `CITY_CONFIG` entry in `src/lib/cities.js`, insert Supabase rows with that `city_slug`, and write a `cityContent.js` prose+FAQ block; prerender and the sitemap pick it up automatically
+- **Adding a new city** — add a `CITY_CONFIG` entry in `src/lib/cities.js`, insert Supabase rows with that `city_slug`, and write a `cityContent.js` prose+FAQ block; prerender and the sitemap pick it up automatically. ALSO update the hardcoded city lists in: `Header.jsx` (CITIES), `Map.jsx` (CITY_CENTERS + CITY_LABELS), `SubmitSaunaModal.jsx` (cityCenters + `<option>`s), `AdminAddSaunaModal.jsx` (cityName map + two `<option>` lists), `AdminEditModal.jsx` (`<option>`s), and the scraper config in `scripts/scrape-saunas.js` (CITY_CONFIGS)
+- **Hidden chains** — `SaunaDataContext.jsx` has a `HIDDEN_CHAINS` list (Anytime Fitness, LA Fitness, Holiday Inn, …); matching records stay in the DB but never render in the UI
 
 ---
 
@@ -169,3 +172,5 @@ SUPABASE_SERVICE_KEY=<for admin writes>
 ## Deployment
 
 Recommended: **Vercel** (`npm run build` then `vercel --prod`). Alternatives: Netlify (drag `dist/`), GitHub Pages. Set all `VITE_` env vars in the hosting platform's dashboard.
+
+**Data freshness:** prerendered HTML is frozen at build time, so Supabase edits only reach crawlers on rebuild. `.github/workflows/nightly-rebuild.yml` fires the Vercel deploy hook nightly (requires the `VERCEL_DEPLOY_HOOK_URL` repo secret — setup steps in the workflow file). `supabase/rebuild-webhook.sql` is an optional DB trigger for instant rebuilds on data changes.

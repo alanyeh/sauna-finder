@@ -108,7 +108,7 @@ function SaunaMarker({ sauna, isSelected, onClick, disableInfoWindow }) {
                   {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
                     <span
                       key={amenity}
-                      className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+                      className="amenity-badge"
                     >
                       {amenityLabels[amenity]}
                     </span>
@@ -120,7 +120,7 @@ function SaunaMarker({ sauna, isSelected, onClick, disableInfoWindow }) {
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sauna.name + ' ' + sauna.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-4 py-2 bg-charcoal text-white text-[13px] rounded transition-colors hover:bg-accent-red font-medium"
+                  className="ui-button ui-button-primary flex-1"
                 >
                   View on Maps
                 </a>
@@ -129,7 +129,7 @@ function SaunaMarker({ sauna, isSelected, onClick, disableInfoWindow }) {
                     href={sauna.website_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 bg-white border border-light-border text-charcoal text-[13px] rounded transition-colors hover:bg-hover-bg font-medium"
+                    className="ui-button flex-1"
                   >
                     View Website
                   </a>
@@ -152,6 +152,7 @@ const CITY_CENTERS = {
   minneapolis: { lat: 44.963, lng: -93.272 },
   portland: { lat: 45.523, lng: -122.676 },
   denver: { lat: 39.7392, lng: -104.9903 },
+  'park-city': { lat: 40.6461, lng: -111.498 },
   houston: { lat: 29.7604, lng: -95.3698 },
   vancouver: { lat: 49.2827, lng: -123.1207 },
   toronto: { lat: 43.6532, lng: -79.3832 },
@@ -167,6 +168,7 @@ const CITY_LABELS = {
   minneapolis: 'Minneapolis',
   portland: 'Portland',
   denver: 'Denver',
+  'park-city': 'Park City',
   houston: 'Houston',
   vancouver: 'Vancouver',
   toronto: 'Toronto',

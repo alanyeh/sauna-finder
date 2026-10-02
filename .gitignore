@@ -33,3 +33,8 @@ dist-ssr
 # Build artifacts
 src/data/saunas-prebuilt.json
 scripts/*-report-*.csv
+scripts/pricing-report-*.json
+scripts/.refresh-checkpoint.json
+
+# Shopify order exports (may contain customer data)
+data/

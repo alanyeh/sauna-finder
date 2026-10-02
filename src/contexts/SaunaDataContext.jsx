@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '../supabase';
-import prebuiltSaunas from '../data/saunas-prebuilt.json';
 
 const SaunaDataContext = createContext(null);
 
@@ -28,26 +27,30 @@ function transform(rows) {
     }));
 }
 
-// Seeded from the build-time Supabase snapshot so the first render (both
-// during prerender and during client hydration) has identical data. Without
-// this, the client's first render would show 0 saunas while the prerendered
-// HTML has the real list — causing hydration mismatches.
-const INITIAL_SAUNAS = transform(prebuiltSaunas);
-
-export function SaunaDataProvider({ children }) {
-  const [saunas, setSaunas] = useState(INITIAL_SAUNAS);
-  const [loading, setLoading] = useState(false);
+// Bootstrap loads the static JSON separately from executable JavaScript.
+export function SaunaDataProvider({ children, initialSaunas }) {
+  const [saunas, setSaunas] = useState(() => transform(initialSaunas));
+  const [loading, setLoading] = useState(!initialSaunas);
 
   const fetchSaunas = async () => {
     try {
-      const { data, error } = await supabase
-        .from('saunas')
-        .select('*')
-        .order('id', { ascending: true });
+      // Supabase caps a single select at 1,000 rows and truncates silently,
+      // so page through with .range().
+      const PAGE_SIZE = 1000;
+      const rows = [];
+      for (let from = 0; ; from += PAGE_SIZE) {
+        const { data, error } = await supabase
+          .from('saunas')
+          .select('*')
+          .order('id', { ascending: true })
+          .range(from, from + PAGE_SIZE - 1);
 
-      if (error) throw error;
+        if (error) throw error;
+        rows.push(...data);
+        if (data.length < PAGE_SIZE) break;
+      }
 
-      setSaunas(transform(data));
+      setSaunas(transform(rows));
     } catch (error) {
       console.error('Error fetching saunas:', error);
     } finally {

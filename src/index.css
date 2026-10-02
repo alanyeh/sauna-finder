@@ -43,12 +43,47 @@
     @apply text-inherit no-underline hover:underline transition-all duration-base;
   }
 
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid theme('colors.terracotta-dark');
+    outline-offset: 3px;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
   button {
     @apply transition-all duration-base;
   }
 }
 
 @layer components {
+  .ui-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-light-border bg-white px-4 py-2 text-xs font-medium text-charcoal hover:border-warm-gray hover:bg-stone-50 hover:no-underline;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+
+  .ui-button-primary {
+    @apply border-terracotta-dark bg-terracotta-dark text-white hover:border-espresso-dark hover:bg-espresso-dark;
+  }
+
+  .ui-field {
+    @apply w-full min-h-11 rounded-sm border border-light-border bg-white px-3 py-2 text-sm text-charcoal hover:border-warm-gray;
+  }
+
+  .ui-label {
+    @apply mb-2 block text-xs font-medium uppercase tracking-wider text-warm-gray;
+  }
+
+  .amenity-badge {
+    @apply inline-flex items-center rounded-sm border border-light-border bg-stone-50 px-2 py-1 text-xs leading-normal text-charcoal-700;
+  }
+
+  .filter-chip {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border px-3 py-2 text-xs;
+  }
+
   /* InfoWindow overrides — edge-to-edge content, hide default close button */
   .gm-style .gm-style-iw-c {
     padding: 0 !important;
@@ -177,4 +212,12 @@
 @keyframes slideInLeft {
   from { transform: translateX(-110%); }
   to   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

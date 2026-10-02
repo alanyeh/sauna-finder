@@ -67,6 +67,8 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
         alt={`${alt} ${currentIndex + 1}`}
         className="w-full h-full object-cover"
         style={{ maxWidth: '100%', maxHeight: '100%' }}
+        loading="lazy"
+        decoding="async"
       />
 
       {photos.length > 1 && (

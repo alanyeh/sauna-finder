@@ -15,7 +15,7 @@ export default {
         'warm-gray': '#6B6B67',
         'warm-gray-400': '#A8A89E',
         'stone-50': '#F5F5F0',
-        'stone-100': '#EBEBЕ4',
+        'stone-100': '#EBEBE4',
         'stone-300': '#C8C8BE',
         'light-border': '#E8E8E2',
         'hover-bg': '#F5F5F0',

@@ -51,7 +51,7 @@ function CategoryGrid() {
           <button
             key={type}
             onClick={() => navigate(`/city/${targetCity}`, { state: { selectedType: type } })}
-            className="flex flex-col items-center justify-center gap-2 px-4 py-5 md:px-6 md:py-5 md:flex-shrink-0 md:min-w-[130px] bg-white border border-light-border rounded-xl hover:border-charcoal hover:bg-hover-bg transition-all duration-150 group"
+            className="flex flex-col items-center justify-center gap-2 px-4 py-5 md:px-6 md:py-5 md:flex-shrink-0 md:min-w-[130px] bg-white border border-light-border rounded-sm hover:border-charcoal hover:bg-hover-bg transition-all duration-150 group"
           >
             <span className="text-2xl md:text-3xl leading-none text-charcoal group-hover:text-accent-red transition-colors">{icon}</span>
             <div className="flex flex-col items-center">
@@ -135,7 +135,8 @@ export default function HomePage() {
       .map(([slug, items]) => ({
         slug,
         fullName: getCityFullName(slug),
-        saunas: items.sort((a, b) => (b.rating || 0) - (a.rating || 0)),
+        // The city page has the full list; keep homepage DOM/image work bounded.
+        saunas: items.sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 12),
         totalCount: items.length,
       }))
       .sort((a, b) => b.totalCount - a.totalCount);
@@ -199,7 +200,7 @@ export default function HomePage() {
             ) : (
               <Link
                 to="/city/nyc"
-                className="px-2.5 md:px-3 py-1 md:py-1.5 rounded text-[12px] md:text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+                className="ui-button shrink-0"
               >
                 Sign In
               </Link>

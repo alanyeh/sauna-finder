@@ -243,6 +243,35 @@ export const CITY_CONTENT = {
     ],
   },
 
+  'park-city': {
+    intro: [
+      "Park City punches far above its weight for sauna and contrast bathing. As a world-class ski town, its recovery culture runs deep: boutique cold-plunge studios in Kimball Junction, wood-fired saunas in the Heber Valley, and some of the best hotel spas in the American West clustered around Deer Valley and Canyons Village. Twenty minutes over the pass, the town of Midway adds a rare geological bonus — a natural geothermal hot spring inside a limestone crater where you can soak year-round.",
+      "The scene splits between destination resort spas — grand facilities with saunas, steam rooms, and pools attached to five-star lodges — and a newer wave of dedicated Nordic-style sauna and plunge studios serving locals and altitude-training athletes. At 7,000 feet, hydration matters even more than usual. Expect boutique sessions from around $40–$60 and resort spa day access from $75 upward.",
+    ],
+    faqs: [
+      {
+        q: "How much does a sauna session cost in Park City?",
+        a: "Boutique sauna and cold plunge studios in the Park City area typically charge $40–$60 per session. Resort and hotel spa day passes run higher, usually $75–$150, and often include pools, steam rooms, and relaxation lounges alongside the sauna.",
+      },
+      {
+        q: "Are there natural hot springs near Park City?",
+        a: "Yes — the Homestead Crater in Midway, about 20 minutes from Park City, is a 10,000-year-old geothermal spring inside a 55-foot limestone dome. The mineral water stays around 90–96°F year-round, and you can soak, swim, or even scuba dive inside the crater.",
+      },
+      {
+        q: "Do Park City hotel spas allow non-guests?",
+        a: "Many do. Several Deer Valley and Canyons Village resort spas sell day access or treat-and-soak packages to non-guests, especially in shoulder season. Availability tightens during peak ski weeks, so call ahead to confirm day-pass policies.",
+      },
+      {
+        q: "Does altitude change how sauna feels in Park City?",
+        a: "Yes. At roughly 7,000 feet, you dehydrate faster and your heart rate runs higher, so sauna sessions feel more intense than at sea level. Drink extra water, shorten your first rounds, and give yourself longer cool-down breaks — especially if you've just arrived at altitude.",
+      },
+      {
+        q: "What should I bring to a sauna in Park City?",
+        a: "Bring a swimsuit, flip-flops, a large water bottle, and a sauna hat for longer heat sessions. Winter visitors should pack warm layers for the walk between outdoor plunges and the sauna — many venues here lean into the snow-and-steam contrast.",
+      },
+    ],
+  },
+
   houston: {
     intro: [
       "Houston's sauna scene reflects its role as one of the most internationally diverse cities in the US. Korean spas are the largest category, centered in the city's sizeable Korean community, followed by hotel spas, infrared studios, and a small number of traditional banyas and modern contrast bathhouses.",

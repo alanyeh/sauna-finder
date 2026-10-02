@@ -78,13 +78,14 @@ export const useFilters = (saunas, citySlug, initialTypes = []) => {
         return false;
       }
       if (selectedAmenities.length > 0 &&
-          !selectedAmenities.every(a => sauna.amenities.includes(a))) {
+          !selectedAmenities.every(a => (sauna.amenities || []).includes(a))) {
         return false;
       }
       return true;
     });
 
-    const sorted = [...filtered];
+    // filter() already produces a new array; sorting it cannot mutate the source.
+    const sorted = filtered;
     switch (sortBy) {
       case 'rating':
         sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));

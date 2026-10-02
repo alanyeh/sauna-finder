@@ -10,6 +10,7 @@ const CITIES = [
   { slug: 'minneapolis', short: 'MSP', label: 'Minneapolis' },
   { slug: 'portland', short: 'PDX', label: 'Portland' },
   { slug: 'denver', short: 'DEN', label: 'Denver' },
+  { slug: 'park-city', short: 'PC', label: 'Park City' },
   { slug: 'houston', short: 'HOU', label: 'Houston' },
   { slug: 'vancouver', short: 'VAN', label: 'Vancouver' },
   { slug: 'toronto', short: 'TOR', label: 'Toronto' },
@@ -30,9 +31,10 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
           </div>
           {/* Mobile: dropdown */}
           <select
+            aria-label="Choose a city"
             value={citySlug}
             onChange={(e) => setCitySlug(e.target.value)}
-            className="md:hidden px-2 py-1 rounded text-[12px] font-medium bg-cream border border-light-border text-charcoal"
+            className="ui-field md:hidden max-w-[145px] min-w-0 text-xs"
           >
             {CITIES.map(({ slug, label }) => (
               <option key={slug} value={slug}>{label}</option>
@@ -44,8 +46,9 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
             {CITIES.map(({ slug, short }) => (
               <button
                 key={slug}
+                aria-pressed={citySlug === slug}
                 onClick={() => setCitySlug(slug)}
-                className={`px-3 py-1 rounded text-[12px] font-medium transition-colors whitespace-nowrap ${
+                className={`min-h-11 px-3 py-2 rounded-sm text-xs font-medium transition-colors whitespace-nowrap ${
                   citySlug === slug
                     ? 'bg-charcoal text-white'
                     : 'text-warm-gray hover:text-charcoal'
@@ -73,7 +76,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
           ) : (
             <button
               onClick={onSignIn}
-              className="px-2.5 md:px-3 py-1 md:py-1.5 rounded text-[11px] md:text-[13px] font-medium transition-colors bg-white text-charcoal border border-charcoal hover:bg-charcoal hover:text-white"
+              className="ui-button shrink-0"
             >
               Sign In
             </button>

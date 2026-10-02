@@ -1,10 +1,12 @@
 // Enrich existing sauna records with expanded amenity/type inference.
-// Usage: node scripts/enrich-saunas.js [--dry-run] [--refetch] [--limit=N] [--city=<slug>]
+// Usage: node scripts/enrich-saunas.js [--dry-run] [--refetch] [--website] [--limit=N] [--city=<slug>]
 
 import { createClient } from '@supabase/supabase-js';
-import fetch from 'node-fetch';
+import { inferAmenityEvidence, placeTextSources } from './lib/amenities.js';
+import { fetchPlacesJSON, PlacesQuotaError } from './lib/places.js';
 import * as dotenv from 'dotenv';
 import { writeFileSync } from 'fs';
+import { crawlWebsite } from './lib/website-content.js';
 
 dotenv.config({ path: '.env.local' });
 
@@ -13,18 +15,6 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY
 );
 const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
-
-// ─── Expanded Amenity Keyword Patterns ──────────────────────────────────────
-const AMENITY_PATTERNS = {
-  cold_plunge: /cold\s*plunge|ice\s*bath|frigidarium|cold\s*dip|polar\s*plunge|shock\s*pool|cold\s*tub|cold\s*(pool|immersion)|plunge\s*pool/i,
-  steam_room: /steam\s*room|steam\s*bath|eucalyptus|wet\s*room|\bhammam\b|turkish\s*bath/i,
-  coed: /co[\-\s]?ed|mixed[\-\s]?gender|couples|communal|bathing\s*suit|swimwear\s*required|men\s*and\s*women|all\s*genders?\b/i,
-  private: /private\s*(room|suite|session|sauna|cabin|pod|bath|experience)|suites|personal\s*room|hourly\s*booking/i,
-  pool: /hot\s*tub|jacuzzi|whirlpool|soaking\s*tub|hydrotherapy|swimming\s*pool|lap\s*pool|thermal\s*pool|rooftop\s*pool|indoor\s*pool|outdoor\s*pool/i,
-  massage: /\bmassage\b|body\s*scrub/i,
-  dry_sauna: /dry\s*sauna|heated\s*sauna|traditional\s*sauna|finnish\s*sauna|cedar\s*sauna|wood[\s\-]*(fired\s*)?sauna|barrel\s*sauna/i,
-  infrared_sauna: /infrared\s*(sauna|room|therapy|cabin|pod|session)|infrared/i,
-};
 
 // ─── Type Categorization Rules ──────────────────────────────────────────────
 // Each rule maps a keyword pattern to a type, with a category group to prevent
@@ -53,33 +43,13 @@ function sleep(ms) {
 }
 
 function buildTextCorpus(sauna, placeDetails) {
-  let text = `${sauna.name} ${sauna.description || ''}`;
-  if (placeDetails) {
-    if (placeDetails.editorialSummary?.text) {
-      text += ` ${placeDetails.editorialSummary.text}`;
-    }
-    if (placeDetails.reviews) {
-      text += ' ' + placeDetails.reviews
-        .map(r => r.text?.text || r.originalText?.text || '')
-        .join(' ');
-    }
-  }
-  return text;
+  return [sauna.name, sauna.description, ...(placeDetails ? placeTextSources(placeDetails) : [])];
 }
 
-// ─── Core Enrichment Functions ──────────────────────────────────────────────
-function enrichAmenities(existingAmenities, textCorpus) {
-  const newAmenities = [...existingAmenities];
-  const added = [];
-
-  for (const [amenity, pattern] of Object.entries(AMENITY_PATTERNS)) {
-    if (!newAmenities.includes(amenity) && pattern.test(textCorpus)) {
-      newAmenities.push(amenity);
-      added.push(amenity);
-    }
-  }
-
-  return { amenities: newAmenities, added };
+function enrichAmenities(existingAmenities, sources) {
+  const evidence = inferAmenityEvidence(sources);
+  const added = Object.keys(evidence).filter(amenity => !existingAmenities.includes(amenity));
+  return { amenities: [...existingAmenities, ...added], added, evidence };
 }
 
 function enrichTypes(existingTypes, name, description) {
@@ -109,7 +79,7 @@ function enrichTypes(existingTypes, name, description) {
 async function fetchPlaceDetails(placeId) {
   if (!placeId || !API_KEY) return null;
 
-  const response = await fetch(
+  return fetchPlacesJSON(
     `https://places.googleapis.com/v1/places/${placeId}`, {
       headers: {
         'X-Goog-Api-Key': API_KEY,
@@ -118,22 +88,19 @@ async function fetchPlaceDetails(placeId) {
     }
   );
 
-  if (!response.ok) return null;
-  return response.json();
 }
 
 // ─── Data Fetching ──────────────────────────────────────────────────────────
 async function fetchSaunasToEnrich(citySlug, limit) {
-  let hasVerificationColumn = true;
-
   // Try fetching with verification_status filter
   let query = supabase
     .from('saunas')
-    .select('id, name, description, types, amenities, place_id, city_slug, verification_status')
+    .select('id, name, description, types, amenities, place_id, website_url, city_slug, verification_status')
     .eq('verification_status', 'unverified')
     .order('id', { ascending: true });
 
   if (citySlug) query = query.eq('city_slug', citySlug);
+  if (limit) query = query.limit(limit);
 
   let { data, error } = await query;
 
@@ -141,13 +108,13 @@ async function fetchSaunasToEnrich(citySlug, limit) {
     console.warn('⚠  verification_status column not found. Processing all records.');
     console.warn('   Run this SQL in Supabase Dashboard to add it:');
     console.warn("   ALTER TABLE saunas ADD COLUMN IF NOT EXISTS verification_status text DEFAULT 'unverified';\n");
-    hasVerificationColumn = false;
 
     let retryQuery = supabase
       .from('saunas')
-      .select('id, name, description, types, amenities, place_id, city_slug')
+      .select('id, name, description, types, amenities, place_id, website_url, city_slug')
       .order('id', { ascending: true });
     if (citySlug) retryQuery = retryQuery.eq('city_slug', citySlug);
+    if (limit) retryQuery = retryQuery.limit(limit);
 
     const result = await retryQuery;
     data = result.data;
@@ -156,22 +123,22 @@ async function fetchSaunasToEnrich(citySlug, limit) {
 
   if (error) throw error;
   if (limit) data = data.slice(0, limit);
-  return { saunas: data, hasVerificationColumn };
+  return { saunas: data };
 }
 
 // ─── CSV Report ─────────────────────────────────────────────────────────────
-function generateEnrichCSV(changes, errors, citySlug) {
+function generateEnrichCSV(changes, errors, citySlug, dryRun) {
   const esc = (s) => `"${(s || '').toString().replace(/"/g, '""')}"`;
-  const lines = ['id,name,field,before,after,status'];
+  const lines = ['id,name,field,before,after,status,evidence'];
 
   for (const change of changes) {
     const before = Array.isArray(change.before) ? change.before.join('; ') : change.before;
     const after = Array.isArray(change.after) ? change.after.join('; ') : change.after;
-    lines.push(`${change.id},${esc(change.name)},${change.field},${esc(before)},${esc(after)},CHANGED`);
+    lines.push(`${change.id},${esc(change.name)},${change.field},${esc(before)},${esc(after)},${dryRun ? 'PROPOSED' : 'CHANGED'},${esc(change.evidence)}`);
   }
 
   for (const err of errors) {
-    lines.push(`${err.id},${esc(err.name)},error,,,${esc(err.error)}`);
+    lines.push(`${err.id},${esc(err.name)},error,,,${esc(err.error)},`);
   }
 
   const slug = citySlug || 'all';
@@ -185,9 +152,10 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args.includes('--help')) {
-    console.log('Usage: node scripts/enrich-saunas.js [--dry-run] [--refetch] [--limit=N] [--city=<slug>]');
+    console.log('Usage: node scripts/enrich-saunas.js [--dry-run] [--refetch] [--website] [--limit=N] [--city=<slug>]');
     console.log('\nFlags:');
     console.log('  --dry-run   Output CSV of proposed changes, no DB writes');
+    console.log('  --website   Read up to 3 linked official website pages per record');
     console.log('  --refetch   Re-fetch Google Places API for richer text matching');
     console.log('  --limit=N   Process only N records');
     console.log('  --city=X    Filter by city_slug (e.g., nyc, sf)');
@@ -196,8 +164,12 @@ async function main() {
 
   const dryRun = args.includes('--dry-run');
   const refetch = args.includes('--refetch');
+  const withWebsite = args.includes('--website');
   const limitArg = args.find(a => a.startsWith('--limit='))?.split('=')[1];
-  const limit = limitArg ? parseInt(limitArg, 10) : null;
+  const limit = limitArg === undefined ? null : Number(limitArg);
+  if (limit !== null && (!Number.isSafeInteger(limit) || limit < 1)) {
+    throw new Error('--limit must be a positive integer');
+  }
   const cityArg = args.find(a => a.startsWith('--city='))?.split('=')[1] || null;
 
   if (!process.env.VITE_SUPABASE_URL || !process.env.SUPABASE_SERVICE_KEY) {
@@ -216,7 +188,7 @@ async function main() {
   if (limit) console.log(`  [LIMIT: ${limit}]`);
   console.log('');
 
-  const { saunas, hasVerificationColumn } = await fetchSaunasToEnrich(cityArg, limit);
+  const { saunas } = await fetchSaunasToEnrich(cityArg, limit);
   console.log(`Fetched ${saunas.length} saunas to enrich\n`);
 
   if (saunas.length === 0) {
@@ -226,22 +198,32 @@ async function main() {
 
   const changes = [];
   const errors = [];
+  let processed = 0;
 
   for (let i = 0; i < saunas.length; i++) {
     const sauna = saunas[i];
+    processed++;
     process.stdout.write(`  [${i + 1}/${saunas.length}] ${sauna.name}...`);
 
     try {
-      // Build text corpus
+      // Try official pages first; pay for review details only as a fallback.
+      const website = withWebsite && sauna.website_url
+        ? await crawlWebsite(sauna.website_url) : { pages: [], errors: [] };
       let placeDetails = null;
-      if (refetch && sauna.place_id) {
+      if (refetch && sauna.place_id && !website.pages.length) {
         placeDetails = await fetchPlaceDetails(sauna.place_id);
         await sleep(300);
       }
-      const textCorpus = buildTextCorpus(sauna, placeDetails);
+      for (const failure of website.errors) {
+        errors.push({ id: sauna.id, name: sauna.name, error: `${failure.url}: ${failure.error}` });
+      }
+      // Prefer available official page text over review snippets. Preserve the
+      // page URL alongside each supporting sentence in the review report.
+      const textCorpus = website.pages.length
+        ? website.pages.map(page => page.text) : buildTextCorpus(sauna, placeDetails);
 
       // Enrich amenities
-      const { amenities: newAmenities, added: addedAmenities } =
+      const { amenities: newAmenities, added: addedAmenities, evidence } =
         enrichAmenities(sauna.amenities || [], textCorpus);
 
       // Enrich types
@@ -250,26 +232,28 @@ async function main() {
 
       // Build update payload
       const update = {};
+      const pendingChanges = [];
       let hasChanges = false;
 
       if (addedAmenities.length > 0) {
         update.amenities = newAmenities;
-        changes.push({ id: sauna.id, name: sauna.name, field: 'amenities',
-          before: sauna.amenities, after: newAmenities });
+        pendingChanges.push({ id: sauna.id, name: sauna.name, field: 'amenities',
+          before: sauna.amenities, after: newAmenities,
+          evidence: addedAmenities.map(amenity => {
+            const source = website.pages.find(page => page.text.includes(evidence[amenity]));
+            return `${amenity}: ${evidence[amenity]}${source ? ` [${source.url}]` : ''}`;
+          }).join(' | ') });
         hasChanges = true;
       }
       if (addedTypes.length > 0) {
         update.types = newTypes;
-        changes.push({ id: sauna.id, name: sauna.name, field: 'types',
+        pendingChanges.push({ id: sauna.id, name: sauna.name, field: 'types',
           before: sauna.types, after: newTypes });
         hasChanges = true;
       }
 
-      if (hasVerificationColumn) {
-        update.verification_status = 'verified';
-      }
-
-      if ((hasChanges || hasVerificationColumn) && !dryRun) {
+      // Keyword inference is not human verification. Keep these records reviewable.
+      if (hasChanges && !dryRun) {
         const { error } = await supabase
           .from('saunas')
           .update(update)
@@ -277,6 +261,7 @@ async function main() {
         if (error) throw error;
       }
 
+      changes.push(...pendingChanges);
       const parts = [];
       if (addedAmenities.length > 0) parts.push(`+${addedAmenities.length} amenities (${addedAmenities.join(', ')})`);
       if (addedTypes.length > 0) parts.push(`+${addedTypes.length} types (${addedTypes.join(', ')})`);
@@ -285,18 +270,19 @@ async function main() {
     } catch (err) {
       console.log(` ERROR: ${err.message}`);
       errors.push({ id: sauna.id, name: sauna.name, error: err.message });
+      if (err instanceof PlacesQuotaError) break;
     }
   }
 
   // Summary
   const changedIds = new Set(changes.map(c => c.id));
   console.log(`\n--- Summary ---`);
-  console.log(`  Processed: ${saunas.length}`);
+  console.log(`  Processed: ${processed}`);
   console.log(`  Changed:   ${changedIds.size}`);
   console.log(`  Errors:    ${errors.length}`);
 
-  if (changes.length > 0) {
-    const csvFile = generateEnrichCSV(changes, errors, cityArg);
+  if (changes.length > 0 || errors.length > 0) {
+    const csvFile = generateEnrichCSV(changes, errors, cityArg, dryRun);
     console.log(`\nCSV report saved to: ${csvFile}`);
   }
 

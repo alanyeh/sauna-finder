@@ -49,8 +49,10 @@ The Google **Places** API key is not a frontend variable — it lives only as th
 `npm run build` runs three stages — the `pre`/`post` hooks fire automatically:
 
 1. **`prebuild`** → `scripts/prefetch-saunas.js` — snapshots the Supabase `saunas`
-   table to `src/data/saunas-prebuilt.json` so prerender and the client's first
-   render start from identical data (no hydration mismatch).
+   table to `src/data/saunas-prebuilt.json`. Vite emits it as a hashed JSON asset,
+   separately from JavaScript. Bootstrap loads this snapshot before mounting React,
+   retaining existing prerendered content while it downloads. If it fails, the
+   data provider falls back to Supabase. Live refetches still refresh listings.
 2. **`build`** → `vite build` — bundles the SPA into `dist/`.
 3. **`postbuild`** → `scripts/prerender.js` — launches Puppeteer against a static
    server, renders every `/city/*` route + `/` to `dist/{route}/index.html`, then
@@ -58,6 +60,10 @@ The Google **Places** API key is not a frontend variable — it lives only as th
    `CITY_CONFIG`.
 
 `npm run dev` runs `prefetch-saunas.js` first (via `predev`) for the same reason.
+
+Home and city routes, maps, and dialogs use dynamic imports. Home visitors do not
+download city-page or admin-dialog code. The snapshot still contains all listings;
+moving it outside the bundle reduces JavaScript parsing, not the dataset size.
 
 ## Project structure
 
@@ -109,3 +115,61 @@ Deploys to **Vercel**. Set the `VITE_` env vars in the Vercel project dashboard.
 prerendered `dist/city/*/index.html` files are served directly by the filesystem.
 
 See `CLAUDE.md` for deeper architecture notes and the data model.
+
+## Scraper validation
+
+Run the offline regression suite with `node --test scripts/tests/*.test.js`.
+It covers amenity evidence, Places pagination, bounded retries, and quota errors.
+
+Preview enrichment with
+`node scripts/enrich-saunas.js --dry-run --city=nyc --limit=20`.
+Add `--refetch` to use fresh Google reviews (this consumes API quota even in
+dry-run mode). The CSV includes supporting sentences for suggested amenities.
+Automated enrichment does not mark records as verified or remove existing
+amenities. Detection is deliberately conservative: contradictory, negative, or
+future-tense mentions are withheld, and suggestions still need review.
+
+To gather amenity evidence from official websites, run
+`node scripts/enrich-saunas.js --dry-run --website --city=nyc --limit=10`.
+This reads the saved website and up to two relevant linked pages, recording the
+source URL with each suggested amenity. Requests have time and response-size
+limits. On chain websites, links stay under the supplied location path.
+If combined with `--refetch`, Google review details are fetched only when no
+usable website page was returned. Static HTML extraction does not execute
+JavaScript, read PDFs, or bypass access challenges; failures appear in the CSV.
+
+`scripts/scrape-websites.js` now checks actual links and page headings instead
+of guessing `/spa` URLs. Generic hotels, gyms, and spas need explicit sauna
+text evidence to pass discovery; known sauna brands and sauna-named businesses
+retain their existing discovery rules. Filtered candidates remain in the
+discovery CSV for manual review.
+
+Discovery now requests pagination tokens, so a search can make more requests
+and return more results than before. Discovery and enrichment stop on quota
+errors; transient server failures are retried at most twice.
+
+Website crawling prioritizes sauna and facilities pages over pricing links and
+follows relevant links discovered on subsequent pages within the same three-request
+budget. File entry URLs (such as `/locations/nyc/index.html`) use their parent
+directory as the location scope. Redirect destinations already fetched are skipped
+without consuming another request; redirects outside the location are reported.
+
+## Pricing research
+
+Run `node scripts/scrape-pricing.js --city=nyc --limit=10` to research admission
+prices from the websites in the local snapshot. This command never writes to
+Supabase and does not use the Google Places API. Optional `--input=records.json`
+and `--output=report.json` control the source records and report destination.
+
+The crawler prioritizes pricing/admission links within a three-page limit per
+listing. It extracts exact USD/CAD prices from visible text and JSON-LD offers,
+preserving source URLs, evidence, stated duration, conditions, currency inference,
+and check date. Every candidate is marked `needs_review`. Ranges, starting prices,
+memberships, packages, and expired offers are not treated as exact admission
+prices. Unresolved pricing text is retained in `review_snippets`, including
+multi-column tables whose labels cannot be safely associated with amounts.
+
+Check the source page, location, eligibility, taxes, and included facilities
+before copying a candidate into a listing's pricing options. Sites that only
+publish prices in booking widgets, JavaScript, or PDFs may return no candidates;
+an empty result does not mean free admission or that existing prices are current.

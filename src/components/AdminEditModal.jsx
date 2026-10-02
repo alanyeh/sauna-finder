@@ -356,6 +356,7 @@ export default function AdminEditModal({ sauna, onClose, onSaunaUpdated }) {
                   <option value="minneapolis">Minneapolis</option>
                   <option value="portland">Portland</option>
                   <option value="denver">Denver</option>
+                  <option value="park-city">Park City</option>
                   <option value="houston">Houston</option>
                   <option value="vancouver">Vancouver</option>
                   <option value="toronto">Toronto</option>

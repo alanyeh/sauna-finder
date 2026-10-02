@@ -9,7 +9,8 @@
     "build": "vite build",
     "postbuild": "node scripts/prerender.js",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "outreach:chatgpt": "node scripts/export-chatgpt-outreach.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",

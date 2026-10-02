@@ -20,10 +20,10 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
     <div
       data-sauna-id={sauna.id}
       onClick={onClick}
-      className={`border-b border-light-border cursor-pointer transition-colors overflow-hidden ${
+      className={`border-b border-l-[3px] border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
-          ? 'bg-white border-l-[3px] border-l-accent-red'
-          : 'bg-cream hover:bg-white'
+          ? 'bg-white border-l-accent-red'
+          : 'bg-cream border-l-transparent hover:bg-white'
       }`}
     >
       {(sauna.photos || sauna.photo_url) && (
@@ -35,7 +35,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
 
       <div className="px-5 py-5">
         <div className="flex items-start justify-between">
-        <h2 className="text-base font-medium mb-1.5 text-charcoal">
+        <h2 className="text-base font-normal leading-snug mb-1.5 text-charcoal">
           {sauna.name}
         </h2>
         <div className="flex items-center gap-1 flex-shrink-0 ml-2">
@@ -123,7 +123,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
           {sauna.amenities.filter(a => amenityLabels[a]).map(amenity => (
             <span
               key={amenity}
-              className="text-[11px] px-2 py-1 bg-cream rounded text-charcoal"
+              className="amenity-badge"
             >
               {amenityLabels[amenity]}
             </span>
@@ -139,7 +139,7 @@ export default function SaunaCard({ sauna, isSelected, onClick, user, isFavorite
       )}
 
       {/* Address + Visit Website */}
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-light-border pt-3">
         {sauna.address ? (
           <a
             href={`https://maps.google.com/?q=${encodeURIComponent(sauna.name + ', ' + sauna.address)}`}

@@ -6,26 +6,39 @@ import App from './App.jsx'
 import { AuthProvider } from './contexts/AuthContext'
 import { SaunaDataProvider } from './contexts/SaunaDataContext'
 import './index.css'
+import snapshotUrl from './data/saunas-prebuilt.json?url'
 
 const rootEl = document.getElementById('root')
 
-// Prerendered HTML is served to crawlers for SEO, but React hydration against
-// it trips over react-router v7's location handling. Instead of hydrating, we
-// throw away the prerendered DOM and mount fresh. Crawlers still read the
-// prerendered HTML (that's the SEO win); real users see a brief flash while
-// React rerenders identical content.
-rootEl.innerHTML = ''
+// Keep prerendered content visible while loading the separately cached snapshot.
+// JSON data no longer has to be parsed as part of the JavaScript bundle.
+async function bootstrap() {
+  let initialSaunas
+  try {
+    const response = await fetch(snapshotUrl, { signal: AbortSignal.timeout(15000) })
+    if (!response.ok) throw new Error(`Snapshot HTTP ${response.status}`)
+    initialSaunas = await response.json()
+    if (!Array.isArray(initialSaunas)) throw new Error('Invalid sauna snapshot')
+  } catch (error) {
+    console.error('Snapshot unavailable; falling back to live data:', error)
+    initialSaunas = null
+  }
+  rootEl.innerHTML = ''
 
-ReactDOM.createRoot(rootEl).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <AuthProvider>
-          <SaunaDataProvider>
-            <App />
-          </SaunaDataProvider>
-        </AuthProvider>
-      </BrowserRouter>
-    </HelmetProvider>
-  </React.StrictMode>,
-)
+  ReactDOM.createRoot(rootEl).render(
+    <React.StrictMode>
+      <HelmetProvider>
+        <BrowserRouter>
+          <AuthProvider>
+            <SaunaDataProvider initialSaunas={initialSaunas}>
+              <App />
+            </SaunaDataProvider>
+          </AuthProvider>
+        </BrowserRouter>
+      </HelmetProvider>
+    </React.StrictMode>,
+  )
+
+}
+
+bootstrap()
