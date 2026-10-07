@@ -179,7 +179,7 @@ export default function HomePage() {
             <h1 className="font-serif text-[16px] md:text-[22px] leading-tight tracking-tight">
               <Link to="/">Sauna Finder</Link>
             </h1>
-            <p className="text-[11px] md:text-[13px] text-warm-gray font-light tracking-wide mt-0.5 hidden sm:block">
+            <p className="text-[11px] md:text-[13px] font-light tracking-wide mt-0.5 hidden sm:block">
               Discover the best saunas and bathhouses across the US and Canada
             </p>
           </div>
