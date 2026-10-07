@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 export default function HomeSaunaCard({ sauna }) {
   const photos = sauna.photos || [];
   const primaryPhoto = photos[0];
+  const reviewCount = sauna.rating_count ?? sauna.ratingCount;
 
   return (
     <Link
@@ -34,6 +35,11 @@ export default function HomeSaunaCard({ sauna }) {
             <div className="flex items-center gap-0.5 flex-shrink-0 text-[12px] md:text-[13px]">
               <span className="text-accent-red">★</span>
               <span className="font-medium">{sauna.rating}</span>
+              {reviewCount != null && (
+                <span className="text-warm-gray ml-0.5">
+                  ({reviewCount.toLocaleString('en-US')} {reviewCount === 1 ? 'review' : 'reviews'})
+                </span>
+              )}
             </div>
           )}
         </div>
