@@ -215,7 +215,7 @@ export default function HomePage() {
 
       {/* City sections */}
       {citySections.map(city => (
-        <section key={city.slug} className="px-4 md:px-8 lg:px-16 py-6 md:py-10">
+        <section key={city.slug} className="px-4 md:px-8 lg:px-16 py-3 md:py-5">
           <div className="flex items-baseline justify-between mb-3 md:mb-5">
             <Link
               to={`/city/${city.slug}`}
