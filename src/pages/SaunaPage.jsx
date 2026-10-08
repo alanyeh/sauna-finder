@@ -1,3 +1,4 @@
+import ContactLink from '../components/ContactLink';
 import ShopLink from '../components/ShopLink';
 import { useEffect, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
@@ -129,6 +130,7 @@ export default function SaunaPage() {
         <div className="text-center pt-4">
           <p className="text-xs text-warm-gray mb-2">Sauna Finder by Koriboshi</p>
           <ShopLink />
+          <ContactLink />
         </div>
       </footer>
     </main>

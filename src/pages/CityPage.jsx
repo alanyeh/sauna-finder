@@ -1,3 +1,4 @@
+import ContactLink from '../components/ContactLink';
 import ShopLink from '../components/ShopLink';
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
@@ -232,6 +233,7 @@ export default function CityPage() {
                   Sauna Finder by Koriboshi
                 </p>
                 <ShopLink />
+                <ContactLink />
               </footer>
             </Sidebar>
           </div>

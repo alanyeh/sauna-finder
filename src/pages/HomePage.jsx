@@ -1,3 +1,4 @@
+import ContactLink from '../components/ContactLink';
 import ShopLink from '../components/ShopLink';
 import { isAdmin } from '../lib/admin';
 import { useMemo, useRef, useState, useCallback, useEffect } from 'react';
@@ -242,6 +243,7 @@ export default function HomePage() {
           Sauna Finder by Koriboshi
         </p>
         <ShopLink />
+        <ContactLink />
       </footer>
     </div>
   );
