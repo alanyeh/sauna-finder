@@ -37,7 +37,7 @@ export default function HomeSaunaCard({ sauna }) {
               <span className="font-medium">{sauna.rating}</span>
               {reviewCount != null && (
                 <span className="text-warm-gray ml-0.5">
-                  ({reviewCount.toLocaleString('en-US')} {reviewCount === 1 ? 'review' : 'reviews'})
+                  ({reviewCount.toLocaleString('en-US')})
                 </span>
               )}
             </div>
