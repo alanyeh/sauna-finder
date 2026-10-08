@@ -52,7 +52,7 @@ export default function CitySEOContent({ citySlug }) {
           ))}
         </div>
 
-        <div className="border border-light-border rounded-xl bg-white p-5 mb-10">
+        <div className="border border-light-border rounded-sm bg-white p-5 mb-10">
           <p className="text-[11px] uppercase tracking-wider text-warm-gray mb-2">
             What to Bring
           </p>

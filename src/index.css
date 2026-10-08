@@ -5,6 +5,15 @@
 @tailwind utilities;
 
 @layer base {
+  :where(img, button, input, select, textarea) {
+    @apply rounded-sm;
+  }
+
+  /* Map tiles must meet seamlessly. */
+  .gm-style img {
+    border-radius: 0;
+  }
+
   body {
     @apply bg-cream text-charcoal font-sans antialiased;
     -webkit-font-smoothing: antialiased;
@@ -60,7 +69,7 @@
 
 @layer components {
   .sauna-card-action {
-    @apply inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-lg border border-light-border bg-white/70 px-2 py-2.5 text-[11px] font-medium text-charcoal whitespace-nowrap hover:bg-white hover:border-warm-gray hover:no-underline;
+    @apply inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-sm border border-light-border bg-white/70 px-2 py-2.5 text-[11px] font-medium text-charcoal whitespace-nowrap hover:bg-white hover:border-warm-gray hover:no-underline;
     transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
   }
 
@@ -96,7 +105,7 @@
   /* InfoWindow overrides — edge-to-edge content, hide default close button */
   .gm-style .gm-style-iw-c {
     padding: 0 !important;
-    border-radius: 0 !important;
+    border-radius: theme('borderRadius.sm') !important;
     overflow: hidden !important;
   }
   .gm-style .gm-style-iw-d {
@@ -158,7 +167,7 @@
 
   /* Card with Koriboshi minimal style */
   .card-minimal {
-    @apply bg-white border border-light-border rounded-none p-6;
+    @apply bg-white border border-light-border rounded-sm p-6;
     box-shadow: none;
   }
 

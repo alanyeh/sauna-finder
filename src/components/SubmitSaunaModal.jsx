@@ -181,7 +181,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4 p-5 max-h-[85vh] overflow-y-auto"
+        className="bg-white rounded-sm shadow-xl w-full max-w-lg mx-4 p-5 max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
@@ -432,7 +432,7 @@ export default function SubmitSaunaModal({ onClose, citySlug, onSaunaAdded }) {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="w-full border-2 border-dashed border-light-border rounded-lg p-4 text-center hover:bg-hover-bg transition text-sm"
+                className="w-full border-2 border-dashed border-light-border rounded-sm p-4 text-center hover:bg-hover-bg transition text-sm"
               >
                 <div className="text-xl mb-1">📷</div>
                 <p className="text-charcoal font-medium">Click to add photos</p>

@@ -49,7 +49,7 @@ export default {
       },
       borderRadius: {
         'none': '0px',
-        'sm': '2px',
+        'sm': '4px',
       },
       spacing: {
         'space-1': '4px',

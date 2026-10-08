@@ -83,7 +83,7 @@ export default function BottomSheet({
 
   return (
     <div
-      className={`absolute left-3 right-3 z-40 bg-white rounded-xl bottom-sheet-shadow overflow-hidden ${animClass}`}
+      className={`absolute left-3 right-3 z-40 bg-white rounded-sm bottom-sheet-shadow overflow-hidden ${animClass}`}
       style={{ bottom: 'calc(12px + env(safe-area-inset-bottom, 0px))' }}
       role="dialog"
       aria-label={`Details for ${sauna.name}`}

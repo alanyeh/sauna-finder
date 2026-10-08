@@ -61,7 +61,7 @@ export default function PhotoCarousel({ photos, alt = 'Sauna', hideCounter = fal
 
   return (
     <div
-      className="relative w-full h-40 bg-gray-200 overflow-hidden flex items-center justify-center"
+      className="relative w-full h-40 bg-gray-200 rounded-sm overflow-hidden flex items-center justify-center"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onTouchStart={handleTouchStart}

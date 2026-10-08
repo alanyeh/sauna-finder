@@ -43,7 +43,7 @@ export default function AuthModal({ onClose }) {
       onClick={onClose}
     >
       <div
-        className="bg-white border border-light-border rounded-none shadow-menu w-full max-w-sm mx-4 p-8"
+        className="bg-white border border-light-border rounded-sm shadow-menu w-full max-w-sm mx-4 p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-6">
@@ -71,7 +71,7 @@ export default function AuthModal({ onClose }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2.5 border border-light-border rounded-none text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
+            className="w-full px-4 py-2.5 border border-light-border rounded-sm text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
           />
           <input
             type="password"
@@ -80,12 +80,12 @@ export default function AuthModal({ onClose }) {
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={6}
-            className="w-full px-4 py-2.5 border border-light-border rounded-none text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
+            className="w-full px-4 py-2.5 border border-light-border rounded-sm text-sm bg-white focus:border-charcoal focus:outline-none transition-all duration-base"
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-terracotta text-white text-sm font-medium tracking-wide uppercase rounded-none hover:bg-terracotta-dark transition-all duration-base disabled:opacity-60"
+            className="w-full py-2.5 bg-terracotta text-white text-sm font-medium tracking-wide uppercase rounded-sm hover:bg-terracotta-dark transition-all duration-base disabled:opacity-60"
           >
             {loading ? 'Please wait...' : isSignUp ? 'Create Account' : 'Sign In'}
           </button>
@@ -102,7 +102,7 @@ export default function AuthModal({ onClose }) {
 
         <button
           onClick={handleGoogle}
-          className="w-full py-2.5 border border-light-border rounded-none text-sm font-medium hover:border-charcoal transition-all duration-base flex items-center justify-center gap-2"
+          className="w-full py-2.5 border border-light-border rounded-sm text-sm font-medium hover:border-charcoal transition-all duration-base flex items-center justify-center gap-2"
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24">
             <path
