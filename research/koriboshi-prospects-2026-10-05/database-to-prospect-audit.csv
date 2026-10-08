@@ -1,0 +1,212 @@
+﻿database_id,listing_name,account,account_id,website,address,listing_status,rank,group
+1,Bathhouse Flatiron,Bathhouse,1,https://www.abathhouse.com/flatiron?utm_source=google&utm_medium=organic&utm_campaign=gbp-website-flatiron,"14 W 22nd St, New York, NY 10010",active,45,Next 30 — Strong prospects
+3,Bathhouse Williamsburg,Bathhouse,1,https://www.abathhouse.com/williamsburg?utm_source=google&utm_medium=organic&utm_campaign=gbp-website-williamsburg,"103 N 10th St, Brooklyn, NY 11249",active,45,Next 30 — Strong prospects
+918,Bathhouse Atlantic Ave,Bathhouse,1,https://www.abathhouse.com/atlantic-ave,"540 Atlantic Ave, Brooklyn, NY 11217, USA",active,45,Next 30 — Strong prospects
+4,Spa Castle,Spa Castle,4,https://ny.spacastleusa.com/,"131-10 11th Ave, College Point, NY 11356",active,80,Long tail
+5,Othership Flatiron,Othership,5,http://othership.us/,"23 W 20th St, New York, NY 10011",active,46,Next 30 — Strong prospects
+821,Othership Yorkville,Othership,5,https://www.othership.us/,"110 Bloor St W, Toronto, ON M5S 2W7, Canada",active,46,Next 30 — Strong prospects
+822,Othership Adelaide,Othership,5,http://www.othership.us/adelaide,"425 Adelaide St W, Toronto, ON M5V 3C1, Canada",active,46,Next 30 — Strong prospects
+916,Othership Williamsburg,Othership,5,https://othership.us/williamsburg,"25 Kent Ave, Brooklyn, NY 11249, USA",active,46,Next 30 — Strong prospects
+6,The SPA Club,The SPA Club,6,https://thespaclub.com/,"22 W 32nd St #4F, New York, NY 10001",active,81,Long tail
+7,Brooklyn Bathhouse,Brooklyn Bathhouse,7,https://www.brooklynbathhouse.nyc/,"731 Flatbush Ave, Brooklyn, NY 11226",active,47,Next 30 — Strong prospects
+9,QC NY SPA,QC NY SPA,9,https://www.qcny.com/?utm_source=google&utm_medium=organic&utm_campaign=google_business_profile,"Governors Island, 112 Andes Rd, New York, NY 10004",active,156,Long tail
+10,JUVENEX SPA,JUVENEX SPA,10,http://juvenexspanyc.com/,"25 W 32nd St, New York, NY 10001",active,58,Long tail
+11,Great Jones Spa,Great Jones Spa,11,http://www.gjspa.com/,"29 Great Jones St, New York, NY 10012",active,94,Long tail
+12,SoJo Spa Club,SoJo Spa Club,12,http://www.sojospaclub.com/,"660 River Rd, Edgewater, NJ 07020",active,79,Long tail
+15,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ny/williamsburg/,"191 N 8th St, Brooklyn, NY 11211",active,155,Long tail
+548,Perspire Sauna Studio — Berkeley,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ca/berkeley/,"2598 Shattuck Ave, Berkeley, CA 94704",active,155,Long tail
+556,Perspire Sauna Studio — Mountain View,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ca/mountain-view/,"555 San Antonio Rd, Unit 38, Mountain View, CA 94040",active,155,Long tail
+557,Perspire Sauna Studio — Santa Clara,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ca/santa-clara/,"3935 Rivermark Plz, Santa Clara, CA 95054",active,155,Long tail
+638,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/il/lakeview/,"3320 N Broadway, Chicago, IL 60657",active,155,Long tail
+704,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/the-heights/,"1111 Shepherd Dr ste 500, Houston, TX 77007, USA",active,155,Long tail
+754,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/tx/the-woodlands/,"10720 Kuykendahl Rd Ste C2, The Woodlands, TX 77381, USA",active,155,Long tail
+879,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ca/culver-city,"3331 S La Cienega Blvd, Los Angeles, CA 90016, USA",active,155,Long tail
+890,Perspire Sauna Studio,Perspire Sauna Studio,15,http://www.perspiresaunastudio.com/ca/santa-monica,"924 Montana Ave, Santa Monica, CA 90403, USA",active,155,Long tail
+892,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ca/brentwood,"11819 Wilshire Blvd Ste 207, Los Angeles, CA 90025, USA",active,155,Long tail
+898,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/mn/maple-grove/,"7808 Main St, Maple Grove, MN 55369, USA",active,155,Long tail
+903,Perspire Sauna Studio,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/mn/plymouth/,"3225 Vicksburg Ln N suite a, Plymouth, MN 55447, USA",active,155,Long tail
+917,Perspire Sauna Studio Flatiron,Perspire Sauna Studio,15,https://www.perspiresaunastudio.com/ny/flatiron/,"50 W 23rd St, New York, NY 10010, USA",active,155,Long tail
+16,Brooklyn Banya,Brooklyn Banya,16,http://www.brooklynbanya.com/,"602 Coney Island Ave, Brooklyn, NY 11218",active,55,Long tail
+17,WORLD SPA,WORLD SPA,17,http://worldspa.com/,"1571 McDonald Ave, Brooklyn, NY 11230",active,130,Long tail
+18,Wall Street Bath & Spa,Wall Street Bath & Spa,18,http://www.spa88.com/,"88 Fulton St, New York, NY 10038",active,66,Long tail
+20,beem Light Sauna,beem Light Sauna,20,https://beemlightsauna.com/park-slope/,"367 5th Ave, Brooklyn, NY 11215",active,161,Long tail
+706,beem Light Sauna River Oaks,beem Light Sauna,20,https://beemlightsauna.com/location/river-oaks,"2800 Kirby Dr suite b 116, Houston, TX 77098, USA",active,161,Long tail
+755,"beem Light Sauna - The Woodlands, Tx",beem Light Sauna,20,https://www.beemlightsauna.com/location/the-woodlands,"6700 Woodlands Pkwy #130, The Woodlands, TX 77382, USA",active,161,Long tail
+910,beem® Light Sauna Excelsior,beem Light Sauna,20,https://beemlightsauna.com/locations/excelsior/,"355 2nd St suite 400, Excelsior, MN 55331, USA",active,161,Long tail
+41,Lore Bathing Club,Lore Bathing Club,41,https://www.lorebathingclub.com/,"676 Broadway, NoHo, NY 10012",active,8,Top 20 — Contact first
+42,Saint NYC,Saint NYC,42,https://saint.nyc/,"242 W 29th St, Chelsea, NY 10001",active,15,Top 20 — Contact first
+44,Akari Sauna Williamsburg,Akari Sauna,44,https://akarisauna.com/,"202 Grand St, Williamsburg, NY 11211",active,7,Top 20 — Contact first
+45,Akari Sauna Greenpoint,Akari Sauna,44,http://akarisauna.com/,"149 Franklin St, Greenpoint, NY 11211",active,7,Top 20 — Contact first
+46,Mermaid Spa,Mermaid Spa,46,http://www.mermaidspa.us/,"3703 Mermaid Ave, Seagate, Brooklyn, NY 11224",active,74,Long tail
+48,New York Spa & Sauna,New York Spa & Sauna,48,http://www.nyspasauna.com/,"149-06 Northern Blvd, Flushing, NY 11354",active,75,Long tail
+51,Bear and Birch,Bear and Birch,51,http://bearandbirch.com/,"6 Paragon Way, Freehold, NJ 07728",active,42,Next 30 — Strong prospects
+52,Island Spa & Sauna,Island Spa & Sauna,52,http://www.islandspasauna.com/,"1769 Lincoln Hwy, Edison, NJ 08817",active,72,Long tail
+53,NLighten Infrared Sauna,NLighten Infrared Sauna,53,http://nlighteninfraredsauna.com/contact/,"157 Southside Ave, Hastings-on-Hudson, NY 10706",active,120,Long tail
+54,Archimedes Banya,Archimedes Banya,54,https://banyasf.com,"748 Innes Ave, San Francisco, CA 94124",active,39,Next 30 — Strong prospects
+56,Alchemy Springs,Alchemy Springs,56,https://alchemysprings.com,"939 Post St, San Francisco, CA 94109",active,22,Next 30 — Strong prospects
+57,Onsen SF,Onsen SF,57,https://onsensf.com,"466 Eddy St, San Francisco, CA 94109",active,24,Next 30 — Strong prospects
+58,Pearl Spa & Sauna,Pearl Spa & Sauna,58,https://pearlspasf.com,"1654 Post St, San Francisco, CA 94115",active,61,Long tail
+59,Reboot Float & Cryo Spa,Reboot Float & Cryo Spa,59,https://rebootfloatspa.com,"810 Valencia St, San Francisco, CA 94110",active,122,Long tail
+60,Reboot Float & Cryo Spa - Marina,Reboot Float & Cryo Spa,59,https://rebootfloatspa.com,"1912 Lombard St, San Francisco, CA 94123",active,122,Long tail
+61,SweatHouz,SweatHouz,61,https://sweathouz.com,"2298 Lombard St, San Francisco, CA 94123",active,158,Long tail
+639,SweatHouz Old Town,SweatHouz,61,https://sweathouz.com/old-town-book-now/,"1439 N Wells Street, Chicago, IL 60610",active,158,Long tail
+698,SweatHouz — South Broadway,SweatHouz,61,https://sweathouz.com/south-broadway-book-now/,"2101 S Broadway, Denver, CO 80210",active,158,Long tail
+62,Dogpatch Paddle Sauna,Dogpatch Paddle Sauna,62,https://dogpatchpaddle.com,"701 Illinois St, San Francisco, CA 94107",active,113,Long tail
+65,SenSpa,SenSpa,65,https://senspa.com,"1161 Gorgas Ave, San Francisco, CA 94129",active,125,Long tail
+66,Bay Club Financial District,Bay Club (including Magnuson Athletic Club),66,https://bayclubs.com/clubs/financialdistrict,"555 California St, San Francisco, CA 94104",active,153,Long tail
+612,Magnuson Athletic Club,Bay Club (including Magnuson Athletic Club),66,http://www.macseattle.com/,"7751 63rd Ave NE, Seattle, WA 98115, USA",active,153,Long tail
+69,Life Time Atlantic Avenue,Life Time,69,https://www.lifetime.life/spa,"18 6th Ave, Brooklyn, NY 11217",active,154,Long tail
+636,Life Time River North,Life Time,69,https://www.lifetime.life/locations/il/river-north-one-chicago.html,"15 W Chicago Avenue, Chicago, IL 60654",active,154,Long tail
+713,Life Time,Life Time,69,https://www.lifetime.life/locations/tx/greenstreet.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"1201 Main St, Houston, TX 77002, USA",active,154,Long tail
+737,Life Time,Life Time,69,https://www.lifetime.life/locations/tx/greenway.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"1 Healthy Way, Houston, TX 77046, USA",active,154,Long tail
+741,Life Time,Life Time,69,https://www.lifetime.life/locations/tx/galleria-tennis-houston.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"5100 W Alabama St, Houston, TX 77056, USA",active,154,Long tail
+750,Life Time,Life Time,69,https://www.lifetime.life/locations/tx/sugar-land.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"1331 Hwy 6, Sugar Land, TX 77478, USA",active,154,Long tail
+760,Life Time,Life Time,69,https://www.lifetime.life/locations/tx/shenandoah.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"9000 Six Pines Dr, Shenandoah, TX 77380, USA",active,154,Long tail
+904,Life Time,Life Time,69,https://www.lifetime.life/locations/mn/minneapolis-target-center.html?utm_source=google&utm_medium=local&utm_campaign=google-local-club,"600 N 1st Ave, Minneapolis, MN 55403, USA",active,154,Long tail
+71,Brooklyn Boulders Queensbridge,Brooklyn Boulders Queensbridge,71,https://qb.brooklynboulders.com/,"23-10 41st Ave, Long Island City, NY 11101",active,145,Long tail
+72,TMPL Avenue A,TMPL,72,https://www.tmplclubs.com/locations/tmpl-avenue-a?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_id=ave_a,"28-30 Ave A, New York, NY 10009",active,159,Long tail
+90,TMPL West Village,TMPL,72,https://www.tmplclubs.com/locations/tmpl-west-village?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_id=west_village,"125 Seventh Ave S, New York, NY 10014",active,159,Long tail
+73,Manhattan Plaza Health Club,Manhattan Plaza Health Club,73,http://www.mphc.com/sauna,"482 W 43rd St, New York, NY 10036",active,138,Long tail
+74,Mercedes Club,Mercedes Club,74,http://www.themercedesclub.com/amenities,"550 W 54th St, New York, NY 10019",active,139,Long tail
+84,Virgin Hotels NYC,Virgin Hotels NYC,84,https://virginhotels.com/nyc/,"1227 Broadway, New York, NY 10001",active,128,Long tail
+92,Remedy Place Flatiron,Remedy Place Flatiron,92,https://remedyplace.com/,"12 W 21st St, New York, NY 10010",active,100,Long tail
+543,Imperial Day Spa,Imperial Day Spa,543,https://imperialdayspa.com/,"1875 Geary Blvd, San Francisco, CA 94115",active,57,Long tail
+544,Vital Ice,Vital Ice,544,https://www.vitalicesf.com/,"2400 Chestnut St, San Francisco, CA 94123",active,129,Long tail
+545,Fjord,Fjord,545,https://www.thisisfjord.com/,"2310 Marinship Way, Sausalito, CA 94965",active,23,Next 30 — Strong prospects
+546,Good Hot,Good Hot,546,https://good-hot.com/,"1950 Stenmark Dr, Richmond, CA 94801",active,28,Next 30 — Strong prospects
+547,Albany Sauna & Hot Tubs,Albany Sauna & Hot Tubs,547,https://www.albanysauna.com/,"1002 Solano Ave, Albany, CA 94706",active,68,Long tail
+549,Worthy Self-Care Studio,Worthy Self-Care Studio,549,https://worthyselfcare.com/,"2633 Ashby Ave, Berkeley, CA 94705",active,111,Long tail
+550,Piedmont Springs,Piedmont Springs,550,https://www.piedmontsprings.com/,"3939 Piedmont Ave, Oakland, CA 94611",active,121,Long tail
+551,PSY Spa USA,PSY Spa USA,551,https://www.psyspausa.com/,"14075 E 14th St, San Leandro, CA 94578",active,60,Long tail
+552,Bay Spa,Bay Spa,552,https://www.bayspaca.com/,"2908 El Camino Real, Ste 160, Santa Clara, CA 95051",active,53,Long tail
+554,Immersion Spa,Immersion Spa,554,https://immersionspa.com/,"3990 El Camino Real, Palo Alto, CA 94306",active,56,Long tail
+565,Mission Cliffs,Mission Cliffs,565,https://touchstoneclimbing.com/mission-cliffs/,"2295 Harrison St, San Francisco, CA 94110",active,147,Long tail
+566,Seattle Sauna,Seattle Sauna,566,https://www.seattlesauna.com/?utm_source=google&utm_medium=gbp,"2401 N Northlake Way Building G, Seattle, WA 98103, USA",active,27,Next 30 — Strong prospects
+567,Hothouse Spa & Sauna,Hothouse Spa & Sauna,567,http://www.hothousespa.com/,"1019 E Pike St Hh, Seattle, WA 98122, USA",active,95,Long tail
+568,Wild Haus Floating Saunas,Wild Haus Floating Saunas,568,https://thewildhaus.com/,"10 E Allison St, Seattle, WA 98102, USA",active,14,Top 20 — Contact first
+569,Banya 5,Banya 5,569,http://www.banya5.com/,"217 9th Ave N, Seattle, WA 98109, USA",active,40,Next 30 — Strong prospects
+570,Bywater Sauna,Bywater Sauna,570,https://www.bywatersauna.com/,"8498 Seaview Pl NW, Seattle, WA 98117, USA",active,12,Top 20 — Contact first
+576,Bywater Sauna - Alki,Bywater Sauna,570,https://www.bywatersauna.com/,"2718 Alki Ave SW, Seattle, WA 98116, USA",active,12,Top 20 — Contact first
+571,Sauna Hut Green Lake,Sauna Hut (Green Lake / Shoreline; ownership to confirm),571,http://www.sauna-hut.com/,"6847 Oswego Pl NE, Seattle, WA 98115, USA",active,102,Long tail
+580,Sauna Hut Shoreline,Sauna Hut (Green Lake / Shoreline; ownership to confirm),571,http://www.thesaunahut.com/,"1610 NE 179th St, Shoreline, WA 98155, USA",active,102,Long tail
+572,Von Sauna,Von Sauna,572,https://www.vonsauna.co/,"1200 Carillon Point, Kirkland, WA 98033, USA",active,26,Next 30 — Strong prospects
+575,Steamworks Baths Seattle,Steamworks (brand-level research account; ownership to confirm),575,https://www.swbaths.com/,"1520 Summit Ave, Seattle, WA 98122, USA",active,151,Long tail
+643,Steamworks Chicago,Steamworks (brand-level research account; ownership to confirm),575,https://www.steamworksbaths.com/chicago,"3246 N Halsted Street, Chicago, IL 60657",active,151,Long tail
+819,Steamworks Baths,Steamworks (brand-level research account; ownership to confirm),575,http://www.swbaths.ca/,"540 Church St, Toronto, ON M4Y 2E1, Canada",active,151,Long tail
+578,Q Sauna & Spa,Q Sauna & Spa,578,https://qspalynnwood.com/,"17420 Hwy 99, Lynnwood, WA 98037, USA",active,99,Long tail
+579,Fyre Sauna,Fyre Sauna,579,https://www.fyresauna.com/,"14123 Redmond - Woodinville Rd NE, Redmond, WA 98052, USA",active,21,Next 30 — Strong prospects
+582,Olympic Athletic Club,Olympic Athletic Club,582,http://www.olympicathleticclub.com/?utm_campaign=gmb,"5301 Leary Ave NW, Seattle, WA 98107, USA",active,141,Long tail
+583,Seattle Massage Sauna & Float,Seattle Massage Sauna & Float,583,https://www.seattlemassagepro.com/,"2818 E Madison St, Seattle, WA 98112, USA",active,124,Long tail
+585,Innovative Health Gym & Wellness Center,Innovative Health Gym & Wellness Center,585,https://ih-seattle.com/,"1916 23rd Ave S Ste A, Seattle, WA 98144, USA",active,136,Long tail
+586,Float Seattle (South Lake Union),Float Seattle,586,http://www.floatseattle.com/,"567 John St Suite 1, Seattle, WA 98109, USA",active,93,Long tail
+588,Float Seattle (Renton Landing),Float Seattle,586,https://www.floatseattle.com/,"727 N 10th St B, Renton, WA 98057, USA",active,93,Long tail
+602,Float Seattle (Greenwood),Float Seattle,586,http://www.floatseattle.com/,"111 NW 85th St, Seattle, WA 98117, USA",active,93,Long tail
+603,Float Seattle (Greenlake),Float Seattle,586,http://www.floatseattle.com/,"408 NE 70th St, Seattle, WA 98115, USA",active,93,Long tail
+604,Float Seattle (Bellevue),Float Seattle,586,http://www.floatseattle.com/,"11101 NE 12th St, Bellevue, WA 98004, USA",active,93,Long tail
+587,Vihta Sauna,Vihta Sauna,587,https://www.vihtasauna.co/,"3560 W Lake Sammamish Pkwy SE, Bellevue, WA 98008, USA",active,25,Next 30 — Strong prospects
+615,Bouldering Project - Poplar,Bouldering Project - Poplar,615,https://boulderingproject.com/location/poplar/,"900 Poplar Pl S, Seattle, WA 98144, USA",active,132,Long tail
+621,Sauna n Soak,Sauna n Soak,621,https://www.saunansoak.com/,"50 Railroad Ave, Edmonds, WA 98020, USA",active,103,Long tail
+622,Elliott Bay Sauna & Hot Tub Co,Elliott Bay Sauna & Hot Tub Co,622,http://www.elliottbayhottubco.com/rates.html,"32510 Pacific Hwy S, Federal Way, WA 98003, USA",active,114,Long tail
+624,Lustre Infrared Sauna Studio,Lustre Infrared Sauna Studio,624,https://www.lustreinfraredsauna.com/,"27203 216th Ave SE #11, Maple Valley, WA 98038, USA",active,97,Long tail
+633,King Spa & Sauna,King Spa & Sauna,633,https://www.kingspa.com/chicago/,"809 Civic Center Drive, Niles, IL 60714",active,73,Long tail
+635,Sky Spa Sauna,Sky Spa Sauna,635,https://skyspasauna.com/,"1501 Busch Parkway, Buffalo Grove, IL 60089",active,62,Long tail
+637,Eastend,Eastend,637,https://practiceeastend.com/,"1132 W Fulton Market, Chicago, IL 60607",active,10,Top 20 — Contact first
+640,Ethos,Ethos,640,https://ethostrainingchi.com/,"3620 N Lincoln Avenue, Chicago, IL 60613",active,133,Long tail
+641,Midtown Athletic Club,Midtown Athletic Club,641,https://www.midtown.com/locations/chicago/,"2444 N Elston Avenue, Chicago, IL 60647",active,146,Long tail
+642,FFC Gold Coast,FFC Gold Coast,642,https://ffc.com/club-locations/gold-coast/,"1030 N Clark Street, Chicago, IL 60610",active,134,Long tail
+647,Chuan Spa at The Langham,Chuan Spa at The Langham,647,https://www.langhamhotels.com/en/the-langham/chicago/wellness/chuan-spa/,"330 N Wabash Avenue, Chicago, IL 60611",active,89,Long tail
+648,Wi Spa,Wi Spa,648,https://wispausa.com,"2700 Wilshire Blvd, Los Angeles, CA 90057",active,67,Long tail
+649,Spa Palace,Spa Palace,649,https://spapalacela.com,"620 S Union Ave, Los Angeles, CA 90017",active,63,Long tail
+650,Olympic Spa,Olympic Spa,650,https://olympicspala.com,"3915 W Olympic Blvd, Los Angeles, CA 90019",active,59,Long tail
+651,Beverly Hot Springs,Beverly Hot Springs,651,https://beverlyhotsprings.com,"308 N Oxford Ave, Los Angeles, CA 90004",active,54,Long tail
+653,Aroma Spa & Sports,Aroma Spa & Sports,653,https://aromaresort.com,"3680 Wilshire Blvd, Suite 301, Los Angeles, CA 90010",active,69,Long tail
+655,Daengki Spa,Daengki Spa,655,https://daengkispa.com,"4245 W 3rd St, Los Angeles, CA 90020",active,70,Long tail
+656,Queen Spa & Sauna,Queen Spa & Sauna,656,https://queenspala.com,"932 S Vermont Ave, Los Angeles, CA 90006",active,76,Long tail
+657,Voda Spa,Voda Spa,657,https://vodaspa.com,"7700 Santa Monica Blvd, West Hollywood, CA 90046",active,109,Long tail
+658,The Raven Spa,The Raven Spa,658,https://theravenspa.com,"2910 Rowena Ave, Los Angeles, CA 90039",active,107,Long tail
+659,Teddy's Hot House,Teddy's Hot House,659,https://teddyshothouse.com,"1915 Lincoln Blvd, Los Angeles, CA 90291",active,31,Next 30 — Strong prospects
+660,Riviera Health Spa,Riviera Health Spa,660,https://rivierakoreanspa.com,"3601 Lomita Blvd, Suite 100, Torrance, CA 90505",active,78,Long tail
+665,PORTAL Thermaculture,PORTAL Thermaculture,665,https://www.portalthermaculture.com,"3120 Excelsior Blvd, Minneapolis, MN 55416",active,18,Top 20 — Contact first
+689,Portal Thermaculture,PORTAL Thermaculture,665,https://www.portalthermaculture.com/,"2949 Federal Blvd, Denver, CO 80211",active,18,Top 20 — Contact first
+666,Embrace North,Embrace North,666,https://embracenorth.com,"811 SE 9th St, Minneapolis, MN 55414",active,9,Top 20 — Contact first
+668,Sauna Strong,Sauna Strong,668,https://saunastrong.com,"4420 Drew Ave S, Minneapolis, MN 55410",active,13,Top 20 — Contact first
+669,The Yard at Superior Sauna & Steam,The Yard at Superior Sauna & Steam,669,https://superiorsaunas.com/pages/events,"4355 Nicollet Ave, Minneapolis, MN 55409",active,65,Long tail
+670,612 Sauna Cooperative,612 Sauna Cooperative,670,https://612saunasociety.com,"1221 Theodore Wirth Pkwy, Minneapolis, MN 55422",active,29,Next 30 — Strong prospects
+671,Relaxing Healthy Center,Relaxing Healthy Center,671,https://www.relaxinghealthy.center,"7827 Portland Ave S, Bloomington, MN 55420",active,77,Long tail
+672,Aurora Spa,Aurora Spa,672,https://www.auroraspaonline.com,"1609 W Lake St, Minneapolis, MN 55408",active,86,Long tail
+674,Vita Day Spa,Vita Day Spa,674,https://www.vitadayspa.com,"5999 Rice Creek Pkwy, Suite 107, Shoreview, MN 55126",active,108,Long tail
+676,Löyly Sauna,Löyly Sauna (Portland),676,https://www.loyly.net,"2713 SE 21st Ave, Portland, OR 97202",active,1,Top 20 — Contact first
+677,Knot Springs Social Club,Knot Springs Social Club,677,https://www.knotsprings.com,"33 NE 3rd Ave, Portland, OR 97232",active,35,Next 30 — Strong prospects
+678,The Everett House,The Everett House,678,https://www.everetthousecommunityhealingcenter.com,"2927 NE Everett St, Portland, OR 97232",active,38,Next 30 — Strong prospects
+679,Common Ground Wellness Cooperative,Common Ground Wellness Cooperative,679,https://www.cgwc.org,"5010 NE 33rd Ave, Portland, OR 97211",active,37,Next 30 — Strong prospects
+680,CASCADA Thermal Springs,CASCADA Thermal Springs,680,https://cascada.me,"1150 NE Alberta St, Portland, OR 97211",active,36,Next 30 — Strong prospects
+681,Haven Forest Sauna,Haven Forest Sauna,681,http://forestsaunapdx.com,"9644 SW West Haven Dr, Portland, OR 97225",active,84,Long tail
+682,Bear Banya,Bear Banya,682,https://www.bearbanya.com,"2130 SE 96th Ave, Portland, OR 97216",active,43,Next 30 — Strong prospects
+683,SaunaGlo,SaunaGlo,683,https://www.saunaglo.com,"1915 SE Jefferson St, Milwaukie, OR 97222",active,4,Top 20 — Contact first
+684,Koti Sauna,Koti Sauna,684,https://www.kotisauna.com,"4128 SE Jefferson St, Milwaukie, OR 97222",active,83,Long tail
+686,Lloyd Athletic Club,Lloyd Athletic Club,686,https://lloydathleticclub.com,"815 NE Halsey St, Portland, OR 97232",active,137,Long tail
+687,RÖK Spas,RÖK Spas,687,https://rokspas.com/,"2025 17th St, Denver, CO 80202",active,16,Top 20 — Contact first
+688,Lake Steam Baths,Lake Steam Baths,688,https://www.lakesteam.com/,"3540 W Colfax Ave, Denver, CO 80204",active,41,Next 30 — Strong prospects
+690,Garden Sauna,Garden Sauna,690,https://www.gardensaunadenver.com/,"1407 N Ogden St, Denver, CO 80218",active,33,Next 30 — Strong prospects
+691,Red Rock Sauna,Red Rock Sauna,691,https://redrocksauna.com/,"4460 W 29th Ave, Denver, CO 80212",active,5,Top 20 — Contact first
+693,Sway Wellness Club — RiNo (formerly Upswell),Sway Wellness Club — RiNo (formerly Upswell),693,https://upswellstudio.com/,"3636 Blake St, Denver, CO 80205",active,127,Long tail
+694,Havana Health Sauna,Havana Health Sauna,694,https://www.havanahealthsauna.com/,"2020 S Havana St, Aurora, CO 80014",active,71,Long tail
+695,Denver Sports Recovery,Denver Sports Recovery,695,https://www.denversportsrecovery.com/,"2242 W 29th Ave, Denver, CO 80211",active,90,Long tail
+696,5 Star Salt Caves,5 Star Salt Caves,696,https://5starsaltcaves.com/,"722 S Pearl St, Denver, CO 80209",active,112,Long tail
+697,Sapa Spa & Wellness,Sapa Spa & Wellness,697,https://sapa-spa.com/,"344 E 7th Ave, Denver, CO 80203",active,101,Long tail
+701,NAOSU SAUNA,NAOSU SAUNA,701,https://naosusauna.com/,"3145 Larimer St, Denver, CO 80205, USA",active,20,Top 20 — Contact first
+702,Löyly Sauna Lounge,Löyly Sauna Lounge,702,https://www.loylysaunalounge.com/,"1210 W Clay St #18, Houston, TX 77019, USA",active,34,Next 30 — Strong prospects
+703,Sudor Sauna Studio,Sudor Sauna Studio,703,https://www.sudorsauna.com/,"3515 W Dallas St Suite 400, Houston, TX 77019, USA",active,126,Long tail
+705,Spa World Houston - Korean Spa & Sauna,Spa World Houston - Korean Spa & Sauna,705,https://spaworldhouston.com/?utm_source=googlebusinessprofile&utm_medium=organic&utm_campaign=google_business_profile,"929 Westgreen Blvd, Katy, TX 77450, USA",active,104,Long tail
+707,Restore Hyper Wellness,Restore Hyper Wellness,707,https://www.restore.com/locations/tx-houston-river-oaks-tx007?utm_source=gmb&utm_medium=Yext&y_source=1_MzE2Mjk5MjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"1944 W Gray St, Houston, TX 77019, USA",active,157,Long tail
+714,Restore Hyper Wellness,Restore Hyper Wellness,707,https://www.restore.com/locations/tx-houston-west-university-tx012?utm_source=gmb&utm_medium=Yext&y_source=1_MzE2Mjk5MzQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"2715 Bissonnet St Suite #140, Houston, TX 77005, USA",active,157,Long tail
+746,Restore Hyper Wellness,Restore Hyper Wellness,707,https://www.restore.com/locations/tx-katy-tx014?utm_source=gmb&utm_medium=Yext&y_source=1_MzE2Mjk5MzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"23116 Cinco Ranch Blvd, Katy, TX 77494, USA",active,157,Long tail
+749,Restore Hyper Wellness,Restore Hyper Wellness,707,https://www.restore.com/locations/tx-sugar-land-tx004?utm_source=gmb&utm_medium=Yext&y_source=1_MzE2Mjk5MjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"15890 Southwest Fwy # 200, Sugar Land, TX 77478, USA",active,157,Long tail
+882,Restore Hyper Wellness,Restore Hyper Wellness,707,http://www.restore.com/locations/ca-marina-del-rey-ca016?utm_source=gmb&utm_medium=Yext&y_source=1_ODAwNDQ3MTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"4635 Admiralty Way Suite 101, Marina Del Rey, CA 90292, USA",active,157,Long tail
+891,Restore Hyper Wellness,Restore Hyper Wellness,707,http://www.restore.com/locations/ca-santa-monica-ca025?utm_source=gmb&utm_medium=Yext&y_source=1_Nzg4OTMyMzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,"1031 Montana Ave, Santa Monica, CA 90403, USA",active,157,Long tail
+745,Tech Sauna Spa,Tech Sauna Spa,745,https://www.techsaunaspa.com/,"21777 Merchants Way #330, Katy, TX 77449, USA",active,106,Long tail
+748,Villa Sport Athletic Club,Villa Sport Athletic Club,748,https://www.villasport.com/cinco-ranch/,"9930 Gaston Rd, Katy, TX 77494, USA",active,160,Long tail
+758,Villa Sport Athletic Club,Villa Sport Athletic Club,748,https://www.villasport.com/the-woodlands/,"4141 Technology Forest Blvd, The Woodlands, TX 77381, USA",active,160,Long tail
+756,Blissful Waters Float & Wellness Center,Blissful Waters Float & Wellness Center,756,https://blissfulwatersfloat.com/,"2408 Timberloch Pl suite D4, The Woodlands, TX 77380, USA",active,87,Long tail
+757,Whole Body Cryo-Salt-Sauna-massage-body contouring,Whole Body Cryo-Salt-Sauna-massage-body contouring,757,http://www.wholebodytherapies.com/,"26730 Interstate 45 N, Spring, TX 77386, USA",active,110,Long tail
+776,Hastings Spa Reflexology Sauna,Hastings Spa Reflexology Sauna,776,https://hastingsspa.com/,"766 E Hastings St, Vancouver, BC V6A 1R5, Canada",active,117,Long tail
+777,Kolm Kontrast,Kolm Kontrast,777,https://kolmkontrast.com/?UTM_source=GMB_listing&UTM_medium=organic,"525 W 8th Ave, Vancouver, BC V5Z 1C6, Canada",active,6,Top 20 — Contact first
+779,The Good Sauna,The Good Sauna,779,http://www.thegoodsauna.com/,"Container Brewing, 1216 Franklin St, Vancouver, BC V6A 1K1, Canada",active,11,Top 20 — Contact first
+780,Float House Vancouver,Float House Vancouver,780,http://www.floathouse.ca/,"70 W Cordova St, Vancouver, BC V6B 1C9, Canada",active,92,Long tail
+782,Art of Sauna (Massage & Wellness Spa),Art of Sauna (Massage & Wellness Spa),782,https://artofsauna.ca/,"7818 6th St, Burnaby, BC V3N 4N8, Canada",active,44,Next 30 — Strong prospects
+785,"Halsa Float Spa- Kitsilano, Vancouver","Halsa Float Spa- Kitsilano, Vancouver",785,https://halsa.ca/,"2028 W 4th Ave, Vancouver, BC V6J 1M9, Canada",active,116,Long tail
+786,The Finnish Sauna,The Finnish Sauna,786,https://www.thefinnishsauna.ca/squamish,"60001 Squamish Valley Rd, Squamish, BC V0N 1H0, Canada",active,30,Next 30 — Strong prospects
+802,"Ritual Urban Retreat - Wellness studio Yoga, Pilates, Sound Bath, Breathwork","Ritual Urban Retreat - Wellness studio Yoga, Pilates, Sound Bath, Breathwork",802,https://www.ritualurbanretreat.com/,"689 Denman St, Vancouver, BC V6G 2L3, Canada",active,149,Long tail
+808,Uptown Sauna House,Uptown Sauna House,808,https://www.uptownsaunahouse.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=18051325068117505311,"414 W 23rd St, Vancouver, WA 98660, USA",active,85,Long tail
+810,Obsidian Athletic Club,Obsidian Athletic Club,810,http://obsidianathleticclub.com/,"949 3rd St W #125, North Vancouver, BC V7P 3P7, Canada",active,140,Long tail
+811,Fitness 2000 Athletic Club,Fitness 2000 Athletic Club,811,http://fitness2000.ca/,"9304 Salish Ct, Burnaby, BC V3J 7B5, Canada",active,135,Long tail
+818,Löyly Floating Sauna,Löyly Floating Sauna,818,https://www.loylyfloatingsauna.ca/toronto-1,"275 Queens Quay W, Toronto, ON M5V 1A2, Canada",active,19,Top 20 — Contact first
+825,Miraj Hammam Spa,Miraj Hammam Spa,825,https://mirajhammamtoronto.com/,"188 University Ave, Toronto, ON M5H 0A3, Canada",active,98,Long tail
+826,Element Outdoor Sauna,Element Outdoor Sauna,826,http://www.elementoutdoorsauna.com/,"257 Danforth Ave, Toronto, ON M4K 1N2, Canada",active,3,Top 20 — Contact first
+827,SPLASH STEAM AND SAUNA,SPLASH STEAM AND SAUNA,827,https://splashsteamandsauna.com/,"1610 Dundas St W, Toronto, ON M6K 1T8, Canada",active,123,Long tail
+828,Banya Richmond Hill,Banya Richmond Hill,828,https://banyarichmondhill.ca/,"13110 Yonge St #1, Richmond Hill, ON L4E 1A3, Canada",active,52,Long tail
+829,South-Western Bathhouse,South-Western Bathhouse,829,http://banya.ca/,"2200 Dundas St E, Mississauga, ON L4X 2V3, Canada",active,49,Next 30 — Strong prospects
+830,Steamul Sauna Richmond Hill,Steamul Sauna Richmond Hill,830,https://steamulsauna.com/,"9688 Leslie St, Richmond Hill, ON L4B 4C4, Canada",active,48,Next 30 — Strong prospects
+851,Toronto Sauna Festival,Toronto Sauna Festival,851,https://www.torontosaunafestival.com/,"550 Bayview Ave, Toronto, ON M4W 3X8, Canada",active,51,Long tail
+861,Water Qube Spa & Sauna,Water Qube Spa & Sauna,861,http://waterq.ca/,"7501 Woodbine Ave Unit 4B, Markham, ON L3R 2W1, Canada",active,131,Long tail
+868,West End Athletic Club,West End Athletic Club,868,https://westendac.com/,"283 Bering Ave, Etobicoke, ON M8Z 3A5, Canada",active,144,Long tail
+873,Float Valley,Float Valley,873,https://floatvalley.com/?utm_source=gmb&utm_medium=maps&utm_campaign=google,"5261 Hwy 7 C102, Markham, ON L3P 1B8, Canada",active,115,Long tail
+874,Unionville Athletic Club,Unionville Athletic Club,874,https://www.unionvilleac.com/,"8500 Warden Ave., Markham, ON L6G 1A5, Canada",active,143,Long tail
+880,Burbank Infrared Sauna,Burbank Infrared Sauna,880,http://burbankinfraredsauna.com/,"2310 W Burbank Blvd, Burbank, CA 91506, USA",active,88,Long tail
+881,Elev8 Infrared Sauna Studio,Elev8 Infrared Sauna Studio,881,https://www.elev8infrared.com/,"8130 W 3rd St, Los Angeles, CA 90048, USA",active,91,Long tail
+883,"Love Your Body: ICOONE, Endermologie, Endospheres, Red Light Therapy, Microcurrent, Infrared Sauna","Love Your Body: ICOONE, Endermologie, Endospheres, Red Light Therapy, Microcurrent, Infrared Sauna",883,https://loveyourbodystudios.com/,"1106 N La Cienega Blvd #207, West Hollywood, CA 90069, USA",active,96,Long tail
+884,IcePass Cold Plunge & Sauna @ Blue Republic Crossfit,IcePass,884,https://www.icepassla.com/,"3328 Pico Blvd, Santa Monica, CA 90405, USA",active,32,Next 30 — Strong prospects
+885,IcePass Cold Plunge & Sauna Club & Saba Cafe,IcePass,884,https://www.icepassla.com/,"12912 Venice Blvd., Los Angeles, CA 90066, USA",active,32,Next 30 — Strong prospects
+886,RVIVL,RVIVL,886,http://rvivl.co/,"12746 W Jefferson Blvd Suite 3-3110, Playa Vista, CA 90094, USA",active,148,Long tail
+893,Red Diamond Yoga + Infrared Sauna,Red Diamond Yoga + Infrared Sauna,893,http://www.reddiamondyoga.com/,"11924 W Washington Blvd Suite A, Los Angeles, CA 90066, USA",active,142,Long tail
+895,Haute Infrared Studio,Haute Infrared Studio,895,http://hauteinfraredstudio.com/,"3704 Park Pl, Montrose, CA 91020, USA",active,118,Long tail
+901,St. Croix Sauna,St. Croix Sauna,901,https://www.stcroixsauna.com/,"6428 Manning Ave N, Stillwater, MN 55082, USA",active,64,Long tail
+914,Kove Studio East Village,Kove Studio,914,https://kove.studio,"268 E 7th St, New York, NY 10009",active,119,Long tail
+915,Kove Studio Williamsburg,Kove Studio,914,https://kove.studio,"189 N 9th St, Brooklyn, NY 11211",active,119,Long tail
+922,Sui Spa,Sui Spa,922,http://www.suiyoga.com/,"180 6th Ave, New York, NY 10013, USA",active,105,Long tail
+923,Avanto Cold Plunge & Sauna,Avanto Cold Plunge & Sauna,923,https://avantoparkcity.com/,"1612 W Ute Blvd Ste 108B, Park City, UT 84098, USA",active,17,Top 20 — Contact first
+924,Silver Mountain Sports Club & Spa,Silver Mountain Sports Club & Spa,924,http://www.silvermountainspa.com/#new-page,"2080 Gold Dust Ln STE. B, Park City, UT 84060, USA",active,150,Long tail
+927,Soho Saunas,Soho Saunas,927,https://www.sohosaunas.com/,"2002 W Soldier Holw Ln, Midway, UT 84049, USA",active,2,Top 20 — Contact first
+928,Wasatch Mountain Sauna,Wasatch Mountain Sauna,928,http://www.wasatchmountainsauna.com/,"1281 Warm Springs Rd, Midway, UT 84049, USA",active,50,Next 30 — Strong prospects
+932,Hatu Plunge Spa,Hatu Plunge Spa,932,http://hatuspa.com/,"1095 S Main St, Heber City, UT 84032, USA",active,82,Long tail
+945,Anytime Fitness,Anytime Fitness,945,https://www.anytimefitness.com/locations/heber-city-utah-5611/?utm_source=google&utm_medium=organic-businesslisting&utm_campaign=gbp-listing&utm_content=6511,"1099 S Main St Ste 160, Heber City, UT 84032, USA",active,152,Long tail

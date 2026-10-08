@@ -1,8 +1,8 @@
 name: Finish October sauna refresh
 
 on:
-  schedule:
-    - cron: '20 8 3-9 10 *'
+  # All 96 queued listings were verified complete on October 7, 2026.
+  # Retain manual validation without a recurring annual schedule.
   workflow_dispatch:
     inputs:
       apply:

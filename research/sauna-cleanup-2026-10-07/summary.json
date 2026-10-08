@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-07T18:08:30.084Z",
+  "applied": true,
+  "totalRecords": 402,
+  "discoverable": 207,
+  "refreshBatchVerified": 96,
+  "listingCorrectionsVerified": 92,
+  "newListingsVerified": 6,
+  "rebrandsVerified": 1,
+  "goodHot": {
+    "before": {
+      "address": "1950 Stenmark Dr, Richmond, CA 94801",
+      "lat": 37.9131,
+      "lng": -122.3617
+    },
+    "after": {
+      "address": "2055 Stenmark Dr, Richmond, CA 94801",
+      "lat": 37.962401199999995,
+      "lng": -122.4275124
+    }
+  }
+}

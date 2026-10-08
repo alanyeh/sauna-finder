@@ -239,3 +239,28 @@ The October 2 cleanup decisions are in
 `node scripts/apply-sauna-quality.js` previews changes; `--apply` writes the
 changed fields with concurrency checks and journals before/after values. Review
 that plan before running it again, as it applies the dated audit decisions.
+
+### October 7 cleanup closeout
+
+Verified all 96 entries in the October catch-up queue, all 92 applied listing
+corrections, six new venues, and the Beverly Wellness Hot Springs rebrand against
+Supabase. All 402 records are preserved; 207 are discoverable. The completed
+catch-up workflow now supports manual runs only.
+
+Good Hot's address and map pin were corrected using its existing Google Place ID
+and the official site's Terminal 4 / Point San Pablo location description. Hours
+now follow its [official information page](https://www.good-hot.com/info);
+arrival instructions and the gate code are supplied with reservations.
+
+The six new venues have 18 reviewed official-website photos, resized to a maximum
+1200 pixels and uploaded to Supabase Storage. Google photo requests hit the daily
+quota, so location-specific website images were selected manually. The closeout
+counts and image provenance are in `research/sauna-cleanup-2026-10-07/`.
+Raw evidence and restoration journals remain in gitignored `reports/`.
+
+For future photo work, `node scripts/scrape-photos.js --ids=946,947` scopes Google
+photo collection to selected listings. `node scripts/fetch-website-photos.js
+--ids=946,947 --dry-run` previews official-website candidates without uploads or
+database changes. Review candidates for location relevance before using them.
+Both scripts retain existing photos, handle empty photo arrays, and guard writes
+against concurrent listing changes.

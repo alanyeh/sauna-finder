@@ -1,0 +1,43 @@
+KORIBOSHI WHOLESALE & PARTNERSHIP PROSPECTS
+Research date: October 5, 2026
+
+SCOPE
+Read the current Sauna Finder Supabase saunas table without changing it: 211 listings. All candidates originate in that table. Websites and targeted searches enriched existing businesses; no unrelated new businesses were added. Customer/order files were not used. No outreach was sent, forms submitted, or database/app changes made.
+
+The 211 listings map to 161 research accounts: Top 20, Next 30, and 111 long-tail accounts. See database-to-prospect-audit.csv for every original row and its assigned account. Same-brand locations are consolidated; no assumption is made that individual sites buy independently. Domain grouping was manually adjusted for Bay Club/Magnuson. Sauna Hut and Steamworks same-name locations are provisionally combined to avoid duplicate outreach; common ownership/buying authority across those domains remains unverified. Distinct businesses with the name Loyly are kept separate. Current public sites may list more locations than the database; upcoming sites are not counted as confirmed operating sites.
+
+RANKING
+The top 50 are individually reviewed and editorially ranked by the practical chance of a useful first relationship: sauna centrality, repeat community, product/retail relevance, design/hospitality alignment, operator scale, contactability, supplier conflict and timing. This is not a ranking by followers or business size. Scores support that judgment rather than mechanically determine the order. A low-volume sampling relationship can outrank a larger possible retailer.
+
+Wholesale potential: 1 = weak category/channel fit; 2 = possible but peripheral; 3 = credible small trial with retail uncertainty; 4 = strong sauna/customer fit and plausible retail or gifting channel; 5 = unusually direct product, retail or existing-hat-use evidence. Scores are relative opportunity estimates, not confirmed demand or conversion probabilities.
+Relationship potential: 1 = little relevant community/accessible local connection; 2 = general wellness overlap; 3 = relevant but less distinct or less verified; 4 = strong sauna culture, guest or program alignment; 5 = unusually close operator/community fit for samples, feedback or collaboration.
+Decision-maker access: 1 = centralized chain/unclear route; 2 = weak or indirect route; 3 = verified general business route but buyer unnamed; 4 = named owner/founder plus business contact, or explicit partnership form; 5 = published named partnership contact. A founder name plus a shared mailbox is not a verified direct founder email.
+High = top 20; Medium = next 30; Low = long tail for this campaign. Long-tail ordering is approximate triage (45% relationship, 35% wholesale, 20% access), not the same depth of qualification as the top 50.
+
+EVIDENCE AND UNKNOWNS
+Official websites were primary sources. Public founder interviews, a design agency portfolio and tourism listings supplied some names or corroboration. Each prospect includes source URLs and an email source. A source list may support several fields; editorial fit, scores and proposed outreach are explicitly analyst judgments. Exact city/state/country comes from database street addresses, with current-site corrections where found; a database metro tag is not treated as the physical city.
+
+Published emails were not guessed, sent to, or deliverability-tested. “Not found” and “Not verified” mean no reliable public value was established in this review. Many named contacts are reached through a general inbox. Roles marked “requested role” describe whom to ask for, not a verified employee. All prospects remain Not contacted; prior relationships or outreach outside this session are unknown, so reconcile with your own history before sending.
+
+Physical retail is distinguished from gift cards, included amenities, rentals, and design mockups. A shop link alone does not prove stock or on-site sales. Existing hat sales are both category validation and a possible supplier conflict. Most businesses did not publish purchasing budgets, minimum orders or willingness to stock another brand. “1 venue shown” is a lower-bound observation, not proof there are no other locations.
+
+Instagram links were taken from official websites or explicit official references where available. Follower counts, recent posting frequency and engagement were not reliably verified and are not used as a scoring shortcut. A linked profile is not proof of a strong social presence. Some profiles are brand-wide rather than location-specific; these are noted. Website retrieval failures are not labeled as closure. Long-tail retail, recurring programs and contact people may remain unqualified even when a contact-page scan succeeded.
+
+CAMPAIGN-SPECIFIC FINDINGS
+Start with Loyly Portland for a retail trial, Soho for feedback on its existing guest-hat use, Element for member gifting, SaunaGlo for an owner relationship, and Red Rock for a small merchandise test.
+Akari and Othership already sell sauna hats; Kolm's design agency shows branded hats. Acknowledge that and test interest in a cotton alternative rather than suggesting the category is missing.
+NAOSU is an exact style benchmark. Its current terms name ERY Holdings LLC; approach the current team instead of assuming a historical founder relationship.
+Fjord advertises construction-related irregular bookings through November; time a retail proposal around normal operations. Alchemy's Sauna Garden is operating, while its full bathhouse is still advertised as opening soon.
+Toronto Sauna Festival's listed October 2–4, 2026 event has ended. It is a future-event relationship, not an imminent sampling slot.
+Koti and Uptown are public-facing but home/backyard-scale operators: appealing personal relationships, deprioritized for residential setting and limited retail volume. Generic gyms, large infrared franchises and treatment-first businesses remain low priority.
+Saint's working website is www.saint.nyc; Von's working website is www.vonsauna.com. Those findings are recorded here without editing the production database.
+
+OUTREACH ASSUMPTIONS
+Recommend asking whether they would like a sample before shipping it. Discuss wholesale terms only after fit is established. Custom/co-branded hats are exploratory proposals; production capability, minimums, pricing, lead time and Canadian landed costs have not been assumed or promised. Product-positioning assumptions follow koriboshi's public description of its Japanese-inspired, machine-washable cotton-blend hat (https://koriboshi.com/products/slate-grey), not a 100% cotton or medical-safety claim.
+
+FILES
+report.html: self-contained searchable report with all fields, sources and three groups.
+all-prospects.csv: complete 161-account spreadsheet-ready list.
+top-20.csv / next-30.csv / long-tail.csv: separate outreach queues.
+database-to-prospect-audit.csv: maps all 211 input listings to the deduplicated accounts.
+prospects.json / research-summary.json: structured report and research counts.

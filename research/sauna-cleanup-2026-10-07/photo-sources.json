@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-10-08T01:02:22.440Z",
+  "venues": [
+    {
+      "id": 946,
+      "name": "Saunawelt European Sauna House",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/946-official-20261007-2.jpg",
+          "sourcePage": "https://www.saunawelt.com/",
+          "sourceImage": "https://static.wixstatic.com/media/058839_db01a952137f453bbc7feb002b48a504~mv2.jpg",
+          "bytes": 174631
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/946-official-20261007-3.jpg",
+          "sourcePage": "https://www.saunawelt.com/",
+          "sourceImage": "https://static.wixstatic.com/media/058839_d20bc0300e2a44a489f9195f453c9145~mv2.jpg",
+          "bytes": 168613
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/946-official-20261007-4.jpg",
+          "sourcePage": "https://www.saunawelt.com/",
+          "sourceImage": "https://static.wixstatic.com/media/058839_e053153af5ba4d91bac69cd4382db61d~mv2.jpg",
+          "bytes": 150714
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/946-official-20261007-8.jpg",
+          "sourcePage": "https://www.saunawelt.com/",
+          "sourceImage": "https://static.wixstatic.com/media/058839_02de773645004f529e3bcaad77377e0a~mv2.jpg",
+          "bytes": 211382
+        }
+      ],
+      "applied": true
+    },
+    {
+      "id": 947,
+      "name": "Circle Wellness Seattle",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/947-official-20261007-1.jpg",
+          "sourcePage": "https://circlewellnessspas.com/locations/seattle/",
+          "sourceImage": "https://circlewellnessspas.com/wp-content/uploads/2026/03/CW_Seattle-3-2560x1440-1.webp",
+          "bytes": 14043
+        }
+      ],
+      "applied": true
+    },
+    {
+      "id": 948,
+      "name": "Remedy Place SoHo",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/948-official-20261007-0.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/soho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/5660f27b2be79c92436a94c53c6a85d93883ea06-1340x1340.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 156975
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/948-official-20261007-3.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/soho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/3d7a5e6055260c1858ea0bc75078d6b15e1dff53-1340x1340.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 107334
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/948-official-20261007-7.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/soho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/99a14b40006221cd5141047636d08d6e0f380850-3557x4446.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 121731
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/948-official-20261007-1.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/soho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/931bd0442e7e55d798df36b086c616cd1dda9659-1340x1340.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 138794
+        }
+      ],
+      "applied": true
+    },
+    {
+      "id": 949,
+      "name": "Remedy Place West Hollywood",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/949-official-20261007-0.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/weho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/06e1f3275ccb40d63e797bf389d64a25a678fcfa-1340x1340.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 203247
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/949-official-20261007-3.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/weho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/9ae39fa7bc238f43fb272f2347d26abc23acab28-1340x1340.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 233533
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/949-official-20261007-7.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/weho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/b95eae9149fd3c89b7f6c143793dc30d736ac35e-3758x2506.jpg?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 113624
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/949-official-20261007-1.jpg",
+          "sourcePage": "https://www.remedyplace.com/clubs/weho",
+          "sourceImage": "https://cdn.sanity.io/images/jptxcgmn/production/bca962a86ecefc9082d5b3d300f6f6d1ad81a462-670x670.png?w=3840&q=85&fit=clip&auto=format",
+          "bytes": 108782
+        }
+      ],
+      "applied": true
+    },
+    {
+      "id": 950,
+      "name": "The Spa Hyu",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/950-official-20261007-0.jpg",
+          "sourcePage": "https://kspala.com/",
+          "sourceImage": "https://img1.wsimg.com/isteam/ip/8f6330a6-dcf0-494b-bd04-18b50665056c/blob-77028d8.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:700,cg:true",
+          "bytes": 75767
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/950-official-20261007-1.jpg",
+          "sourcePage": "https://kspala.com/",
+          "sourceImage": "https://img1.wsimg.com/isteam/ip/8f6330a6-dcf0-494b-bd04-18b50665056c/1140-coiner-mls-8.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25",
+          "bytes": 215549
+        }
+      ],
+      "applied": true
+    },
+    {
+      "id": 951,
+      "name": "Sauna Moon",
+      "before": null,
+      "photos": [
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/951-official-20261007-1.jpg",
+          "sourcePage": "https://www.hotrockssaunaclub.com/",
+          "sourceImage": "https://images.squarespace-cdn.com/content/v1/68b381a42fc85d0c6141f70d/5a631745-6459-4c07-9227-cd70479b6f73/sauna-window.png",
+          "bytes": 64097
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/951-official-20261007-4.jpg",
+          "sourcePage": "https://www.hotrockssaunaclub.com/",
+          "sourceImage": "https://images.squarespace-cdn.com/content/v1/68b381a42fc85d0c6141f70d/fdf8215d-b712-4e93-9a52-0e37a2f2d9f8/alki-beach-sauna-home-left.png",
+          "bytes": 116621
+        },
+        {
+          "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/951-official-20261007-6.jpg",
+          "sourcePage": "https://www.hotrockssaunaclub.com/",
+          "sourceImage": "https://images.squarespace-cdn.com/content/v1/68b381a42fc85d0c6141f70d/a0cfb1ee-7231-4448-ae18-96ca76fb9a10/seattle-sauna-home.jpeg",
+          "bytes": 240399
+        }
+      ],
+      "applied": true
+    }
+  ]
+}

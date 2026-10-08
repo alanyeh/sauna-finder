@@ -11,6 +11,7 @@ const supabase = createClient(
 async function fetchPageImages(url) {
   try {
     const res = await fetch(url, {
+      signal: AbortSignal.timeout(30000),
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
         'Accept': 'text/html',
@@ -37,7 +38,7 @@ async function fetchPageImages(url) {
     let match;
     while ((match = imgRegex.exec(html)) !== null) {
       let src = match[0];
-      let imgUrl = match[1];
+      let imgUrl = match[1].replaceAll('&amp;', '&');
 
       // Skip tiny icons, svgs, tracking pixels, data URIs
       if (/\.svg|favicon|icon|logo|pixel|tracking|badge|avatar|1x1/i.test(imgUrl)) continue;
@@ -56,10 +57,7 @@ async function fetchPageImages(url) {
     // Resolve relative URLs
     const base = new URL(url);
     return images.slice(0, 5).map(img => {
-      if (img.startsWith('//')) return 'https:' + img;
-      if (img.startsWith('/')) return base.origin + img;
-      if (img.startsWith('http')) return img;
-      return base.origin + '/' + img;
+      return new URL(img.replaceAll('&amp;', '&'), base).href;
     });
   } catch (err) {
     console.log(`  Error fetching ${url}: ${err.message}`);
@@ -70,6 +68,7 @@ async function fetchPageImages(url) {
 async function downloadAndUpload(supabaseId, imageUrl) {
   try {
     const res = await fetch(imageUrl, {
+      signal: AbortSignal.timeout(30000),
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
         'Accept': 'image/*',
@@ -113,6 +112,7 @@ async function main() {
   const args = process.argv.slice(2);
   const cityArg = args.find(a => a.startsWith('--city='))?.split('=')[1];
   const idsArg = args.find(a => a.startsWith('--ids='))?.split('=')[1];
+  const dryRun = args.includes('--dry-run');
 
   if (!cityArg && !idsArg) {
     console.error('Usage: node scripts/fetch-website-photos.js --city=<slug> | --ids=1,2,3');
@@ -122,18 +122,22 @@ async function main() {
 
   let query = supabase
     .from('saunas')
-    .select('id, name, website_url')
-    .is('photos', null)
+    .select('id, name, website_url, photos, updated_at')
     .order('id', { ascending: true });
   if (cityArg) query = query.eq('city_slug', cityArg);
-  if (idsArg) query = query.in('id', idsArg.split(',').map(Number));
+  if (idsArg) {
+    const ids = idsArg.split(',').map(Number);
+    if (ids.some(id => !Number.isInteger(id) || id <= 0)) throw new Error('Invalid --ids');
+    query = query.in('id', ids);
+  }
 
-  const { data: saunas, error } = await query;
+  const { data: rows, error } = await query;
 
   if (error) {
     console.error('Error:', error.message);
     process.exit(1);
   }
+  const saunas = rows.filter(row => !row.photos?.length);
 
   console.log(`Found ${saunas.length} saunas needing photos\n`);
 
@@ -152,6 +156,7 @@ async function main() {
     }
 
     console.log(`  Found ${imageUrls.length} candidate image(s)`);
+    if (dryRun) { console.log(JSON.stringify({ id: sauna.id, imageUrls })); continue; }
     const uploadedUrls = [];
 
     for (const imgUrl of imageUrls) {
@@ -166,13 +171,16 @@ async function main() {
     }
 
     if (uploadedUrls.length > 0) {
-      const { error: updateErr } = await supabase
+      let update = supabase
         .from('saunas')
-        .update({ photos: uploadedUrls })
+        .update({ photos: uploadedUrls, updated_at: new Date().toISOString() })
         .eq('id', sauna.id);
+      update = sauna.updated_at ? update.eq('updated_at', sauna.updated_at) : update.is('updated_at', null);
+      const { data: updated, error: updateErr } = await update.select('id');
 
-      if (updateErr) {
-        console.log(`  DB update failed: ${updateErr.message}\n`);
+      if (updateErr || !updated.length) {
+        console.log(`  DB update failed: ${updateErr?.message || 'Listing changed during download'}\n`);
+        process.exitCode = 1;
       } else {
         console.log(`  ✓ Saved ${uploadedUrls.length} photo(s) to DB\n`);
       }
