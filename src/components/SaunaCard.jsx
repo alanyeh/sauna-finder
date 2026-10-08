@@ -29,7 +29,7 @@ export default function SaunaCard({ sauna, isSelected, user, isFavorite, onToggl
           navigate(path);
         }
       }}
-      className={`rounded-sm border-b border-l-[3px] border-light-border cursor-pointer transition-colors overflow-hidden ${
+      className={`rounded-sm border-l-[3px] border-light-border cursor-pointer transition-colors overflow-hidden ${
         isSelected
           ? 'bg-white border-l-accent-red'
           : 'bg-cream border-l-transparent hover:bg-white'
