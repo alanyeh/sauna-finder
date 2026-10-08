@@ -215,7 +215,8 @@ const CITY_CONFIGS = {
     },
   },
   slc: {
-    city_slug: 'slc',
+    // Keep the CLI search alias, but save into the combined listing area.
+    city_slug: 'park-city',
     full_name: 'Salt Lake City',
     center: { lat: 40.7608, lng: -111.8910 },
     radius: 25000,

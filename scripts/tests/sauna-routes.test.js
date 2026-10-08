@@ -26,3 +26,15 @@ test('prerender routes and sitemap exclude hidden, duplicate and unconfirmed hot
   assert.equal((xml.match(/\/sauna\//g) || []).length, 1);
   assert.ok(!xml.includes('/admin/'));
 });
+
+test('combined Utah area publishes both Salt Lake City and Park City listings', () => {
+  const rows = [
+    { ...sauna, id: 952, name: 'Sauna Public', city_slug: 'park-city', lat: 40.7125, lng: -111.8349 },
+    { ...sauna, id: 923, name: 'Park City Sauna', city_slug: 'park-city', lat: 40.6461, lng: -111.498 },
+  ];
+  assert.equal(saunaRoutes(rows).length, 2);
+  const xml = buildSitemapXml(rows);
+  for (const row of rows) assert.ok(xml.includes(saunaPath(row)));
+  assert.ok(xml.includes('/city/park-city</loc>'));
+  assert.ok(!xml.includes('/city/slc'));
+});

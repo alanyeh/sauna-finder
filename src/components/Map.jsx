@@ -16,7 +16,7 @@ function MapController({ selectedSauna, cityCenter, citySlug }) {
   useEffect(() => {
     if (!map) return;
     map.panTo(cityCenter);
-    map.setZoom(citySlug === 'all' ? 4 : 12);
+    map.setZoom(citySlug === 'all' ? 4 : citySlug === 'park-city' ? 10 : 12);
   }, [cityCenter, citySlug, map]);
 
   useEffect(() => {
@@ -154,8 +154,7 @@ const CITY_CENTERS = {
   minneapolis: { lat: 44.963, lng: -93.272 },
   portland: { lat: 45.523, lng: -122.676 },
   denver: { lat: 39.7392, lng: -104.9903 },
-  slc: { lat: 40.7608, lng: -111.8910 },
-  'park-city': { lat: 40.6461, lng: -111.498 },
+  'park-city': { lat: 40.7, lng: -111.68 },
   houston: { lat: 29.7604, lng: -95.3698 },
   vancouver: { lat: 49.2827, lng: -123.1207 },
   toronto: { lat: 43.6532, lng: -79.3832 },
@@ -171,8 +170,7 @@ const CITY_LABELS = {
   minneapolis: 'Minneapolis',
   portland: 'Portland',
   denver: 'Denver',
-  slc: 'Salt Lake City',
-  'park-city': 'Park City',
+  'park-city': 'Park City & Salt Lake City',
   houston: 'Houston',
   vancouver: 'Vancouver',
   toronto: 'Toronto',
@@ -198,7 +196,7 @@ function CityMarker({ citySlug, center, count, label, onClick }) {
 
 export default function SaunaMap({ saunas, selectedSauna, onSaunaSelect, citySlug, disableInfoWindow = false, onCityClick }) {
   const center = CITY_CENTERS[citySlug] || CITY_CENTERS.nyc;
-  const [defaultZoom] = useState(citySlug === 'all' ? 4 : 12);
+  const [defaultZoom] = useState(citySlug === 'all' ? 4 : citySlug === 'park-city' ? 10 : 12);
 
   const cityCounts = useMemo(() => {
     if (citySlug !== 'all') return null;

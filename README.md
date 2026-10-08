@@ -21,9 +21,13 @@ index — while staying a fast SPA for real users.
 | Auth      | Supabase Auth (email/password + Google OAuth)           |
 | Hosting   | Vercel                                                  |
 
-Cities are defined in `src/lib/cities.js` (`CITY_CONFIG`) — currently 13: NYC, SF,
-Chicago, Seattle, LA, Minneapolis, Portland, Denver, Salt Lake City, Park City,
+Cities are defined in `src/lib/cities.js` (`CITY_CONFIG`) — currently 12 areas: NYC, SF,
+Chicago, Seattle, LA, Minneapolis, Portland, Denver, Park City & Salt Lake City,
 Houston, Vancouver, Toronto.
+
+Park City and Salt Lake City share `city_slug: park-city` and `/city/park-city`.
+Legacy `/city/slc` city and detail URLs redirect to the combined area. The scraper's
+`--city=slc` search alias still searches Salt Lake City but saves to `park-city`.
 
 ## Quick start
 

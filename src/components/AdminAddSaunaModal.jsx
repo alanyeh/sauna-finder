@@ -130,7 +130,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
       const cityName = {
         nyc: 'New York', sf: 'San Francisco', chicago: 'Chicago', la: 'Los Angeles',
         seattle: 'Seattle', minneapolis: 'Minneapolis', portland: 'Portland',
-        denver: 'Denver', slc: 'Salt Lake City', 'park-city': 'Park City', houston: 'Houston',
+        denver: 'Denver', 'park-city': 'Park City & Salt Lake City', houston: 'Houston',
         vancouver: 'Vancouver', toronto: 'Toronto',
       }[city] || city;
 
@@ -360,8 +360,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                 <option value="minneapolis">Minneapolis</option>
                 <option value="portland">Portland</option>
                 <option value="denver">Denver</option>
-                <option value="slc">Salt Lake City</option>
-                <option value="park-city">Park City</option>
+                <option value="park-city">Park City &amp; Salt Lake City</option>
                 <option value="houston">Houston</option>
                 <option value="vancouver">Vancouver</option>
                 <option value="toronto">Toronto</option>
@@ -464,8 +463,7 @@ export default function AdminAddSaunaModal({ onClose, onSaunaAdded }) {
                   <option value="minneapolis">Minneapolis</option>
                   <option value="portland">Portland</option>
                   <option value="denver">Denver</option>
-                  <option value="slc">Salt Lake City</option>
-                  <option value="park-city">Park City</option>
+                  <option value="park-city">Park City &amp; Salt Lake City</option>
                   <option value="houston">Houston</option>
                   <option value="vancouver">Vancouver</option>
                   <option value="toronto">Toronto</option>

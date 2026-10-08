@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/city/slc", "destination": "/city/park-city", "permanent": true },
+    { "source": "/city/slc/sauna/:slug", "destination": "/city/park-city/sauna/:slug", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
