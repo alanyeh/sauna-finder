@@ -12,6 +12,7 @@ const CITIES = [
   { slug: 'minneapolis', short: 'MSP', label: 'Minneapolis' },
   { slug: 'portland', short: 'PDX', label: 'Portland' },
   { slug: 'denver', short: 'DEN', label: 'Denver' },
+  { slug: 'slc', short: 'SLC', label: 'Salt Lake City' },
   { slug: 'park-city', short: 'PC', label: 'Park City' },
   { slug: 'houston', short: 'HOU', label: 'Houston' },
   { slug: 'vancouver', short: 'VAN', label: 'Vancouver' },

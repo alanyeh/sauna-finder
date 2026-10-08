@@ -243,6 +243,18 @@ export const CITY_CONTENT = {
     ],
   },
 
+  slc: {
+    intro: [
+      "Explore Salt Lake City's public saunas, bathhouses and private infrared studios, with nearby options in South Salt Lake and Holladay. Choose a communal sauna and cold plunge, a bathhouse with steam and soaking pools, or a private sauna session.",
+      "Access varies by venue: some welcome walk-ins or sell day passes, while others use timed bookings. Check each listing's website for current pricing, availability and what your session includes.",
+    ],
+    faqs: [
+      { q: "Where can I combine sauna and cold plunge in Salt Lake City?", a: "Sauna Public, Glow SLC, Elemntal Wellness, SWTHZ Sugar House, SLT Gym and PLUNJ Salt Lake offer both. Check the venue's booking page for session details." },
+      { q: "Are there private sauna sessions in Salt Lake City?", a: "Elemntal Wellness offers private traditional and infrared sauna sessions. SWTHZ Sugar House offers private infrared sauna and cold-plunge suites." },
+      { q: "Does this directory include nearby towns?", a: "Yes. Salt Lake City listings include South Salt Lake and Holladay. Park City has its own section." },
+    ],
+  },
+
   'park-city': {
     intro: [
       "Park City punches far above its weight for sauna and contrast bathing. As a world-class ski town, its recovery culture runs deep: boutique cold-plunge studios in Kimball Junction, wood-fired saunas in the Heber Valley, and some of the best hotel spas in the American West clustered around Deer Valley and Canyons Village. Twenty minutes over the pass, the town of Midway adds a rare geological bonus — a natural geothermal hot spring inside a limestone crater where you can soak year-round.",

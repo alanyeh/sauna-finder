@@ -214,6 +214,17 @@ const CITY_CONFIGS = {
       'V7C': 'Richmond', 'V7E': 'Richmond',
     },
   },
+  slc: {
+    city_slug: 'slc',
+    full_name: 'Salt Lake City',
+    center: { lat: 40.7608, lng: -111.8910 },
+    radius: 25000,
+    neighborhoods: ['Downtown', 'Sugar House', 'Central City', 'South Salt Lake', 'Holladay'],
+    zipToNeighborhood: {
+      '84101': 'Downtown', '84111': 'Central City', '84106': 'Sugar House',
+      '84115': 'South Salt Lake', '84117': 'Holladay',
+    },
+  },
   'park-city': {
     city_slug: 'park-city',
     full_name: 'Park City',

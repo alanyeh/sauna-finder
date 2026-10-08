@@ -1,0 +1,201 @@
+{
+  "checkedAt": "2026-10-08T14:52:58.111Z",
+  "listings": [
+    {
+      "id": 952,
+      "name": "Sauna Public",
+      "address": "1952 E 2700 S, Salt Lake City, UT 84106",
+      "city_slug": "slc",
+      "place_id": "ChIJ2_6rK9thUocRl0EXAqUzgag",
+      "sauna_source_url": "https://www.saunapublic.com/",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "day_pass",
+      "access_notes": "Official homepage confirms Finnish sauna, communal cold plunge, walk-ins and day passes.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-3.jpg",
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-4.jpg",
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-5.jpg"
+      ]
+    },
+    {
+      "id": 953,
+      "name": "Glow SLC",
+      "address": "730 W 900 S, Salt Lake City, UT 84104",
+      "city_slug": "slc",
+      "place_id": "ChIJq44Mnbj1UocRF1LpLg7MUk0",
+      "sauna_source_url": "https://www.glowslc.com/",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "public",
+      "access_notes": "Official homepage confirms sauna, steam room, cold plunge and warm pool; use booking calendar for access sessions.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJq44Mnbj1UocRF1LpLg7MUk0-photo-1-2.jpg",
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJq44Mnbj1UocRF1LpLg7MUk0-photo-1-1.jpg"
+      ]
+    },
+    {
+      "id": 954,
+      "name": "Elemntal Wellness",
+      "address": "360 W Broadway #102, Salt Lake City, UT 84101",
+      "city_slug": "slc",
+      "place_id": "ChIJx59JKrZhUocRqrWoTSOt6_I",
+      "sauna_source_url": "https://elemntalwellness.com/",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "public",
+      "access_notes": "Official homepage confirms private Finnish and infrared sauna sessions, cold plunge and massage.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJx59JKrZhUocRqrWoTSOt6_I-photo-2-1.jpg"
+      ]
+    },
+    {
+      "id": 955,
+      "name": "SWTHZ Sugar House",
+      "address": "1140 Wilmington Ave, Salt Lake City, UT 84106",
+      "city_slug": "slc",
+      "place_id": "ChIJLYMV25iLUocRr6GyoK7wB70",
+      "sauna_source_url": "https://sweathouz.com/sugar-house-book-now/",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "public",
+      "access_notes": "Official Sugar House booking page confirms private infrared sauna and cold-plunge suites.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJLYMV25iLUocRr6GyoK7wB70-photo-3-0.jpg"
+      ]
+    },
+    {
+      "id": 956,
+      "name": "SLT Gym",
+      "address": "358 S 300 E, Salt Lake City, UT 84111",
+      "city_slug": "slc",
+      "place_id": "ChIJnUkudgD1UocR4tU25Ll4f1A",
+      "sauna_source_url": "https://www.sltgym.com/dropin",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "day_pass",
+      "access_notes": "Official drop-in page explicitly includes sauna and cold plunge with a $45 day pass; consult venue for guest hours.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJnUkudgD1UocR4tU25Ll4f1A-photo-4-1.jpg"
+      ]
+    },
+    {
+      "id": 957,
+      "name": "PLUNJ Salt Lake",
+      "address": "51 W Utopia Ave PLUNJ, South Salt Lake, UT 84115",
+      "city_slug": "slc",
+      "place_id": "ChIJdQ3tBcGLUocR_IxXX8wj1-o",
+      "sauna_source_url": "https://www.plunj.co/locations/salt-lake",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "public",
+      "access_notes": "Official Salt Lake location page confirms communal dry saunas and cold pools; public timed bookings and private groups.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJdQ3tBcGLUocR_IxXX8wj1-o-photo-5-0.jpg",
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJdQ3tBcGLUocR_IxXX8wj1-o-photo-5-4.jpg"
+      ]
+    },
+    {
+      "id": 958,
+      "name": "Perspire Sauna Studio Holladay",
+      "address": "2250 E Murray Holladay Rd #106, Holladay, UT 84117",
+      "city_slug": "slc",
+      "place_id": "ChIJOcvwggxjUocRKLrReGBr1No",
+      "sauna_source_url": "https://www.perspiresaunastudio.com/locations/holladay",
+      "sauna_checked_at": "2026-10-08T14:52:45.983+00:00",
+      "access_policy": "public",
+      "access_notes": "Official Holladay location page confirms bookable infrared sauna sessions. Photos are official location-page promotional imagery.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJOcvwggxjUocRKLrReGBr1No-photo-6-3.jpg",
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJOcvwggxjUocRKLrReGBr1No-photo-6-4.jpg"
+      ]
+    }
+  ],
+  "photoSources": [
+    {
+      "name": "Sauna Public",
+      "sourcePage": "https://www.saunapublic.com/",
+      "sourceImage": "https://static.wixstatic.com/media/bb2d5c_bbc88a40f35c4b00b5238a057c70666b~mv2.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-3.jpg",
+      "bytes": 142719
+    },
+    {
+      "name": "Sauna Public",
+      "sourcePage": "https://www.saunapublic.com/",
+      "sourceImage": "https://static.wixstatic.com/media/bb2d5c_a503e522a33b43298e1ca5300f4a6b31~mv2.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-4.jpg",
+      "bytes": 168031
+    },
+    {
+      "name": "Sauna Public",
+      "sourcePage": "https://www.saunapublic.com/",
+      "sourceImage": "https://static.wixstatic.com/media/bb2d5c_13e39acff80843888857cb334809ed65~mv2.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJ2_6rK9thUocRl0EXAqUzgag-photo-0-5.jpg",
+      "bytes": 156883
+    },
+    {
+      "name": "Glow SLC",
+      "sourcePage": "https://www.glowslc.com/",
+      "sourceImage": "https://www.glowslc.com/wp-content/uploads/2024/08/Glow-Soak-Sauna-Marketing-Shoot-230-768x512.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJq44Mnbj1UocRF1LpLg7MUk0-photo-1-2.jpg",
+      "bytes": 42605
+    },
+    {
+      "name": "Glow SLC",
+      "sourcePage": "https://www.glowslc.com/",
+      "sourceImage": "https://www.glowslc.com/wp-content/uploads/2024/08/Glow-Soak-Sauna-Marketing-Shoot-118-7-768x1151.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJq44Mnbj1UocRF1LpLg7MUk0-photo-1-1.jpg",
+      "bytes": 121781
+    },
+    {
+      "name": "Elemntal Wellness",
+      "sourcePage": "https://elemntalwellness.com/",
+      "sourceImage": "https://elemntalwellness.com/wp-content/uploads/2026/05/1.jpg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJx59JKrZhUocRqrWoTSOt6_I-photo-2-1.jpg",
+      "bytes": 81804
+    },
+    {
+      "name": "SWTHZ Sugar House",
+      "sourcePage": "https://sweathouz.com/sugar-house-book-now/",
+      "sourceImage": "https://sweathouz.com/wp-content/uploads/2026/01/UN2-1024x576.png",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJLYMV25iLUocRr6GyoK7wB70-photo-3-0.jpg",
+      "bytes": 70224
+    },
+    {
+      "name": "SLT Gym",
+      "sourcePage": "https://www.sltgym.com/dropin",
+      "sourceImage": "https://images.squarespace-cdn.com/content/v1/649c519e43a051032350279d/1787524412298-USHZ2Q1L64FEW5LTFIDY/image-asset.jpeg",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJnUkudgD1UocR4tU25Ll4f1A-photo-4-1.jpg",
+      "bytes": 54451
+    },
+    {
+      "name": "PLUNJ Salt Lake",
+      "sourcePage": "https://www.plunj.co/locations/salt-lake",
+      "sourceImage": "https://plunj.co/images/saltLake/East-Studio-sauna-3-people-1-2-scaled.webp",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJdQ3tBcGLUocR_IxXX8wj1-o-photo-5-0.jpg",
+      "bytes": 146082
+    },
+    {
+      "name": "PLUNJ Salt Lake",
+      "sourcePage": "https://www.plunj.co/locations/salt-lake",
+      "sourceImage": "https://www.plunj.co/_vercel/image?url=%2Fimages%2FsaltLake%2FEast-sauna-two-people-scaled.webp&w=1280&q=100",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJdQ3tBcGLUocR_IxXX8wj1-o-photo-5-4.jpg",
+      "bytes": 138820
+    },
+    {
+      "name": "Perspire Sauna Studio Holladay",
+      "sourcePage": "https://www.perspiresaunastudio.com/locations/holladay",
+      "sourceImage": "https://cdn.prod.website-files.com/68efba7a47d275fc151ce8c6/69d614e903511fa3b313284a_23f8606a37b689f969c22ae2c095e532_Location%20Hero%20Image%201.avif",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJOcvwggxjUocRKLrReGBr1No-photo-6-3.jpg",
+      "bytes": 63394
+    },
+    {
+      "name": "Perspire Sauna Studio Holladay",
+      "sourcePage": "https://www.perspiresaunastudio.com/locations/holladay",
+      "sourceImage": "https://cdn.prod.website-files.com/68efba7a47d275fc151ce8c6/69d6158e572c0569c7a3cab2_5bb46a1c68f371cf42742d864aba0861_Location%20Hero%20Image%202.avif",
+      "url": "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/slc-20261008-ChIJOcvwggxjUocRKLrReGBr1No-photo-6-4.jpg",
+      "bytes": 49423
+    }
+  ],
+  "notes": [
+    "Resumed the seven-venue batch saved in the interrupted terminal session.",
+    "Reused saved Google Places results and reviewed official websites before publication.",
+    "Checked live Place IDs before inserting to avoid duplicate listings.",
+    "Prices remain unknown unless verified; SLT Gym has a source-backed $45 day pass.",
+    "Official chain location-page images may be promotional, not unique photographs of that branch."
+  ]
+}
