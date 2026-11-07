@@ -137,6 +137,14 @@ const CITY_CONFIGS = {
     ],
     zipToNeighborhood: {},
   },
+  austin: {
+    city_slug: 'austin',
+    full_name: 'Austin, Texas',
+    center: { lat: 30.2672, lng: -97.7431 },
+    radius: 35000,
+    neighborhoods: ['Downtown', 'East Austin', 'South Austin', 'North Loop', 'Cedar Park', 'Round Rock'],
+    zipToNeighborhood: {},
+  },
   houston: {
     city_slug: 'houston',
     full_name: 'Houston',

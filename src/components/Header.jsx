@@ -13,6 +13,7 @@ const CITIES = [
   { slug: 'portland', short: 'PDX', label: 'Portland' },
   { slug: 'denver', short: 'DEN', label: 'Denver' },
   { slug: 'park-city', short: 'PC / SLC', label: 'Park City & Salt Lake City' },
+  { slug: 'austin', short: 'ATX', label: 'Austin' },
   { slug: 'houston', short: 'HOU', label: 'Houston' },
   { slug: 'vancouver', short: 'VAN', label: 'Vancouver' },
   { slug: 'toronto', short: 'TOR', label: 'Toronto' },

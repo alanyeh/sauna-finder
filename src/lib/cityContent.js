@@ -275,6 +275,19 @@ export const CITY_CONTENT = {
     ],
   },
 
+  austin: {
+    intro: [
+      "Explore Austin's sauna and cold plunge studios, social bathhouses, and private infrared sauna sessions. Listings cover central Austin and nearby neighborhoods, with venue-specific access details to help you plan a visit.",
+      "Some venues offer a shared sauna and cold plunge circuit, while others book private rooms or include sauna access with a spa treatment. Check the venue's booking page for current prices, session lengths, and availability.",
+    ],
+    faqs: [
+      { q: "Where can I book a sauna and cold plunge in Austin?", a: "Austin has dedicated contrast therapy venues including Sweatcity and Cøntrast. Use the cold plunge filter to find listings offering both, then check the venue's schedule before visiting." },
+      { q: "Do I need a membership to use a sauna in Austin?", a: "Several studios offer single sessions or day passes. Gym and hotel sauna access varies; review each listing's access notes and confirm what your booking includes." },
+      { q: "Are there private saunas in Austin?", a: "Private infrared sauna studios offer reservable sessions. Use the private amenity filter and check the venue's guest limits and booking options." },
+      { q: "What should I bring to a sauna in Austin?", a: "Check the venue's instructions for swimwear, towels, footwear, and water bottles. Shared sauna and cold plunge venues generally require swimwear; private spa policies vary." },
+    ],
+  },
+
   houston: {
     intro: [
       "Houston's sauna scene reflects its role as one of the most internationally diverse cities in the US. Korean spas are the largest category, centered in the city's sizeable Korean community, followed by hotel spas, infrared studios, and a small number of traditional banyas and modern contrast bathhouses.",

@@ -9,6 +9,7 @@ export const CITY_CONFIG = {
   portland: { slug: 'portland', label: 'PDX', fullName: 'Portland', center: { lat: 45.523, lng: -122.676 } },
   denver: { slug: 'denver', label: 'DEN', fullName: 'Denver', center: { lat: 39.7392, lng: -104.9903 } },
   'park-city': { slug: 'park-city', label: 'PC / SLC', fullName: 'Park City & Salt Lake City', center: { lat: 40.7, lng: -111.68 } },
+  austin: { slug: 'austin', label: 'ATX', fullName: 'Austin', center: { lat: 30.2672, lng: -97.7431 } },
   houston: { slug: 'houston', label: 'HOU', fullName: 'Houston', center: { lat: 29.7604, lng: -95.3698 } },
   vancouver: { slug: 'vancouver', label: 'VAN', fullName: 'Vancouver', center: { lat: 49.2827, lng: -123.1207 } },
   toronto: { slug: 'toronto', label: 'TOR', fullName: 'Toronto', center: { lat: 43.6532, lng: -79.3832 } },
