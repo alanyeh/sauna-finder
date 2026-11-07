@@ -9,6 +9,7 @@ const CITIES = [
   { slug: 'chicago', short: 'CHI', label: 'Chicago' },
   { slug: 'seattle', short: 'SEA', label: 'Seattle' },
   { slug: 'la', short: 'LA', label: 'Los Angeles' },
+  { slug: 'san-diego', short: 'SD', label: 'San Diego' },
   { slug: 'minneapolis', short: 'MSP', label: 'Minneapolis' },
   { slug: 'portland', short: 'PDX', label: 'Portland' },
   { slug: 'denver', short: 'DEN', label: 'Denver' },

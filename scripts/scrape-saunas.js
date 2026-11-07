@@ -64,6 +64,14 @@ const CITY_CONFIGS = {
     ],
     zipToNeighborhood: {},
   },
+  'san-diego': {
+    city_slug: 'san-diego',
+    full_name: 'San Diego',
+    center: { lat: 32.83, lng: -117.15 },
+    radius: 65000,
+    neighborhoods: ['La Jolla', 'Kearny Mesa', 'Pacific Beach', 'Mission Valley', 'Hillcrest', 'Point Loma', 'Carlsbad', 'Encinitas', 'Oceanside', 'Chula Vista'],
+    zipToNeighborhood: {},
+  },
   la: {
     city_slug: 'la',
     full_name: 'Los Angeles',

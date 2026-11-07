@@ -1,0 +1,171 @@
+{
+  "verified_at": "2026-11-07T21:27:31.697Z",
+  "researched": 94,
+  "imported": 91,
+  "visible": 80,
+  "hidden_by_existing_chain_policy": 11,
+  "withheld": [
+    {
+      "name": "Eco Chateau — Mission Valley",
+      "id": "sd-eco-chateau-mission-valley",
+      "place_id": "ChIJK4hNNwRV2YARuI5sB5ndg8M",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Mission%20Valley&query_place_id=ChIJK4hNNwRV2YARuI5sB5ndg8M"
+    },
+    {
+      "name": "Eco Chateau — Otay Ranch",
+      "id": "sd-eco-chateau-otay-ranch",
+      "place_id": "ChIJ35xAN6pF2YARU6Cu9fQ6qYc",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Otay%20Ranch&query_place_id=ChIJ35xAN6pF2YARU6Cu9fQ6qYc"
+    },
+    {
+      "name": "The Recovery Co.",
+      "id": "sd-the-recovery-co",
+      "place_id": "ChIJ2cPJTRxX2YARlQiwHqesrF0",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Recovery%20Co.&query_place_id=ChIJ2cPJTRxX2YARlQiwHqesrF0"
+    }
+  ],
+  "photos": 50,
+  "visible_with_photos": 50,
+  "visible_without_photos": [
+    {
+      "id": 989,
+      "name": "24 Hour Fitness — Carlsbad Palomar Airport"
+    },
+    {
+      "id": 1003,
+      "name": "AquaVie Fitness + Wellness Club"
+    },
+    {
+      "id": 1004,
+      "name": "Arcane Wellness"
+    },
+    {
+      "id": 1005,
+      "name": "Beauty Kliniek Aromatherapy Day Spa"
+    },
+    {
+      "id": 1012,
+      "name": "Chuze Fitness — Chula Vista"
+    },
+    {
+      "id": 1013,
+      "name": "Chuze Fitness — Escondido"
+    },
+    {
+      "id": 1014,
+      "name": "Chuze Fitness — La Mesa"
+    },
+    {
+      "id": 1015,
+      "name": "Chuze Fitness — Mission Valley"
+    },
+    {
+      "id": 1016,
+      "name": "Chuze Fitness — National City"
+    },
+    {
+      "id": 1017,
+      "name": "Chuze Fitness — Santee"
+    },
+    {
+      "id": 1020,
+      "name": "Cove Wellness"
+    },
+    {
+      "id": 1023,
+      "name": "Drippin Detox"
+    },
+    {
+      "id": 1024,
+      "name": "EōS Fitness — Sports Arena"
+    },
+    {
+      "id": 1025,
+      "name": "Fire & Flow Hot Yoga"
+    },
+    {
+      "id": 1047,
+      "name": "Perspire Sauna Studio — 4S Ranch"
+    },
+    {
+      "id": 1048,
+      "name": "Perspire Sauna Studio — Del Mar"
+    },
+    {
+      "id": 1050,
+      "name": "Pure Infrared Sauna Studio — Bankers Hill"
+    },
+    {
+      "id": 1051,
+      "name": "Pure Infrared Sauna Studio — Solana Beach"
+    },
+    {
+      "id": 1052,
+      "name": "Pure Spa & Skin Care"
+    },
+    {
+      "id": 1053,
+      "name": "R3 Recover"
+    },
+    {
+      "id": 1056,
+      "name": "REJUV — Carlsbad"
+    },
+    {
+      "id": 1057,
+      "name": "REJUV — Encinitas"
+    },
+    {
+      "id": 1059,
+      "name": "SDBody — La Jolla"
+    },
+    {
+      "id": 1060,
+      "name": "SDBody — Mission Hills"
+    },
+    {
+      "id": 1065,
+      "name": "SWTHZ — One Paseo"
+    },
+    {
+      "id": 1067,
+      "name": "The Healing Room"
+    },
+    {
+      "id": 1069,
+      "name": "The Spa at Fairmont Grand Del Mar"
+    },
+    {
+      "id": 1070,
+      "name": "The Spa at Omni La Costa"
+    },
+    {
+      "id": 1071,
+      "name": "The Spa at Rancho Valencia"
+    },
+    {
+      "id": 1075,
+      "name": "Wellness by Pilates Collective"
+    }
+  ],
+  "validations": [
+    "91 exact operational Places matches with coordinates",
+    "No duplicate Place IDs",
+    "91 active rows read back from Supabase",
+    "80 discoverable with existing chain policy",
+    "All uploaded image URLs return valid image content",
+    "44 offline regression tests passed",
+    "335 routes prerendered locally",
+    "Desktop SD and mobile San Diego selector browser checks"
+  ],
+  "notes": "Official operator evidence and Places status checked online; no phone or on-site inspection. Photos are actual venue images and may show interiors/exteriors rather than the sauna itself. Uncertain stock and wrong-branch images were rejected."
+}

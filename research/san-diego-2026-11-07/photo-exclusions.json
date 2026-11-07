@@ -1,0 +1,163 @@
+{
+  "approved_count": 50,
+  "discoverable_count": 80,
+  "missing_count": 30,
+  "missing": [
+    {
+      "id": "sd-24-hour-fitness-carlsbad-palomar-airport",
+      "name": "24 Hour Fitness \u2014 Carlsbad Palomar Airport",
+      "reason": "Branch page gallery reused the Carlsbad club image path; withheld to avoid showing the wrong branch."
+    },
+    {
+      "id": "sd-aquavie-fitness-wellness-club",
+      "name": "AquaVie Fitness + Wellness Club",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-arcane-wellness",
+      "name": "Arcane Wellness",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-beauty-kliniek-aromatherapy-day-spa",
+      "name": "Beauty Kliniek Aromatherapy Day Spa",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-chula-vista",
+      "name": "Chuze Fitness \u2014 Chula Vista",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-escondido",
+      "name": "Chuze Fitness \u2014 Escondido",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-la-mesa",
+      "name": "Chuze Fitness \u2014 La Mesa",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-mission-valley",
+      "name": "Chuze Fitness \u2014 Mission Valley",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-national-city",
+      "name": "Chuze Fitness \u2014 National City",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-chuze-fitness-santee",
+      "name": "Chuze Fitness \u2014 Santee",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-cove-wellness",
+      "name": "Cove Wellness",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-drippin-detox",
+      "name": "Drippin Detox",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-eos-fitness-sports-arena",
+      "name": "E\u014dS Fitness \u2014 Sports Arena",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-fire-flow-hot-yoga",
+      "name": "Fire & Flow Hot Yoga",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-perspire-sauna-studio-4s-ranch",
+      "name": "Perspire Sauna Studio \u2014 4S Ranch",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-perspire-sauna-studio-del-mar",
+      "name": "Perspire Sauna Studio \u2014 Del Mar",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-pure-infrared-sauna-studio-bankers-hill",
+      "name": "Pure Infrared Sauna Studio \u2014 Bankers Hill",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-pure-infrared-sauna-studio-solana-beach",
+      "name": "Pure Infrared Sauna Studio \u2014 Solana Beach",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-pure-spa-skin-care",
+      "name": "Pure Spa & Skin Care",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-r3-recover",
+      "name": "R3 Recover",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-rejuv-carlsbad",
+      "name": "REJUV \u2014 Carlsbad",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-rejuv-encinitas",
+      "name": "REJUV \u2014 Encinitas",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-sdbody-la-jolla",
+      "name": "SDBody \u2014 La Jolla",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-sdbody-mission-hills",
+      "name": "SDBody \u2014 Mission Hills",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-swthz-one-paseo",
+      "name": "SWTHZ \u2014 One Paseo",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-the-healing-room",
+      "name": "The Healing Room",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-the-spa-at-fairmont-grand-del-mar",
+      "name": "The Spa at Fairmont Grand Del Mar",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-the-spa-at-omni-la-costa",
+      "name": "The Spa at Omni La Costa",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-the-spa-at-rancho-valencia",
+      "name": "The Spa at Rancho Valencia",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    },
+    {
+      "id": "sd-wellness-by-pilates-collective",
+      "name": "Wellness by Pilates Collective",
+      "reason": "No confidently location-specific venue image recovered; available candidates were branding, stock/marketing imagery, or source page blocked."
+    }
+  ],
+  "notes": [
+    "Google Places photo metadata unavailable in search and details response.",
+    "All approved images visually reviewed, sourced from official websites, credited to venue.",
+    "Exterior/gym/interior images may illustrate venue rather than sauna itself.",
+    "Closed venues excluded; 11 records hidden by existing site policy not prioritized."
+  ]
+}

@@ -21,8 +21,8 @@ index — while staying a fast SPA for real users.
 | Auth      | Supabase Auth (email/password + Google OAuth)           |
 | Hosting   | Vercel                                                  |
 
-Cities are defined in `src/lib/cities.js` (`CITY_CONFIG`) — currently 13 areas: NYC, SF,
-Chicago, Seattle, LA, Minneapolis, Portland, Denver, Park City & Salt Lake City,
+Cities are defined in `src/lib/cities.js` (`CITY_CONFIG`) — currently 14 areas: NYC, SF,
+Chicago, Seattle, LA, San Diego, Minneapolis, Portland, Denver, Park City & Salt Lake City,
 Austin, Houston, Vancouver, Toronto.
 
 Park City and Salt Lake City share `city_slug: park-city` and `/city/park-city`.

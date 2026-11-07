@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Eco Chateau — Mission Valley",
+    "id": "sd-eco-chateau-mission-valley",
+    "place_id": "ChIJK4hNNwRV2YARuI5sB5ndg8M",
+    "status": "CLOSED_PERMANENTLY",
+    "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+    "checked_at": "2026-11-07",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Mission%20Valley&query_place_id=ChIJK4hNNwRV2YARuI5sB5ndg8M"
+  },
+  {
+    "name": "Eco Chateau — Otay Ranch",
+    "id": "sd-eco-chateau-otay-ranch",
+    "place_id": "ChIJ35xAN6pF2YARU6Cu9fQ6qYc",
+    "status": "CLOSED_PERMANENTLY",
+    "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+    "checked_at": "2026-11-07",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Otay%20Ranch&query_place_id=ChIJ35xAN6pF2YARU6Cu9fQ6qYc"
+  },
+  {
+    "name": "The Recovery Co.",
+    "id": "sd-the-recovery-co",
+    "place_id": "ChIJ2cPJTRxX2YARlQiwHqesrF0",
+    "status": "CLOSED_PERMANENTLY",
+    "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+    "checked_at": "2026-11-07",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Recovery%20Co.&query_place_id=ChIJ2cPJTRxX2YARlQiwHqesrF0"
+  }
+]

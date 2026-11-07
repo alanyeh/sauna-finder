@@ -1,0 +1,2959 @@
+{
+  "checked_at": "2026-11-07",
+  "rows": [
+    {
+      "name": "24 Hour Fitness — Balboa",
+      "address": "Vista Balboa Center, 7715 Balboa Ave, San Diego, CA 92111, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJBeryV5L_24ARofOLrbdars8",
+      "lat": 32.8205947,
+      "lng": -117.15823359999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-986-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/balboa-ultra-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/balboa-ultra-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/balboa-ultra-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-balboa. ",
+      "rating": 3.8,
+      "rating_count": 1242,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 986
+    },
+    {
+      "name": "24 Hour Fitness — Bonita",
+      "address": "870 Amena Ct, Chula Vista, CA 91910, USA",
+      "neighborhood": "Chula Vista",
+      "place_id": "ChIJP3OlPbpP2YARH9HdkTmjk9E",
+      "lat": 32.6367416,
+      "lng": -117.019165,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Chula Vista.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-987-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/bonita-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/bonita-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/bonita-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-bonita. ",
+      "rating": 4.3,
+      "rating_count": 948,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 987
+    },
+    {
+      "name": "24 Hour Fitness — Carlsbad",
+      "address": "2501 El Camino Real, Carlsbad, CA 92008, USA",
+      "neighborhood": "Carlsbad",
+      "place_id": "ChIJb-AdgjmC4xQRTI1IKO_DKLk",
+      "lat": 33.1788378,
+      "lng": -117.32887559999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Carlsbad.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-988-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-carlsbad. ",
+      "rating": 3.9,
+      "rating_count": 445,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 988
+    },
+    {
+      "name": "24 Hour Fitness — Carlsbad Palomar Airport",
+      "address": "1265 Laurel Tree Ln Suite 100, Carlsbad, CA 92011, USA",
+      "neighborhood": "Carlsbad",
+      "place_id": "ChIJtT7EXxZz3IARFq8SMEEGH5o",
+      "lat": 33.1229236,
+      "lng": -117.2987593,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Carlsbad.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-palomar-airport-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-palomar-airport-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/carlsbad-ca/carlsbad-palomar-airport-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-carlsbad-palomar-airport. ",
+      "rating": 4.1,
+      "rating_count": 533,
+      "hours": "Monday: 5:00 AM – 12:00 AM\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: 12:00 AM – 9:00 PM\nSaturday: 5:00 AM – 9:00 PM\nSunday: 5:00 AM – 9:00 PM",
+      "id": 989
+    },
+    {
+      "name": "24 Hour Fitness — Carmel Mountain Ranch",
+      "address": "14331 Penasquitos Dr, San Diego, CA 92129, USA",
+      "neighborhood": "Carmel Mountain Ranch",
+      "place_id": "ChIJrc8uSAL524ARr5aBCEw5LJk",
+      "lat": 32.9780124,
+      "lng": -117.08839760000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Carmel Mountain Ranch.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-990-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/carmel-mountain-ranch-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/carmel-mountain-ranch-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/carmel-mountain-ranch-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-carmel-mountain-ranch. ",
+      "rating": 3.8,
+      "rating_count": 419,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 990
+    },
+    {
+      "name": "24 Hour Fitness — Chula Vista",
+      "address": "1660 Broadway, Chula Vista, CA 91911, USA",
+      "neighborhood": "Chula Vista",
+      "place_id": "ChIJhx77Hp1O2YARWZOtkuBli90",
+      "lat": 32.596393299999995,
+      "lng": -117.0763844,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Chula Vista.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-991-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/chula-vista-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/chula-vista-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/chula-vista-ca/chula-vista-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-chula-vista. ",
+      "rating": 4.3,
+      "rating_count": 859,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 8:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 991
+    },
+    {
+      "name": "24 Hour Fitness — College Grove",
+      "address": "6348 College Grove Way Ste 109, San Diego, CA 92115, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJGf7KoUpR2YARPphC6UegNuc",
+      "lat": 32.738163,
+      "lng": -117.05596299999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-992-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/college-grove-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/college-grove-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/college-grove-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-college-grove. ",
+      "rating": 4,
+      "rating_count": 915,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 992
+    },
+    {
+      "name": "24 Hour Fitness — El Cajon Main St",
+      "address": "198 W Main St, El Cajon, CA 92020, USA",
+      "neighborhood": "El Cajon",
+      "place_id": "ChIJnTqyjC1Y2YARB1c1ybQMX1k",
+      "lat": 32.7963173,
+      "lng": -116.96421329999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in El Cajon.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-993-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/el-cajon-ca/el-cajon-main-st-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/el-cajon-ca/el-cajon-main-st-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/el-cajon-ca/el-cajon-main-st-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-el-cajon-main-st. ",
+      "rating": 3.6,
+      "rating_count": 731,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 6:00 AM – 9:00 PM\nSunday: 6:00 AM – 9:00 PM",
+      "id": 993
+    },
+    {
+      "name": "24 Hour Fitness — Escondido La Terraza",
+      "address": "400 La Terraza Blvd, Escondido, CA 92025, USA",
+      "neighborhood": "Escondido",
+      "place_id": "ChIJCaDXmo7024AR2nFRmQilegw",
+      "lat": 33.113693,
+      "lng": -117.09641599999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Escondido.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-994-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/escondido-ca/escondido-la-terraza-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/escondido-ca/escondido-la-terraza-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/escondido-ca/escondido-la-terraza-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-escondido-la-terraza. ",
+      "rating": 4.3,
+      "rating_count": 1512,
+      "hours": "Monday: 5:00 AM – 12:00 AM\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: 12:00 AM – 9:00 PM\nSaturday: 5:00 AM – 9:00 PM\nSunday: 5:00 AM – 9:00 PM",
+      "id": 994
+    },
+    {
+      "name": "24 Hour Fitness — Imperial Marketplace",
+      "address": "4345 Imperial Ave, San Diego, CA 92113, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJybh8cb9T2YARYRPVtFxBmL0",
+      "lat": 32.703415,
+      "lng": -117.103861,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-995-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/imperial-marketplace-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/imperial-marketplace-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/imperial-marketplace-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-imperial-marketplace. ",
+      "rating": 3.9,
+      "rating_count": 1170,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 995
+    },
+    {
+      "name": "24 Hour Fitness — Mission Valley Center",
+      "address": "1640 Camino Del Rio N Ste 315, San Diego, CA 92108, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJs2n-qRlV2YARDmG-h8WkVgU",
+      "lat": 32.7685623,
+      "lng": -117.14771499999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-996-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/mission-valley-center-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/mission-valley-center-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/mission-valley-center-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-mission-valley-center. ",
+      "rating": 4,
+      "rating_count": 534,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 996
+    },
+    {
+      "name": "24 Hour Fitness — Navajo",
+      "address": "8876 Navajo Rd, San Diego, CA 92119, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJqSMKoDJX2YARQybyhFDDHM8",
+      "lat": 32.804041999999995,
+      "lng": -117.0064884,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-997-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/navajo-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/navajo-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/navajo-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-navajo. ",
+      "rating": 3.7,
+      "rating_count": 815,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 997
+    },
+    {
+      "name": "24 Hour Fitness — Oceanside",
+      "address": "4655 Frazee Rd, Oceanside, CA 92057, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJWxtAIe9w3IAREMR2UPMdyTU",
+      "lat": 33.236960599999996,
+      "lng": -117.297829,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Oceanside.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-998-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/oceanside-ca/oceanside-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/oceanside-ca/oceanside-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/oceanside-ca/oceanside-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-oceanside. ",
+      "rating": 4.1,
+      "rating_count": 807,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 998
+    },
+    {
+      "name": "24 Hour Fitness — Rancho Penasquitos",
+      "address": "10025 Carmel Mountain Rd, San Diego, CA 92129, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJwx2bvcb524ARUaOyVQstaVQ",
+      "lat": 32.9599082,
+      "lng": -117.11190839999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-999-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/rancho-penasquitos-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/rancho-penasquitos-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/rancho-penasquitos-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-rancho-penasquitos. ",
+      "rating": 4.1,
+      "rating_count": 709,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 999
+    },
+    {
+      "name": "24 Hour Fitness — Santee",
+      "address": "9906 Mission Gorge Rd, Santee, CA 92071, USA",
+      "neighborhood": "Santee",
+      "place_id": "ChIJnyif6wBY2YARk1Fgo9tYoqE",
+      "lat": 32.841315099999996,
+      "lng": -116.97947730000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Santee.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1000-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/santee-ca/santee-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/santee-ca/santee-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/santee-ca/santee-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-santee. ",
+      "rating": 4,
+      "rating_count": 433,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 6:00 AM – 9:00 PM\nSunday: 6:00 AM – 9:00 PM",
+      "id": 1000
+    },
+    {
+      "name": "24 Hour Fitness — UTC",
+      "address": "4425 La Jolla Village Dr, San Diego, CA 92122, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJz1ztmi0H3IARLfm1FAUQ-QM",
+      "lat": 32.871169099999996,
+      "lng": -117.2118487,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in San Diego.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1001-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.24hourfitness.com/gyms/san-diego-ca/utc-super-sport",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/utc-super-sport",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.24hourfitness.com/gyms/san-diego-ca/utc-super-sport",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-24-hour-fitness-utc. ",
+      "rating": 3.7,
+      "rating_count": 884,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 1001
+    },
+    {
+      "name": "Aqua Day Spa",
+      "address": "4637 Convoy St, San Diego, CA 92111, USA",
+      "neighborhood": "Kearny Mesa",
+      "place_id": "ChIJ15C-G5T_24ARjS4_rCcbPVE",
+      "lat": 32.8249989,
+      "lng": -117.1542784,
+      "city_slug": "san-diego",
+      "types": [
+        "Korean Spa"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room",
+        "cold_plunge"
+      ],
+      "description": "Korean spa with dry sauna, steam room, cold plunge in Kearny Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1002-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.aquadayspaconvoy.com/about-us",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://www.aquadayspaconvoy.com/about-us",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.aquadayspaconvoy.com/about-us",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Public admission includes sauna and bathing facilities. Gender-separated nude bathing; swimsuits are not permitted in the wet areas.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-aqua-day-spa. ",
+      "rating": 4.3,
+      "rating_count": 395,
+      "hours": "Monday: 8:30 AM – 9:00 PM\nTuesday: 8:30 AM – 9:00 PM\nWednesday: 8:30 AM – 9:00 PM\nThursday: 8:30 AM – 9:00 PM\nFriday: 8:30 AM – 9:00 PM\nSaturday: 8:30 AM – 9:00 PM\nSunday: 8:30 AM – 9:00 PM",
+      "id": 1002
+    },
+    {
+      "name": "AquaVie Fitness + Wellness Club",
+      "address": "234 Broadway, San Diego, CA 92101, USA",
+      "neighborhood": "Downtown",
+      "place_id": "ChIJxXj3cahU2YARNBsbmwXUd_I",
+      "lat": 32.715892100000005,
+      "lng": -117.16249229999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room",
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with dry and infrared saunas, steam room in Downtown.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.aquaviewellness.com/rooftop/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://www.aquaviewellness.com/memberships/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.aquaviewellness.com/rooftop/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Limited public full-facility day passes are available at the front desk. Confirm availability and any separate recovery-lounge reservations.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-aquavie-fitness-wellness-club. ",
+      "rating": 4.5,
+      "rating_count": 133,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1003
+    },
+    {
+      "name": "Arcane Wellness",
+      "address": "401 W A St Ste 100, San Diego, CA 92101, USA",
+      "neighborhood": "Little Italy",
+      "place_id": "ChIJN4Yn_kFV2YARKAWe7d685nQ",
+      "lat": 32.718348399999996,
+      "lng": -117.16700689999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "dry_sauna"
+      ],
+      "description": "Recovery studio with dry and infrared saunas in Little Italy.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.arcanewellness.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.arcanewellness.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.arcanewellness.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-arcane-wellness. ",
+      "rating": 5,
+      "rating_count": 10,
+      "hours": "Monday: 8:00 AM – 7:00 PM\nTuesday: 8:00 AM – 7:00 PM\nWednesday: 8:00 AM – 7:00 PM\nThursday: 8:00 AM – 7:00 PM\nFriday: 8:00 AM – 4:00 PM\nSaturday: 9:00 AM – 1:00 PM\nSunday: 9:00 AM – 1:00 PM",
+      "id": 1004
+    },
+    {
+      "name": "Beauty Kliniek Aromatherapy Day Spa",
+      "address": "3282 Governor Dr, San Diego, CA 92122, USA",
+      "neighborhood": "University City",
+      "place_id": "ChIJyR_ahd4A3IARmQj0QGQ72po",
+      "lat": 32.852163,
+      "lng": -117.2149898,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Day spa with infrared sauna in University City.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://beautykliniek.com/day-spa-services-san-diego/day-spa-escapes-san-diego/",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://beautykliniek.com/beauty-kliniek/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://beautykliniek.com/day-spa-services-san-diego/day-spa-escapes-san-diego/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve a qualifying spa treatment or package that includes sauna access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-beauty-kliniek-aromatherapy-day-spa. ",
+      "rating": 4.7,
+      "rating_count": 164,
+      "hours": "Monday: Closed\nTuesday: 9:00 AM – 7:00 PM\nWednesday: 9:00 AM – 7:00 PM\nThursday: 9:00 AM – 7:00 PM\nFriday: 9:00 AM – 6:00 PM\nSaturday: 8:00 AM – 6:00 PM\nSunday: 9:00 AM – 5:00 PM",
+      "id": 1005
+    },
+    {
+      "name": "Bella Longevity Spa",
+      "address": "1763 S Oceanside Blvd Ste B, Oceanside, CA 92054, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJ-7wAjpVx3IARUZglscVdlpA",
+      "lat": 33.190229099999996,
+      "lng": -117.3592949,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in Oceanside.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1006-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://tour.bellalongevityspa.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://bellalongevityspa.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://tour.bellalongevityspa.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-bella-longevity-spa. ",
+      "rating": 5,
+      "rating_count": 48,
+      "hours": "Monday: 7:00 AM – 7:00 PM\nTuesday: 7:00 AM – 7:00 PM\nWednesday: 7:00 AM – 7:00 PM\nThursday: 7:00 AM – 7:00 PM\nFriday: 7:00 AM – 7:00 PM\nSaturday: 9:00 AM – 3:00 PM\nSunday: Closed",
+      "id": 1006
+    },
+    {
+      "name": "Body Beautiful Spa",
+      "address": "4295 Gesner St #2B, San Diego, CA 92117, USA",
+      "neighborhood": "Bay Park",
+      "place_id": "ChIJEbI_UlQB3IARG__riJd2X8c",
+      "lat": 32.7912162,
+      "lng": -117.2035564,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Day spa with infrared sauna in Bay Park.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1007-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.bodybspasd.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.bodybspasd.com/sauna-therapy/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.bodybspasd.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-body-beautiful-spa. ",
+      "rating": 5,
+      "rating_count": 215,
+      "hours": "Monday: Closed\nTuesday: 10:00 AM – 5:00 PM\nWednesday: Closed\nThursday: 10:00 AM – 5:00 PM\nFriday: 10:00 AM – 5:00 PM\nSaturday: 10:00 AM – 3:00 PM\nSunday: Closed",
+      "id": 1007
+    },
+    {
+      "name": "Breathe Degrees — Carlsbad",
+      "address": "6965 El Camino Real Unit 107, Carlsbad, CA 92009, USA",
+      "neighborhood": "Carlsbad",
+      "place_id": "ChIJJakEX3wL3IARHeEVEYnMDWY",
+      "lat": 33.1042458,
+      "lng": -117.2680905,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in Carlsbad.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1008-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://breathedegrees.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://breathedegrees.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://breathedegrees.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book open sauna and plunge time or a class that includes access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-breathe-degrees-carlsbad. ",
+      "rating": 4.9,
+      "rating_count": 429,
+      "hours": "Monday: 5:30 AM – 9:00 PM\nTuesday: 5:30 AM – 9:00 PM\nWednesday: 5:30 AM – 9:00 PM\nThursday: 5:30 AM – 9:00 PM\nFriday: 5:30 AM – 9:00 PM\nSaturday: 7:00 AM – 8:00 PM\nSunday: 7:00 AM – 9:00 PM",
+      "id": 1008
+    },
+    {
+      "name": "Breathe Degrees — Liberty Station",
+      "address": "2560 Laning Rd Ste 103, San Diego, CA 92106, USA",
+      "neighborhood": "Liberty Station",
+      "place_id": "ChIJ9RQzqn-r3oARNTpmWxEdduc",
+      "lat": 32.728622099999995,
+      "lng": -117.21789709999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in Liberty Station.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1009-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://breathedegrees.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://breathedegrees.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://breathedegrees.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book open sauna and plunge time or a class that includes access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-breathe-degrees-liberty-station. ",
+      "rating": 5,
+      "rating_count": 124,
+      "hours": "Monday: 6:00 AM – 9:00 PM\nTuesday: 6:00 AM – 9:00 PM\nWednesday: 6:00 AM – 9:00 PM\nThursday: 6:00 AM – 9:00 PM\nFriday: 6:00 AM – 9:00 PM\nSaturday: 7:00 AM – 8:00 PM\nSunday: 7:00 AM – 9:00 PM",
+      "id": 1009
+    },
+    {
+      "name": "Cascade Spa",
+      "address": "3838 Fifth Ave, San Diego, CA 92103, USA",
+      "neighborhood": "Hillcrest",
+      "place_id": "ChIJhb2gLMVU2YARtqETQbT3fGo",
+      "lat": 32.747644799999996,
+      "lng": -117.16057049999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room"
+      ],
+      "description": "Day spa with dry sauna, steam room in Hillcrest.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1010-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.cascadethespa.com/packages",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://www.cascadethespa.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.cascadethespa.com/packages",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve a qualifying spa treatment or package that includes sauna access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-cascade-spa. ",
+      "rating": 4.3,
+      "rating_count": 433,
+      "hours": "Monday: 10:00 AM – 10:00 PM\nTuesday: 10:00 AM – 10:00 PM\nWednesday: 10:00 AM – 10:00 PM\nThursday: 10:00 AM – 10:00 PM\nFriday: 9:00 AM – 10:00 PM\nSaturday: 9:00 AM – 10:00 PM\nSunday: 9:00 AM – 10:00 PM",
+      "id": 1010
+    },
+    {
+      "name": "Catalyst — Point Loma Recovery Lounge",
+      "address": "4490 W Point Loma Blvd, San Diego, CA 92107, USA",
+      "neighborhood": "Point Loma",
+      "place_id": "ChIJ5_B06Qir3oARuZAQSm_PAMQ",
+      "lat": 32.753660499999995,
+      "lng": -117.23451100000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with dry sauna, cold plunge in Point Loma.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1011-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book an outdoor recovery-lounge session with traditional sauna and cold plunge.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-catalyst-point-loma-recovery-lounge. ",
+      "rating": 5,
+      "rating_count": 141,
+      "hours": "Monday: 7:00 AM – 7:30 PM\nTuesday: 7:00 AM – 7:30 PM\nWednesday: 7:00 AM – 7:30 PM\nThursday: 7:00 AM – 7:30 PM\nFriday: 7:00 AM – 6:30 PM\nSaturday: Closed\nSunday: Closed",
+      "id": 1011
+    },
+    {
+      "name": "Chuze Fitness — Chula Vista",
+      "address": "1030 3rd Ave, Chula Vista, CA 91911, USA",
+      "neighborhood": "Chula Vista",
+      "place_id": "ChIJG9vxhntO2YARYk1euSApY8Q",
+      "lat": 32.615520499999995,
+      "lng": -117.0715036,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna"
+      ],
+      "description": "Fitness club with dry sauna in Chula Vista.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/chula-vista/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/chula-vista/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/chula-vista/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-chula-vista. ",
+      "rating": 4.4,
+      "rating_count": 1212,
+      "hours": "Monday: 4:00 AM – 12:00 AM\nTuesday: 4:00 AM – 12:00 AM\nWednesday: 4:00 AM – 12:00 AM\nThursday: 4:00 AM – 12:00 AM\nFriday: 4:00 AM – 10:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1012
+    },
+    {
+      "name": "Chuze Fitness — Escondido",
+      "address": "409 W Felicita Ave, Escondido, CA 92025, USA",
+      "neighborhood": "Escondido",
+      "place_id": "ChIJ0a7flobz24ARkQGmQw450vU",
+      "lat": 33.1021897,
+      "lng": -117.07361050000002,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with infrared sauna in Escondido.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/escondido/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/escondido/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/escondido/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-escondido. ",
+      "rating": 4.5,
+      "rating_count": 397,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 8:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1013
+    },
+    {
+      "name": "Chuze Fitness — La Mesa",
+      "address": "5500 Grossmont Center Dr, La Mesa, CA 91942, USA",
+      "neighborhood": "La Mesa",
+      "place_id": "ChIJDz1qQhJX2YARMhCMJLL-skg",
+      "lat": 32.7764938,
+      "lng": -117.01141439999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with infrared sauna in La Mesa.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/la-mesa/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/la-mesa/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/la-mesa/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-la-mesa. ",
+      "rating": 4.4,
+      "rating_count": 637,
+      "hours": "Monday: 4:00 AM – 11:00 PM\nTuesday: 4:00 AM – 11:00 PM\nWednesday: 4:00 AM – 11:00 PM\nThursday: 4:00 AM – 11:00 PM\nFriday: 4:00 AM – 10:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1014
+    },
+    {
+      "name": "Chuze Fitness — Mission Valley",
+      "address": "1233 Camino del Rio S, San Diego, CA 92108, USA",
+      "neighborhood": "San Diego",
+      "place_id": "ChIJlXEHySNV2YAR2J0Wr-brZN8",
+      "lat": 32.7648237,
+      "lng": -117.15240240000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "dry_sauna"
+      ],
+      "description": "Fitness club with dry and infrared saunas in San Diego.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/san-diego-mission-valley/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/san-diego-mission-valley/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/san-diego-mission-valley/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-mission-valley. ",
+      "rating": 4.4,
+      "rating_count": 940,
+      "hours": "Monday: 5:00 AM – 12:00 AM\nTuesday: 5:00 AM – 12:00 AM\nWednesday: 5:00 AM – 12:00 AM\nThursday: 5:00 AM – 12:00 AM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1015
+    },
+    {
+      "name": "Chuze Fitness — National City",
+      "address": "3007 Highland Ave #102, National City, CA 91950, USA",
+      "neighborhood": "National City",
+      "place_id": "ChIJYQfBxBpS2YARIdzzxZQiFWk",
+      "lat": 32.6591186,
+      "lng": -117.08893580000002,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with infrared sauna in National City.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/national-city/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/national-city/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/national-city/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-national-city. ",
+      "rating": 4.5,
+      "rating_count": 601,
+      "hours": "Monday: 4:00 AM – 11:00 PM\nTuesday: 4:00 AM – 11:00 PM\nWednesday: 4:00 AM – 11:00 PM\nThursday: 4:00 AM – 11:00 PM\nFriday: 4:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1016
+    },
+    {
+      "name": "Chuze Fitness — Santee",
+      "address": "215 Town Center Pkwy, Santee, CA 92071, USA",
+      "neighborhood": "Santee",
+      "place_id": "ChIJ9SeU3FT924AR_8aovGVIo-0",
+      "lat": 32.8420851,
+      "lng": -116.98674319999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna"
+      ],
+      "description": "Fitness club with dry sauna in Santee.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://chuzefitness.com/gym-locations/ca/santee/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://chuzefitness.com/gym-locations/ca/santee/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://chuzefitness.com/gym-locations/ca/santee/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-chuze-fitness-santee. ",
+      "rating": 4.6,
+      "rating_count": 651,
+      "hours": "Monday: 4:00 AM – 10:00 PM\nTuesday: 4:00 AM – 10:00 PM\nWednesday: 4:00 AM – 10:00 PM\nThursday: 4:00 AM – 10:00 PM\nFriday: 4:00 AM – 9:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1017
+    },
+    {
+      "name": "Club House Enc",
+      "address": "449 S Coast Hwy 101, Encinitas, CA 92024, USA",
+      "neighborhood": "Encinitas",
+      "place_id": "ChIJQy_uqLEN3IARni3QdPazIf0",
+      "lat": 33.0472107,
+      "lng": -117.2936504,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in Encinitas.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1018-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.clubhouse-enc.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.clubhouse-enc.com/first-time-guide",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.clubhouse-enc.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-club-house-enc. ",
+      "rating": 5,
+      "rating_count": 11,
+      "hours": "Monday: 8:00 AM – 7:00 PM\nTuesday: 8:00 AM – 7:00 PM\nWednesday: 8:00 AM – 7:00 PM\nThursday: 8:00 AM – 7:00 PM\nFriday: 8:00 AM – 7:00 PM\nSaturday: 8:00 AM – 3:00 PM\nSunday: 8:00 AM – 3:00 PM",
+      "id": 1018
+    },
+    {
+      "name": "Conscious Body Recovery — San Diego",
+      "address": "4030b Sports Arena Blvd, San Diego, CA 92110, USA",
+      "neighborhood": "Midway",
+      "place_id": "ChIJa9n42fKr3oARnXob2nWF3fM",
+      "lat": 32.7561283,
+      "lng": -117.2209905,
+      "city_slug": "san-diego",
+      "types": [
+        "Private Sauna Studio"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Private wellness studio with infrared sauna, cold plunge in Midway.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1019-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.consciousbodyrecovery.com/contact",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.consciousbodyrecovery.com/contact",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.consciousbodyrecovery.com/contact",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Private sauna, cold plunge and shower suite inside Self Made Training Facility. Advance booking and self check-in required.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-conscious-body-recovery-san-diego. ",
+      "rating": 4.9,
+      "rating_count": 166,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 9:00 PM\nSunday: 7:00 AM – 9:00 PM",
+      "id": 1019
+    },
+    {
+      "name": "Cove Wellness",
+      "address": "7946 Ivanhoe Ave #202, La Jolla, CA 92037, USA",
+      "neighborhood": "La Jolla",
+      "place_id": "ChIJ3fChY_wD3IARquLdBO_ytKA",
+      "lat": 32.8481194,
+      "lng": -117.27273500000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Day spa with infrared sauna in La Jolla.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.covewellness.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.covewellness.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.covewellness.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-cove-wellness. ",
+      "rating": 4.9,
+      "rating_count": 183,
+      "hours": "Monday: Closed\nTuesday: 9:00 AM – 6:00 PM\nWednesday: 9:00 AM – 6:00 PM\nThursday: 9:00 AM – 6:00 PM\nFriday: 9:00 AM – 6:00 PM\nSaturday: 9:00 AM – 6:00 PM\nSunday: Closed",
+      "id": 1020
+    },
+    {
+      "name": "Crunch Fitness — Carmel Valley",
+      "address": "6025 Village Way, San Diego, CA 92130, USA",
+      "neighborhood": "Carmel Valley",
+      "place_id": "ChIJiQDkvb0H3IARbxZ9nosIe9w",
+      "lat": 32.9624125,
+      "lng": -117.1888898,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Carmel Valley.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.crunch.com/locations/carmel-valley",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.crunch.com/locations/carmel-valley",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.crunch.com/locations/carmel-valley",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-crunch-fitness-carmel-valley. ",
+      "rating": 4.4,
+      "rating_count": 643,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1021
+    },
+    {
+      "name": "Crunch Fitness — El Cajon Jamacha",
+      "address": "522 Jamacha Rd, El Cajon, CA 92019, USA",
+      "neighborhood": "El Cajon",
+      "place_id": "ChIJHUrbtgxZ2YAR16x5X9u1dXk",
+      "lat": 32.7894684,
+      "lng": -116.93126649999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in El Cajon.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.crunch.com/locations/el-cajon-jamacha",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.crunch.com/locations/el-cajon-jamacha",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.crunch.com/locations/el-cajon-jamacha",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-crunch-fitness-el-cajon-jamacha. ",
+      "rating": 3.9,
+      "rating_count": 742,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1022
+    },
+    {
+      "name": "Drippin Detox",
+      "address": "8697 La Mesa Blvd Ste d, La Mesa, CA 91942, USA",
+      "neighborhood": "La Mesa",
+      "place_id": "ChIJJXXfiKJX2YAR4l0zzO0alRU",
+      "lat": 32.769017,
+      "lng": -117.009615,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Wellness center with infrared sauna in La Mesa.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.drippindetox.com/wellness-day-pass",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.drippindetox.com/wellness-drop-in-services",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.drippindetox.com/wellness-day-pass",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve a private 30- or 45-minute infrared sauna session. Multi-service day passes are also offered; online requests need confirmation.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-drippin-detox. ",
+      "rating": 5,
+      "rating_count": 125,
+      "hours": "Monday: 8:00 AM – 7:00 PM\nTuesday: 8:00 AM – 6:00 PM\nWednesday: 8:00 AM – 6:00 PM\nThursday: 8:00 AM – 6:00 PM\nFriday: 8:00 AM – 7:00 PM\nSaturday: 8:00 AM – 3:00 PM\nSunday: 9:00 AM – 3:00 PM",
+      "id": 1023
+    },
+    {
+      "name": "EōS Fitness — Sports Arena",
+      "address": "3156 Sports Arena Blvd, San Diego, CA 92110, USA",
+      "neighborhood": "Midway",
+      "place_id": "ChIJ35idjeSq3oARlVBsAbFbXuQ",
+      "lat": 32.753323099999996,
+      "lng": -117.2065513,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Midway.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.eosfitness.com/gym/sandiego",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.eosfitness.com/gym/sandiego",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.eosfitness.com/gym/sandiego",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-eos-fitness-sports-arena. ",
+      "rating": 4,
+      "rating_count": 2014,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 1024
+    },
+    {
+      "name": "Fire & Flow Hot Yoga",
+      "address": "3617 Ocean Ranch Blvd Ste 103, Oceanside, CA 92056, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJKwFt4EBx3IARXF1LcgrzD0c",
+      "lat": 33.2096758,
+      "lng": -117.31210969999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in Oceanside.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.fireandflowhotyoga.com/sauna-cold-plunge",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.fireandflowhotyoga.com/sauna-cold-plunge",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.fireandflowhotyoga.com/sauna-cold-plunge",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-fire-flow-hot-yoga. ",
+      "rating": 5,
+      "rating_count": 132,
+      "hours": "Monday: 5:45 AM – 7:00 PM\nTuesday: 5:45 AM – 7:00 PM\nWednesday: 5:45 AM – 7:00 PM\nThursday: 5:45 AM – 7:00 PM\nFriday: 5:45 AM – 7:00 PM\nSaturday: 7:30 AM – 12:30 PM\nSunday: 7:30 AM – 2:00 PM",
+      "id": 1025
+    },
+    {
+      "name": "Fit — East Village",
+      "address": "350 Tenth Ave, San Diego, CA 92101, USA",
+      "neighborhood": "East Village",
+      "place_id": "ChIJLd3sd1xT2YARof5bsg0HgB4",
+      "lat": 32.708940399999996,
+      "lng": -117.1557239,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in East Village.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1026-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-east-village-san-diego/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-east-village-san-diego/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-east-village-san-diego/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-fit-east-village. ",
+      "rating": 4.3,
+      "rating_count": 261,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1026
+    },
+    {
+      "name": "Fit — Little Italy",
+      "address": "405 W Ash St, San Diego, CA 92101, USA",
+      "neighborhood": "Little Italy",
+      "place_id": "ChIJqzl6sc5V2YARS-7VaE2PUBU",
+      "lat": 32.71970170000001,
+      "lng": -117.1668368,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Little Italy.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1027-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-little-italy-san-diego/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-little-italy-san-diego/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-little-italy-san-diego/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-fit-little-italy. ",
+      "rating": 4.5,
+      "rating_count": 192,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1027
+    },
+    {
+      "name": "Fit — Mission Beach",
+      "address": "3115, Ocean Front Walk, San Diego, CA 92109, USA",
+      "neighborhood": "Mission Beach",
+      "place_id": "ChIJi9VQozir3oAR_0tzp6aglaE",
+      "lat": 32.770311299999996,
+      "lng": -117.25235099999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in Mission Beach.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1028-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-mission-beach/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-mission-beach/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.fitclubs.com/luxury-wellness-gym-san-diego/fitness-welllness-gym-mission-beach/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership includes locker-room sauna and steam facilities. Fit gym access is separate from public admission to The Plunge at the same complex.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-fit-mission-beach. Shares Belmont Park complex; separate access product.",
+      "rating": 4.3,
+      "rating_count": 288,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1028
+    },
+    {
+      "name": "Hive Training Club",
+      "address": "625 Broadway Ste 110, San Diego, CA 92101, USA",
+      "neighborhood": "Downtown",
+      "place_id": "ChIJQVK0bgBV2YARbNywTiHRrgQ",
+      "lat": 32.715530199999996,
+      "lng": -117.15896550000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Fitness club with infrared sauna, cold plunge in Downtown.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1029-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://hivetrainingclub.com/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://hivetrainingclub.com/facility/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://hivetrainingclub.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required; add the recovery-lounge option for sauna and cold plunge access. Membership availability is limited.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-hive-training-club. ",
+      "rating": 4.9,
+      "rating_count": 93,
+      "hours": "Monday: 6:00 AM – 9:00 PM\nTuesday: 6:00 AM – 9:00 PM\nWednesday: 6:00 AM – 9:00 PM\nThursday: 6:00 AM – 9:00 PM\nFriday: 6:00 AM – 8:00 PM\nSaturday: 7:00 AM – 2:00 PM\nSunday: 8:00 AM – 2:00 PM",
+      "id": 1029
+    },
+    {
+      "name": "HOT HAVEN",
+      "address": "521 Grape Street, San Diego, CA 92101, USA",
+      "neighborhood": "Bankers Hill",
+      "place_id": "ChIJWebbge1V2YAR5GpWMcxv8aU",
+      "lat": 32.725985900000005,
+      "lng": -117.15984499999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Infrared Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Sauna studio with infrared sauna in Bankers Hill.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1030-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.myhothaven.com/prices",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.myhothaven.com/services",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.myhothaven.com/prices",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve the sit-up infrared sauna cabin. Sauna wraps are a separate service.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-hot-haven. ",
+      "rating": 4.9,
+      "rating_count": 41,
+      "hours": "Monday: 10:00 AM – 7:30 PM\nTuesday: 10:00 AM – 7:30 PM\nWednesday: 10:00 AM – 7:30 PM\nThursday: 10:00 AM – 7:30 PM\nFriday: 10:00 AM – 5:00 PM\nSaturday: 9:30 AM – 5:00 PM\nSunday: 9:30 AM – 5:00 PM",
+      "id": 1030
+    },
+    {
+      "name": "Karma Wellness",
+      "address": "3969 First Ave., San Diego, CA 92103, USA",
+      "neighborhood": "Hillcrest",
+      "place_id": "ChIJwUL-wtBU2YARgF3EmJJEepo",
+      "lat": 32.749544,
+      "lng": -117.1635742,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "steam_room",
+        "cold_plunge"
+      ],
+      "description": "Day spa with sauna, steam room, cold plunge in Hillcrest.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1031-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.karma-wellness.com/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://www.karma-wellness.com/faq",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.karma-wellness.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Public day or session passes are available. Confirm that your chosen pass includes sauna access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-karma-wellness. ",
+      "rating": 4.6,
+      "rating_count": 837,
+      "hours": "Monday: 10:00 AM – 9:30 PM\nTuesday: 10:00 AM – 9:30 PM\nWednesday: 10:00 AM – 9:30 PM\nThursday: 10:00 AM – 9:30 PM\nFriday: 10:00 AM – 9:30 PM\nSaturday: 10:00 AM – 9:30 PM\nSunday: 10:00 AM – 9:30 PM",
+      "id": 1031
+    },
+    {
+      "name": "LA Fitness — 4S Ranch",
+      "address": "16913 Dove Canyon Rd, San Diego, CA 92127, USA",
+      "neighborhood": "4S Ranch / Rancho Bernardo area",
+      "place_id": "ChIJG9JSxh3324ARq25yp8mor5s",
+      "lat": 33.016947099999996,
+      "lng": -117.1098467,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in 4S Ranch / Rancho Bernardo area.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=322",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=322",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=322",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-4s-ranch. ",
+      "rating": 3.8,
+      "rating_count": 534,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1032
+    },
+    {
+      "name": "LA Fitness — Eastlake",
+      "address": "2070 Otay Lakes Rd, Chula Vista, CA 91913, USA",
+      "neighborhood": "Chula Vista",
+      "place_id": "ChIJEylcpXNF2YARPtLFlpBIDUY",
+      "lat": 32.6445147,
+      "lng": -116.97264059999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Chula Vista.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=270",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=270",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=270",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-eastlake. ",
+      "rating": 4,
+      "rating_count": 703,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1033
+    },
+    {
+      "name": "LA Fitness — Encinitas",
+      "address": "201 S El Camino Real Ste A, Encinitas, CA 92024, USA",
+      "neighborhood": "Encinitas",
+      "place_id": "ChIJm3WEe_IL3IARKMcC4iqdhG0",
+      "lat": 33.043991,
+      "lng": -117.25640519999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Encinitas.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=52",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=52",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=52",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-encinitas. ",
+      "rating": 4.1,
+      "rating_count": 374,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1034
+    },
+    {
+      "name": "LA Fitness — Escondido",
+      "address": "362 W El Norte Pkwy, Escondido, CA 92026, USA",
+      "neighborhood": "Escondido",
+      "place_id": "ChIJtdUFk7P024ARCmjORAKR9xU",
+      "lat": 33.1454082,
+      "lng": -117.0943936,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Escondido.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=103",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=103",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=103",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-escondido. ",
+      "rating": 4,
+      "rating_count": 421,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1035
+    },
+    {
+      "name": "LA Fitness — Kearny Mesa",
+      "address": "4984 Shawline St, San Diego, CA 92111, USA",
+      "neighborhood": "Kearny Mesa",
+      "place_id": "ChIJ5dwIrIX_24ARdrUzbQ9OVd4",
+      "lat": 32.8310325,
+      "lng": -117.16562839999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Kearny Mesa.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=104",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=104",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=104",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-kearny-mesa. ",
+      "rating": 3.9,
+      "rating_count": 699,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1036
+    },
+    {
+      "name": "LA Fitness — National City",
+      "address": "1910 Sweetwater Rd, National City, CA 91950, USA",
+      "neighborhood": "National City",
+      "place_id": "ChIJLWa-pgJS2YARacLbmVqOHW4",
+      "lat": 32.6594455,
+      "lng": -117.07968399999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Fitness club with sauna, steam room in National City.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=831",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=831",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=831",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-national-city. ",
+      "rating": 3.8,
+      "rating_count": 516,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1037
+    },
+    {
+      "name": "LA Fitness — Sorrento Valley",
+      "address": "10535 Heater Ct, San Diego, CA 92121, USA",
+      "neighborhood": "Sorrento Valley",
+      "place_id": "ChIJGTogc53424ARCkgZLSCoD74",
+      "lat": 32.9080709,
+      "lng": -117.17240590000002,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Sorrento Valley.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=199",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=199",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lafitness.com/Pages/clubhome.aspx?clubid=199",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-la-fitness-sorrento-valley. ",
+      "rating": 3.8,
+      "rating_count": 688,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1038
+    },
+    {
+      "name": "Lagree + Versa Fit",
+      "address": "515 Vista Way, Oceanside, CA 92054, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJq6q6X_5x3IARQ4dk7jaBERQ",
+      "lat": 33.1723006,
+      "lng": -117.3588473,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in Oceanside.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1039-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.lagreeandversafit.com/home",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.lagreeandversafit.com/home",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lagreeandversafit.com/home",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-lagree-versa-fit. ",
+      "rating": 5,
+      "rating_count": 385,
+      "hours": "Monday: 5:30 AM – 7:30 PM\nTuesday: 5:30 AM – 7:30 PM\nWednesday: 5:30 AM – 7:30 PM\nThursday: 5:30 AM – 7:30 PM\nFriday: 5:30 AM – 5:30 PM\nSaturday: 6:00 AM – 1:30 PM\nSunday: 7:00 AM – 5:00 PM",
+      "id": 1039
+    },
+    {
+      "name": "Life Time — La Jolla",
+      "address": "1055 Wall St, La Jolla, CA 92037, USA",
+      "neighborhood": "La Jolla",
+      "place_id": "ChIJVfsqawAD3IAR70OotsQ5Pno",
+      "lat": 32.8465049,
+      "lng": -117.2735736,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room"
+      ],
+      "description": "Fitness club with dry sauna, steam room in La Jolla.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.lifetime.life/locations/ca/la-jolla.html",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://www.lifetime.life/locations/ca/la-jolla/amenities.html",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.lifetime.life/locations/ca/la-jolla.html",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership and full-access day passes are available. Confirm day-pass availability and restrictions with the club.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-life-time-la-jolla. ",
+      "rating": 3.9,
+      "rating_count": 137,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 6:00 AM – 7:00 PM\nSunday: 6:00 AM – 7:00 PM",
+      "id": 1040
+    },
+    {
+      "name": "Longevity Lounge",
+      "address": "4747 Mission Blvd #7, San Diego, CA 92109, USA",
+      "neighborhood": "Pacific Beach",
+      "place_id": "ChIJsUPchY0B3IARekXPwPUQQDo",
+      "lat": 32.800099599999996,
+      "lng": -117.2562069,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Day spa with infrared sauna in Pacific Beach.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1041-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.longevityloungespa.com/day-spa-services",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.longevityloungespa.com/infrared-sauna-therapy",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.longevityloungespa.com/day-spa-services",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-longevity-lounge. ",
+      "rating": 5,
+      "rating_count": 62,
+      "hours": "Monday: 9:00 AM – 6:00 PM\nTuesday: 9:00 AM – 6:00 PM\nWednesday: 9:00 AM – 6:00 PM\nThursday: 9:00 AM – 6:00 PM\nFriday: 9:00 AM – 7:00 PM\nSaturday: 9:00 AM – 5:00 PM\nSunday: 12:00 AM – 5:00 PM",
+      "id": 1041
+    },
+    {
+      "name": "Magdalena Ecke Family YMCA",
+      "address": "200 Saxony Rd, Encinitas, CA 92024, USA",
+      "neighborhood": "Encinitas",
+      "place_id": "ChIJ5druX2YM3IARLGuaDy_geNs",
+      "lat": 33.052202799999996,
+      "lng": -117.28623970000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Encinitas.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.ymcasd.org/locations/magdalena-ecke-family-ymca",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.ymcasd.org/locations/magdalena-ecke-family-ymca",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.ymcasd.org/locations/magdalena-ecke-family-ymca",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-magdalena-ecke-family-ymca. ",
+      "rating": 3.9,
+      "rating_count": 144,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 8:30 PM\nSaturday: 7:00 AM – 5:00 PM\nSunday: 7:00 AM – 5:00 PM",
+      "id": 1042
+    },
+    {
+      "name": "Mesa Rim — Mira Mesa",
+      "address": "10110 Mesa Rim Rd, San Diego, CA 92121, USA",
+      "neighborhood": "Mira Mesa",
+      "place_id": "ChIJ-SxzFmEH3IARJWH43YGWe5c",
+      "lat": 32.9022917,
+      "lng": -117.17776389999997,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in Mira Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1043-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://mesarim.com/miramesa/purchase-a-membership/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://mesarim.com/miramesa/purchase-a-membership/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://mesarim.com/miramesa/purchase-a-membership/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-mesa-rim-mira-mesa. ",
+      "rating": 4.7,
+      "rating_count": 313,
+      "hours": "Monday: 6:00 AM – 10:00 PM\nTuesday: 6:00 AM – 10:00 PM\nWednesday: 6:00 AM – 10:00 PM\nThursday: 6:00 AM – 10:00 PM\nFriday: 6:00 AM – 10:00 PM\nSaturday: 8:00 AM – 9:00 PM\nSunday: 8:00 AM – 9:00 PM",
+      "id": 1043
+    },
+    {
+      "name": "Nalu Healing Arts",
+      "address": "2405 Morena Blvd, San Diego, CA 92110, USA",
+      "neighborhood": "Bay Park",
+      "place_id": "ChIJD_yTT7IB3IARlB4YpwytyrU",
+      "lat": 32.78739,
+      "lng": -117.20595,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Wellness center with infrared sauna in Bay Park.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1044-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.naluhealingarts.com/services-1",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.naluhealingarts.com/services-1",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.naluhealingarts.com/services-1",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-nalu-healing-arts. ",
+      "rating": 5,
+      "rating_count": 147,
+      "hours": "Monday: 10:00 AM – 8:00 PM\nTuesday: 10:00 AM – 7:30 PM\nWednesday: 10:00 AM – 6:30 PM\nThursday: 10:00 AM – 8:00 PM\nFriday: 9:00 AM – 8:00 PM\nSaturday: 9:00 AM – 4:30 PM\nSunday: 10:00 AM – 6:00 PM",
+      "id": 1044
+    },
+    {
+      "name": "NXPT Fitness — La Mesa",
+      "address": "7450 University Ave, La Mesa, CA 91942, USA",
+      "neighborhood": "La Mesa",
+      "place_id": "ChIJbczudcVX2YARjaTrS3sK2AE",
+      "lat": 32.7580393,
+      "lng": -117.03777889999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [],
+      "description": "Fitness club with sauna in La Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1045-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.nxptfit.com/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.nxptfit.com/la-mesa",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.nxptfit.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-nxpt-fitness-la-mesa. ",
+      "rating": 4.8,
+      "rating_count": 136,
+      "hours": "Monday: 4:30 AM – 7:00 PM\nTuesday: 4:30 AM – 7:00 PM\nWednesday: 4:30 AM – 7:00 PM\nThursday: 4:30 AM – 7:00 PM\nFriday: 4:30 AM – 7:00 PM\nSaturday: 7:00 – 10:00 AM\nSunday: 7:00 – 10:30 AM",
+      "id": 1045
+    },
+    {
+      "name": "Ocean Pacific Gym & Wellness",
+      "address": "4150 Mission Blvd Ste 242, San Diego, CA 92109, USA",
+      "neighborhood": "Pacific Beach",
+      "place_id": "ChIJMb0BlTsB3IARu1xF3f9cucM",
+      "lat": 32.791765999999996,
+      "lng": -117.2543247,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room",
+        "cold_plunge"
+      ],
+      "description": "Fitness club with dry sauna, steam room, cold plunge in Pacific Beach.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1046-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://oceanpacificgym.com/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://oceanpacificgym.com/amenities",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://oceanpacificgym.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Public day passes include gym and wellness amenities and are available at the front desk.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-ocean-pacific-gym-wellness. ",
+      "rating": 4.7,
+      "rating_count": 335,
+      "hours": "Monday: 5:00 AM – 10:00 PM\nTuesday: 5:00 AM – 10:00 PM\nWednesday: 5:00 AM – 10:00 PM\nThursday: 5:00 AM – 10:00 PM\nFriday: 5:00 AM – 10:00 PM\nSaturday: 6:00 AM – 8:00 PM\nSunday: 6:00 AM – 8:00 PM",
+      "id": 1046
+    },
+    {
+      "name": "Perspire Sauna Studio — 4S Ranch",
+      "address": "10436 Craftsman Way Ste 121, San Diego, CA 92127, USA",
+      "neighborhood": "4S Ranch",
+      "place_id": "ChIJm-r7o9H324ARiL5k7UV_G4g",
+      "lat": 33.0202121,
+      "lng": -117.11411199999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Infrared Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Sauna studio with infrared sauna in 4S Ranch.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.perspiresaunastudio.com/locations/4s-ranch",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.perspiresaunastudio.com/locations/4s-ranch",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.perspiresaunastudio.com/locations/4s-ranch",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a private infrared sauna session. The SNØ cooling shower is separate from an immersion cold plunge.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-perspire-sauna-studio-4s-ranch. ",
+      "rating": 5,
+      "rating_count": 43,
+      "hours": "Monday: 7:00 AM – 9:00 PM\nTuesday: 7:00 AM – 9:00 PM\nWednesday: 7:00 AM – 9:00 PM\nThursday: 7:00 AM – 9:00 PM\nFriday: 7:00 AM – 9:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1047
+    },
+    {
+      "name": "Perspire Sauna Studio — Del Mar",
+      "address": "12853 El Camino Real Ste 202, San Diego, CA 92130, USA",
+      "neighborhood": "Carmel Valley",
+      "place_id": "ChIJ9RxSqG8J3IARjxe02H-posg",
+      "lat": 32.950742,
+      "lng": -117.232945,
+      "city_slug": "san-diego",
+      "types": [
+        "Infrared Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Sauna studio with infrared sauna in Carmel Valley.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.perspiresaunastudio.com/locations/del-mar",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.perspiresaunastudio.com/locations/del-mar",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.perspiresaunastudio.com/locations/del-mar",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a private infrared sauna session. The SNØ cooling shower is separate from an immersion cold plunge.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-perspire-sauna-studio-del-mar. ",
+      "rating": 4.8,
+      "rating_count": 23,
+      "hours": "Monday: 7:00 AM – 9:00 PM\nTuesday: 7:00 AM – 9:00 PM\nWednesday: 7:00 AM – 9:00 PM\nThursday: 7:00 AM – 9:00 PM\nFriday: 7:00 AM – 9:00 PM\nSaturday: 8:00 AM – 8:00 PM\nSunday: 8:00 AM – 8:00 PM",
+      "id": 1048
+    },
+    {
+      "name": "Point Loma Sports Club",
+      "address": "2751 Roosevelt Rd #100, San Diego, CA 92106, USA",
+      "neighborhood": "Liberty Station",
+      "place_id": "ChIJ1_zpzAWr3oARsZ_QeHlzKr4",
+      "lat": 32.7363816,
+      "lng": -117.21374619999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with infrared sauna in Liberty Station.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1049-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://plsportsclub.com/plwellnesscenter/services/sauna/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://plsportsclub.com/plwellnesscenter/services/sauna/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://plsportsclub.com/plwellnesscenter/services/sauna/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Saunas are located in the locker rooms. Memberships and public day passes are available.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-point-loma-sports-club. ",
+      "rating": 4.7,
+      "rating_count": 85,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 7:00 AM – 6:00 PM\nSunday: 7:00 AM – 6:00 PM",
+      "id": 1049
+    },
+    {
+      "name": "Pure Infrared Sauna Studio — Bankers Hill",
+      "address": "2665 Fifth Ave Unit 103, San Diego, CA 92103, USA",
+      "neighborhood": "Bankers Hill",
+      "place_id": "ChIJh9dpqBBV2YARpEJHMl-qt5U",
+      "lat": 32.7330405,
+      "lng": -117.16002239999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Infrared Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Sauna studio with infrared sauna, cold plunge in Bankers Hill.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://pureinfraredsaunastudio.com/faq",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.pureinfraredsaunastudio.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://pureinfraredsaunastudio.com/faq",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-pure-infrared-sauna-studio-bankers-hill. ",
+      "rating": 5,
+      "rating_count": 66,
+      "hours": "Monday: 7:00 AM – 7:00 PM\nTuesday: 7:00 AM – 7:00 PM\nWednesday: 7:00 AM – 7:00 PM\nThursday: 7:00 AM – 7:00 PM\nFriday: 7:00 AM – 6:00 PM\nSaturday: 8:00 AM – 4:00 PM\nSunday: 8:00 AM – 4:00 PM",
+      "id": 1050
+    },
+    {
+      "name": "Pure Infrared Sauna Studio — Solana Beach",
+      "address": "437 S Hwy 101 Ste 107, Solana Beach, CA 92075, USA",
+      "neighborhood": "Solana Beach",
+      "place_id": "ChIJU9w98N8P3IARPJG04frYm0g",
+      "lat": 32.9860779,
+      "lng": -117.27120839999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Infrared Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Sauna studio with infrared sauna in Solana Beach.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://pureinfraredsaunastudio.com/faq",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.pureinfraredsaunastudio.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://pureinfraredsaunastudio.com/faq",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-pure-infrared-sauna-studio-solana-beach. ",
+      "rating": 5,
+      "rating_count": 11,
+      "hours": "Monday: 7:00 AM – 7:00 PM\nTuesday: 7:00 AM – 7:00 PM\nWednesday: 7:00 AM – 7:00 PM\nThursday: 7:00 AM – 7:00 PM\nFriday: 7:00 AM – 6:00 PM\nSaturday: 8:00 AM – 4:00 PM\nSunday: 8:00 AM – 4:00 PM",
+      "id": 1051
+    },
+    {
+      "name": "Pure Spa & Skin Care",
+      "address": "10793 Tierrasanta Blvd, San Diego, CA 92124, USA",
+      "neighborhood": "Tierrasanta",
+      "place_id": "ChIJoQkPxxn-24ARbmNopcqjUZE",
+      "lat": 32.8220315,
+      "lng": -117.0991531,
+      "city_slug": "san-diego",
+      "types": [
+        "Day Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Day spa with infrared sauna in Tierrasanta.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://purespasd.com/sauna/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://purespasd.com/sauna/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://purespasd.com/sauna/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-pure-spa-skin-care. ",
+      "rating": 4.9,
+      "rating_count": 99,
+      "hours": null,
+      "id": 1052
+    },
+    {
+      "name": "R3 Recover",
+      "address": "7741 Fay Ave, La Jolla, CA 92037, USA",
+      "neighborhood": "La Jolla",
+      "place_id": "ChIJORnmOQMD3IARQrsBzm-ZetY",
+      "lat": 32.8442049,
+      "lng": -117.27472750000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.r3recover.com/first-visit/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.r3recover.com/the-r3-flow/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.r3recover.com/first-visit/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book the guided R3 Flow, which includes infrared sauna and cold plunge. Swimwear is required in the plunge pools.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-r3-recover. ",
+      "rating": 5,
+      "rating_count": 67,
+      "hours": "Monday: 6:00 AM – 6:00 PM\nTuesday: 6:00 AM – 6:00 PM\nWednesday: 6:00 AM – 6:00 PM\nThursday: 6:00 AM – 6:00 PM\nFriday: 6:00 AM – 3:00 PM\nSaturday: 9:00 AM – 3:00 PM\nSunday: 9:00 AM – 3:00 PM",
+      "id": 1053
+    },
+    {
+      "name": "Real Deal Wellness",
+      "address": "7377 Convoy Ct A-2, San Diego, CA 92111, USA",
+      "neighborhood": "Kearny Mesa",
+      "place_id": "ChIJQzWlWCz_24ARlzmY30AArN4",
+      "lat": 32.8345056,
+      "lng": -117.1595212,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Recovery studio with infrared sauna in Kearny Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1054-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://realdealwellness.net/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://realdealwellness.net/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://realdealwellness.net/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-real-deal-wellness. ",
+      "rating": 5,
+      "rating_count": 287,
+      "hours": "Monday: 7:00 AM – 6:30 PM\nTuesday: 7:00 AM – 6:30 PM\nWednesday: 7:00 AM – 7:30 PM\nThursday: 7:00 AM – 6:30 PM\nFriday: 7:00 AM – 5:30 PM\nSaturday: 9:00 AM – 3:30 PM\nSunday: Closed",
+      "id": 1054
+    },
+    {
+      "name": "RecoverMe San Diego",
+      "address": "3270 Greyling Dr, San Diego, CA 92123, USA",
+      "neighborhood": "Serra Mesa",
+      "place_id": "ChIJ6WyT5-tV2YARPf90-rleR7Q",
+      "lat": 32.8029334,
+      "lng": -117.14012459999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Recovery studio with infrared sauna in Serra Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1055-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.recovermesandiego.com/appointment-schedule",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.recovermesandiego.com/appointment-schedule",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.recovermesandiego.com/appointment-schedule",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-recoverme-san-diego. ",
+      "rating": 4,
+      "rating_count": 12,
+      "hours": "Monday: 5:00 AM – 11:00 PM\nTuesday: 5:00 AM – 11:00 PM\nWednesday: 5:00 AM – 11:00 PM\nThursday: 5:00 AM – 11:00 PM\nFriday: 5:00 AM – 11:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1055
+    },
+    {
+      "name": "REJUV — Carlsbad",
+      "address": "6990 El Camino Real Ste M, Carlsbad, CA 92009, USA",
+      "neighborhood": "Carlsbad",
+      "place_id": "ChIJebuffFIL3IARdGZ5kCCtdSE",
+      "lat": 33.104165699999996,
+      "lng": -117.2659123,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Recovery studio with infrared sauna in Carlsbad.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.rejuvcryo.com/carlsbad-ca-location",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.rejuvcryo.com/infrared-sauna",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.rejuvcryo.com/carlsbad-ca-location",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-rejuv-carlsbad. ",
+      "rating": 5,
+      "rating_count": 248,
+      "hours": "Monday: 10:00 AM – 6:30 PM\nTuesday: 10:00 AM – 6:30 PM\nWednesday: 10:00 AM – 6:30 PM\nThursday: 10:00 AM – 6:30 PM\nFriday: 10:00 AM – 6:30 PM\nSaturday: Closed\nSunday: Closed",
+      "id": 1056
+    },
+    {
+      "name": "REJUV — Encinitas",
+      "address": "463 Encinitas Blvd, Encinitas, CA 92024, USA",
+      "neighborhood": "Encinitas",
+      "place_id": "ChIJ0yCSkQMN3IAROHxRk6lQhDM",
+      "lat": 33.04632410000001,
+      "lng": -117.28285179999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Recovery studio with infrared sauna in Encinitas.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.rejuvcryo.com/encinitas-ca-location",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.rejuvcryo.com/infrared-sauna",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.rejuvcryo.com/encinitas-ca-location",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-rejuv-encinitas. ",
+      "rating": 4.9,
+      "rating_count": 470,
+      "hours": "Monday: 10:00 AM – 6:30 PM\nTuesday: 10:00 AM – 6:30 PM\nWednesday: 10:00 AM – 6:30 PM\nThursday: 10:00 AM – 6:30 PM\nFriday: 10:00 AM – 6:30 PM\nSaturday: 10:00 AM – 6:30 PM\nSunday: 10:00 AM – 6:30 PM",
+      "id": 1057
+    },
+    {
+      "name": "RESET",
+      "address": "3904 Park Blvd, San Diego, CA 92103, USA",
+      "neighborhood": "Hillcrest",
+      "place_id": "ChIJdTRPMMVU2YARLEuzoUaTvLY",
+      "lat": 32.7487511,
+      "lng": -117.14674210000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "cold_plunge"
+      ],
+      "description": "Fitness club with sauna, cold plunge in Hillcrest.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1058-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.resetsd.com/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.resetsd.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.resetsd.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-reset. ",
+      "rating": 4.8,
+      "rating_count": 158,
+      "hours": "Monday: 5:30 AM – 7:00 PM\nTuesday: 5:30 AM – 7:00 PM\nWednesday: 5:30 AM – 7:00 PM\nThursday: 5:30 AM – 7:00 PM\nFriday: 5:30 AM – 6:00 PM\nSaturday: 9:00 – 11:30 AM\nSunday: Closed",
+      "id": 1058
+    },
+    {
+      "name": "SDBody — La Jolla",
+      "address": "7710 Fay Ave, La Jolla, CA 92037, USA",
+      "neighborhood": "La Jolla",
+      "place_id": "ChIJz_hSwOQD3IAR8hfDi1mn6Fs",
+      "lat": 32.843530799999996,
+      "lng": -117.27495010000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://sdbody.com/wellness/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://sdbody.com/services/infrared-sauna-cold-plunge/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://sdbody.com/wellness/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or contrast-therapy session, or a qualifying wellness pass. Clinical screening may apply.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-sdbody-la-jolla. ",
+      "rating": 4.8,
+      "rating_count": 83,
+      "hours": "Monday: 9:00 AM – 5:00 PM\nTuesday: 9:00 AM – 5:00 PM\nWednesday: 9:00 AM – 5:00 PM\nThursday: 9:00 AM – 5:00 PM\nFriday: 9:00 AM – 3:00 PM\nSaturday: 9:00 AM – 3:00 PM\nSunday: 9:00 AM – 3:00 PM",
+      "id": 1059
+    },
+    {
+      "name": "SDBody — Mission Hills",
+      "address": "1747 Hancock St Ste C, San Diego, CA 92101, USA",
+      "neighborhood": "Mission Hills",
+      "place_id": "ChIJlbpeTviq3oARDl2_Hp-mI0w",
+      "lat": 32.7415181,
+      "lng": -117.18332459999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in Mission Hills.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://sdbody.com/wellness/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://sdbody.com/services/infrared-sauna-cold-plunge/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://sdbody.com/wellness/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or contrast-therapy session, or a qualifying wellness pass. Clinical screening may apply.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-sdbody-mission-hills. ",
+      "rating": 4.8,
+      "rating_count": 154,
+      "hours": "Monday: 9:00 AM – 5:00 PM\nTuesday: 9:00 AM – 5:00 PM\nWednesday: 9:00 AM – 5:00 PM\nThursday: 9:00 AM – 5:00 PM\nFriday: 9:00 AM – 3:00 PM\nSaturday: 9:00 AM – 2:00 PM\nSunday: 9:00 AM – 2:00 PM",
+      "id": 1060
+    },
+    {
+      "name": "Soul Plunge",
+      "address": "7463 Girard Ave, La Jolla, CA 92037, USA",
+      "neighborhood": "La Jolla",
+      "place_id": "ChIJl0kAmcUB3IAROf-KXAI78MM",
+      "lat": 32.840142,
+      "lng": -117.272089,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in La Jolla.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1061-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://soulplunge.com/introspecial",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://soulplunge.com/frequently-asked-questions",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://soulplunge.com/introspecial",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-soul-plunge. ",
+      "rating": 5,
+      "rating_count": 239,
+      "hours": "Monday: 7:00 AM – 8:00 PM\nTuesday: 7:00 AM – 8:00 PM\nWednesday: 6:00 AM – 8:00 PM\nThursday: 7:00 AM – 8:00 PM\nFriday: 7:00 AM – 8:00 PM\nSaturday: 7:30 AM – 3:00 PM\nSunday: 7:30 AM – 6:30 PM",
+      "id": 1061
+    },
+    {
+      "name": "Stardust Float Spa",
+      "address": "3589 Midway Dr, San Diego, CA 92110, USA",
+      "neighborhood": "Midway",
+      "place_id": "ChIJUU38BHir3oARbehEmiB1EOE",
+      "lat": 32.751686299999996,
+      "lng": -117.21519810000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Float Spa"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Float spa with infrared sauna in Midway.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1062-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.stardustfloatspa.com/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.stardustfloatspa.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.stardustfloatspa.com/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-stardust-float-spa. ",
+      "rating": 5,
+      "rating_count": 313,
+      "hours": "Monday: 10:00 AM – 8:00 PM\nTuesday: Closed\nWednesday: 10:00 AM – 10:00 PM\nThursday: 10:00 AM – 10:00 PM\nFriday: 10:00 AM – 10:00 PM\nSaturday: 8:00 AM – 10:00 PM\nSunday: 8:00 AM – 10:00 PM",
+      "id": 1062
+    },
+    {
+      "name": "Stone Impact",
+      "address": "845 S Coast Hwy, Oceanside, CA 92054, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJAeVmvDdv3IARmvZt34c5cqA",
+      "lat": 33.1876817,
+      "lng": -117.37301430000001,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "cold_plunge"
+      ],
+      "description": "Fitness club with sauna, cold plunge in Oceanside.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1063-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.stoneimpact.co/",
+      "listing_status": "active",
+      "access_policy": "members_only",
+      "sauna_source_url": "https://www.stoneimpact.co/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.stoneimpact.co/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Membership required. Confirm which plan includes sauna access and check for temporary closures.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-stone-impact. ",
+      "rating": 5,
+      "rating_count": 83,
+      "hours": "Monday: 5:00 AM – 8:00 PM\nTuesday: 5:00 AM – 8:00 PM\nWednesday: 5:00 AM – 8:00 PM\nThursday: 5:00 AM – 8:00 PM\nFriday: 5:00 AM – 8:00 PM\nSaturday: 8:00 AM – 2:00 PM\nSunday: 8:00 AM – 2:00 PM",
+      "id": 1063
+    },
+    {
+      "name": "Sunny’s Spa & Beauty Lounge",
+      "address": "101 Mission Ave, Oceanside, CA 92054, USA",
+      "neighborhood": "Oceanside",
+      "place_id": "ChIJVWDyDm9v3IARHIv9XR3RFu0",
+      "lat": 33.193767699999995,
+      "lng": -117.3820485,
+      "city_slug": "san-diego",
+      "types": [
+        "Hotel Spa"
+      ],
+      "amenities": [
+        "dry_sauna"
+      ],
+      "description": "Resort spa with dry sauna in Oceanside.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1064-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://theseabirdresort.com/spa/about-sunnys-spa-and-beauty-lounge/",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://theseabirdresort.com/spa/about-sunnys-spa-and-beauty-lounge/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://theseabirdresort.com/spa/about-sunnys-spa-and-beauty-lounge/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Open to the public with a qualifying treatment. Limited spa day passes are available by phone. Spa facilities are for ages 18+; swimsuit required.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-sunny-s-spa-beauty-lounge. ",
+      "rating": 4.5,
+      "rating_count": 48,
+      "hours": "Monday: 10:00 AM – 7:00 PM\nTuesday: 10:00 AM – 7:00 PM\nWednesday: 10:00 AM – 7:00 PM\nThursday: 10:00 AM – 7:00 PM\nFriday: 10:00 AM – 7:00 PM\nSaturday: 10:00 AM – 7:00 PM\nSunday: 10:00 AM – 7:00 PM",
+      "id": 1064
+    },
+    {
+      "name": "SWTHZ — One Paseo",
+      "address": "12895 Paseo Vlg Wy #1260, San Diego, CA 92130, USA",
+      "neighborhood": "Carmel Valley",
+      "place_id": "ChIJgVQ5L6MJ3IAREQS6QPJK8ug",
+      "lat": 32.951462899999996,
+      "lng": -117.2363631,
+      "city_slug": "san-diego",
+      "types": [
+        "Private Sauna Studio"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Private wellness studio with infrared sauna, cold plunge in Carmel Valley.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://sweathouz.com/one-paseo-book-now/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://sweathouz.com/one-paseo-book-now/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://sweathouz.com/one-paseo-book-now/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve a private 60-minute suite with infrared sauna, cold plunge and shower.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-swthz-one-paseo. ",
+      "rating": 4.8,
+      "rating_count": 70,
+      "hours": "Monday: 7:00 AM – 8:00 PM\nTuesday: 7:00 AM – 8:00 PM\nWednesday: 7:00 AM – 8:00 PM\nThursday: 7:00 AM – 8:00 PM\nFriday: 7:00 AM – 8:00 PM\nSaturday: 8:00 AM – 7:00 PM\nSunday: 8:00 AM – 7:00 PM",
+      "id": 1065
+    },
+    {
+      "name": "The Catamaran Spa",
+      "address": "3999 Mission Blvd, San Diego, CA 92109, USA",
+      "neighborhood": "Pacific Beach",
+      "place_id": "ChIJK3OYCO8B3IAReF_MYXb2WoY",
+      "lat": 32.7899613,
+      "lng": -117.2526444,
+      "city_slug": "san-diego",
+      "types": [
+        "Hotel Spa"
+      ],
+      "amenities": [
+        "steam_room"
+      ],
+      "description": "Resort spa with sauna, steam room in Pacific Beach.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1066-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://www.catamaranresort.com/spa-wellness-offers?page=1",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://www.catamaranresort.com/how-to-spa",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.catamaranresort.com/spa-wellness-offers?page=1",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Sauna access is available with a qualifying spa treatment. Check current spa day-pass availability; hotel-guest-only rates do not apply to public visitors.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-catamaran-spa. ",
+      "rating": 4.6,
+      "rating_count": 58,
+      "hours": "Monday: 7:00 AM – 7:00 PM\nTuesday: 7:00 AM – 7:00 PM\nWednesday: 7:00 AM – 7:00 PM\nThursday: 7:00 AM – 7:00 PM\nFriday: 7:00 AM – 7:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1066
+    },
+    {
+      "name": "The Healing Room",
+      "address": "2645 Financial Ct suite i, San Diego, CA 92117, USA",
+      "neighborhood": "Bay Ho",
+      "place_id": "ChIJHa5IO8gB3IARcoTL1uCzvPA",
+      "lat": 32.825738699999995,
+      "lng": -117.22862189999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Wellness center with infrared sauna in Bay Ho.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.thehealingroomsandiego.com/service-page/infrared-sauna",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.thehealingroomsandiego.com/service-page/infrared-sauna",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.thehealingroomsandiego.com/service-page/infrared-sauna",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book a sauna or recovery session directly with the venue. Check reservation requirements and current availability.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-healing-room. ",
+      "rating": 4.8,
+      "rating_count": 46,
+      "hours": "Monday: Closed\nTuesday: 9:30 AM – 8:00 PM\nWednesday: 9:30 AM – 8:00 PM\nThursday: 9:30 AM – 8:00 PM\nFriday: 9:00 AM – 5:00 PM\nSaturday: 9:00 AM – 6:00 PM\nSunday: Closed",
+      "id": 1067
+    },
+    {
+      "name": "The Plunge San Diego",
+      "address": "3115, Ocean Front Walk, San Diego, CA 92109, USA",
+      "neighborhood": "Mission Beach",
+      "place_id": "ChIJkcDD8wqr3oARSM0bjAMcKfY",
+      "lat": 32.7706413,
+      "lng": -117.2523956,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "dry_sauna"
+      ],
+      "description": "Fitness club with dry sauna in Mission Beach.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1068-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://plungesandiego.com/rates/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://plungesandiego.com/faq/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://plungesandiego.com/rates/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Public session and day passes include the pool-deck dry sauna, subject to programs and rentals. Sauna users must be at least 16. Fit Mission Beach gym admission is separate.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-plunge-san-diego. Shares Belmont Park complex; separate access product.",
+      "rating": 4.5,
+      "rating_count": 414,
+      "hours": "Monday: 7:00 AM – 7:00 PM\nTuesday: 7:00 AM – 7:00 PM\nWednesday: 7:00 AM – 7:00 PM\nThursday: 7:00 AM – 7:00 PM\nFriday: 7:00 AM – 7:00 PM\nSaturday: 7:00 AM – 7:00 PM\nSunday: 7:00 AM – 7:00 PM",
+      "id": 1068
+    },
+    {
+      "name": "The Spa at Fairmont Grand Del Mar",
+      "address": "5300 Grand Del Mar Ct, San Diego, CA 92130, USA",
+      "neighborhood": "Carmel Valley",
+      "place_id": "ChIJCQZ8zsEH3IARR5naywYgkXs",
+      "lat": 32.9383052,
+      "lng": -117.1976102,
+      "city_slug": "san-diego",
+      "types": [
+        "Hotel Spa"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room"
+      ],
+      "description": "Resort spa with dry sauna, steam room in Carmel Valley.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.fairmont.com/en/hotels/san-diego/fairmont-grand-del-mar/wellness/spa/day-pass-popoin.html",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://www.fairmont.com/en/hotels/san-diego/fairmont-grand-del-mar/wellness/spa/day-pass-popoin.html",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.fairmont.com/en/hotels/san-diego/fairmont-grand-del-mar/wellness/spa/day-pass-popoin.html",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve a Wellness Day pass that includes wet and dry saunas, whirlpools, pool and fitness access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-spa-at-fairmont-grand-del-mar. ",
+      "rating": 4.7,
+      "rating_count": 41,
+      "hours": "Monday: 8:30 AM – 5:30 PM\nTuesday: 8:30 AM – 5:30 PM\nWednesday: 8:30 AM – 5:30 PM\nThursday: 8:30 AM – 5:30 PM\nFriday: 8:30 AM – 5:30 PM\nSaturday: 8:30 AM – 5:30 PM\nSunday: 8:30 AM – 5:30 PM",
+      "id": 1069
+    },
+    {
+      "name": "The Spa at Omni La Costa",
+      "address": "2104 Costa Del Mar Rd, Carlsbad, CA 92009, USA",
+      "neighborhood": "Carlsbad",
+      "place_id": "ChIJE0P0tlgL3IARdmNhrc-1cu0",
+      "lat": 33.091631299999996,
+      "lng": -117.26616039999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Hotel Spa"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room"
+      ],
+      "description": "Resort spa with dry sauna, steam room in Carlsbad.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.omnihotels.com/hotels/san-diego-la-costa/spa/details",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://www.omnihotels.com/hotels/san-diego-la-costa/spa/details",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.omnihotels.com/hotels/san-diego-la-costa/spa/details",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Open to the public with a qualifying spa treatment. Limited spa day passes may also be available; pool-only passes are different.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-spa-at-omni-la-costa. ",
+      "rating": 4.6,
+      "rating_count": 97,
+      "hours": "Monday: 8:30 AM – 5:00 PM\nTuesday: 8:30 AM – 5:00 PM\nWednesday: 8:30 AM – 5:00 PM\nThursday: 8:30 AM – 5:00 PM\nFriday: 8:30 AM – 6:00 PM\nSaturday: 8:30 AM – 6:00 PM\nSunday: 8:30 AM – 6:00 PM",
+      "id": 1070
+    },
+    {
+      "name": "The Spa at Rancho Valencia",
+      "address": "5921 Valencia Cir, Rancho Santa Fe, CA 92067, USA",
+      "neighborhood": "Rancho Santa Fe",
+      "place_id": "ChIJ0U3xCDAI3IAR_onx_ftYpxg",
+      "lat": 32.990956,
+      "lng": -117.18633309999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Hotel Spa"
+      ],
+      "amenities": [
+        "steam_room",
+        "cold_plunge"
+      ],
+      "description": "Resort spa with sauna, steam room, cold plunge in Rancho Santa Fe.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://ranchovalencia.com/san-diego-spa-resort/",
+      "listing_status": "active",
+      "access_policy": "treatment",
+      "sauna_source_url": "https://ranchovalencia.com/san-diego-spa-resort/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://ranchovalencia.com/san-diego-spa-resort/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Qualifying spa treatments include sauna, steam, cold plunge and spa-pool access. No standalone day pass. Bring a swimsuit for co-ed facilities.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-spa-at-rancho-valencia. ",
+      "rating": 4.4,
+      "rating_count": 23,
+      "hours": "Monday: 7:00 AM – 8:00 PM\nTuesday: 7:00 AM – 8:00 PM\nWednesday: 7:00 AM – 8:00 PM\nThursday: 7:00 AM – 8:00 PM\nFriday: 7:00 AM – 8:00 PM\nSaturday: 7:00 AM – 8:00 PM\nSunday: 7:00 AM – 8:00 PM",
+      "id": 1071
+    },
+    {
+      "name": "The Studio by Catalyst",
+      "address": "16473 Bernardo Center Dr, San Diego, CA 92128, USA",
+      "neighborhood": "Rancho Bernardo",
+      "place_id": "ChIJpWW2TR7324ARAJQYGgbmMcg",
+      "lat": 33.0126425,
+      "lng": -117.0779538,
+      "city_slug": "san-diego",
+      "types": [
+        "Recovery Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Recovery studio with infrared sauna, cold plunge in Rancho Bernardo.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1072-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://catalystptandwellness.com/wellness/recovery-lounges/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Book an indoor recovery-lounge session with infrared sauna and cold plunge.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-the-studio-by-catalyst. ",
+      "rating": 4.8,
+      "rating_count": 79,
+      "hours": "Monday: 5:30 AM – 7:00 PM\nTuesday: 5:30 AM – 7:00 PM\nWednesday: 5:30 AM – 7:00 PM\nThursday: 5:30 AM – 7:00 PM\nFriday: 5:30 AM – 7:00 PM\nSaturday: 6:00 AM – 12:00 PM\nSunday: 7:30 AM – 12:00 PM",
+      "id": 1072
+    },
+    {
+      "name": "TruSelf Sporting Club",
+      "address": "5125 Waring Rd, San Diego, CA 92120, USA",
+      "neighborhood": "Allied Gardens",
+      "place_id": "ChIJOUsNy9hV2YARpDbx5TzHIBo",
+      "lat": 32.7907237,
+      "lng": -117.08115479999998,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna"
+      ],
+      "description": "Fitness club with infrared sauna in Allied Gardens.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1073-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://truselfsportingclub.com/one-day-membership/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://truselfsportingclub.com/one-day-membership/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://truselfsportingclub.com/one-day-membership/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Choose the Infrared Sauna Day option for a private sauna session and gym access. The basic gym pass does not include sauna access.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-truself-sporting-club. ",
+      "rating": 4.5,
+      "rating_count": 71,
+      "hours": "Monday: 5:00 AM – 9:00 PM\nTuesday: 5:00 AM – 9:00 PM\nWednesday: 5:00 AM – 9:00 PM\nThursday: 5:00 AM – 9:00 PM\nFriday: 5:00 AM – 9:00 PM\nSaturday: 8:00 AM – 4:00 PM\nSunday: 8:00 AM – 4:00 PM",
+      "id": 1073
+    },
+    {
+      "name": "War House Gym — San Diego",
+      "address": "3191 Commercial St, San Diego, CA 92113, USA",
+      "neighborhood": "Logan Heights",
+      "place_id": "ChIJwynUFsFT2YARrtcCiXnNzI8",
+      "lat": 32.7050944,
+      "lng": -117.12560889999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Gym Sauna"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Fitness club with infrared sauna, cold plunge in Logan Heights.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1074-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://warhousegyms.com/courses",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://warhousegyms.com/courses",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://warhousegyms.com/courses",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Choose Day Pass + Wellness Patio for sauna and cold plunge access. Contact the gym for entry instructions to the secured facility.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-war-house-gym-san-diego. ",
+      "rating": 4.9,
+      "rating_count": 415,
+      "hours": "Monday: Open 24 hours\nTuesday: Open 24 hours\nWednesday: Open 24 hours\nThursday: Open 24 hours\nFriday: Open 24 hours\nSaturday: Open 24 hours\nSunday: Open 24 hours",
+      "id": 1074
+    },
+    {
+      "name": "Wellness by Pilates Collective",
+      "address": "8330 Merge Ave, San Diego, CA 92129, USA",
+      "neighborhood": "Torrey Highlands",
+      "place_id": "ChIJJS9IamT524ARL-FxuPGdWlI",
+      "lat": 32.9542763,
+      "lng": -117.15187879999999,
+      "city_slug": "san-diego",
+      "types": [
+        "Wellness Center"
+      ],
+      "amenities": [
+        "infrared_sauna",
+        "cold_plunge"
+      ],
+      "description": "Wellness center with infrared sauna, cold plunge in Torrey Highlands.",
+      "photos": [],
+      "pricing_options": [],
+      "website_url": "https://www.pilatescollective.org/general-8",
+      "listing_status": "active",
+      "access_policy": "public",
+      "sauna_source_url": "https://www.pilatescollective.org/copy-of-cold-plunge-faq",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://www.pilatescollective.org/general-8",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Reserve the recovery suite through the operator’s website or app. A reservation permits one guest.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-wellness-by-pilates-collective. ",
+      "rating": null,
+      "rating_count": null,
+      "hours": null,
+      "id": 1075
+    },
+    {
+      "name": "Yu Spa",
+      "address": "3927 Convoy St, San Diego, CA 92111, USA",
+      "neighborhood": "Kearny Mesa",
+      "place_id": "ChIJmZqfdun_24ARP3_b0sJ8DEM",
+      "lat": 32.8152152,
+      "lng": -117.1533221,
+      "city_slug": "san-diego",
+      "types": [
+        "Korean Spa"
+      ],
+      "amenities": [
+        "dry_sauna",
+        "steam_room",
+        "cold_plunge"
+      ],
+      "description": "Korean spa with dry sauna, steam room, cold plunge in Kearny Mesa.",
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1076-20261107.jpg"
+      ],
+      "pricing_options": [],
+      "website_url": "https://yuspasd.com/services/",
+      "listing_status": "active",
+      "access_policy": "day_pass",
+      "sauna_source_url": "https://yuspasd.com/",
+      "sauna_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_source_url": "https://yuspasd.com/services/",
+      "access_checked_at": "2026-11-07T00:00:00.000Z",
+      "access_notes": "Public admission available. Wet areas are gender-separated. Minimum age 13; ages 13–17 require a same-gender parent or guardian. Confirm clothing rules before visiting.",
+      "review_notes": "Official sauna/access evidence reviewed November 7, 2026, with matching Google Places OPERATIONAL status and coordinates. Research ID sd-yu-spa. ",
+      "rating": 4.2,
+      "rating_count": 496,
+      "hours": "Monday: 9:30 AM – 8:30 PM\nTuesday: 9:30 AM – 8:30 PM\nWednesday: 9:30 AM – 8:30 PM\nThursday: 9:30 AM – 8:30 PM\nFriday: 9:30 AM – 9:00 PM\nSaturday: 9:30 AM – 9:00 PM\nSunday: 9:30 AM – 8:30 PM",
+      "id": 1076
+    }
+  ],
+  "deferred": [
+    {
+      "name": "Eco Chateau — Mission Valley",
+      "id": "sd-eco-chateau-mission-valley",
+      "place_id": "ChIJK4hNNwRV2YARuI5sB5ndg8M",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Mission%20Valley&query_place_id=ChIJK4hNNwRV2YARuI5sB5ndg8M"
+    },
+    {
+      "name": "Eco Chateau — Otay Ranch",
+      "id": "sd-eco-chateau-otay-ranch",
+      "place_id": "ChIJ35xAN6pF2YARU6Cu9fQ6qYc",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Eco%20Chateau%20%E2%80%94%20Otay%20Ranch&query_place_id=ChIJ35xAN6pF2YARU6Cu9fQ6qYc"
+    },
+    {
+      "name": "The Recovery Co.",
+      "id": "sd-the-recovery-co",
+      "place_id": "ChIJ2cPJTRxX2YARlQiwHqesrF0",
+      "status": "CLOSED_PERMANENTLY",
+      "reason": "Google Places reports permanent closure; retained website is not sufficient to publish.",
+      "checked_at": "2026-11-07",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Recovery%20Co.&query_place_id=ChIJ2cPJTRxX2YARlQiwHqesrF0"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ export const CITY_CONFIG = {
   chicago: { slug: 'chicago', label: 'CHI', fullName: 'Chicago', center: { lat: 41.88, lng: -87.63 } },
   seattle: { slug: 'seattle', label: 'SEA', fullName: 'Seattle', center: { lat: 47.61, lng: -122.33 } },
   la: { slug: 'la', label: 'LA', fullName: 'Los Angeles', center: { lat: 34.052, lng: -118.291 } },
+  'san-diego': { slug: 'san-diego', label: 'SD', fullName: 'San Diego', center: { lat: 32.83, lng: -117.15 } },
   minneapolis: { slug: 'minneapolis', label: 'MSP', fullName: 'Minneapolis', center: { lat: 44.963, lng: -93.272 } },
   portland: { slug: 'portland', label: 'PDX', fullName: 'Portland', center: { lat: 45.523, lng: -122.676 } },
   denver: { slug: 'denver', label: 'DEN', fullName: 'Denver', center: { lat: 39.7392, lng: -104.9903 } },

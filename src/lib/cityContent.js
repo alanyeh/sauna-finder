@@ -11,6 +11,18 @@
 // specific venues whose details may go stale.
 
 export const CITY_CONTENT = {
+  'san-diego': {
+    intro: [
+      "Explore sauna locations across San Diego and the surrounding county, from Korean spas in Kearny Mesa to private infrared studios, coastal recovery centers and North County wellness venues. Listings cover the city as well as communities including Carlsbad, Encinitas, Oceanside and Chula Vista, so check the address and map before booking.",
+      "Access varies by venue. Some studios sell individual sauna or contrast-therapy sessions, while bathhouses and fitness clubs may offer day passes. Other gym saunas require membership, and hotel spas may include sauna access only with a qualifying treatment. Review each listing’s access notes and source links for reservation requirements, age limits and what is included. Traditional sauna, infrared sauna, steam rooms and cold plunges are listed separately when confirmed.",
+    ],
+    faqs: [
+      { q: "Can I use a sauna in San Diego without a gym membership?", a: "Yes. Sauna studios and recovery centers offer individual appointments, and some bathhouses and fitness facilities sell public passes. Hotel spa access may require a treatment. Check each venue’s access notes before booking." },
+      { q: "Does this page include North County and South Bay?", a: "Yes. The San Diego collection includes locations throughout the county, including Carlsbad, Encinitas, Oceanside, Chula Vista and nearby communities. The map and street address show the exact location." },
+      { q: "Where can I find a sauna and cold plunge together?", a: "Use the Cold Plunge filter to find venues with confirmed immersion pools alongside their sauna offering. A cooling shower or cryotherapy chamber is not counted as a cold plunge." },
+      { q: "What should I bring to a San Diego sauna?", a: "Check the venue’s swimwear, towel and footwear policy. Mixed-gender facilities often require swimwear, while Korean spas may have separate nude bathing areas. Bring water and confirm any age or reservation requirements." },
+    ],
+  },
   nyc: {
     intro: [
       "New York City has one of the oldest and most diverse bathhouse scenes in North America. From century-old Russian and Turkish steam rooms in the East Village to Korean-style jjimjilbangs in Flushing and sleek social bathhouses in Williamsburg and Flatiron, you can find almost every bathing tradition within a single subway ride.",

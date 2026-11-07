@@ -50,6 +50,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = resolve(__dirname, '..', 'dist')
 const PORT = 4319
 const ORIGIN = `http://localhost:${PORT}`
+// Lower the worker count on resource-constrained local machines.
+const WORKER_COUNT = Math.max(1, Math.min(4, Number.parseInt(process.env.PRERENDER_CONCURRENCY, 10) || 4))
 
 // Prerender city pages first, home LAST. Reason: writing dist/index.html
 // causes the static server's SPA fallback to serve the prerendered home
@@ -183,7 +185,7 @@ async function main() {
     await browser.defaultBrowserContext().overridePermissions(ORIGIN, [])
     const pending = routes.filter(route => route !== '/')
     let cursor = 0
-    const workers = await Promise.allSettled(Array.from({ length: 4 }, async () => {
+    const workers = await Promise.allSettled(Array.from({ length: WORKER_COUNT }, async () => {
       while (cursor < pending.length) await prerenderRoute(browser, pending[cursor++])
     }))
     const failed = workers.find(worker => worker.status === 'rejected')
