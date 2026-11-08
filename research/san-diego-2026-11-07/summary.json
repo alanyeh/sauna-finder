@@ -33,60 +33,20 @@
       "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Recovery%20Co.&query_place_id=ChIJ2cPJTRxX2YARlQiwHqesrF0"
     }
   ],
-  "photos": 50,
-  "visible_with_photos": 20,
+  "photos": 63,
+  "visible_with_photos": 33,
   "visible_without_photos": [
-    {
-      "id": 1048,
-      "name": "Perspire Sauna Studio — Del Mar"
-    },
-    {
-      "id": 1050,
-      "name": "Pure Infrared Sauna Studio — Bankers Hill"
-    },
-    {
-      "id": 1051,
-      "name": "Pure Infrared Sauna Studio — Solana Beach"
-    },
     {
       "id": 1052,
       "name": "Pure Spa & Skin Care"
-    },
-    {
-      "id": 1053,
-      "name": "R3 Recover"
     },
     {
       "id": 1056,
       "name": "REJUV — Carlsbad"
     },
     {
-      "id": 1057,
-      "name": "REJUV — Encinitas"
-    },
-    {
-      "id": 1059,
-      "name": "SDBody — La Jolla"
-    },
-    {
-      "id": 1060,
-      "name": "SDBody — Mission Hills"
-    },
-    {
-      "id": 1020,
-      "name": "Cove Wellness"
-    },
-    {
-      "id": 1023,
-      "name": "Drippin Detox"
-    },
-    {
       "id": 1025,
       "name": "Fire & Flow Hot Yoga"
-    },
-    {
-      "id": 1047,
-      "name": "Perspire Sauna Studio — 4S Ranch"
     },
     {
       "id": 1067,
@@ -97,20 +57,8 @@
       "name": "SWTHZ — One Paseo"
     },
     {
-      "id": 1070,
-      "name": "The Spa at Omni La Costa"
-    },
-    {
       "id": 1075,
       "name": "Wellness by Pilates Collective"
-    },
-    {
-      "id": 1004,
-      "name": "Arcane Wellness"
-    },
-    {
-      "id": 1069,
-      "name": "The Spa at Fairmont Grand Del Mar"
     }
   ],
   "validations": [
@@ -123,5 +71,7 @@
   ],
   "notes": "Official operator evidence and Places status checked online; no phone or on-site inspection. Photos are actual venue images and may show interiors/exteriors rather than the sauna itself. Uncertain stock and wrong-branch images were rejected.",
   "publication_policy_update": "24 Hour Fitness excluded sitewide. San Diego additionally excludes 21 gym/pool amenity listings and four treatment-dependent spas, retaining 39 sauna, bathhouse, recovery, and public-access spa destinations.",
-  "hidden_by_curation": 25
+  "hidden_by_curation": 25,
+  "photos_verified_at": "2026-11-08T01:25:14.317Z",
+  "additional_photos": 13
 }
