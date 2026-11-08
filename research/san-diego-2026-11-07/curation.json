@@ -1,0 +1,180 @@
+{
+  "policy": "24 Hour Fitness excluded sitewide. San Diego additionally excludes 21 gym/pool amenity listings and four treatment-dependent spas, retaining 39 sauna, bathhouse, recovery, and public-access spa destinations.",
+  "decisions": [
+    {
+      "id": 1028,
+      "name": "Fit — Mission Beach",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1012,
+      "name": "Chuze Fitness — Chula Vista",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1013,
+      "name": "Chuze Fitness — Escondido",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1014,
+      "name": "Chuze Fitness — La Mesa",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1015,
+      "name": "Chuze Fitness — Mission Valley",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1016,
+      "name": "Chuze Fitness — National City",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1017,
+      "name": "Chuze Fitness — Santee",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1024,
+      "name": "EōS Fitness — Sports Arena",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1029,
+      "name": "Hive Training Club",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1073,
+      "name": "TruSelf Sporting Club",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1074,
+      "name": "War House Gym — San Diego",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1010,
+      "name": "Cascade Spa",
+      "reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1026,
+      "name": "Fit — East Village",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1027,
+      "name": "Fit — Little Italy",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1043,
+      "name": "Mesa Rim — Mira Mesa",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1045,
+      "name": "NXPT Fitness — La Mesa",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1049,
+      "name": "Point Loma Sports Club",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1058,
+      "name": "RESET",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1068,
+      "name": "The Plunge San Diego",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1003,
+      "name": "AquaVie Fitness + Wellness Club",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1005,
+      "name": "Beauty Kliniek Aromatherapy Day Spa",
+      "reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1046,
+      "name": "Ocean Pacific Gym & Wellness",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1063,
+      "name": "Stone Impact",
+      "reason": "Gym, fitness club, or pool with sauna as an ancillary amenity.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1066,
+      "name": "The Catamaran Spa",
+      "reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission.",
+      "previous_status": "active",
+      "status": "hidden"
+    },
+    {
+      "id": 1071,
+      "name": "The Spa at Rancho Valencia",
+      "reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission.",
+      "previous_status": "active",
+      "status": "hidden"
+    }
+  ]
+}

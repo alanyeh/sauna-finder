@@ -14,7 +14,7 @@ export const CITY_CONTENT = {
   'san-diego': {
     intro: [
       "Explore sauna locations across San Diego and the surrounding county, from Korean spas in Kearny Mesa to private infrared studios, coastal recovery centers and North County wellness venues. Listings cover the city as well as communities including Carlsbad, Encinitas, Oceanside and Chula Vista, so check the address and map before booking.",
-      "Access varies by venue. Some studios sell individual sauna or contrast-therapy sessions, while bathhouses and fitness clubs may offer day passes. Other gym saunas require membership, and hotel spas may include sauna access only with a qualifying treatment. Review each listing’s access notes and source links for reservation requirements, age limits and what is included. Traditional sauna, infrared sauna, steam rooms and cold plunges are listed separately when confirmed.",
+      "Access varies by venue. Studios offer individual sauna or contrast-therapy sessions, bathhouses sell admission, and selected hotel spas offer public wellness passes. This collection focuses on sauna and recovery destinations; ordinary gym amenities and treatment-only sauna access are excluded. Review each listing’s access notes and source links for reservation requirements, age limits and what is included. Traditional sauna, infrared sauna, steam rooms and cold plunges are listed separately when confirmed.",
     ],
     faqs: [
       { q: "Can I use a sauna in San Diego without a gym membership?", a: "Yes. Sauna studios and recovery centers offer individual appointments, and some bathhouses and fitness facilities sell public passes. Hotel spa access may require a treatment. Check each venue’s access notes before booking." },

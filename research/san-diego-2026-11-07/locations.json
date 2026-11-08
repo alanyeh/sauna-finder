@@ -46,7 +46,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-bonita",
@@ -87,7 +88,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Chula Vista.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-carlsbad",
@@ -128,7 +130,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Carlsbad.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-carlsbad-palomar-airport",
@@ -167,7 +170,8 @@
       "photos": [],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Carlsbad.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-carmel-mountain-ranch",
@@ -208,7 +212,8 @@
       ],
       "research_notes": "Branch-specific sauna and steam room; publicly joinable, access varies by tier.",
       "description": "Fitness club with sauna, steam room in Carmel Mountain Ranch.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-chula-vista",
@@ -248,7 +253,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in Chula Vista.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-college-grove",
@@ -289,7 +295,8 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-el-cajon-main-st",
@@ -330,7 +337,8 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in El Cajon.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-escondido-la-terraza",
@@ -371,7 +379,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Escondido.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-imperial-marketplace",
@@ -412,7 +421,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-mission-valley-center",
@@ -452,7 +462,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-navajo",
@@ -492,7 +503,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-oceanside",
@@ -533,7 +545,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Oceanside.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-rancho-penasquitos",
@@ -574,7 +587,8 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-santee",
@@ -615,7 +629,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Santee.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-24-hour-fitness-utc",
@@ -656,7 +671,8 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-aqua-day-spa",
@@ -698,7 +714,8 @@
       ],
       "research_notes": "Gender-separated nude bathing; women's side also has salt/clay jjimjilbang.",
       "description": "Korean spa with dry sauna, steam room, cold plunge in Kearny Mesa.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-aquavie-fitness-wellness-club",
@@ -738,7 +755,9 @@
       "photos": [],
       "research_notes": "Limited public full-facility day passes sold at the front desk. Locker-room dry saunas and steam rooms included; confirm separate rooftop recovery reservations.",
       "description": "Fitness club with dry and infrared saunas, steam room in Downtown.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-arcane-wellness",
@@ -777,7 +796,8 @@
       "photos": [],
       "research_notes": "Book a sauna/recovery appointment.",
       "description": "Recovery studio with dry and infrared saunas in Little Italy.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-beauty-kliniek-aromatherapy-day-spa",
@@ -817,7 +837,9 @@
       "photos": [],
       "research_notes": "Infrared sauna available for extra fee; packages explicitly include it. Address from operator contact page.",
       "description": "Day spa with infrared sauna in University City.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission."
     },
     {
       "id": "sd-bella-longevity-spa",
@@ -859,7 +881,8 @@
       ],
       "research_notes": "No membership required.",
       "description": "Recovery studio with infrared sauna, cold plunge in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-body-beautiful-spa",
@@ -899,7 +922,8 @@
       ],
       "research_notes": "Sauna sessions available by online or telephone appointment.",
       "description": "Day spa with infrared sauna in Bay Park.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-breathe-degrees-carlsbad",
@@ -940,7 +964,8 @@
       ],
       "research_notes": "Book open plunge/sauna or classes including access.",
       "description": "Wellness center with infrared sauna, cold plunge in Carlsbad.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-breathe-degrees-liberty-station",
@@ -981,7 +1006,8 @@
       ],
       "research_notes": "Book open plunge/sauna or classes including access. Both branches explicitly listed by operator.",
       "description": "Wellness center with infrared sauna, cold plunge in Liberty Station.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-cascade-spa",
@@ -1022,7 +1048,9 @@
       ],
       "research_notes": "Book a spa package specifying sauna. Standalone sauna admission not confirmed; bathing suit required for Jacuzzi.",
       "description": "Day spa with dry sauna, steam room in Hillcrest.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission."
     },
     {
       "id": "sd-catalyst-point-loma-recovery-lounge",
@@ -1063,7 +1091,8 @@
       ],
       "research_notes": "Outdoor recovery lounge; first-time visits and booking offered.",
       "description": "Recovery studio with dry sauna, cold plunge in Point Loma.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-chuze-fitness-chula-vista",
@@ -1101,7 +1130,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with dry sauna in Chula Vista.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-chuze-fitness-escondido",
@@ -1139,7 +1170,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with infrared sauna in Escondido.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-chuze-fitness-la-mesa",
@@ -1177,7 +1210,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with infrared sauna in La Mesa.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-chuze-fitness-mission-valley",
@@ -1216,7 +1251,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with dry and infrared saunas in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-chuze-fitness-national-city",
@@ -1254,7 +1291,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with infrared sauna in National City.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-chuze-fitness-santee",
@@ -1292,7 +1331,9 @@
       "photos": [],
       "research_notes": "Sauna listed for this branch; eligibility varies by membership tier. Basic guest privileges do not establish sauna access.",
       "description": "Fitness club with dry sauna in Santee.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-club-house-enc",
@@ -1333,7 +1374,8 @@
       ],
       "research_notes": "Operator confirms Clearlight infrared sauna and cold plunge.",
       "description": "Recovery studio with infrared sauna, cold plunge in Encinitas.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-conscious-body-recovery-san-diego",
@@ -1375,7 +1417,8 @@
       ],
       "research_notes": "One private suite inside Self Made Training Facility; appointment and self check-in required.",
       "description": "Private wellness studio with infrared sauna, cold plunge in Midway.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-cove-wellness",
@@ -1413,7 +1456,8 @@
       "photos": [],
       "research_notes": "Infrared Jade Sauna listed among treatments; contact spa to book and confirm session format.",
       "description": "Day spa with infrared sauna in La Jolla.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-crunch-fitness-carmel-valley",
@@ -1451,7 +1495,8 @@
       "photos": [],
       "research_notes": "Sauna explicitly listed in branch services; confirm membership tier.",
       "description": "Fitness club with sauna in Carmel Valley.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-crunch-fitness-el-cajon-jamacha",
@@ -1489,7 +1534,8 @@
       "photos": [],
       "research_notes": "Sauna shown in branch service list; confirm qualifying membership.",
       "description": "Fitness club with sauna in El Cajon.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-drippin-detox",
@@ -1527,7 +1573,8 @@
       "photos": [],
       "research_notes": "Standalone 30/45-minute private sauna; multi-service day pass also available. Online requests require operator confirmation.",
       "description": "Wellness center with infrared sauna in La Mesa.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-eos-fitness-sports-arena",
@@ -1565,7 +1612,9 @@
       "photos": [],
       "research_notes": "Branch-specific essential amenities list sauna; public membership with tier/guest restrictions.",
       "description": "Fitness club with sauna in Midway.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-fire-flow-hot-yoga",
@@ -1605,7 +1654,8 @@
       "photos": [],
       "research_notes": "Book Fire & Frost sauna/cold-plunge session; separate from infrared-heated yoga classes.",
       "description": "Wellness center with infrared sauna, cold plunge in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-fit-east-village",
@@ -1646,7 +1696,9 @@
       ],
       "research_notes": "Branch-specific locker-room sauna and steam rooms; public memberships. Mission Beach is co-located with The Plunge complex; separate operator/access product, possible shared amenity requires confirmation.",
       "description": "Fitness club with sauna, steam room in East Village.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-fit-little-italy",
@@ -1687,7 +1739,9 @@
       ],
       "research_notes": "Branch-specific locker-room sauna and steam rooms; public memberships. Mission Beach is co-located with The Plunge complex; separate operator/access product, possible shared amenity requires confirmation.",
       "description": "Fitness club with sauna, steam room in Little Italy.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-fit-mission-beach",
@@ -1728,7 +1782,9 @@
       ],
       "research_notes": "Membership includes gym locker-room saunas and steam rooms. Located at the same complex as The Plunge, which has a separate public pool-deck sauna admission product.",
       "description": "Fitness club with sauna, steam room in Mission Beach.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-hive-training-club",
@@ -1769,7 +1825,9 @@
       ],
       "research_notes": "Publicly joinable limited-membership club. Recovery lounge is a membership enhancement; confirm availability and tier.",
       "description": "Fitness club with infrared sauna, cold plunge in Downtown.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-hot-haven",
@@ -1809,7 +1867,8 @@
       ],
       "research_notes": "Book the sit-up infrared sauna cabin; infrared wraps are a separate service.",
       "description": "Sauna studio with infrared sauna in Bankers Hill.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-karma-wellness",
@@ -1851,7 +1910,8 @@
       ],
       "research_notes": "Current homepage says wet facilities now open, despite older testimonial language.",
       "description": "Day spa with sauna, steam room, cold plunge in Hillcrest.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-4s-ranch",
@@ -1889,7 +1949,8 @@
       "photos": [],
       "research_notes": "Branch sauna and public membership verified. San Diego postal address; precise city/unincorporated boundary not verified, excluded from city-only count.",
       "description": "Fitness club with sauna in 4S Ranch / Rancho Bernardo area.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-eastlake",
@@ -1927,7 +1988,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; confirm access tier and guest eligibility.",
       "description": "Fitness club with sauna in Chula Vista.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-encinitas",
@@ -1965,7 +2027,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; confirm access tier and guest eligibility.",
       "description": "Fitness club with sauna in Encinitas.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-escondido",
@@ -2003,7 +2066,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; confirm access tier and guest eligibility.",
       "description": "Fitness club with sauna in Escondido.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-kearny-mesa",
@@ -2041,7 +2105,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; membership/guest restrictions apply.",
       "description": "Fitness club with sauna in Kearny Mesa.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-national-city",
@@ -2080,7 +2145,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; confirm access tier and guest eligibility.",
       "description": "Fitness club with sauna, steam room in National City.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-la-fitness-sorrento-valley",
@@ -2118,7 +2184,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment; membership/guest restrictions apply.",
       "description": "Fitness club with sauna in Sorrento Valley.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-lagree-versa-fit",
@@ -2159,7 +2226,8 @@
       ],
       "research_notes": "Operator announces recovery room now open to current members and new visitors; confirm recovery-specific reservation, not class-only booking.",
       "description": "Wellness center with infrared sauna, cold plunge in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-life-time-la-jolla",
@@ -2198,7 +2266,8 @@
       "photos": [],
       "research_notes": "Operator advertises full-member-access day passes; confirm availability and fees. Membership also available.",
       "description": "Fitness club with dry sauna, steam room in La Jolla.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-longevity-lounge",
@@ -2238,7 +2307,8 @@
       ],
       "research_notes": "Book a sauna/recovery appointment.",
       "description": "Day spa with infrared sauna in Pacific Beach.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-magdalena-ecke-family-ymca",
@@ -2276,7 +2346,8 @@
       "photos": [],
       "research_notes": "Branch lists sauna and public enrollment. Age and membership restrictions may apply.",
       "description": "Fitness club with sauna in Encinitas.",
-      "visible_on_site": false
+      "visible_on_site": false,
+      "publication_status": "active"
     },
     {
       "id": "sd-mesa-rim-mira-mesa",
@@ -2316,7 +2387,9 @@
       ],
       "research_notes": "Membership expressly includes locker-room sauna; day-pass sauna inclusion not separately confirmed.",
       "description": "Fitness club with sauna in Mira Mesa.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-nalu-healing-arts",
@@ -2357,7 +2430,8 @@
       ],
       "research_notes": "Private sauna room with restroom, shower and towels; book standalone service.",
       "description": "Wellness center with infrared sauna in Bay Park.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-nxpt-fitness-la-mesa",
@@ -2399,7 +2473,9 @@
       ],
       "research_notes": "Saunas in men's and women's locker rooms; public membership/trial offers. Confirm sauna access with selected plan.",
       "description": "Fitness club with sauna in La Mesa.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-ocean-pacific-gym-wellness",
@@ -2441,7 +2517,9 @@
       ],
       "research_notes": "Public day/session admission advertised.",
       "description": "Fitness club with dry sauna, steam room, cold plunge in Pacific Beach.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-perspire-sauna-studio-4s-ranch",
@@ -2479,7 +2557,8 @@
       "photos": [],
       "research_notes": "San Diego postal address; 4S Ranch is outside city limits. SNØ shower, not plunge; hours ambiguous on operator page.",
       "description": "Sauna studio with infrared sauna in 4S Ranch.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-perspire-sauna-studio-del-mar",
@@ -2517,7 +2596,8 @@
       "photos": [],
       "research_notes": "SNØ cold shower is not a cold plunge. Operator's hours formatting is ambiguous; confirm hours.",
       "description": "Sauna studio with infrared sauna in Carmel Valley.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-point-loma-sports-club",
@@ -2557,7 +2637,9 @@
       ],
       "research_notes": "Public day/session admission advertised.",
       "description": "Fitness club with infrared sauna in Liberty Station.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-pure-infrared-sauna-studio-bankers-hill",
@@ -2596,7 +2678,8 @@
       "photos": [],
       "research_notes": "Private sessions; member and nonmember booking. Pricing pages conflict; confirm at booking.",
       "description": "Sauna studio with infrared sauna, cold plunge in Bankers Hill.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-pure-infrared-sauna-studio-solana-beach",
@@ -2634,7 +2717,8 @@
       "photos": [],
       "research_notes": "Operating branch listed on homepage; do not merge with future La Jolla, Rancho Santa Fe or Carlsbad branches. Confirm contrast-room availability at this branch.",
       "description": "Sauna studio with infrared sauna in Solana Beach.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-pure-spa-skin-care",
@@ -2672,7 +2756,8 @@
       "photos": [],
       "research_notes": "Private infrared sauna sessions are sold to nonmembers; treatment packages also available.",
       "description": "Day spa with infrared sauna in Tierrasanta.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-r3-recover",
@@ -2711,7 +2796,8 @@
       "photos": [],
       "research_notes": "Book the R3 Flow; address verified on operator contact page.",
       "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-real-deal-wellness",
@@ -2751,7 +2837,8 @@
       ],
       "research_notes": "Operator lists infrared sauna and first-session booking, packages and memberships.",
       "description": "Recovery studio with infrared sauna in Kearny Mesa.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-recoverme-san-diego",
@@ -2791,7 +2878,8 @@
       ],
       "research_notes": "Sauna-specific appointment schedule; memberships also available.",
       "description": "Recovery studio with infrared sauna in Serra Mesa.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-rejuv-carlsbad",
@@ -2829,7 +2917,8 @@
       "photos": [],
       "research_notes": "30-minute infrared sauna sessions advertised at both locations.",
       "description": "Recovery studio with infrared sauna in Carlsbad.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-rejuv-encinitas",
@@ -2867,7 +2956,8 @@
       "photos": [],
       "research_notes": "30-minute infrared sauna sessions advertised at both locations.",
       "description": "Recovery studio with infrared sauna in Encinitas.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-reset",
@@ -2908,7 +2998,9 @@
       ],
       "research_notes": "Publicly joinable gym lists sauna/cold plunge. Confirm recovery access tier; a free fitness trial is not proven sauna admission.",
       "description": "Fitness club with sauna, cold plunge in Hillcrest.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-sdbody-la-jolla",
@@ -2947,7 +3039,8 @@
       "photos": [],
       "research_notes": "Both clinics offer private sauna and cold plunge.",
       "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-sdbody-mission-hills",
@@ -2986,7 +3079,8 @@
       "photos": [],
       "research_notes": "Both clinics offer private sauna and cold plunge.",
       "description": "Recovery studio with infrared sauna, cold plunge in Mission Hills.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-soul-plunge",
@@ -3028,7 +3122,8 @@
       ],
       "research_notes": "Book contrast therapy or guided classes. La Jolla address and ZIP 92037 confirmed with the matching Google Place.",
       "description": "Wellness center with infrared sauna, cold plunge in La Jolla.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-stardust-float-spa",
@@ -3068,7 +3163,8 @@
       ],
       "research_notes": "Book a private infrared sauna session through the operator. Earlier sauna page no longer exists.",
       "description": "Float spa with infrared sauna in Midway.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-stone-impact",
@@ -3109,7 +3205,9 @@
       ],
       "research_notes": "All members have sauna and cold plunge access. Publicly joinable; standalone recovery pass price not independently confirmed.",
       "description": "Fitness club with sauna, cold plunge in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-sunny-s-spa-beauty-lounge",
@@ -3149,7 +3247,8 @@
       ],
       "research_notes": "Explicitly open to general public with treatment; limited standalone day passes by phone. Co-ed, swimsuit required, spa age18+.",
       "description": "Resort spa with dry sauna in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-swthz-one-paseo",
@@ -3189,7 +3288,8 @@
       "photos": [],
       "research_notes": "Book a sauna/recovery appointment.",
       "description": "Private wellness studio with infrared sauna, cold plunge in Carmel Valley.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-the-catamaran-spa",
@@ -3230,7 +3330,9 @@
       ],
       "research_notes": "Sauna access before/after spa treatment; spa passes also offered via ResortPass.",
       "description": "Resort spa with sauna, steam room in Pacific Beach.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission."
     },
     {
       "id": "sd-the-healing-room",
@@ -3268,7 +3370,8 @@
       "photos": [],
       "research_notes": "Infrared sauna by appointment. Suite I confirmed by the matching Google Place.",
       "description": "Wellness center with infrared sauna in Bay Ho.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-the-plunge-san-diego",
@@ -3308,7 +3411,9 @@
       ],
       "research_notes": "Public session/day passes include the pool-deck dry sauna, subject to programs and rentals. Minimum sauna age 16. Separate from Fit Mission Beach gym access at the same complex.",
       "description": "Fitness club with dry sauna in Mission Beach.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-the-spa-at-fairmont-grand-del-mar",
@@ -3347,7 +3452,8 @@
       "photos": [],
       "research_notes": "Reserve the Wellness Day pass, which explicitly includes wet and dry saunas, whirlpools, pool and fitness access. Spa entrance has a separate Grand Del Mar Court address.",
       "description": "Resort spa with dry sauna, steam room in Carmel Valley.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-the-spa-at-omni-la-costa",
@@ -3386,7 +3492,8 @@
       "photos": [],
       "research_notes": "Open to public; sauna amenities included on treatment day. Limited spa day passes also offered; pool-only passes not equivalent.",
       "description": "Resort spa with dry sauna, steam room in Carlsbad.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-the-spa-at-rancho-valencia",
@@ -3426,7 +3533,9 @@
       "photos": [],
       "research_notes": "Sauna, steam, cold plunge and spa-pool access included with a qualifying spa treatment. No standalone day pass. Co-ed facilities require a swimsuit.",
       "description": "Resort spa with sauna, steam room, cold plunge in Rancho Santa Fe.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Sauna access requires a qualifying spa treatment; no confirmed standalone sauna admission."
     },
     {
       "id": "sd-the-studio-by-catalyst",
@@ -3467,7 +3576,8 @@
       ],
       "research_notes": "Indoor recovery lounge; customizable sessions available to book.",
       "description": "Recovery studio with infrared sauna, cold plunge in Rancho Bernardo.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-truself-sporting-club",
@@ -3507,7 +3617,9 @@
       ],
       "research_notes": "Choose the Infrared Sauna Day option, which includes a private sauna session and gym access. Basic gym admission does not establish sauna access.",
       "description": "Fitness club with infrared sauna in Allied Gardens.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-war-house-gym-san-diego",
@@ -3548,7 +3660,9 @@
       ],
       "research_notes": "Purchase Day Pass + Wellness Patio, which explicitly includes sauna and cold plunges. Basic day pass differs; contact operator for secured-facility access.",
       "description": "Fitness club with infrared sauna, cold plunge in Logan Heights.",
-      "visible_on_site": true
+      "visible_on_site": false,
+      "publication_status": "hidden",
+      "curation_reason": "Gym, fitness club, or pool with sauna as an ancillary amenity."
     },
     {
       "id": "sd-wellness-by-pilates-collective",
@@ -3590,7 +3704,8 @@
       "photos": [],
       "research_notes": "Titan infrared sauna and contrast therapy by appointment; recovery suite permits one guest. Address established by operator shower FAQ.",
       "description": "Wellness center with infrared sauna, cold plunge in Torrey Highlands.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     },
     {
       "id": "sd-yu-spa",
@@ -3632,7 +3747,8 @@
       ],
       "research_notes": "Admission sold separately; gender-separated wet areas; jjimjilbang adds heated salt and clay rooms. Minimum age 13; ages 13–17 accompanied by same-gender parent/guardian.",
       "description": "Korean spa with dry sauna, steam room, cold plunge in Kearny Mesa.",
-      "visible_on_site": true
+      "visible_on_site": true,
+      "publication_status": "active"
     }
   ]
 }
