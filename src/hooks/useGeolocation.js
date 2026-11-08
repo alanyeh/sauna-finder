@@ -23,7 +23,8 @@ export function useGeolocation() {
       (err) => {
         setError(err.message);
         setLoading(false);
-      }
+      },
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
   }, []);
 

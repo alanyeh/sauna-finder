@@ -11,6 +11,7 @@ import HomeSaunaCard from '../components/HomeSaunaCard';
 import CarouselArrowButton from '../components/CarouselArrowButton';
 import SEO from '../components/SEO';
 import { getCategory } from '../hooks/useFilters';
+import { orderHomeCities } from '../lib/homeCityOrder';
 
 const CATEGORIES = [
   { type: 'Russian Banya',    label: 'Russian Banya',    icon: '♨' },
@@ -22,12 +23,11 @@ const CATEGORIES = [
   { type: 'Japanese Sauna',   label: 'Japanese Sauna',   icon: '⛩' },
 ];
 
-function CategoryGrid() {
+function CategoryGrid({ lat, lng }) {
   const navigate = useNavigate();
-  const { lat, lng } = useGeolocation();
   const { saunas } = useSaunaData();
 
-  const closestCitySlug = lat && lng ? findClosestCity(lat, lng) : null;
+  const closestCitySlug = Number.isFinite(lat) && Number.isFinite(lng) ? findClosestCity(lat, lng) : null;
   const closestCityName = closestCitySlug ? getCityFullName(closestCitySlug) : null;
   const targetCity = closestCitySlug || 'all';
   const headingText = closestCityName ? `Browse by Category in ${closestCityName}` : 'Browse by Category';
@@ -117,6 +117,7 @@ function CityCarousel({ saunas, citySlug }) {
 
 export default function HomePage() {
   const { saunas, loading } = useSaunaData();
+  const { lat, lng } = useGeolocation();
   const { user, logout } = useAuth();
   const [headerPinned, setHeaderPinned] = useState(false);
 
@@ -134,16 +135,15 @@ export default function HomePage() {
       grouped[slug].push(s);
     });
 
-    return Object.entries(grouped)
+    return orderHomeCities(Object.entries(grouped)
       .map(([slug, items]) => ({
         slug,
         fullName: getCityFullName(slug),
         // The city page has the full list; keep homepage DOM/image work bounded.
         saunas: items.sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 12),
         totalCount: items.length,
-      }))
-      .sort((a, b) => b.totalCount - a.totalCount);
-  }, [saunas]);
+      })), { lat, lng });
+  }, [saunas, lat, lng]);
 
   if (loading) {
     return (
@@ -211,7 +211,7 @@ export default function HomePage() {
       </header>
 
       {/* Category grid */}
-      <CategoryGrid />
+      <CategoryGrid lat={lat} lng={lng} />
 
       {/* City sections */}
       {citySections.map(city => (
