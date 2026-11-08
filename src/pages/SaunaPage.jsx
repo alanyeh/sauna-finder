@@ -60,7 +60,6 @@ export default function SaunaPage() {
         ...(sauna.address ? { address: sauna.address } : {}),
         ...(photos.length ? { image: photos } : {}),
         ...(website ? { sameAs: website } : {}),
-        ...(hasRating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: rating, ratingCount: reviewCount } } : {}),
         geo: { '@type': 'GeoCoordinates', latitude: sauna.lat, longitude: sauna.lng } },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Sauna Finder', item: SITE },

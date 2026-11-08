@@ -126,7 +126,7 @@ export default function CityPage() {
   const cityDescription = `Discover ${displayedSaunas.length} top-rated saunas and bathhouses in ${cityFullName}. Compare amenities, ratings, prices, and find your perfect sauna experience.`;
 
   const cityJsonLd = useMemo(() => {
-    const itemListItems = displayedSaunas.slice(0, 20).map((sauna, index) => ({
+    const itemListItems = displayedSaunas.map((sauna, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
@@ -138,14 +138,6 @@ export default function CityPage() {
         address: { '@type': 'PostalAddress', streetAddress: sauna.address },
         ...(sauna.lat && sauna.lng && {
           geo: { '@type': 'GeoCoordinates', latitude: sauna.lat, longitude: sauna.lng },
-        }),
-        ...(sauna.rating && {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: sauna.rating,
-            ratingCount: sauna.rating_count || sauna.ratingCount,
-            bestRating: 5,
-          },
         }),
         ...(sauna.price && { priceRange: sauna.price }),
         ...(sauna.photos?.length > 0 && { image: sauna.photos[0] }),
@@ -183,6 +175,7 @@ export default function CityPage() {
         description={cityDescription}
         path={`/city/${citySlug}`}
         jsonLd={cityJsonLd}
+        image={displayedSaunas.find(sauna => sauna.photos?.length)?.photos[0]}
       />
       <h1 className="sr-only">Saunas and Bathhouses in {cityFullName}</h1>
 
