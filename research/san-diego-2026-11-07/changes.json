@@ -605,7 +605,9 @@
         "dry_sauna"
       ],
       "description": "Recovery studio with dry and infrared saunas in Little Italy.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1004-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.arcanewellness.com/",
       "listing_status": "active",
@@ -1125,7 +1127,9 @@
         "infrared_sauna"
       ],
       "description": "Day spa with infrared sauna in La Jolla.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1020-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.covewellness.com/",
       "listing_status": "active",
@@ -1214,7 +1218,9 @@
         "infrared_sauna"
       ],
       "description": "Wellness center with infrared sauna in La Mesa.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1023-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.drippindetox.com/wellness-day-pass",
       "listing_status": "active",
@@ -1969,7 +1975,9 @@
         "infrared_sauna"
       ],
       "description": "Sauna studio with infrared sauna in 4S Ranch.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1047-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.perspiresaunastudio.com/locations/4s-ranch",
       "listing_status": "active",
@@ -2000,7 +2008,9 @@
         "infrared_sauna"
       ],
       "description": "Sauna studio with infrared sauna in Carmel Valley.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1048-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.perspiresaunastudio.com/locations/del-mar",
       "listing_status": "active",
@@ -2065,7 +2075,9 @@
         "cold_plunge"
       ],
       "description": "Sauna studio with infrared sauna, cold plunge in Bankers Hill.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1050-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://pureinfraredsaunastudio.com/faq",
       "listing_status": "active",
@@ -2096,7 +2108,9 @@
         "infrared_sauna"
       ],
       "description": "Sauna studio with infrared sauna in Solana Beach.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1051-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://pureinfraredsaunastudio.com/faq",
       "listing_status": "active",
@@ -2159,7 +2173,9 @@
         "cold_plunge"
       ],
       "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1053-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.r3recover.com/first-visit/",
       "listing_status": "active",
@@ -2287,7 +2303,9 @@
         "infrared_sauna"
       ],
       "description": "Recovery studio with infrared sauna in Encinitas.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1057-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.rejuvcryo.com/encinitas-ca-location",
       "listing_status": "active",
@@ -2352,7 +2370,9 @@
         "cold_plunge"
       ],
       "description": "Recovery studio with infrared sauna, cold plunge in La Jolla.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1059-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://sdbody.com/wellness/",
       "listing_status": "active",
@@ -2384,7 +2404,9 @@
         "cold_plunge"
       ],
       "description": "Recovery studio with infrared sauna, cold plunge in Mission Hills.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1060-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://sdbody.com/wellness/",
       "listing_status": "active",
@@ -2678,7 +2700,9 @@
         "steam_room"
       ],
       "description": "Resort spa with dry sauna, steam room in Carmel Valley.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1069-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.fairmont.com/en/hotels/san-diego/fairmont-grand-del-mar/wellness/spa/day-pass-popoin.html",
       "listing_status": "active",
@@ -2710,7 +2734,9 @@
         "steam_room"
       ],
       "description": "Resort spa with dry sauna, steam room in Carlsbad.",
-      "photos": [],
+      "photos": [
+        "https://oqwwxfecnrspcjjwrylx.supabase.co/storage/v1/object/public/sauna-photos/public/san-diego-1070-20261107.jpg"
+      ],
       "pricing_options": [],
       "website_url": "https://www.omnihotels.com/hotels/san-diego-la-costa/spa/details",
       "listing_status": "active",
