@@ -1,24 +1,7 @@
+import CitySelector from './CitySelector';
 import { Link } from 'react-router-dom';
 import { isAdmin } from '../lib/admin';
 import { useAuth } from '../contexts/AuthContext';
-
-const CITIES = [
-  { slug: 'all', short: 'All', label: 'All Cities' },
-  { slug: 'nyc', short: 'NYC', label: 'New York' },
-  { slug: 'sf', short: 'SF', label: 'San Francisco' },
-  { slug: 'chicago', short: 'CHI', label: 'Chicago' },
-  { slug: 'seattle', short: 'SEA', label: 'Seattle' },
-  { slug: 'la', short: 'LA', label: 'Los Angeles' },
-  { slug: 'san-diego', short: 'SD', label: 'San Diego' },
-  { slug: 'minneapolis', short: 'MSP', label: 'Minneapolis' },
-  { slug: 'portland', short: 'PDX', label: 'Portland' },
-  { slug: 'denver', short: 'DEN', label: 'Denver' },
-  { slug: 'park-city', short: 'PC / SLC', label: 'Park City & Salt Lake City' },
-  { slug: 'austin', short: 'ATX', label: 'Austin' },
-  { slug: 'houston', short: 'HOU', label: 'Houston' },
-  { slug: 'vancouver', short: 'VAN', label: 'Vancouver' },
-  { slug: 'toronto', short: 'TOR', label: 'Toronto' },
-];
 
 export default function Header({ citySlug, setCitySlug, onSignIn }) {
   const { user, logout } = useAuth();
@@ -30,35 +13,7 @@ export default function Header({ citySlug, setCitySlug, onSignIn }) {
           <Link to="/" className="font-serif text-[14px] md:text-[18px] leading-tight tracking-tight shrink-0 whitespace-nowrap">
             Sauna Finder
           </Link>
-          {/* Mobile: dropdown */}
-          <select
-            aria-label="Choose a city"
-            value={citySlug}
-            onChange={(e) => setCitySlug(e.target.value)}
-            className="ui-field md:hidden w-auto flex-1 max-w-[145px] min-w-0 text-xs"
-          >
-            {CITIES.map(({ slug, label }) => (
-              <option key={slug} value={slug}>{label}</option>
-            ))}
-          </select>
-
-          {/* Desktop: button row */}
-          <div className="hidden md:flex gap-1 flex-wrap">
-            {CITIES.map(({ slug, short }) => (
-              <button
-                key={slug}
-                aria-pressed={citySlug === slug}
-                onClick={() => setCitySlug(slug)}
-                className={`min-h-11 px-3 py-2 rounded-sm text-xs font-medium transition-colors whitespace-nowrap ${
-                  citySlug === slug
-                    ? 'bg-charcoal text-white'
-                    : 'text-warm-gray hover:text-charcoal'
-                }`}
-              >
-                {short}
-              </button>
-            ))}
-          </div>
+          <CitySelector value={citySlug} onChange={setCitySlug} />
         </div>
 
         <div className="flex-shrink-0 flex items-center gap-2 md:gap-3">
