@@ -2,8 +2,8 @@
   "verified_at": "2026-11-07T21:27:31.697Z",
   "researched": 94,
   "imported": 91,
-  "visible": 80,
-  "hidden_by_existing_chain_policy": 11,
+  "visible": 64,
+  "hidden_by_existing_chain_policy": 27,
   "withheld": [
     {
       "name": "Eco Chateau — Mission Valley",
@@ -34,12 +34,8 @@
     }
   ],
   "photos": 50,
-  "visible_with_photos": 50,
+  "visible_with_photos": 35,
   "visible_without_photos": [
-    {
-      "id": 989,
-      "name": "24 Hour Fitness — Carlsbad Palomar Airport"
-    },
     {
       "id": 1003,
       "name": "AquaVie Fitness + Wellness Club"
@@ -161,11 +157,11 @@
     "91 exact operational Places matches with coordinates",
     "No duplicate Place IDs",
     "91 active rows read back from Supabase",
-    "80 discoverable with existing chain policy",
     "All uploaded image URLs return valid image content",
     "44 offline regression tests passed",
-    "335 routes prerendered locally",
-    "Desktop SD and mobile San Diego selector browser checks"
+    "Desktop SD and mobile San Diego selector browser checks",
+    "64 discoverable after excluding 24 Hour Fitness"
   ],
-  "notes": "Official operator evidence and Places status checked online; no phone or on-site inspection. Photos are actual venue images and may show interiors/exteriors rather than the sauna itself. Uncertain stock and wrong-branch images were rejected."
+  "notes": "Official operator evidence and Places status checked online; no phone or on-site inspection. Photos are actual venue images and may show interiors/exteriors rather than the sauna itself. Uncertain stock and wrong-branch images were rejected.",
+  "publication_policy_update": "24 Hour Fitness excluded from public discovery at user request on November 7, 2026."
 }

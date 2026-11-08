@@ -3,7 +3,7 @@ import { isPublicSauna, isHotelSauna } from './saunaQuality.js';
 // Generic chains to hide from results (records stay in DB but are filtered out)
 const HIDDEN_CHAINS = [
   // Gym chains
-  'LA Fitness', 'Anytime Fitness', 'Crunch Fitness', 'YMCA', 'Life Time',
+  'LA Fitness', 'Anytime Fitness', 'Crunch Fitness', 'YMCA', 'Life Time', '24 Hour Fitness',
   // Budget/generic hotel chains
   'Holiday Inn', 'Comfort Suites', 'Comfort Inn', 'La Quinta',
   'Quality Inn', 'Best Western', 'Crowne Plaza', 'Courtyard by Marriott',

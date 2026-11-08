@@ -46,7 +46,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-bonita",
@@ -87,7 +87,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Chula Vista.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-carlsbad",
@@ -128,7 +128,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Carlsbad.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-carlsbad-palomar-airport",
@@ -167,7 +167,7 @@
       "photos": [],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Carlsbad.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-carmel-mountain-ranch",
@@ -208,7 +208,7 @@
       ],
       "research_notes": "Branch-specific sauna and steam room; publicly joinable, access varies by tier.",
       "description": "Fitness club with sauna, steam room in Carmel Mountain Ranch.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-chula-vista",
@@ -248,7 +248,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in Chula Vista.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-college-grove",
@@ -289,7 +289,7 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-el-cajon-main-st",
@@ -330,7 +330,7 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in El Cajon.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-escondido-la-terraza",
@@ -371,7 +371,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Escondido.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-imperial-marketplace",
@@ -412,7 +412,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-mission-valley-center",
@@ -452,7 +452,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-navajo",
@@ -492,7 +492,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-oceanside",
@@ -533,7 +533,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Oceanside.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-rancho-penasquitos",
@@ -574,7 +574,7 @@
       ],
       "research_notes": "Branch-specific amenities confirm sauna and steam room; public membership. Trial access language contradictory; not represented as a confirmed day pass.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-santee",
@@ -615,7 +615,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in Santee.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-24-hour-fitness-utc",
@@ -656,7 +656,7 @@
       ],
       "research_notes": "Branch-specific amenities list sauna. Public membership available; confirm qualifying club/tier and temporary maintenance. Trial/day-pass sauna access not independently established.",
       "description": "Fitness club with sauna, steam room in San Diego.",
-      "visible_on_site": true
+      "visible_on_site": false
     },
     {
       "id": "sd-aqua-day-spa",
